@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<title>A richer dust</title>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html,body{
+		height: 100%;
+	}
+
+	body {
+		font: 50px Helvetica, Arial;
+	}
+
+	#container{
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+</style>
+</head>
+<body>
+	
+
+	<div id="container">
+
+		<div id="message"></div>
+		
+	</div>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	<script>
+		$(function () {
+			var socket = io();
+			
+			socket.on('chat message', function(msg){
+				$('#message').text( msg );
+			});
+		});
+	</script>
+</body>
+</html>

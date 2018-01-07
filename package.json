@@ -1,0 +1,26 @@
+{
+  "name": "ldf-a-richer-dust",
+  "version": "1.0.0",
+  "description": "Conducteur numérique pour la pièce audio-visuelle A richer dust, montée par la Haute école des arts du Rhin",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HEAR/LDF-A-Richer-Dust.git"
+  },
+  "author": "Atelier de communication graphique, Haute école des arts du Rhin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HEAR/LDF-A-Richer-Dust/issues"
+  },
+  "homepage": "https://github.com/HEAR/LDF-A-Richer-Dust#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.14.7",
+    "osc-min": "^1.1.1",
+    "socket.io": "^2.0.4"
+  }
+}
