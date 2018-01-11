@@ -1,6 +1,8 @@
 // https://socket.io/get-started/chat/
 // https://github.com/russellmcc/node-osc-min
 
+// https://expressjs.com/en/starter/generator.html (not used)
+// http://expressjs.com/en/starter/hello-world.html
 const express 	= require('express')
 const app  		= require('express')();
 
