@@ -3,32 +3,100 @@
 <head>
 	<title>Admin A richer dust</title>
 	<style>
-	* { margin: 0; padding: 0; box-sizing: border-box; }
-	body { font: 13px Helvetica, Arial; }
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html, body{
+		height: 100%;
+	}
+	body {
+		font: 13px Helvetica, Arial;
+	}
 
 
 	#admin{
 		display: grid;
+		grid-template-columns: 15% 15% 35% 35%;
+		grid-template-areas:
+			"head head head head" 
+			"info info info info"
+			"chat chat flux flux"
+			"foot foot foot foot" ;
+		/*width: 100%;*/
+		height: 100%;
+	}
+	
+	header{
+		grid-area: head;
+		padding:15px;
 	}
 
-	form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-	form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-	form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
 	#infos{
-		top:0;
+		grid-area: info;
+		/*top:0;*/
 		width:100%;
-		position: fixed;
-		background: #DDD;
-		height: 200px;
+		/*position: fixed;*/
+		/*background: #DDD;*/
+		/*height: 200px;*/
+		padding:15px;
+		display: grid;
+		grid-template-columns: 10% 90%;
+		grid-template-areas:
+			"boutons chrono" ;
 	}
+
+	#flux{
+		grid-area: flux;
+		/*height: calc(100% - 200px);*/
+		overflow-y: auto;
+		background: #CCC;
+	}
+
+	#chat{
+		grid-area: chat;
+		padding:15px;
+	}
+
+	footer{
+		grid-area: foot;
+		padding:15px;
+	}
+
 	#chrono{
-		font-size: 160px;
+		grid-area: chrono;
+		font-size: 80px;
 		font-family: monospace;
 	}
+
+	.boutons{
+		grid-area: boutons;
+		justify-self: center;
+	}
+
+	.boutons button{
+		display: block;
+		height: 50%;
+		width:80px;
+		background: #F00;
+		border: none;
+		font-weight: bold;
+	}
+
+	#play{
+		background: #0F0;
+	}
+	#pause{
+		background: #DDD;
+	}
+
+
 	#messages {
 		list-style-type: none;
 		margin: 0;
-		margin-top:200px;
+		/*margin-top:200px;*/
 		padding: 0;
 	}
 	#messages li {
@@ -38,31 +106,68 @@
 		background: #eee;
 	}
 
+	#messages li.activated{
+		background: #FF0;
+	}
+
 	.millis{
 		font-size: 0.5em;
+	}
+
+
+
+
+	form {
+		background: #000;
+		padding: 3px;
+		/*position: fixed;
+		bottom: 0;
+		width: 100%;*/
+	}
+	form input {
+		border: 0;
+		padding: 10px;
+		width: 80%;
+		margin-right: .5%;
+	}
+	form button {
+		width: 19.5%;
+		background: rgb(130, 224, 255);
+		border: none;
+		padding: 10px;
 	}
 </style>
 </head>
 <body>
 
 	<div id="admin">
-
-		<div id="infos">
-			<span id="chrono"><span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>.<span class="millis">000</span></span>
-			<button id="play">play</button>
-			<button id="pause">pause</button>
-			<button id="stop">stop</button>
-		</div>
-		<ul id="messages"></ul>
-		<form action="">
-			<input id="m" autocomplete="off" /><button>Send</button>
-		</form>
-
-
+		<header>
+			<h1>A richer dust ~ pilotage</h1>
+		</header>
+		<section id="infos">
+			<div id="chrono">
+				<span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>.<span class="millis">000</span>
+			</div>
+			<div class="boutons">
+				<button id="play">play</button>
+				<button id="pause">pause</button>
+				<button id="stop">stop</button>
+			</div>
+		</section>
+		<section id="flux">
+			<ul id="messages"></ul>
+		</section>
+		<section id="chat">
+			<form action="">
+				<input id="m" autocomplete="off" /><button>Send</button>
+			</form>
+		</section>
+		<footer>Atelier de communication graphique, Haute école des arts du Rhin</footer>
 	</div>
 
 	<script src="/socket.io/socket.io.js"></script>
-	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="assets/js/jquery-3.2.1.min.js"></script>
+	<script src="assets/js/PapaParse-4.3.2/papaparse.min.js"></script>
 
 	<!-- http://workshop.chromeexperiments.com/examples/gui/#4--Color-Controllers -->
 
@@ -75,7 +180,7 @@
 			var isPlaying = false;
 			var isPaused;
 
-			$("#pause").hide();
+			
 
 
 			var socket = io();
@@ -88,6 +193,41 @@
 				$('#messages').append($('<li>').text(msg));
 			});
 
+
+			Papa.parse("assets/csv/a-richer-dust-conducteur.csv", {
+				// delimiter: ",",
+				download: true,
+				header:true,
+				complete: function(results){
+					console.log(results);
+
+
+					for(var i = 0; i< results.data.length; i++){
+
+						console.log( timestamp(results.data[i].from) );
+
+						let elem = $("<li>")
+						.text( results.data[i].texte )
+						.data("from", timestamp(results.data[i].from))
+						.data("to", timestamp(results.data[i].to));
+
+						elem.click(function(event){
+							$(this).addClass("activated");
+							console.log( $(this).data("from") , $(this).data("to") );
+						});
+
+						$("#messages").append( elem );
+
+					}
+				}
+			});
+
+			
+
+
+			/* CHRONOMETRE */
+
+			$("#pause").hide();
 
 			$("#play").click(function(){
 				if(isPlaying === false){
@@ -104,6 +244,9 @@
 				pauseDate 		= new Date();
 				$("#pause").hide();
 				$("#play").show();
+
+
+				console.log( timestamp( $("#chrono").text() ) );
 			});
 			$("#stop").click(function(){
 				isPaused		= true;
@@ -124,6 +267,8 @@
 			    if(isPaused !== true){
 				    d =  getDuration( currentDate - startDate - pauseDuration);
 				    $("#chrono").html( timecode(d) );
+
+				    evenements( d, socket );
 				}
 			    prevDate = new Date();
 			}		
@@ -131,15 +276,43 @@
 		});
 
 
+		function evenements(millis, socket){
 
-		function timecode(millis){
-			return "<span class='hours'>"+FormatNumberLength(millis.hours,2)+"</span>:<span class='minutes'>"+FormatNumberLength(millis.minutes,2)+"</span>:<span class='seconds'>"+FormatNumberLength(millis.seconds,2)+"</span>.<span class='millis'>"+FormatNumberLength(millis.millis,3)+"</span>";
+
+			// console.log(millis);
+
+			let time = millis.millis + millis.seconds *1000 + millis.minutes * 60000;
+
+			$("#messages li").not(".activated").each(function(elem){
+				// console.log( $(this) )
+				if( $(this).data("from")!= false && $(this).data("from") <= time ){
+					// console.log( $(this).data("from") );
+					$(this).addClass("activated");
+
+
+					socket.emit('chat message', $(this).text() );
+				}
+			});
+
 		}
 
-		// https://stackoverflow.com/questions/175554/how-to-convert-milliseconds-into-human-readable-form
+
+		/**
+		 * timecode function
+		 * pour renvoyer le code HTML afin de formater le timecode
+		 */
+		function timecode(millis){
+			return "<span class='hours'>"+formatNumberLength(millis.hours,2)+"</span>:<span class='minutes'>"+formatNumberLength(millis.minutes,2)+"</span>:<span class='seconds'>"+formatNumberLength(millis.seconds,2)+"</span>.<span class='millis'>"+formatNumberLength(millis.millis,3)+"</span>";
+		}
+
+		/**
+		 * getDuration function
+		 * pour renvoyer un objet convertissant un timestamp en millisecondes en J/H/M/S/m
+		 * cf https://stackoverflow.com/questions/175554/ how-to-convert-milliseconds-into-human-readable-form
+		 */
 		function getDuration(millis){
-		    var dur = {};
-		    var units = [
+		    let dur = {};
+		    let units = [
 		        {label:"millis",    mod:1000},
 		        {label:"seconds",   mod:60},
 		        {label:"minutes",   mod:60},
@@ -151,7 +324,7 @@
 		        millis = (millis - (dur[u.label] = (millis % u.mod))) / u.mod;
 		    });
 		    // convert object to a string representation...
-		    var nonZero = function(u){ return dur[u.label]; };
+		    let nonZero = function(u){ return dur[u.label]; };
 		    dur.toString = function(){
 		        return units
 		            .reverse()
@@ -164,13 +337,34 @@
 		    return dur;
 		};
 
-		// https://stackoverflow.com/questions/1127905/how-can-i-format-an-integer-to-a-specific-length-in-javascript
-		function FormatNumberLength(num, length) {
-		    var r = "" + num;
+ 
+		/**
+		 * formatNumberLength function
+		 * pour écrire un nombre avec un zéro initial
+		 * cf https://stackoverflow.com/questions/1127905/how-can-i-format-an-integer-to-a-specific-length-in-javascript
+		 */
+		function formatNumberLength(num, length) {
+		    let r = "" + num;
 		    while (r.length < length) {
 		        r = "0" + r;
 		    }
 		    return r;
+		}
+
+		/**
+		 * timestamp function
+		 * pour convertire un timecode en millisecondes
+		 */
+		function timestamp(timecode){
+
+			let t = timecode.split(":");
+
+			if(timecode !== ""){
+				return ( parseInt(t[0])*3600 + parseInt(t[1])*60 + parseInt(t[2]) ) * 1000;
+			}else{
+				return false;
+			}
+
 		}
 
 	</script>

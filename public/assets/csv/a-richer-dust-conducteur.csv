@@ -1,0 +1,49 @@
+id,type,from,to,texte,param
+1,part,,,Still We Drudge in this Dark Maze,{}
+2,text,00:00:00,00:00:02,hear me—,{}
+3,text,00:00:03,00:00:05,"ten, nine, eight, seven, six, five, four, three, two, one…",{}
+,light,00:00:03,00:00:06,,"{id:1,val:50}"
+4,text,00:00:05,00:00:07,"maimed civilians
+ killed, murdered
+ unknown numbers
+ soldiers missing too",{}
+5,text,00:00:08,00:00:10,horror terror violence war,{}
+6,text,00:00:12,00:00:14,if only it was someone else’s son,{}
+7,text,00:00:15,00:00:18,mother screams,{}
+8,text,00:00:19,00:00:21,listen to me,{}
+9,text,00:00:22,00:00:25,war is the health of the state,{}
+10,text,00:00:26,00:00:28,dirtied bloodied stinking,{}
+11,text,00:00:29,00:00:30,prepare war for peace,{}
+12,text,00:00:31,00:00:34,"who do you believe ?
+ who do you choose to follow ?
+ what to believe ?",{}
+13,text,00:00:34,00:00:36,"prepare for peace, avoid war",{}
+14,text,00:00:37,00:00:39,we tortured some folks,{}
+15,text,00:00:39,00:00:41,justify validate execute,{}
+16,text,00:00:41,00:00:43,third world starves,{}
+17,text,00:00:44,00:00:46,second world fight,{}
+18,text,00:00:48,00:00:50,first world feasts,{}
+19,text,,,do future threats justify violence ?,{}
+20,text,,,hit hurt hunt,{}
+21,text,,,are we ever justified ?,{}
+22,text,,,no one listens,{}
+23,text,,,thousands of memorial to the dead in the future,{}
+24,text,,,"atrocities, destruction, massacre
+ air raids — who dies — died ?",{}
+25,text,,,shaming those who refuse,{}
+26,text,,,"deserted, executed pacifist
+ — it was his third tour",{}
+27,text,,,world without war — dream ridiculed,{}
+28,text,,,"ignored, irrelevant civilians
+ or just poor and peaceful",{}
+29,text,,,"losing side — blamed, punished",{}
+30,text,,,"out-witted, out-bedded, conquered
+ — they should have known better
+ losers as fault",{}
+31,text,,,"I hate war
+ you love war ?
+ I love my country
+ that’s not the same
+ how do you know — for sure",{}
+32,text,,,maimed wounded crippled mangled,{}
+33,text,,,only sit at may table if I knew your grandfather,{}
