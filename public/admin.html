@@ -106,14 +106,55 @@
 		background: #eee;
 	}
 
-	#messages li.activated{
+	#messages li.stacked{
 		background: #FF0;
+		animation: stacked 20s;
+		animation-fill-mode: forwards;
+	}
+
+	#messages li.activated{
+		animation: activated 0.5s;
+		animation-fill-mode: forwards;
+		overflow-y: auto;
+	}
+
+	body.pause #messages li.stacked{
+		animation-play-state: paused;
 	}
 
 	.millis{
 		font-size: 0.5em;
 	}
 
+
+	@keyframes stacked {
+		0% {
+			background-color: #FF0;
+		}
+		100% {
+			background-color: #F00;
+		}
+	}
+
+	@keyframes activated {
+		0% {
+			
+		}
+		30%{
+			background-color: #FFF;
+		}
+		75%{
+			color: rgba(0,0,0,0);
+			height: auto;
+			padding: 5px 10px;
+		}
+		100% {
+			/*transform: scaleY(0);*/
+			height: 0;
+			padding: 0px 10px;
+			display: none;
+		}
+	}
 
 
 
@@ -189,8 +230,9 @@
 				$('#m').val('');
 				return false;
 			});
+
 			socket.on('chat message', function(msg){
-				$('#messages').append($('<li>').text(msg));
+				// $('#messages').append($('<li>').text(msg));
 			});
 
 
@@ -214,6 +256,8 @@
 						elem.click(function(event){
 							$(this).addClass("activated");
 							console.log( $(this).data("from") , $(this).data("to") );
+
+							socket.emit('chat message', $(this).text() );
 						});
 
 						$("#messages").append( elem );
@@ -237,17 +281,21 @@
 				isPaused = false;
 				isPlaying = true;
 				$("#pause").show();
+				$("body").removeClass("pause");
 				$("#play").hide();
 			});
+			
 			$("#pause").click(function(){
 				isPaused 		= true;
 				pauseDate 		= new Date();
 				$("#pause").hide();
+				$("body").addClass("pause");
 				$("#play").show();
 
 
 				console.log( timestamp( $("#chrono").text() ) );
 			});
+
 			$("#stop").click(function(){
 				isPaused		= true;
 				isPlaying 		= false;
@@ -255,7 +303,11 @@
 				clearInterval( chronometre );
 				$("#chrono").html( '<span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>.<span class="millis">000</span>' );
 				$("#pause").hide();
+				$("body").removeClass("pause");
 				$("#play").show();
+				$("#messages li").removeClass('activated').removeClass('stacked');
+
+				socket.emit('chat message', "");
 			});
 
 			
@@ -287,10 +339,9 @@
 				// console.log( $(this) )
 				if( $(this).data("from")!= false && $(this).data("from") <= time ){
 					// console.log( $(this).data("from") );
-					$(this).addClass("activated");
+					$(this).addClass("stacked");
 
-
-					socket.emit('chat message', $(this).text() );
+					// socket.emit('chat message', $(this).text() );
 				}
 			});
 
