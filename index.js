@@ -12,6 +12,9 @@ const io   		= require('socket.io')(http);
 const osc 		= require('osc-min');
 const udp 		= require('dgram');
 
+const clc 		= require('cli-color');
+
+// console.log(clc.red('Text in red'));
 
 
 // https://stackoverflow.com/questions/3653065/get-local-ip-address-in-node-js#8440736
@@ -38,7 +41,7 @@ var port 	= 3000;
 var portOSC = 4000;
 
 
-console.log("~ OSC listener running at http://"+ getIPAddress() +":" + portOSC)
+console.log("~ OSC listener running : "+ clc.red("http://"+ getIPAddress() +":" + portOSC) );
 
 
 app.use( express.static('public') )
@@ -80,7 +83,9 @@ sock.bind(portOSC);
 
 
 http.listen(port, function(){
-	console.log('listening on *:'+port);
+	console.log("HTML server is :         "+clc.cyan("http://"+ getIPAddress() +":"+ port) );
+	console.log("ADMIN :                  "+clc.cyanBright("http://"+ getIPAddress() +":"+ port + "/admin.html") );
+	console.log("TYPO  :                  "+clc.cyanBright("http://"+ getIPAddress() +":"+ port + "/index.html") );
 });
 
 
