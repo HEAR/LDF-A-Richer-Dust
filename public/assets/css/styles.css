@@ -11,7 +11,8 @@ body {
 	font: 13px Helvetica, Arial;
 }
 
-
+/* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+/* https://www.alsacreations.com/article/lire/1388-css3-grid-layout.html */
 #admin{
 	display: grid;
 	grid-template-columns: 15% 15% 35% 35%;
