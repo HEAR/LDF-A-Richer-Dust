@@ -68,6 +68,8 @@ $(function () {
 		$("#pause").show();
 		$("body").removeClass("pause");
 		$("#play").hide();
+
+		sendOSC("/composition/tempocontroller/pause",0);
 	});
 	
 	$("#pause").click(function(){
@@ -79,6 +81,8 @@ $(function () {
 
 
 		console.log( timestamp( $("#chrono").text() ) );
+
+		sendOSC("/composition/tempocontroller/pause",1);
 	});
 
 	$("#stop").click(function(){
@@ -93,6 +97,8 @@ $(function () {
 		$("#messages li").removeClass('activated').removeClass('stacked');
 
 		socket.emit('chat message', "");
+
+		sendOSC("/composition/tempocontroller/pause",1);
 	});
 
 	
@@ -112,19 +118,22 @@ $(function () {
 
 
 
-	function sendOSC(command){
+	function sendOSC(command,value){
 		// /composition/layers/1/clips/1/connect
 		// /composition/layers/1/clips/4/connect
 
-		socket.emit('osc message', command );
+		socket.emit('osc message', {
+			path: command,
+			val : value
+		});
 	}	
 
 	$("#clip1").click(function(){
-		sendOSC("/composition/layers/1/clips/1/connect");
+		sendOSC("/composition/layers/1/clips/1/connect",1);
 	})
 
 	$("#clip2").click(function(){
-		sendOSC("/composition/layers/1/clips/4/connect");
+		sendOSC("/composition/layers/1/clips/4/connect",1);
 	})	
 
 });

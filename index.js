@@ -65,11 +65,27 @@ io.on('connection', function(socket){
 		console.log(msg)
 		// io.emit('chat message', msg);
 
-		// osc.toBuffer({
-		// 	oscType : "message",
-		// 	adress : msg,
-		// 	args : true
-		// })
+		// https://github.com/russellmcc/node-osc-mi
+		// https://stackoverflow.com/questions/12438744/node-js-to-osc-via-udp
+		// https://resolume.com/manual/en/r4/controlling#open_sound_control_osc
+
+
+		oscMsg = osc.toBuffer({
+			address: msg.path,
+				args: [
+				{
+					type: "integer",
+					value: msg.val
+				}
+			]
+		});
+
+		// oscMsg = msg+"/1";
+
+
+		client.send( oscMsg, 0, oscMsg.length, 7000, "127.0.0.1", function(err, bytes) {
+			console.log("err : " + err + " | bytes : " + bytes + " | Message : " + oscMsg);
+		});
 	});
 });
 
@@ -91,6 +107,26 @@ var sock = udp.createSocket("udp4", function(msg, rinfo) {
 
 
 
+// https://stackoverflow.com/questions/12438744/node-js-to-osc-via-udp
+var message = new Buffer("5656"); // Whatever the number could be...
+var client = udp.createSocket("udp4");
+
+client.on("error", function (err) {
+
+	console.log("Socket error: " + err);
+
+});
+
+// At every second, send a message...
+// setInterval(function(){
+// 	client.send(message, 0, message.length, 1337, "127.0.0.1", function(err, bytes) {
+// 		console.log("err : " + err + " | bytes : " + bytes + " | Message : " + message);
+// 	});
+// }, 1000);
+
+
+
+
 sock.bind(portOSC);
 
 
@@ -99,6 +135,9 @@ http.listen(port, function(){
 	console.log("ADMIN :                  "+clc.cyanBright("http://"+ getIPAddress() +":"+ port + "/admin.html") );
 	console.log("TYPO  :                  "+clc.cyanBright("http://"+ getIPAddress() +":"+ port + "/index.html") );
 });
+
+
+
 
 
 // OSC OUTPUT 127.0.0.1:7000
