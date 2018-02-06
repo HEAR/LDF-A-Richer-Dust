@@ -60,6 +60,17 @@ io.on('connection', function(socket){
 	socket.on('chat message', function(msg){
 		io.emit('chat message', msg);
 	});
+
+	socket.on('osc message', function(msg){
+		console.log(msg)
+		// io.emit('chat message', msg);
+
+		// osc.toBuffer({
+		// 	oscType : "message",
+		// 	adress : msg,
+		// 	args : true
+		// })
+	});
 });
 
 
@@ -90,3 +101,4 @@ http.listen(port, function(){
 });
 
 
+// OSC OUTPUT 127.0.0.1:7000

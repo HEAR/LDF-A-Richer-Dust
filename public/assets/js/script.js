@@ -108,7 +108,24 @@ $(function () {
 		    evenements( d, socket );
 		}
 	    prevDate = new Date();
-	}		
+	}
+
+
+
+	function sendOSC(command){
+		// /composition/layers/1/clips/1/connect
+		// /composition/layers/1/clips/4/connect
+
+		socket.emit('osc message', command );
+	}	
+
+	$("#clip1").click(function(){
+		sendOSC("/composition/layers/1/clips/1/connect");
+	})
+
+	$("#clip2").click(function(){
+		sendOSC("/composition/layers/1/clips/4/connect");
+	})	
 
 });
 
@@ -200,5 +217,4 @@ function timestamp(timecode){
 	}else{
 		return false;
 	}
-
 }
