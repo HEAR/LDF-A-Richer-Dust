@@ -80,9 +80,6 @@ io.on('connection', function(socket){
 			]
 		});
 
-		// oscMsg = msg+"/1";
-
-
 		client.send( oscMsg, 0, oscMsg.length, 7000, "127.0.0.1", function(err, bytes) {
 			console.log("err : " + err + " | bytes : " + bytes + " | Message : " + oscMsg);
 		});
