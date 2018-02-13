@@ -1,0 +1,253 @@
+id,type,part,from,to,texte,param,target,colonne,rang,width,height
+1,part,1,,,Still We Drudge in this Dark Maze,,,,,,
+2,text,1,00:04:13,00:04:14,hear me—,,#bloc1,4,4,3,2
+3,text,1,00:04:15,00:04:27,"ten, nine, eight, seven, six, five, four, three, two, one…",,#bloc2,1,1,1,1
+4,light,1,/,/,,,,,,,
+5,text,1,00:04:29,00:04:36,"maimed civilians
+ killed, murdered
+ unknown numbers
+ soldiers missing too",,#bloc1,2,2,2,2
+6,text,1,00:04:37,00:04:45,horror terror violence war,,#bloc4,6,3,2,1
+7,text,1,00:04:48,00:04:51,if only it was someone else’s son,,,,,,
+8,text,1,00:04:52,00:04:54,mother screams,,,,,,
+9,text,1,00:04:58,00:04:59,listen to me,,,,,,
+10,text,1,00:05:02,00:05:05,war is the health of the state,,,,,,
+11,text,1,00:05:17,00:05:25,dirtied bloodied stinking,,,,,,
+12,text,1,00:05:31,00:05:33,prepare war for peace,,,,,,
+13,text,1,00:05:35,00:05:43,"who do you believe ?
+ who do you choose to follow ?
+ what to believe ?",,,,,,
+14,text,1,00:05:45,00:05:49,"prepare for peace, avoid war",,,,,,
+15,text,1,00:05:55,00:05:57,we tortured some folks,,,,,,
+16,text,1,00:06:31,00:06:38,justify validate execute,,,,,,
+17,text,1,00:06:39,00:06:42,third world starves,,,,,,
+18,text,1,00:06:43,00:06:45,second world fight,,,,,,
+19,text,1,00:06:47,00:06:49,first world feasts,,,,,,
+20,text,1,00:06:58,00:07:02,do future threats justify violence ?,,,,,,
+21,text,1,00:09:10,00:09:15,hit hurt hunt,,,,,,
+22,text,1,00:09:16,00:09:18,are we ever justified ?,,,,,,
+23,text,1,00:09:19,00:09:21,no one listens,,,,,,
+24,text,1,00:09:22,00:09:25,thousands of memorial to the dead of the past,,,,,,
+25,text,1,00:09:26,00:09:33,"honourable wars, soldiers
+pride ? propaganda ? truth ? memory?",,,,,,
+26,text,1,00:09:33,00:09:36,one memorial to the dead in the future,,,,,,
+27,text,1,00:09:37,00:09:43,"atrocities, destruction, massacre
+ air raids — who dies — died ?",,,,,,
+28,text,1,00:09:43,00:09:46,shaming those who refuse,,,,,,
+29,text,1,00:09:46,00:09:51,"deserted, executed pacifist — it was his third tour",,,,,,
+30,text,1,00:09:52,00:09:56,world without war — dream ridiculed,,,,,,
+31,text,1,00:09:56,00:10:03,"ignored, irrelevant civilians or just poor and peaceful",,,,,,
+32,text,1,00:10:03,00:10:06,"losing side — blamed, punished",,,,,,
+33,text,1,00:10:06,00:10:13,"out-witted, out-bedded, conquered
+ — they should have known better
+ losers as fault",,,,,,
+34,text,1,00:10:14,00:10:24,"I hate war
+ you love war ?
+ I love my country
+ that’s not the same
+ how do you know — for sure",,,,,,
+35,text,1,00:11:55,00:12:04,maimed wounded crippled mangled,,,,,,
+36,text,1,00:12:06,00:12:09,only sit at my table if I knew your grandfather,,,,,,
+37,text,1,00:12:12,00:12:17,casualties fatalities,,,,,,
+38,text,1,00:12:18,00:12:22,I have earned the right to my opinion,,,,,,
+39,text,1,00:12:24,00:12:42,"Civil War, Great War, World War,
+Hundred Years War, Thirty Years War, War of the Triple Alliance,
+War on Terror, Overseas Contingency Operation",,,,,,
+40,text,1,00:12:43,00:12:49,"there is never one point of view
+one interest
+one consequence",,,,,,
+41,text,1,00:12:49,00:12:53,money love power money,,,,,,
+42,text,1,00:12:53,00:13:00,"started and finished in an instance
+pointless, never-ending, pause for peace",,,,,,
+43,text,1,00:13:00,00:13:03,"for God, king and country",,,,,,
+44,text,1,00:13:03,00:13:06,they shall not grow old —,,,,,,
+45,text,1,00:14:12,00:14:16,dead deadly done,,,,,,
+46,text,1,00:14:16,00:14:18,— we are of our time,,,,,,
+47,text,1,00:14:19,00:14:20,out of time,,,,,,
+48,text,2,00:00:15,00:00:22,they them themselves theirs,,,,,,
+49,text,2,00:00:32,00:00:39,"what images do you remember?
+what images do they want you to remember?
+forever",,,,,,
+50,text,2,00:01:09,00:01:23,"— they came in the middle of the night
+— they bombed my house
+— they left me behind to die
+— they started it
+— it is their fault",,,,,,
+51,text,2,00:01:34,00:01:47,"strings for indoors — violin, harp — singing, dancing, flirting
+winds for outdoors — trumpets, drums — hunting, fighting, marching",,,,,,
+52,text,2,00:02:37,00:02:45,"thou shalt not kill
+thou shalt love thy neighbour as thyself",,,,,,
+53,text,2,00:02:46,00:02:54,"war
+destruction, profits
+hidden artefacts, uncovered, past, present, future",,,,,,
+54,text,2,00:02:56,00:03:00,"Boston Marathon
+3 dead",,,,,,
+55,text,2,00:03:01,00:03:08,"shaking band
+fear, anxiety
+excitement, love",,,,,,
+56,text,2,00:03:30,00:03:39,"World War One
+estimated 17 million dead",,,,,,
+57,text,2,00:03:46,00:03:51,"white feather
+coward
+angel",,,,,,
+58,text,2,00:04:17,00:04:22,"7/7
+52 dead",,,,,,
+59,text,2,00:04:22,00:04:27,"red rose, white rose
+red poppy, white poppy",,,,,,
+60,text,2,00:04:27,00:04:33,"World War Two
+50 - 70 million people dead",,,,,,
+61,text,2,00:04:34,00:04:38,"father carries his son
+wounded
+game, love",,,,,,
+62,text,2,00:04:39,00:04:49,"Hiroshima Nagasaki
+129,000 - 246,000 dead",,,,,,
+63,text,2,00:04:49,00:04:54,"shovel
+weapon, tool
+death, life",,,,,,
+64,text,2,00:04:55,00:05:01,"Luxor, Egypt- massacre
+62 dead - tourists targeted",,,,,,
+65,text,2,00:05:01,00:05:06,"fight
+war, not at all
+playground spart",,,,,,
+66,text,2,00:05:15,00:05:28,"Iraq
+half a million war-related deaths
+4,486 dead service men and women",,,,,,
+67,text,2,00:05:28,00:05:36,"women don't fight wars
+bare-breasted, shield-maiden, myth denied,
+a peaceful world if run by women",,,,,,
+68,text,2,00:05:37,00:05:44,"Tokyo Firebombing
+125,000 dead",,,,,,
+69,text,2,00:05:44,00:05:50,"Syria
+Estimated 200,000 dead and counting",,,,,,
+70,text,2,00:05:51,00:05:56,"castle
+protectors of common people
+protected from common people",,,,,,
+71,text,2,00:05:56,00:06:02,"church
+comfort, knowledge,
+obligation, hypnotic rhythms, shapes",,,,,,
+72,text,2,00:06:03,00:06:09,"9/11
+2,996 dead",,,,,,
+73,text,2,00:06:10,00:06:15,"army
+honourable protectors —
+uniforms marching, obeying in time",,,,,,
+74,text,2,00:06:16,00:06:24,"Oslo, Norway
+77 youths ( communists?) dead",,,,,,
+75,text,2,00:06:24,00:06:29,"twisted metal
+jewellery
+building tarn apart",,,,,,
+76,text,2,00:06:30,00:06:34,— are people killed in war or do they die?,,,,,,
+77,text,2,00:06:35,00:06:44,"the battle of Waterloo was won on the playing-fields of Eton;
+the opening battles of all subsequent wars have been lost there",,,,,,
+78,text,2,00:07:11,00:07:13,child's body in the street,,,,,,
+79,text,2,00:07:45,00:07:53,"road accidents
+1,240,000 killed - worldwide annually",,,,,,
+80,text,2,00:07:57,00:08:00,man hangs dead on barbed wire,,,,,,
+81,text,2,00:08:08,00:08:17,"american guns
+yearly 31,000 killed, 19,000 are suicides",,,,,,
+82,text,2,00:08:26,00:08:29,woman raped in front of officials,,,,,,
+83,text,2,00:08:32,00:08:35,"hunger
+kills 25,000 a day",,,,,,
+84,text,2,00:08:39,00:08:42,soldier pours buming wax on woman,,,,,,
+85,text,2,00:08:43,00:08:50,"rape
+250,000 cases reported in 65 countries annually",,,,,,
+86,text,2,00:08:51,00:08:52,man beaten by police,,,,,,
+87,text,2,00:08:53,00:08:58,"smoking, alcohol, drugs
+kills — impossible to count",,,,,,
+88,text,2,00:08:59,00:08:05,"pandora's box of death, disease, evil, torture, released",,,,,,
+89,text,2,00:10:38,00:10:45,"— how do we warn the next generations
+— a thousand years in the future?",,,,,,
+90,text,2,00:10:56,00:12:05,"tub-flies, maggots, impaled, brazen bull, heretic
+fork-head held high, cement shoes, judas cradle,
+brown rats, tongue tearer, rack, eaten by crows,
+thumbscrew, breast ripper, bleeding, submission,
+crocodile shears, republican marriage for nuns and
+monks, breaking wheel, spanish donkey/wooden
+horse, guillotine, prison of terror, crucifixion, rope,
+rape, roasting, water boarding
+— kind one day, evil the next",,,,,,
+91,text,2,00:12:10,00:12:19,"false confessions, cheap, on-going
+— damage, permanent —
+on the pain of death",,,,,,
+92,text,2,00:12:27,00:12:32,... this world in arms spends the hopes of its children,,,,,,
+93,text,2,00:12:46,00:12:52,"I dream of a child who asks: 'what was war, weapons, violence?'",,,,,,
+94,text,2,00:12:58,00:13:01,— a multi-billion dollar industry,,,,,,
+95,text,2,00:13:06,00:13:08,we've lost empathy,,,,,,
+96,text,2,00:13:16,00:13:27,I me myself mine,,,,,,
+97,text,3,,,"Arabic, African, American, Asian, Inuit, European, Extremist",,,,,,
+98,text,3,,,"Christian, Jewish, Hindu, Muslim, Buddhist, Atheist, Anarchist, Extremist",,,,,,
+99,text,3,,,"Racist, Anti-Semitic, Pro-terrorist, Sexist, Extremist",,,,,,
+100,text,3,,,"Fascist, Communist, Socialist, Conservative, Traditionalist, Extremist",,,,,,
+101,text,3,,,"Man, Woman, Child, Soldier, Politician, Civilian, Extremist",,,,,,
+102,text,3,,,"Bully, Master, King, Queen, Emperor, Empress, President, Pope, God, Extremist",,,,,,
+103,text,3,,,"Slave, Illegal, Hybrid, Common, Nobody, Somebody, Anybody, Extremist",,,,,,
+104,text,3,,,"Freedom fighter, Protector, Liberator, Peace keeper, Saviour, Extremist",,,,,,
+105,text,3,,,"Soldier, Warrior, Raider, Crusader, Invader, Attacker, Extremist",,,,,,
+106,text,3,,,"Victim, Maimed, Wounded, Missing, Dead, Extremist",,,,,,
+107,text,3,,,"Rich, Poor, Gunslinger, Mass-Murder, Pacifist, Populist, Extremist",,,,,,
+108,text,3,,,"Unknown, Known, Anonymous, Innocent, Guilty, Extremist",,,,,,
+109,text,3,,,"Vain, Lustful, Gluttonous, Greedy, ldle, Angry, Envious, Proud, Extremist",,,,,,
+110,text,3,,,"Virtuous, Bored, Billionaire, Employed, Enlightened, Privileged, Mediocre, Extremist",,,,,,
+111,text,3,,,"Eco-terrorist, Corporate-terrorist, Religious-terrorist, Cultural-terrorist, Extremist",,,,,,
+112,text,3,,,"Hero, Heroine, Victor, Winner, Favourite, Ideal, White Knight, Extremist",,,,,,
+113,text,3,,,"Radical, Fanatic, Devoted, Revolutionist, Extremist",,,,,,
+114,text,3,,,"Coward, Sissy, Chicken, Mouse, Scaredy-Cat, Weakling, Extremist",,,,,,
+115,text,3,,,"Reasonable, Sensible, Restrained, Temperate, Practical, Realistic, Liberal, Moderate",,,,,,
+116,text,3,,,Moderate Extremist — Extremist Moderate,,,,,,
+117,text,3,,,"Does one need to Love ? Don't ask, feel it.",,,,,,
+118,text,4,00:01:20,00:01:39,"I believe that order is better than chaos,
+creation is better than destruction.
+I prefer gentleness to violence,
+forgiveness to vendetta,
+knowledge to ignorance.
+I believe in courtesy
+",,,,,,
+119,text,4,00:03:25,00:04:08,"candles in the dark of winter
+kiss under a full moon
+kicking up dead leaves
+whirlwind
+masterpiece
+cups of tea
+quiet sunset
+my child's first giggle
+warm wind touching a tanned cheek
+memories
+miracles
+happy exhaustion
+nightingale singing at midnight
+fresh sheets
+smile from a stranger
+joy of expectation",,,,,,
+120,text,4,00:04:10,00:04:13,small delights make us human,,,,,,
+121,text,4,00:04:23,00:04:33,"We all breathe the same air. We all cherish our children's future.
+And we are all mortal.",,,,,,
+122,text,4,00:04:37,00:04:41,in that rich earth a richer dust,,,,,,
+123,text,4,00:04:43,00:04:46,who are the terrorists now?,,,,,,
+124,text,4,/,/,"Words, thoughts, ideas, images, and inspiration liberally borrowed and quoted from:",,,,,,
+125,text,4,/,/,"Amnesty International, Elizabeth Wayland Barber, Dominique P. Behague, Jennifer
+Bendery, Thomas Bendixen, Laurence Binyon, Henri Lucien Chaffer, Dover Arts
+Development, Rupert Brook, Edmund Blunden, Jens Breivik, Randolph Bourne,
+Charles Chaplin, Diana Shaw Clark, Kenneth Clarke, Nigel Clarke, Dwight D.
+Eisenhower, Eleanor Farjeon, Robert Fisk, Colin Gill, Louis John Ginnett, Nancy
+Goldstone, Francisco Goya, Sadie Harrison, Holmens Kirke-Copenhagen, A. H.
+Houseman, Imperial War Museum-London, Jon Henley, Edvard Henley-Read,
+Jonathan Jones, John F. Kennedy, John Macrae, Adrienne Mayor, Moms Demand
+Action for Gun Sense in America, Eve Merriam, Middle Tennessee State University,
+Paul Moorhouse, Suzanne More, John Nash, National Rifle Association, C.R.W.
+Nevison, Sir Henry Newbolt, Vasa Museum-Stockholm, President Barack Obama,
+William Orphan, George Orwell, Blaise Pascal, Sylvia Pankhurst, Pablo Picasso,
+Randeep Ramesh, Publius Flavius Vegetius Renatus, Malene Sheppard Skrerved,
+Marius Sheppard Skrerved, Peter Sheppard Skrerved, John Singer Sargent, Morten
+Skrerved, Mattias Skrerved, Paul Vemer Skrerved, Reed Thomas, Ulla Skrerved, Elly
+Strange Petersen, Reed Thomas, Lady Butler/Elizabeth Southerden Thompson, Henry
+Tonks, War Registers' International, Louise Vale, Louis Weirter, Benjamin West, Jon
+Wiant, amongst many more.",,,,,,
+,text,4,00:09:46,00:09:55,horror terror violence war,,,,,,
+,text,4,00:10:01,00:10:06,dirtied bloodied stinking,,,,,,
+,text,4,00:10:07,00:10:14,justify validate execute,,,,,,
+,text,4,00:10:17,00:10:23,hit hurt hunt,,,,,,
+,text,4,00:10:24,00:10:40,maimed wounded crippled mangled,,,,,,
+,text,4,00:10:41,00:10:45,casualties fatalities,,,,,,
+,text,4,00:10:45,00:10:53,money love power money,,,,,,
+,text,4,00:10:54,00:10:59,dead deadly done,,,,,,
+,text,4,00:11:01,00:11:08,they them themselves theirs,,,,,,
+,text,4,00:11:09,00:11:17,I me myself mine,,,,,,

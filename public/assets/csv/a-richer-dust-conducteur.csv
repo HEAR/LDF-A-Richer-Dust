@@ -1,6 +1,6 @@
 id,type,from,to,texte,param
 1,part,,,Still We Drudge in this Dark Maze,{}
-2,text,00:00:00,00:00:02,hear me—,{}
+2,text,00:00:00,00:00:02,hear me—,"{\"target\":\"#bloc1\",\"rang\":4,\"col\":4,\"width\":3,\"height\":2}"
 3,text,00:00:03,00:00:05,"ten, nine, eight, seven, six, five, four, three, two, one…",{}
 ,light,00:00:03,00:00:06,,"{id:1,val:50}"
 4,text,00:00:05,00:00:07,"maimed civilians

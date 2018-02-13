@@ -21,35 +21,73 @@ $(function () {
 	});
 
 
-	Papa.parse("assets/csv/a-richer-dust-conducteur.csv", {
-		// delimiter: ",",
-		download: true,
-		header:true,
-		complete: function(results){
-			console.log(results);
+	$.ajax({
+		url: "assets/csv/a-richer-dust-conducteur.json",
+		// beforeSend: function( xhr ) {
+		// 	xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+		// }
+	})
+	.done(function( data ) {
+		
+		for(var i = 0; i< data.length; i++){
 
+			console.log( timestamp(data[i].from) );
 
-			for(var i = 0; i< results.data.length; i++){
+			let elem = $("<li>")
+			.text( data[i].texte )
+			.data("from", timestamp(data[i].from))
+			.data("to", timestamp(data[i].to))
+			.data("param", {
+				target 	: data[i].target,
+				colonne : data[i].colonne,
+				rang 	: data[i].rang,
+				width 	: data[i].width,
+				height 	: data[i].height,
+			}) ;
 
-				console.log( timestamp(results.data[i].from) );
+			elem.click(function(event){
+				$(this).addClass("activated");
+				console.log( $(this).data("from") , $(this).data("to") );
 
-				let elem = $("<li>")
-				.text( results.data[i].texte )
-				.data("from", timestamp(results.data[i].from))
-				.data("to", timestamp(results.data[i].to));
+				socket.emit('chat message', {text:$(this).text(), param:$(this).data("param")} );
+			});
 
-				elem.click(function(event){
-					$(this).addClass("activated");
-					console.log( $(this).data("from") , $(this).data("to") );
+			$("#messages").append( elem );
 
-					socket.emit('chat message', $(this).text() );
-				});
-
-				$("#messages").append( elem );
-
-			}
 		}
+
 	});
+
+	// Papa.parse("assets/csv/a-richer-dust-conducteur.csv", {
+	// 	// delimiter: ",",
+	// 	download: true,
+	// 	header:true,
+	// 	complete: function(results){
+	// 		console.log(results);
+
+
+	// 		for(var i = 0; i< results.data.length; i++){
+
+	// 			console.log( timestamp(results.data[i].from) );
+
+	// 			let elem = $("<li>")
+	// 			.text( results.data[i].texte )
+	// 			.data("from", timestamp(results.data[i].from))
+	// 			.data("to", timestamp(results.data[i].to))
+	// 			.data("param", results.data[i].param) ;
+
+	// 			elem.click(function(event){
+	// 				$(this).addClass("activated");
+	// 				console.log( $(this).data("from") , $(this).data("to") );
+
+	// 				socket.emit('chat message', {text:$(this).text(), param:$(this).data("param")} );
+	// 			});
+
+	// 			$("#messages").append( elem );
+
+	// 		}
+	// 	}
+	// });
 
 	
 
@@ -68,6 +106,8 @@ $(function () {
 		$("#pause").show();
 		$("body").removeClass("pause");
 		$("#play").hide();
+
+		sendOSC("/composition/tempocontroller/pause",0);
 	});
 	
 	$("#pause").click(function(){
@@ -79,6 +119,8 @@ $(function () {
 
 
 		console.log( timestamp( $("#chrono").text() ) );
+
+		sendOSC("/composition/tempocontroller/pause",1);
 	});
 
 	$("#stop").click(function(){
@@ -93,6 +135,8 @@ $(function () {
 		$("#messages li").removeClass('activated').removeClass('stacked');
 
 		socket.emit('chat message', "");
+
+		sendOSC("/composition/tempocontroller/pause",1);
 	});
 
 	
@@ -108,7 +152,27 @@ $(function () {
 		    evenements( d, socket );
 		}
 	    prevDate = new Date();
-	}		
+	}
+
+
+
+	function sendOSC(command,value){
+		// /composition/layers/1/clips/1/connect
+		// /composition/layers/1/clips/4/connect
+
+		socket.emit('osc message', {
+			path: command,
+			val : value
+		});
+	}	
+
+	$("#clip1").click(function(){
+		sendOSC("/composition/layers/1/clips/1/connect",1);
+	})
+
+	$("#clip2").click(function(){
+		sendOSC("/composition/layers/1/clips/4/connect",1);
+	})	
 
 });
 
@@ -200,5 +264,4 @@ function timestamp(timecode){
 	}else{
 		return false;
 	}
-
 }
