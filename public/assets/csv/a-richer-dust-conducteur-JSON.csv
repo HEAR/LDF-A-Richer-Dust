@@ -2,7 +2,7 @@ id,type,part,from,to,texte,param,target,colonne,rang,width,height
 1,part,1,,,Still We Drudge in this Dark Maze,,,,,,
 2,text,1,00:04:13,00:04:14,hear me—,,#bloc1,4,4,3,2
 3,text,1,00:04:15,00:04:27,"ten, nine, eight, seven, six, five, four, three, two, one…",,#bloc2,1,1,1,1
-4,light,1,/,/,,,,,,,
+4,light,1,00:04:15,00,00:04:27,Lumière,,,,,,
 5,text,1,00:04:29,00:04:36,"maimed civilians
  killed, murdered
  unknown numbers

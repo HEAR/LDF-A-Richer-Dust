@@ -57,8 +57,14 @@ io.on('connection', function(socket){
 		console.log('user disconnected');
 	});
 
-	socket.on('chat message', function(msg){
-		io.emit('chat message', msg);
+	socket.on('text message', function(msg){
+		io.emit('text message', msg);
+		console.log('text message', msg);
+	});
+
+	socket.on('light message', function(msg){
+		io.emit('light message', msg);
+		console.log('light message', msg);
 	});
 
 	socket.on('osc message', function(msg){

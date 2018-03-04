@@ -1,0 +1,539 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"osc",
+				"sendOSC"
+			],
+			[
+				"overfl",
+				"overflow-y"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"get",
+				"getIPAddress"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"z",
+				"z\tz-index"
+			],
+			[
+				"HEAR-021",
+				"HEAR-2017-Actes-cartographiques/"
+			],
+			[
+				"border",
+				"border-right"
+			],
+			[
+				"le",
+				"leftW"
+			],
+			[
+				"pos",
+				"position"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "public/assets/css/styles.css",
+			"settings":
+			{
+				"buffer_size": 2325,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/js/script.js",
+			"settings":
+			{
+				"buffer_size": 6425,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 822,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.js",
+			"settings":
+			{
+				"buffer_size": 3438,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/admin.html",
+			"settings":
+			{
+				"buffer_size": 1256,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/index.html",
+			"settings":
+			{
+				"buffer_size": 1570,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "proje",
+		"selected_items":
+		[
+			[
+				"proje",
+				"Project Manager"
+			],
+			[
+				"project",
+				"Project Manager: Add New Project"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"pro",
+				"Project Manager"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 412.0
+	},
+	"console":
+	{
+		"height": 143.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/loic/Sites/LDF-A-Richer-Dust",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/js"
+	],
+	"file_history":
+	[
+		"/Users/loic/Sites/LDF-A-Richer-Dust/package.json",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/package-lock.json",
+		"/Users/loic/Sites/HEAR-2017-Actes-cartographiques/test.php",
+		"/Users/loic/Desktop/instagram-api/vendor/cosenary/instagram/example/index.php",
+		"/Users/loic/Desktop/instagram-api/vendor/cosenary/instagram/example/success.php",
+		"/Users/loic/Desktop/instagram-api/vendor/cosenary/instagram/example/popular.php",
+		"/Users/loic/Documents/Cours/STRASBOURG/2016-2017/kirby-2.3.1/site/templates/projects.php",
+		"/Users/loic/Sites/Site_KONCRET-ART-PROJECT/site/templates/contact.php",
+		"/Users/loic/Sites/Site_KONCRET-ART-PROJECT/site/templates/home.php",
+		"/Users/loic/Sites/Site_KONCRET-ART-PROJECT/site/snippets/footer.php",
+		"/Users/loic/Sites/Site_KONCRET-ART-PROJECT/site/snippets/header.php",
+		"/Users/loic/Sites/Site_KONCRET-ART-PROJECT/site/snippets/menu.php",
+		"/Users/loic/Sites/Site_KONCRET-ART-PROJECT/site/controllers/contact.php",
+		"/Users/loic/Sites/Site_KONCRET-ART-PROJECT/site/tags/signature.php",
+		"/Users/loic/Sites/Site_KONCRET-ART-PROJECT/site/config/config.php",
+		"/Users/loic/Sites/Site_KONCRET-ART-PROJECT/site/blueprints/home.yml",
+		"/Users/loic/Sites/Site_EXILES-COORDINATION/_RECHERCHE/exports/LOGO/Vert-noir.svg"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"lien"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/assets/css/styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2325,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								185,
+								185
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1798.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/assets/js/script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6425,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2369,
+								2369
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1663.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 822,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								764,
+								764
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3438,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2184,
+								1889
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/admin.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1256,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								107,
+								107
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1570,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								86,
+								86
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.console":
+	{
+		"height": 114.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "a-richer-dust.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 268.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

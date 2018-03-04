@@ -6,7 +6,11 @@ $(function () {
 	var isPlaying = false;
 	var isPaused;
 
-	
+
+	var light = {
+		value:0
+	};
+
 
 
 	var socket = io();
@@ -33,26 +37,92 @@ $(function () {
 
 			console.log( timestamp(data[i].from) );
 
-			let elem = $("<li>")
-			.text( data[i].texte )
-			.data("from", timestamp(data[i].from))
-			.data("to", timestamp(data[i].to))
-			.data("param", {
-				target 	: data[i].target,
-				colonne : data[i].colonne,
-				rang 	: data[i].rang,
-				width 	: data[i].width,
-				height 	: data[i].height,
-			}) ;
+			let elem;
 
-			elem.click(function(event){
-				$(this).addClass("activated");
-				console.log( $(this).data("from") , $(this).data("to") );
+			switch(data[i].type){
 
-				socket.emit('chat message', {text:$(this).text(), param:$(this).data("param")} );
-			});
+				case "text" :
+					elem = $("<li>")
+						.text( data[i].texte )
+						.data("from", timestamp(data[i].from))
+						.data("to", timestamp(data[i].to))
+						.data("param", {
+							target 	: data[i].target,
+							colonne : data[i].colonne,
+							rang 	: data[i].rang,
+							width 	: data[i].width,
+							height 	: data[i].height,
+						}) ;
 
-			$("#messages").append( elem );
+					elem.click(function(event){
+						$(this).addClass("activated");
+						console.log( $(this).data("from") , $(this).data("to") );
+
+						socket.emit('text message', {
+							text:$(this).text(), 
+							param:$(this).data("param")
+						} );
+					});
+
+					$("#messages").append( elem );
+
+				break;
+
+				case "videos" :
+
+
+				break;
+
+				case "light" :
+
+					elem = $("<li>")
+						.text( data[i].texte )
+						.data("from", timestamp(data[i].from))
+						.data("to", timestamp(data[i].to))
+						.data("param", {
+							target 	: data[i].target,
+							from : data[i].param.from,
+							to 	: data[i].param.to
+						}) ;
+
+					// https://jsfiddle.net/mcLecfud/7/
+					// https://github.com/tweenjs/tween.js
+					elem.click(function(event){
+						$(this).addClass("activated");
+						console.log( $(this).data("param").from , $(this).data("param").to );
+
+
+						var tween = new TWEEN.Tween(light) // Create a new tween that modifies 'light'.
+							.to({
+								value: $(this).data("param").to
+							}, 1000) // Move to (300, 200) in 1 second.
+							.easing(TWEEN.Easing.Quadratic.Out) // Use an easing function to make the animation smooth.
+							.onUpdate(function() { // Called after tween.js updates 'coords'.
+								console.log(light.value);
+
+								socket.emit('light message', {
+									value: light.value
+								});
+
+							})
+							.start();
+
+						// socket.emit('light message', {
+						// 	text:$(this).text(),
+						// 	param:{ from :$(this).data("param").from , to : $(this).data("param").to }
+						// });
+					});
+
+					$("#lights").append( elem );
+
+
+				break;
+
+				default :
+
+
+				break;
+			}
 
 		}
 
@@ -184,7 +254,7 @@ function evenements(millis, socket){
 
 	let time = millis.millis + millis.seconds *1000 + millis.minutes * 60000;
 
-	$("#messages li").not(".activated").each(function(elem){
+	$("#flux li").not(".activated").each(function(elem){
 		// console.log( $(this) )
 		if( $(this).data("from")!= false && $(this).data("from") <= time ){
 			// console.log( $(this).data("from") );
@@ -265,3 +335,17 @@ function timestamp(timecode){
 		return false;
 	}
 }
+
+
+/**
+ * setup the animation loop.
+ * @param  {[type]} time [description]
+ * @return {[type]}      [description]
+ */
+function animate(time) {
+  requestAnimationFrame(animate);
+  TWEEN.update(time);
+}
+requestAnimationFrame(animate);
+
+

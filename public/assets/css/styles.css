@@ -49,6 +49,11 @@ header{
 	/*height: calc(100% - 200px);*/
 	overflow-y: auto;
 	background: #CCC;
+	display: flex;
+}
+
+#flux ul{
+	width: calc(100% / 3);
 }
 
 #chat{
@@ -89,32 +94,32 @@ footer{
 }
 
 
-#messages {
+#flux ul {
 	list-style-type: none;
 	margin: 0;
 	/*margin-top:200px;*/
 	padding: 0;
 }
-#messages li {
+#flux ul li {
 	padding: 5px 10px;
 }
-#messages li:nth-child(odd) {
+#flux ul li:nth-child(odd) {
 	background: #eee;
 }
 
-#messages li.stacked{
+#flux ul li.stacked{
 	background: #FF0;
 	animation: stacked 20s;
 	animation-fill-mode: forwards;
 }
 
-#messages li.activated{
+#flux ul li.activated{
 	animation: activated 0.5s;
 	animation-fill-mode: forwards;
 	overflow-y: auto;
 }
 
-body.pause #messages li.stacked{
+body.pause #flux ul li.stacked{
 	animation-play-state: paused;
 }
 
