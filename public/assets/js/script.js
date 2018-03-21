@@ -7,6 +7,8 @@ $(function () {
 	var isPaused;
 
 
+	var dataConducteur;
+
 	var light = {
 		value:0
 	};
@@ -26,22 +28,43 @@ $(function () {
 
 
 	$.ajax({
-		url: "assets/csv/a-richer-dust-conducteur.json",
+		url: "assets/data/a-richer-dust-conducteur.json",
 		// beforeSend: function( xhr ) {
 		// 	xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
 		// }
 	})
 	.done(function( data ) {
+
+		dataConducteur = data;
 		
 		for(var i = 0; i< data.length; i++){
 
-			console.log( timestamp(data[i].from) );
+			// console.log( timestamp(data[i].from) );
 
 			let elem;
 
 			switch(data[i].type){
 
-				case "text" :
+				case "part" :
+
+					elem = $("<li>")
+						.text( data[i].texte )
+						.data("from", timestamp(data[i].from))
+						.data("to", timestamp(data[i].to))
+						.data("id", data[i].part) ;
+
+					elem.click(function(event){
+
+						loadPart( $(this).data("id") );
+
+						$(this).addClass("activated");
+					});
+
+					$("#parties").append( elem );
+
+				break;
+
+				/*case "text" :
 					elem = $("<li>")
 						.text( data[i].texte )
 						.data("from", timestamp(data[i].from))
@@ -117,7 +140,7 @@ $(function () {
 
 
 				break;
-
+*/
 				default :
 
 
@@ -242,7 +265,140 @@ $(function () {
 
 	$("#clip2").click(function(){
 		sendOSC("/composition/layers/1/clips/4/connect",1);
-	})	
+	})
+
+
+	/**
+	 *
+	 *
+	 */
+	function loadPart(_id){
+
+
+		console.log( "PARTIE n°"+ _id );
+
+		console.log(dataConducteur);
+
+		for(var i = 0; i< dataConducteur.length; i++){
+
+			if(dataConducteur[i].part == _id){
+
+				console.log( timestamp(dataConducteur[i].from) );
+
+
+
+				let elem;
+
+				switch(dataConducteur[i].type){
+
+					
+
+					case "text" :
+						elem = $("<li>")
+							.text( dataConducteur[i].texte )
+							.data("from", timestamp(dataConducteur[i].from))
+							.data("to", timestamp(dataConducteur[i].to))
+							.data("param", {
+								target 	: dataConducteur[i].target,
+								colonne : dataConducteur[i].colonne,
+								rang 	: dataConducteur[i].rang,
+								width 	: dataConducteur[i].width,
+								height 	: dataConducteur[i].height,
+							}) ;
+
+						elem.click(function(event){
+							$(this).addClass("activated");
+							console.log( $(this).data("from") , $(this).data("to") );
+
+							socket.emit('text message', {
+								text:$(this).text(), 
+								param:$(this).data("param")
+							} );
+						});
+
+						$("#messages").append( elem );
+
+					break;
+
+					case "video" :
+						elem = $("<li>")
+							.html( dataConducteur[i].texte )
+							.data("from", timestamp(dataConducteur[i].from))
+							.data("to", timestamp(dataConducteur[i].to))
+							.data("param", {
+								target 	: dataConducteur[i].target,
+								colonne : dataConducteur[i].colonne,
+								rang 	: dataConducteur[i].rang,
+								width 	: dataConducteur[i].width,
+								height 	: dataConducteur[i].height,
+							}) ;
+
+						elem.click(function(event){
+							$(this).addClass("activated");
+							console.log( $(this).data("from") , $(this).data("to") );
+
+							socket.emit('text message', {
+								text:$(this).text(), 
+								param:$(this).data("param")
+							} );
+						});
+
+						$("#videos").append( elem );
+
+					break;
+
+					case "light" :
+
+						elem = $("<li>")
+							.text( dataConducteur[i].texte )
+							.data("from", timestamp(dataConducteur[i].from))
+							.data("to", timestamp(dataConducteur[i].to))
+							.data("param", {
+								target 	: dataConducteur[i].target,
+								from : dataConducteur[i].param.from,
+								to 	: dataConducteur[i].param.to
+							}) ;
+
+						// https://jsfiddle.net/mcLecfud/7/
+						// https://github.com/tweenjs/tween.js
+						elem.click(function(event){
+							$(this).addClass("activated");
+							console.log( $(this).data("param").from , $(this).data("param").to );
+
+
+							var tween = new TWEEN.Tween(light) // Create a new tween that modifies 'light'.
+								.to({
+									value: $(this).data("param").to
+								}, 1000) // Move to (300, 200) in 1 second.
+								.easing(TWEEN.Easing.Quadratic.Out) // Use an easing function to make the animation smooth.
+								.onUpdate(function() { // Called after tween.js updates 'coords'.
+									console.log(light.value);
+
+									socket.emit('light message', {
+										value: light.value
+									});
+								})
+								.start();
+
+							// socket.emit('light message', {
+							// 	text:$(this).text(),
+							// 	param:{ from :$(this).data("param").from , to : $(this).data("param").to }
+							// });
+						});
+
+						$("#lights").append( elem );
+
+
+					break;
+
+					default :
+
+
+					break;
+				}
+			}
+		}
+	}	// fin loadPart
 
 });
 
