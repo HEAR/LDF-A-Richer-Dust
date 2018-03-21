@@ -1,5 +1,8 @@
 // http://yeoman.io/generators/
 
+
+const param = require("./param.json");
+
 // https://socket.io/get-started/chat/
 // https://github.com/russellmcc/node-osc-min
 
@@ -19,11 +22,18 @@ const clc 		= require('cli-color');
 // console.log(clc.red('Text in red'));
  
 
-var DMX = require('dmx');
-var A = DMX.Animation;
 
-var dmx = new DMX();
-var universe = dmx.addUniverse('demo', 'enttec-usb-dmx-pro', '/dev/cu.usbserial-EN187701')
+
+console.log(param);
+
+
+if(param.isDMX === true){
+	var DMX = require('dmx');
+	var A = DMX.Animation;
+
+	var dmx = new DMX();
+	var universe = dmx.addUniverse('demo', 'enttec-usb-dmx-pro', '/dev/cu.usbserial-EN187701')
+}
 
 
 
@@ -75,7 +85,9 @@ io.on('connection', function(socket){
 		// io.emit('light message', msg);
 		console.log('light message', msg.value);
 
-		universe.update({1: msg.value, 2: 255})
+		if(param.isDMX === true){
+			universe.update({1: msg.value, 2: 255})
+		}
 	});
 
 	socket.on('osc message', function(msg){
