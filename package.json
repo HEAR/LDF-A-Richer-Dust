@@ -22,6 +22,7 @@
     "express": "^4.16.2",
     "nodemon": "^1.14.7",
     "osc-min": "^1.1.1",
+<<<<<<< HEAD
     "socket.io": "^2.0.4",
     "bower": "^1.8.2",
     "install": "^0.10.4"
@@ -67,5 +68,9 @@
         "single"
       ]
     }
+=======
+    "serialport": "^6.1.1",
+    "socket.io": "^2.0.4"
+>>>>>>> parent of 581ded5... Merge branch 'prototypo' into master
   }
 }
