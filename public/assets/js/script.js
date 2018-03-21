@@ -7,6 +7,8 @@ $(function () {
 	var isPaused;
 
 
+	var dataConducteur;
+
 	var light = {
 		value:0
 	};
@@ -26,15 +28,12 @@ $(function () {
 
 
 	$.ajax({
-		url: "assets/data/a-richer-dust-conducteur.json",
-		// dataType: 'json',
-		beforeSend: function( xhr ) {
-			xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
-		}
+		url: "assets/csv/a-richer-dust-conducteur.json",
+		// beforeSend: function( xhr ) {
+		// 	xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+		// }
 	})
 	.done(function( data ) {
-
-		console.log("data");
 
 		dataConducteur = data;
 		
@@ -47,8 +46,6 @@ $(function () {
 			switch(data[i].type){
 
 				case "part" :
-
-					console.log(data[i].texte );
 
 					elem = $("<li>")
 						.text( data[i].texte )
@@ -263,8 +260,6 @@ $(function () {
 	}	
 
 	$("#clip1").click(function(){
-
-		console.log( dataConducteur );
 		sendOSC("/composition/layers/1/clips/1/connect",1);
 	})
 
@@ -326,7 +321,7 @@ $(function () {
 					break;
 
 					case "video" :
-						 // "text" :
+						 "text" :
 						elem = $("<li>")
 							.html( dataConducteur[i].texte )
 							.data("from", timestamp(dataConducteur[i].from))

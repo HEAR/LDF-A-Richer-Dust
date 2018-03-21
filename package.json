@@ -21,9 +21,12 @@
     "cli-color": "^1.2.0",
     "dmx": "0.0.7",
     "express": "^4.16.2",
+    "fivetwelve": "^0.9.4",
+    "fivetwelve-driver-usbpro": "^1.0.2",
     "nodemon": "^1.14.7",
     "osc-min": "^1.1.1",
-    "socket.io": "^2.0.4",
+    "serialport": "^6.1.1",
+    "socket.io": "^2.0.4"
     "bower": "^1.8.2",
     "install": "^0.10.4"
   },
