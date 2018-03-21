@@ -279,12 +279,14 @@ $(function () {
 
 		console.log(dataConducteur);
 
+
+
 		for(var i = 0; i< dataConducteur.length; i++){
 
 			if(dataConducteur[i].part == _id){
 
-				console.log( timestamp(dataConducteur[i].from) );
-
+				// console.log( timestamp(dataConducteur[i].from) );
+				console.log(dataConducteur[i].type);
 
 
 				let elem;
@@ -321,15 +323,28 @@ $(function () {
 					break;
 
 					case "video" :
+
+						var picture = "part-" + dataConducteur[i].part + "-" + dataConducteur[i].movie + ".jpg";
+
+						console.log("icone : " ,picture);
+
+
+
 						elem = $("<li>")
-							.html( dataConducteur[i].texte )
+							.html( "<img src='assets/images/" + picture + "'>" )
 							.data("from", timestamp(dataConducteur[i].from))
 							.data("to", timestamp(dataConducteur[i].to))
-							.append("<img src='"+dataConducteur[i].param.icon+"'>") ;
+							.data("movie", dataConducteur[i].movie)
+							.data("part",dataConducteur[i].part);
+
 
 						elem.click(function(event){
 							$(this).addClass("activated");
 							console.log( $(this).data("from") , $(this).data("to") );
+
+							var command = "/composition/layers/" + $(this).data("part") +"/clips/"+ $(this).data("movie") + "/connect";
+
+							sendOSC( command ,1);
 
 							socket.emit('text message', {
 								text:$(this).text(), 
