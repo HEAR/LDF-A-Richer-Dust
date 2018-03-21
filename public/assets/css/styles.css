@@ -28,6 +28,7 @@ body {
 header{
 	grid-area: head;
 	padding:15px;
+	max-height: 40px;
 }
 
 #infos{
@@ -36,7 +37,7 @@ header{
 	width:100%;
 	/*position: fixed;*/
 	/*background: #DDD;*/
-	/*height: 200px;*/
+	max-height: 200px;
 	padding:15px;
 	display: grid;
 	grid-template-columns: 10% 90%;
@@ -44,9 +45,22 @@ header{
 		"boutons chrono" ;
 }
 
+
+#parties{
+	list-style: none;
+}
+
+#parties li{
+	height: 100px;
+	line-height: 80px;
+	vertical-align: center;
+	background: #F00;
+	padding: 10px;
+}
+
 #flux{
 	grid-area: flux;
-	/*height: calc(100% - 200px);*/
+	height: calc(100vh - 260px);
 	overflow-y: auto;
 	background: #CCC;
 	display: flex;
@@ -64,6 +78,7 @@ header{
 footer{
 	grid-area: foot;
 	padding:15px;
+	max-height: 40px;
 }
 
 #chrono{
