@@ -325,13 +325,7 @@ $(function () {
 							.html( dataConducteur[i].texte )
 							.data("from", timestamp(dataConducteur[i].from))
 							.data("to", timestamp(dataConducteur[i].to))
-							.data("param", {
-								target 	: dataConducteur[i].target,
-								colonne : dataConducteur[i].colonne,
-								rang 	: dataConducteur[i].rang,
-								width 	: dataConducteur[i].width,
-								height 	: dataConducteur[i].height,
-							}) ;
+							.append("<img src='"+dataConducteur[i].param.icon+"'>") ;
 
 						elem.click(function(event){
 							$(this).addClass("activated");
