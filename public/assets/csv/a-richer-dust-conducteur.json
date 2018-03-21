@@ -14,23 +14,6 @@
     "height": ""
   },
   {
-    "id": 1.5,
-    "type": "video",
-    "part": 1,
-    "from": "00:00:30",
-    "to": "00:04:14",
-    "texte": "",
-    "param": {
-        "icon":"part-0-0.jpg",
-        "command":"0-0"
-    },
-    "target": "",
-    "colonne": ,
-    "rang": ,
-    "width": ,
-    "height": 
-  },
-  {
     "id": 2,
     "type": "text",
     "part": 1,
