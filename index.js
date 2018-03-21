@@ -1,7 +1,7 @@
 // http://yeoman.io/generators/
 
-
-const param = require("./param.json");
+// https://www.codementor.io/codementorteam/how-to-use-json-files-in-node-js-85hndqt32
+const param 	= require("./param.json");
 
 // https://socket.io/get-started/chat/
 // https://github.com/russellmcc/node-osc-min
@@ -28,10 +28,10 @@ console.log(param);
 
 
 if(param.isDMX === true){
-	var DMX = require('dmx');
-	var A = DMX.Animation;
+	const DMX 	= require('dmx');
+	const A 	= DMX.Animation;
 
-	var dmx = new DMX();
+	var dmx 	= new DMX();
 	var universe = dmx.addUniverse('demo', 'enttec-usb-dmx-pro', '/dev/cu.usbserial-EN187701')
 }
 
