@@ -8,6 +8,8 @@ var universe = dmx.addUniverse('demo', 'enttec-usb-dmx-pro', '/dev/cu.usbserial-
 // var universe = dmx.addUniverse('demo', 'null')
 
 
+// https://github.com/wiedi/node-dmx
+
 
 var valeur = 0;
 // https://github.com/wiedi/node-dmx/blob/master/demo_simple.js
