@@ -6,6 +6,8 @@ $(function () {
 	var isPlaying = false;
 	var isPaused;
 
+	var shortcuts = new Array();
+
 
 	var dataConducteur;
 
@@ -64,132 +66,47 @@ $(function () {
 
 				break;
 
-				/*case "text" :
-					elem = $("<li>")
-						.text( data[i].texte )
-						.data("from", timestamp(data[i].from))
-						.data("to", timestamp(data[i].to))
-						.data("param", {
-							target 	: data[i].target,
-							colonne : data[i].colonne,
-							rang 	: data[i].rang,
-							width 	: data[i].width,
-							height 	: data[i].height,
-						}) ;
-
-					elem.click(function(event){
-						$(this).addClass("activated");
-						console.log( $(this).data("from") , $(this).data("to") );
-
-						socket.emit('text message', {
-							text:$(this).text(), 
-							param:$(this).data("param")
-						} );
-					});
-
-					$("#messages").append( elem );
-
-				break;
-
-				case "videos" :
-
-
-				break;
-
-				case "light" :
-
-					elem = $("<li>")
-						.text( data[i].texte )
-						.data("from", timestamp(data[i].from))
-						.data("to", timestamp(data[i].to))
-						.data("param", {
-							target 	: data[i].target,
-							from : data[i].param.from,
-							to 	: data[i].param.to
-						}) ;
-
-					// https://jsfiddle.net/mcLecfud/7/
-					// https://github.com/tweenjs/tween.js
-					elem.click(function(event){
-						$(this).addClass("activated");
-						console.log( $(this).data("param").from , $(this).data("param").to );
-
-
-						var tween = new TWEEN.Tween(light) // Create a new tween that modifies 'light'.
-							.to({
-								value: $(this).data("param").to
-							}, 1000) // Move to (300, 200) in 1 second.
-							.easing(TWEEN.Easing.Quadratic.Out) // Use an easing function to make the animation smooth.
-							.onUpdate(function() { // Called after tween.js updates 'coords'.
-								console.log(light.value);
-
-								socket.emit('light message', {
-									value: light.value
-								});
-
-							})
-							.start();
-
-						// socket.emit('light message', {
-						// 	text:$(this).text(),
-						// 	param:{ from :$(this).data("param").from , to : $(this).data("param").to }
-						// });
-					});
-
-					$("#lights").append( elem );
-
-
-				break;
-*/
 				default :
-
-
+					// RIEN
 				break;
 			}
-
 		}
-
 	});
 
-	// Papa.parse("assets/csv/a-richer-dust-conducteur.csv", {
-	// 	// delimiter: ",",
-	// 	download: true,
-	// 	header:true,
-	// 	complete: function(results){
-	// 		console.log(results);
 
+	$("body").keyup(function(event){
+		// console.log(event.key, shortcuts);
 
-	// 		for(var i = 0; i< results.data.length; i++){
+		// console.log(shortcuts.hasOwnProperty(event.key));
 
-	// 			console.log( timestamp(results.data[i].from) );
+		if( shortcuts.hasOwnProperty(event.key) ){
+			console.log("raccourci trouvé => " + shortcuts[event.key] );
 
-	// 			let elem = $("<li>")
-	// 			.text( results.data[i].texte )
-	// 			.data("from", timestamp(results.data[i].from))
-	// 			.data("to", timestamp(results.data[i].to))
-	// 			.data("param", results.data[i].param) ;
-
-	// 			elem.click(function(event){
-	// 				$(this).addClass("activated");
-	// 				console.log( $(this).data("from") , $(this).data("to") );
-
-	// 				socket.emit('chat message', {text:$(this).text(), param:$(this).data("param")} );
-	// 			});
-
-	// 			$("#messages").append( elem );
-
-	// 		}
-	// 	}
-	// });
-
-	
+			jump( shortcuts[event.key] );
+		}else{
+			console.log("pas de raccourci");
+		}
+	});
 
 
 	/* CHRONOMETRE */
 
 	$("#pause").hide();
 
-	$("#play").click(function(){
+	$("#play").click( function(){
+		play();
+	});
+	
+	$("#pause").click( function(){
+		pause();
+	});
+
+	$("#stop").click( function(){
+		stop();
+	});
+
+
+	function play(){
 		if(isPlaying === false){
 			startDate = new Date();
 			chronometre = setInterval(function(){ myTimer() }, 1000/25);
@@ -201,9 +118,9 @@ $(function () {
 		$("#play").hide();
 
 		sendOSC("/composition/tempocontroller/pause",0);
-	});
-	
-	$("#pause").click(function(){
+	}
+
+	function pause(){
 		isPaused 		= true;
 		pauseDate 		= new Date();
 		$("#pause").hide();
@@ -214,23 +131,11 @@ $(function () {
 		console.log( timestamp( $("#chrono").text() ) );
 
 		sendOSC("/composition/tempocontroller/pause",1);
-	});
+	}
 
-	$("#stop").click(function(){
-		isPaused		= true;
-		isPlaying 		= false;
-		pauseDuration 	= 0;
-		clearInterval( chronometre );
-		$("#chrono").html( '<span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>.<span class="millis">000</span>' );
-		$("#pause").hide();
-		$("body").removeClass("pause");
-		$("#play").show();
-		$("#messages li").removeClass('activated').removeClass('stacked');
-
-		socket.emit('chat message', "");
-
-		sendOSC("/composition/tempocontroller/pause",1);
-	});
+	function switchPlayState(){
+		
+	}
 
 	
 	function myTimer() {
@@ -245,6 +150,49 @@ $(function () {
 		    evenements( d, socket );
 		}
 	    prevDate = new Date();
+	}
+
+	function stop(){
+		isPaused		= true;
+		isPlaying 		= false;
+		pauseDuration 	= 0;
+		clearInterval( chronometre );
+		$("#chrono").html( '<span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>.<span class="millis">000</span>' );
+		$("#pause").hide();
+		$("body").removeClass("pause");
+		$("#play").show();
+		$("#messages li").removeClass('activated').removeClass('stacked');
+
+		socket.emit('chat message', "");
+
+		sendOSC("/composition/tempocontroller/pause",1);
+	}
+
+	/**
+	 * 
+	 * fonction pour gérer les sautes lorsque l'on clique sur un raccourci clavier
+	 * 
+	 **/
+	function jump(millis){
+
+		console.log("jump",millis, "pauseDuration", pauseDuration);
+
+
+		let wasPaused = isPaused ? true : false;
+
+		if(isPaused !== false){
+			play();
+		}
+
+		console.log(wasPaused);
+
+		pauseDuration = 0;
+		let now = new Date();
+		startDate = new Date(now.getTime() - millis);
+
+		if(wasPaused === false){
+			pause();
+		}
 	}
 
 
@@ -274,11 +222,18 @@ $(function () {
 	 */
 	function loadPart(_id){
 
+		$("#messages").empty();
+		$("#videos").empty();
+		$("#lights").empty();
+
 
 		console.log( "PARTIE n°"+ _id );
 
-		console.log(dataConducteur);
+		// console.log(dataConducteur);
 
+		shortcuts = new Object();
+
+		// shortcuts.a = "test";
 
 
 		for(var i = 0; i< dataConducteur.length; i++){
@@ -286,14 +241,10 @@ $(function () {
 			if(dataConducteur[i].part == _id){
 
 				// console.log( timestamp(dataConducteur[i].from) );
-				console.log(dataConducteur[i].type);
-
-
+				// console.log(dataConducteur[i].type);
 				let elem;
 
 				switch(dataConducteur[i].type){
-
-					
 
 					case "text" :
 						elem = $("<li>")
@@ -326,7 +277,7 @@ $(function () {
 
 						var picture = "part-" + dataConducteur[i].part + "-" + dataConducteur[i].movie + ".jpg";
 
-						console.log("icone : " ,picture);
+						// console.log("icone : " ,picture);
 
 
 
@@ -400,6 +351,15 @@ $(function () {
 
 					break;
 
+
+					case "key" :
+
+						// console.log( "raccourci", dataConducteur[i].param, timestamp(dataConducteur[i].from) );
+
+						shortcuts[ dataConducteur[i].param ] = timestamp(dataConducteur[i].from);
+
+					break;
+
 					default :
 
 
@@ -410,6 +370,7 @@ $(function () {
 	}	// fin loadPart
 
 });
+
 
 
 function evenements(millis, socket){

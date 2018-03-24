@@ -134,6 +134,15 @@ footer{
 	overflow-y: auto;
 }
 
+#flux ul#videos li{
+	padding: 0;
+}
+
+#flux ul#videos li img{
+	max-width: 100%;
+	display: block;
+}
+
 body.pause #flux ul li.stacked{
 	animation-play-state: paused;
 }

@@ -51,7 +51,7 @@ function getIPAddress() {
     }
   }
 
-  return '0.0.0.0';
+  return 'localhost';
 }
 
 // console.log( getIPAddress() );
