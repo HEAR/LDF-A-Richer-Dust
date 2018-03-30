@@ -60,8 +60,8 @@ function getIPAddress() {
 var port 	= 3000;
 var portOSC = 4000;
 
-
-console.log("~ OSC listener running : "+ clc.red("http://"+ getIPAddress() +":" + portOSC) );
+console.log("\n");
+console.log("OSC~ listener running :  "+ clc.red("http://"+ getIPAddress() +":" + portOSC) );
 
 
 app.use( express.static('public') )
@@ -157,7 +157,7 @@ sock.bind(portOSC);
 
 
 http.listen(port, function(){
-	console.log("HTML server is :         "+clc.cyan("http://"+ getIPAddress() +":"+ port) );
+	console.log("HTML server is :         "+clc.blue("http://"+ getIPAddress() +":"+ port) );
 	console.log("ADMIN :                  "+clc.cyanBright("http://"+ getIPAddress() +":"+ port + "/admin.html") );
 	console.log("TYPO  :                  "+clc.cyanBright("http://"+ getIPAddress() +":"+ port + "/index.html") );
 });

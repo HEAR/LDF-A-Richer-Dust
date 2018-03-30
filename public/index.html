@@ -9,6 +9,10 @@
 		box-sizing: border-box;
 	}
 
+	html{
+		font-size: 20px;
+	}
+
 	html,body{
 		height: 100%;
 	}
@@ -22,16 +26,30 @@
 
 	#scene{
 		width:1920px;
-		height:1080px;
+		height:720px;
 		background: #fdd;
 		position: relative;
+
+		background: repeating-linear-gradient(
+		  rgba(255, 0, 0, 0.2),
+		  rgba(255, 0, 0, 0.2) 0.5rem,
+		  rgba(255, 0, 0, 0.1) 0.5rem,
+		  rgba(255, 0, 0, 0.1) 1rem
+		);
+
+	/*	  background: linear-gradient(0deg, #FFFFFF 2px, rgba(0,0,0,0) 2px), linear-gradient(90deg, #FFFFFF 2px, rgba(0,0,0,0) 2px), linear-gradient(0deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), linear-gradient(90deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), rgb(34, 102, 153);*/
+
 	}
 
 	.message{
 		width:calc(1920px / 12);
 		height: calc(1080px / 8);
-		background: #F00;
+		background: rgba(255, 0, 0, 0.5);
 		position: absolute;
+		line-height: 1rem;
+		font-size: 0.9rem;
+		padding-top: 0.2rem;
+		display: none;
 	}
 
 
@@ -56,13 +74,14 @@
 	</div>
 
 	<script src="/socket.io/socket.io.js"></script>
-	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	<script src="assets/js/jquery-3.2.1.min.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
 	<script>
 		$(function () {
 			var socket = io();
 
-			var nbrColonnes = 12;
-			var nbrLignes = 8;
+			var nbrColonnes = 24;
+			var nbrLignes = 12;
 			
 			socket.on('text message', function(msg){
 
@@ -77,7 +96,8 @@
 				.css("left", msg.param.colonne * pasX )
 				.css("top", msg.param.rang * pasY)
 				.css("width", msg.param.width * pasX )
-				.css("height", msg.param.height * pasY); 
+				.css("height", msg.param.height * pasY)
+				.css("display", "block"); 
 
 				console.log(msg.param);
 			});
