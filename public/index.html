@@ -29,21 +29,33 @@
 		height:720px;
 		background: #fdd;
 		position: relative;
+	}
 
+	#scene.callage{
 		background: repeating-linear-gradient(
-		  rgba(255, 0, 0, 0.2),
-		  rgba(255, 0, 0, 0.2) 0.5rem,
-		  rgba(255, 0, 0, 0.1) 0.5rem,
-		  rgba(255, 0, 0, 0.1) 1rem
+			rgba(255, 0, 0, 0.1),
+			rgba(255, 0, 0, 0.1) 0.5rem,
+			rgba(255, 0, 0, 0.05) 0.5rem,
+			rgba(255, 0, 0, 0.05) 1rem
+		),repeating-linear-gradient(
+			rgba(0, 0, 255, 0),
+			rgba(0, 0, 255, 0) 59px,
+			rgba(0, 0, 255, 0.5) 60px,
+			rgba(0, 0, 255, 0.5) 60px
+		),repeating-linear-gradient(
+			90deg,
+			rgba(255, 0, 0, 0),
+			rgba(255, 0, 0, 0) 79px,
+			rgba(255, 0, 0, 0.5) 80px,
+			rgba(255, 0, 0, 0.5) 80px
 		);
 
-	/*	  background: linear-gradient(0deg, #FFFFFF 2px, rgba(0,0,0,0) 2px), linear-gradient(90deg, #FFFFFF 2px, rgba(0,0,0,0) 2px), linear-gradient(0deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), linear-gradient(90deg, rgba(255,255,255,0.298039) 1px, rgba(0,0,0,0) 1px), rgb(34, 102, 153);*/
-
+		background-size: 80px 60px;
 	}
 
 	.message{
 		width:calc(1920px / 12);
-		height: calc(1080px / 8);
+		height: calc(720px / 8);
 		background: rgba(255, 0, 0, 0.5);
 		position: absolute;
 		line-height: 1rem;
@@ -58,7 +70,7 @@
 <body>
 	
 
-	<div id="scene">
+	<div id="scene" class="callage">
 
 		<div class="message" id="bloc1"></div>
 		<div class="message" id="bloc2"></div>
@@ -82,14 +94,18 @@
 
 			var nbrColonnes = 24;
 			var nbrLignes = 12;
+
+			var pasX = 1920/nbrColonnes;
+			var pasY = 720/nbrLignes;
+
+			console.log(pasX, pasY);
 			
 			socket.on('text message', function(msg){
 
 
 				// $('#bloc1').text( msg.text );
 
-				pasX = 1920/nbrColonnes;
-				pasY = 1080/nbrLignes;
+				
 
 				$( msg.param.target )
 				.text(msg.text)
