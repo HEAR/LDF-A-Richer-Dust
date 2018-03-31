@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<midiController enabled="1" midiClockMode="1" octaveNumForMiddleC="4" syncDeviceName="">
+	<versionInfo name="Resolume Avenue" majorVersion="6" minorVersion="0" microVersion="7" revision="60578"/>
+	<inputDevices/>
+	<outputDevices/>
+	<controlSurfaces/>
+</midiController>
+
