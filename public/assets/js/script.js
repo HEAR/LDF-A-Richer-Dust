@@ -215,6 +215,17 @@ $(function () {
 		sendOSC("/composition/layers/1/clips/4/connect",1);
 	})
 
+	var testID = 0;
+
+	$("#tests").click(function(){
+
+		testID = (testID +1)%60 +1;
+
+		console.log("/composition/layers/2/clips/"+testID+"/connect");
+
+		sendOSC("/composition/layers/2/clips/"+testID+"/connect",1);
+	})
+
 
 	/**
 	 *

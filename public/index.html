@@ -19,6 +19,11 @@
 
 	body {
 		font: 50px Helvetica, Arial;
+		background: #000;
+	}
+
+	body.callage{
+		background: #FFF;
 	}
 
 	/* http://www.learnlayout.com/flexbox.html */
@@ -27,11 +32,11 @@
 	#scene{
 		width:1920px;
 		height:720px;
-		background: #fdd;
+		/*background: #fdd;*/
 		position: relative;
 	}
 
-	#scene.callage{
+	.callage #scene{
 		background: repeating-linear-gradient(
 			rgba(255, 0, 0, 0.1),
 			rgba(255, 0, 0, 0.1) 0.5rem,
@@ -56,32 +61,44 @@
 	.message{
 		width:calc(1920px / 12);
 		height: calc(720px / 8);
-		background: rgba(255, 0, 0, 0.5);
 		position: absolute;
 		line-height: 1rem;
 		font-size: 0.9rem;
 		padding-top: 0.2rem;
 		display: none;
+		background: #000;
+		color: #FFF;
+	}
+
+	.callage .message{
+		background: rgba(255, 0, 0, 0.5);
+		color: #000;
+	}
+
+	.size2{
+		line-height: 2rem;
+		font-size: 1.8rem;
+		padding-top: 0.4rem;
 	}
 
 
 </style>
 </head>
-<body>
+<body class="">
 	
 
-	<div id="scene" class="callage">
+	<div id="scene">
 
 		<div class="message" id="bloc1"></div>
-		<div class="message" id="bloc2"></div>
-		<div class="message" id="bloc3"></div>
-		<div class="message" id="bloc4"></div>
-		<div class="message" id="bloc5"></div>
-		<div class="message" id="bloc6"></div>
-		<div class="message" id="bloc7"></div>
-		<div class="message" id="bloc8"></div>
-		<div class="message" id="bloc9"></div>
-		<div class="message" id="bloc10"></div>
+		<div class="message size2" id="bloc2"></div>
+		<div class="message size2" id="bloc3"></div>
+		<div class="message size2" id="bloc4"></div>
+		<div class="message size2" id="bloc5"></div>
+		<div class="message size2" id="bloc6"></div>
+		<div class="message size2" id="bloc7"></div>
+		<div class="message size2" id="bloc8"></div>
+		<div class="message size2" id="bloc9"></div>
+		<div class="message size2" id="bloc10"></div>
 		
 	</div>
 

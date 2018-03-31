@@ -30,5 +30,11 @@ setInterval(function(){
 
   console.log(valeur);
 
-  universe.update({1: valeur, 2: 255})
+
+  universe.updateAll(valeur);
+
+  // universe.update({1: valeur, 2: 255})
+
+  // universe.update({1: valeur, 2: 255})
+
 }, 40);
