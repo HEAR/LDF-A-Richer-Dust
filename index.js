@@ -3,6 +3,8 @@
 // https://www.codementor.io/codementorteam/how-to-use-json-files-in-node-js-85hndqt32
 const param 	= require("./param.json");
 
+const fs		= require('fs');
+
 // https://socket.io/get-started/chat/
 // https://github.com/russellmcc/node-osc-min
 
@@ -21,6 +23,8 @@ const udp 		= require('dgram');
 const clc 		= require('cli-color');
 // console.log(clc.red('Text in red'));
  
+const csvjson = require('csvjson');
+
 
 
 
@@ -79,6 +83,37 @@ io.on('connection', function(socket){
 	socket.on('text message', function(msg){
 		io.emit('text message', msg);
 		console.log('text message', msg);
+	});
+
+
+	socket.on("interface message", function(msg){
+	
+		if(msg.switchgrid === true){
+			console.log("switch grid");
+		}
+
+		if(msg.refreshjson === true){
+
+			console.log("refresh json");
+
+			let data = fs.readFileSync('./public/assets/csv/conducteur-last.csv',{ encoding : 'utf8'});
+
+			let options = {
+				delimiter   : ",",
+				quote: '"'
+			}
+
+			let jsondata = csvjson.toObject(data, options);
+
+			jsondata = intify(jsondata, ['id','part','colonne','rang','width','height']);
+
+			let json = JSON.stringify(jsondata);
+			fs.writeFile('./public/assets/data/a-richer-dust.json', json, (error) => { /* handle error */ console.log("erreur json : ", error) });
+
+		}
+
+		io.emit('interface message', msg);
+		console.log('interface message', msg);
 	});
 
 	socket.on('light message', function(msg){
@@ -165,5 +200,21 @@ http.listen(port, function(){
 
 
 
-
 // OSC OUTPUT 127.0.0.1:7000
+
+
+
+
+
+
+function intify(obj, fields) {
+	if (typeof(obj) == "undefined") return;
+	var numFields = fields.length;
+	for (var i = 0; i < numFields; i++) {
+		var field = fields[i];
+		if (typeof(obj[field]) != "undefined") {
+			obj[field] = parseInt(obj[field], 10);
+		}
+	}
+	return obj;
+}

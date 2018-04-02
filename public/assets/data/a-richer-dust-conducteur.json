@@ -64,8 +64,8 @@
     "texte": "hear me—",
     "param": "",
     "target": "#bloc1",
-    "colonne": 4,
-    "rang": 4,
+    "colonne": 1,
+    "rang": 1,
     "width": 3,
     "height": 2
   },
@@ -78,7 +78,7 @@
     "texte": "ten, nine, eight, seven, six, five, four, three, two, one…",
     "param": "",
     "target": "#bloc2",
-    "colonne": 1,
+    "colonne": 5,
     "rang": 1,
     "width": 3,
     "height": 1
@@ -105,10 +105,10 @@
     "to": "00:04:36",
     "texte": "maimed civilians\n killed, murdered\n unknown numbers\n soldiers missing too",
     "param": "",
-    "target": "#bloc1",
-    "colonne": 2,
-    "rang": 2,
-    "width": 2,
+    "target": "#bloc3",
+    "colonne": 9,
+    "rang": 1,
+    "width": 4,
     "height": 2
   },
   {
@@ -120,10 +120,10 @@
     "texte": "horror terror violence war",
     "param": "",
     "target": "#bloc4",
-    "colonne": 6,
-    "rang": 3,
-    "width": 2,
-    "height": 1
+    "colonne": 14,
+    "rang": 1,
+    "width": 4,
+    "height": 2
   },
   {
     "id": 7,

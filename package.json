@@ -4,7 +4,7 @@
   "description": "Conducteur numérique pour la pièce audio-visuelle A richer dust, montée par la Haute école des arts du Rhin",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon index.js --ignore 'public/assets/data/*.json'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,13 +20,14 @@
   "dependencies": {
     "bower": "^1.8.2",
     "cli-color": "^1.2.0",
+    "csvjson": "^5.0.0",
     "dmx": "0.0.7",
-    "express": "^4.16.2",
+    "express": "^4.16.3",
     "install": "^0.10.4",
-    "nodemon": "^1.14.7",
+    "nodemon": "^1.17.3",
     "osc-min": "^1.1.1",
     "serialport": "^6.1.1",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.1.0"
   },
   "engines": {
     "node": ">=4"

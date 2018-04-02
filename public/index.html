@@ -2,87 +2,10 @@
 <html>
 <head>
 	<title>A richer dust</title>
-	<style>
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-
-	html{
-		font-size: 20px;
-	}
-
-	html,body{
-		height: 100%;
-	}
-
-	body {
-		font: 50px Helvetica, Arial;
-		background: #000;
-	}
-
-	body.callage{
-		background: #FFF;
-	}
-
-	/* http://www.learnlayout.com/flexbox.html */
-
-
-	#scene{
-		width:1920px;
-		height:720px;
-		/*background: #fdd;*/
-		position: relative;
-	}
-
-	.callage #scene{
-		background: repeating-linear-gradient(
-			rgba(255, 0, 0, 0.1),
-			rgba(255, 0, 0, 0.1) 0.5rem,
-			rgba(255, 0, 0, 0.05) 0.5rem,
-			rgba(255, 0, 0, 0.05) 1rem
-		),repeating-linear-gradient(
-			rgba(0, 0, 255, 0),
-			rgba(0, 0, 255, 0) 59px,
-			rgba(0, 0, 255, 0.5) 60px,
-			rgba(0, 0, 255, 0.5) 60px
-		),repeating-linear-gradient(
-			90deg,
-			rgba(255, 0, 0, 0),
-			rgba(255, 0, 0, 0) 79px,
-			rgba(255, 0, 0, 0.5) 80px,
-			rgba(255, 0, 0, 0.5) 80px
-		);
-
-		background-size: 80px 60px;
-	}
-
-	.message{
-		width:calc(1920px / 12);
-		height: calc(720px / 8);
-		position: absolute;
-		line-height: 1rem;
-		font-size: 0.9rem;
-		padding-top: 0.2rem;
-		display: none;
-		background: #000;
-		color: #FFF;
-	}
-
-	.callage .message{
-		background: rgba(255, 0, 0, 0.5);
-		color: #000;
-	}
-
-	.size2{
-		line-height: 2rem;
-		font-size: 1.8rem;
-		padding-top: 0.4rem;
-	}
-
-
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/prototypo.css">
+	<link rel="stylesheet" href="assets/css/scene.css">
+	
 </head>
 <body class="">
 	
@@ -91,8 +14,8 @@
 
 		<div class="message" id="bloc1"></div>
 		<div class="message size2" id="bloc2"></div>
-		<div class="message size2" id="bloc3"></div>
-		<div class="message size2" id="bloc4"></div>
+		<div class="message size3" id="bloc3"></div>
+		<div class="message size4" id="bloc4"></div>
 		<div class="message size2" id="bloc5"></div>
 		<div class="message size2" id="bloc6"></div>
 		<div class="message size2" id="bloc7"></div>
@@ -102,39 +25,15 @@
 		
 	</div>
 
+	<div class="controls">
+		<button class="js-button-changeparam">Click me (changeParam)</button>
+		<button class="js-button-tween">Click me (tween)</button>
+	</div>
+
 	<script src="/socket.io/socket.io.js"></script>
+	<script src="assets/js/prototypo/lib/prototypo-projects.js"></script>
+	<script src="assets/js/prototypo/lib/ptypo.js"></script>
 	<script src="assets/js/jquery-3.2.1.min.js"></script>
-	<!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
-	<script>
-		$(function () {
-			var socket = io();
-
-			var nbrColonnes = 24;
-			var nbrLignes = 12;
-
-			var pasX = 1920/nbrColonnes;
-			var pasY = 720/nbrLignes;
-
-			console.log(pasX, pasY);
-			
-			socket.on('text message', function(msg){
-
-
-				// $('#bloc1').text( msg.text );
-
-				
-
-				$( msg.param.target )
-				.text(msg.text)
-				.css("left", msg.param.colonne * pasX )
-				.css("top", msg.param.rang * pasY)
-				.css("width", msg.param.width * pasX )
-				.css("height", msg.param.height * pasY)
-				.css("display", "block"); 
-
-				console.log(msg.param);
-			});
-		});
-	</script>
-</body>
+	<script src="assets/js/scene.js"></script>
+</body> 
 </html>

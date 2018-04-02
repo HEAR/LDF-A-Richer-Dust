@@ -40,9 +40,9 @@ header{
 	max-height: 200px;
 	padding:15px;
 	display: grid;
-	grid-template-columns: 10% 90%;
+	grid-template-columns: 10% 10% 80%;
 	grid-template-areas:
-		"boutons chrono" ;
+		"interface boutons chrono" ;
 }
 
 
@@ -97,6 +97,21 @@ footer{
 	height: 50%;
 	width:80px;
 	background: #F00;
+	border: none;
+	font-weight: bold;
+}
+
+.interface{
+	grid-area: interface;
+	justify-self: center;
+}
+
+.interface button{
+	display: block;
+	height: 50%;
+	width:80px;
+	background: #333;
+	color: #FFF;
 	border: none;
 	font-weight: bold;
 }
