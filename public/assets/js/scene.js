@@ -4,9 +4,9 @@ function loadPrototypo(email,password){
 	console.log(email,password);
 
 	// Permet de récupérer les projets d'un compte prototypo
-	window['prototypo-projects'].getProjects('email', 'password').then(function (fonts) {
+	window['prototypo-projects'].getProjects(email, password).then(function (fonts) {
 
-		console.log("fonts",fonts);
+		// console.log("fonts",fonts);
 
 	    // Recherche la famille dans la liste de projets
 	    var family = fonts.find(function (font) {
@@ -22,6 +22,8 @@ function loadPrototypo(email,password){
 	    var ptypoFont;
 
 	    var prototypo = new Ptypo.default('b1f4fb23-7784-456e-840b-f37f5a647b1c');
+	 	// var prototypo = new Ptypo.default();
+
 	    // Crée une font 'testfont' en utilisant le template récupéré
 	    // la font 'testfont' a étée ajoutée à la page en css via une font-family
 	    prototypo.createFont('a-richer-dust-font', template).then(function(createdFont){
@@ -126,8 +128,10 @@ $(function () {
 	});
 
 	// CHARGEMENT DU CODE PROTOTYPO
-	// en fonction des paramatètres dans param.json (copie de param-sample.json) 
+	// en fonction des paramètres dans param.json (copie de param-sample.json) 
 	$.getJSON( "param.json", function( data ) {  
+
+		console.log("data",data);
 
 		var email = data.prototypoEmail;
 		var password = data.prototypoPassword;
