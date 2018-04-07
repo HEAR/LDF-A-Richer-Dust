@@ -32,6 +32,8 @@ function loadPrototypo(email,password){
 	        createdFont.changeParams(values);
 	    });
 
+	    $(".message").css("font-family","a-richer-dust-font");
+
 	    // Deux évènements de tests lancés va des boutons sur la page et récupérés en jquery
 	    $('.js-button-changeparam').on('click', function(){
 	        // Changement de paramètre simple de la thickness vers 200, en utilisant le texte de la page comme subset
