@@ -26,6 +26,7 @@ const clc 		= require('cli-color');
 const csvjson = require('csvjson');
 
 
+var abbletonJSON = {};
 
 
 console.log(param);
@@ -151,12 +152,57 @@ io.on('connection', function(socket){
 });
 
 
+abbletonInterval = setInterval(abbletonSender, 1000);
+
+function abbletonSender(){
+	console.log("socket emit abbleton", abbletonJSON);
+
+	io.emit('abbleton message', abbletonJSON);
+}
+
 // https://github.com/russellmcc/node-osc-min
+// http://sonicbloom.net/en/livegrabber-to-sendreceive-osc-in-ableton-live/
+/**
+ * écoute des messages OSC arrivant sur le serveur
+ * @param  {[type]}
+ * @param  {[type]}
+ * @return {[type]}
+ */
 var sock = udp.createSocket("udp4", function(msg, rinfo) {
 	var error;
 	try {
+
+		console.log("osc input",osc.fromBuffer(msg));
+
+		let messageOSC = osc.fromBuffer(msg);
+
+		// console.log("osc address",messageOSC.address);		
 		
-		io.emit('chat message', osc.fromBuffer(msg));
+
+		// if( messageOSC.address.indexOf('/abbleton') !== -1){
+
+		switch(osc.fromBuffer(msg).address){
+			case '/abbleton/highfrequency' :
+				// console.log( clc.blue('\thighfrequency') );
+				abbletonJSON.highfrequency = osc.fromBuffer(msg).args[0].value;
+			break;
+			case '/abbleton/midfrequency' :
+				// console.log( clc.blue('\tmidfrequency') );
+				abbletonJSON.midfrequency = osc.fromBuffer(msg).args[0].value;
+			break;
+			case '/abbleton/lowfrequency' :
+				// console.log( clc.blue('\tlowfrequency') );
+				abbletonJSON.lowfrequency = osc.fromBuffer(msg).args[0].value;
+			break;
+			default:
+
+			break;
+		}
+
+			// io.emit('abbleton message', messageOSC);
+			// console.log('abbleton message');
+		// }
+		
 
 
 		return console.log(osc.fromBuffer(msg));
@@ -203,6 +249,13 @@ http.listen(port, function(){
 // OSC OUTPUT 127.0.0.1:7000
 
 
+function sleep(time, callback) {
+    var stop = new Date().getTime();
+    while(new Date().getTime() < stop + time) {
+        ;
+    }
+    callback();
+}
 
 
 
