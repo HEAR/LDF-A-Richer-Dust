@@ -3,10 +3,10 @@ $(function () {
 	var chronometre;
 	var startDate, pauseDate, prevDate;
 	var pauseDuration = 0;
-	var isPlaying = false;
+	var isPlaying     = false;
 	var isPaused;
-
-	var shortcuts = new Array();
+	
+	var shortcuts     = new Array();
 
 
 	var dataConducteur;
@@ -127,10 +127,10 @@ $(function () {
 
 	function play(){
 		if(isPlaying === false){
-			startDate = new Date();
+			startDate   = new Date();
 			chronometre = setInterval(function(){ myTimer() }, 1000/25);
 		}
-		isPaused = false;
+		isPaused  = false;
 		isPlaying = true;
 		$("#pause").show();
 		$("body").removeClass("pause");
@@ -140,8 +140,8 @@ $(function () {
 	}
 
 	function pause(){
-		isPaused 		= true;
-		pauseDate 		= new Date();
+		isPaused  = true;
+		pauseDate = new Date();
 		$("#pause").hide();
 		$("body").addClass("pause");
 		$("#play").show();
@@ -210,8 +210,8 @@ $(function () {
 		console.log(wasPaused);
 
 		pauseDuration = 0;
-		let now = new Date();
-		startDate = new Date(now.getTime() - millis);
+		let now       = new Date();
+		startDate     = new Date(now.getTime() - millis);
 
 		if(wasPaused === false){
 			pause();
@@ -463,11 +463,11 @@ function timecode(millis){
 function getDuration(millis){
     let dur = {};
     let units = [
-        {label:"millis",    mod:1000},
-        {label:"seconds",   mod:60},
-        {label:"minutes",   mod:60},
-        {label:"hours",     mod:24},
-        {label:"days",      mod:31}
+		{label:"millis",    mod:1000},
+		{label:"seconds",   mod:60},
+		{label:"minutes",   mod:60},
+		{label:"hours",     mod:24},
+		{label:"days",      mod:31}
     ];
     // calculate the individual unit values...
     units.forEach(function(u){

@@ -17,8 +17,8 @@ function loadPrototypo(email,password){
 	        return variant.name === 'Regular';
 	    });
 	    // Récupère les valeurs nécessaires à initialiser la police
-	    var template = family.template;
-	    var values = variant.values;
+		var template = family.template;
+		var values   = variant.values;
 	    var ptypoFont;
 
 	    var prototypo = new Ptypo.default('b1f4fb23-7784-456e-840b-f37f5a647b1c');
