@@ -1,5 +1,7 @@
 
-function loadPrototypo(email,password){
+
+
+function loadPrototypo(email,password, sock){
 
 	console.log(email,password);
 
@@ -45,6 +47,19 @@ function loadPrototypo(email,password){
 	        // Anime la width vers 1.4 sur 10 étapes pendant 0.3 secondes en utilisant le texte de la page comme subset
 	        ptypoFont.tween('width', 1.4, 10, 0.3, function(){}, $('.text p').text());
 	    });
+
+	    sock.on('abbleton message', function(msg){
+
+			// console.log(msg);
+
+			console.log(msg.args[0].value * 2000000);
+
+			// $('#bloc1').text( msg.text );	
+
+			ptypoFont.changeParam('thickness', (2 * 1000000 * msg.args[0].value), $('.text p').text());
+
+			// console.log(msg.param);
+		});
 
 	});
 
@@ -111,6 +126,8 @@ $(function () {
 		console.log(msg.param);
 	});
 
+
+
 	socket.on('interface message', function(msg){
 
 		if(msg.switchgrid === true){
@@ -139,7 +156,7 @@ $(function () {
 		var password = data.prototypoPassword;
 
 
-		loadPrototypo(email,password);
+		loadPrototypo(email,password, socket);
 
 	});
 
