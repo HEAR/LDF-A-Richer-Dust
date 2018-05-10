@@ -77,7 +77,10 @@ $(function () {
 
 							loadPart( $(this).data("id") );
 
+							$("#parties li").removeClass("active");
+
 							$(this).addClass("activated");
+							$(this).addClass("active");
 						});
 
 						$("#parties").append( elem );
@@ -301,7 +304,9 @@ $(function () {
 
 					case "text" :
 						elem = $("<li>")
+							.attr("id", "event-"+dataConducteur[i].id)
 							.text( dataConducteur[i].texte )
+							.data("parent", dataConducteur[i].parent)
 							.data("from", timestamp(dataConducteur[i].from))
 							.data("to", timestamp(dataConducteur[i].to))
 							.data("param", {
@@ -310,12 +315,31 @@ $(function () {
 								rang 	: dataConducteur[i].rang,
 								width 	: dataConducteur[i].width,
 								height 	: dataConducteur[i].height,
-								classes : dataConducteur[i].classes.split(",").join(" "),
+								classes : dataConducteur[i].classes.split(",").join(" ")
 							}) ;
 
 						elem.click(function(event){
 							$(this).addClass("activated");
-							console.log( $(this).data("from") , $(this).data("to") );
+
+							let ID = $(this).attr("id").split("-")[1];
+
+							console.log( "ID", ID, "parent", $(this).data("parent"), $(this).data("from") , $(this).data("to") );
+
+							// $("[data-parent='" + ID + "']").trigger("click");
+
+
+							// console.log( $("li[parent="+ID+"]") );
+							// https://api.jqueryui.com/data-selector/
+							let enfants =  $("li:data(parent):not(.activated)");
+
+
+							enfants.each(function(){
+								if( $(this).data("parent") === ID ){
+									$(this).trigger("click");
+								}
+							});
+
+						
 
 							socket.emit('text message', {
 								text:$(this).text(), 
@@ -336,7 +360,9 @@ $(function () {
 
 
 						elem = $("<li>")
+							.attr("id", "event-"+dataConducteur[i].id)
 							.html( "<img src='assets/images/" + picture + "'>" )
+							.data("parent", dataConducteur[i].parent)
 							.data("from", timestamp(dataConducteur[i].from))
 							.data("to", timestamp(dataConducteur[i].to))
 							.data("movie", dataConducteur[i].movie)
@@ -364,7 +390,9 @@ $(function () {
 					case "light" :
 
 						elem = $("<li>")
+							.attr("id", "event-"+dataConducteur[i].id)
 							.text( dataConducteur[i].texte )
+							.data("parent", dataConducteur[i].parent)
 							.data("from", timestamp(dataConducteur[i].from))
 							.data("to", timestamp(dataConducteur[i].to))
 							.data("param", {
@@ -527,5 +555,4 @@ function animate(time) {
   TWEEN.update(time);
 }
 requestAnimationFrame(animate);
-
 
