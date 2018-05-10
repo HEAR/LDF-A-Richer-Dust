@@ -113,15 +113,15 @@ $(function () {
 		// $('#bloc1').text( msg.text );	
 
 		$( msg.param.target )
-		.text(msg.text)
-		.attr("class","")
-		.addClass("message")
-		.addClass(msg.param.classes)
-		.css("left", msg.param.colonne * pasX )
-		.css("top", msg.param.rang * pasY)
-		.css("width", msg.param.width * pasX )
-		.css("height", msg.param.height * pasY)
-		.css("display", "block"); 
+			.text(msg.text)
+			.attr("class","")
+			.addClass("message")
+			.addClass(msg.param.classes)
+			.css("left", msg.param.colonne * pasX )
+			.css("top", msg.param.rang * pasY)
+			.css("width", msg.param.width * pasX )
+			.css("height", msg.param.height * pasY)
+			.css("display", "block"); 
 
 		console.log(msg.param);
 	});
@@ -152,9 +152,9 @@ $(function () {
 
 		console.log("data",data);
 
-		var email = data.prototypoEmail;
-		var password = data.prototypoPassword;
-		var fontName = data.fontName;
+		var email       = data.prototypoEmail;
+		var password    = data.prototypoPassword;
+		var fontName    = data.fontName;
 		var fontVariant = data.fontVariant;
 
 
