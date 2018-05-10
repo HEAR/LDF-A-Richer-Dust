@@ -1,22 +1,22 @@
 
 
 
-function loadPrototypo(email,password, sock){
+function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 	console.log(email,password);
 
 	// Permet de récupérer les projets d'un compte prototypo
 	window['prototypo-projects'].getProjects(email, password).then(function (fonts) {
 
-		// console.log("fonts",fonts);
+		console.log("fonts",fonts);
 
 	    // Recherche la famille dans la liste de projets
 	    var family = fonts.find(function (font) {
-	        return font.name === 'test-richer-dust';
+	        return font.name === fontName; //'test-richer-dust';
 	    });
 	    // Recherche la variante dans les variantes de la famille
 	    var variant = family && family.variants.find(function (variant) {
-	        return variant.name === 'Regular';
+	        return variant.name === fontVariant; //'Regular';
 	    });
 	    // Récupère les valeurs nécessaires à initialiser la police
 		var template = family.template;
@@ -36,17 +36,17 @@ function loadPrototypo(email,password, sock){
 
 	    $(".message").css("font-family","a-richer-dust-font");
 
-	    // Deux évènements de tests lancés va des boutons sur la page et récupérés en jquery
-	    $('.js-button-changeparam').on('click', function(){
-	        // Changement de paramètre simple de la thickness vers 200, en utilisant le texte de la page comme subset
-	        ptypoFont.changeParam('thickness', 200, $('.text p').text());
-	    });
+	    // // Deux évènements de tests lancés va des boutons sur la page et récupérés en jquery
+	    // $('.js-button-changeparam').on('click', function(){
+	    //     // Changement de paramètre simple de la thickness vers 200, en utilisant le texte de la page comme subset
+	    //     ptypoFont.changeParam('thickness', 200, $('.text p').text());
+	    // });
 
 
-	    $('.js-button-tween').on('click', function(){
-	        // Anime la width vers 1.4 sur 10 étapes pendant 0.3 secondes en utilisant le texte de la page comme subset
-	        ptypoFont.tween('width', 1.4, 10, 0.3, function(){}, $('.text p').text());
-	    });
+	    // $('.js-button-tween').on('click', function(){
+	    //     // Anime la width vers 1.4 sur 10 étapes pendant 0.3 secondes en utilisant le texte de la page comme subset
+	    //     ptypoFont.tween('width', 1.4, 10, 0.3, function(){}, $('.text p').text());
+	    // });
 
 	    sock.on('abbleton message', function(msg){
 
@@ -154,9 +154,11 @@ $(function () {
 
 		var email = data.prototypoEmail;
 		var password = data.prototypoPassword;
+		var fontName = data.fontName;
+		var fontVariant = data.fontVariant;
 
 
-		loadPrototypo(email,password, socket);
+		loadPrototypo(email, password, fontName, fontVariant, socket);
 
 	});
 
