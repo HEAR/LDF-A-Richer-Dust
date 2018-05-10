@@ -1,168 +1,174 @@
-id,type,part,movie,from,to,param,target,classes,colonne,rang,width,height,texte
-1,part,0,,,,,,,,,,,Prologue
-2,text,0,,00:00:10,00:00:20,,#bloc1,"size4,center",7,2,10,6,A Richer Dust
-3,part,1,,,,,,,,,,,I.Still We Drudge in this Dark Maze
-4,video,1,1,00:00:30,00:04:14,,,,,,,,
-5,key,1,,00:04:00,,a,,,,,,,
-5,text,1,,00:04:13,00:04:14,,#bloc1,size1,1,1,3,3,hear me—
-6,text,1,,00:04:15,00:04:27,,#bloc2,size2,5,1,3,4,"ten, nine, eight, seven, six, five, four, three, two, one…"
-7,light,1,,/,/,"from:0,to:100",,,,,,,
-8,text,1,,00:04:29,00:04:36,,#bloc3,size3,9,1,3,5,"maimed civilians
+id,type,part,parent,movie,from,to,param,target,classes,colonne,rang,width,height,texte
+1,part,0,,,,,,,,,,,,Prologue
+2,video,0,,1,00:00:30,00:04:14,,,,,,,,
+3,text,0,,,00:00:10,00:00:20,,#bloc1,"size4,center",7,5,10,6,A Richer Dust
+4,text,0,,,00:00:20,00:00:30,,#bloc2,,7,5,10,6,un projet du programme de recherche Lignes de front 1914-2018 de l'atelier de communication graphique de la Haute école des arts du Rhin (a partenariat avec l'atelier de scénographie et l'Académie).
+5,text,0,,,00:00:30,00:00:40,,#bloc2,,2,2,3,3,Nigel Clarck
+6,text,0,5,,00:00:30,00:00:40,,#bloc3,,2,5,3,3,Malene Sheppard
+7,part,1,,,,,,,,,,,,Still We Drudge in this Dark Maze
+8,video,1,,1,00:00:00,00:04:14,,,,,,,,
+9,text,1,,,00:00:00,00:00:05,,#bloc2,,,,,,I.Still We Drudge in this Dark Maze
+10,key,1,,,00:04:00,,,,,,,,,
+11,text,1,,,00:04:13,00:04:14,,#bloc1,size1,1,2,4,3,hear me—
+12,text,1,11,,00:04:15,00:04:27,,#bloc2,size2,4,2,10,1,"ten, nine, eight, seven, six, five, four, three, two, one…"
+13,light,1,11,,/,/,"from:0,to:100",,,,,,,
+14,text,1,11,,00:04:29,00:04:36,,#bloc3,size3,21,2,4,5,"maimed civilians
 killed, murdered
 unknown numbers
 soldiers missing too"
-9,text,1,,00:04:37,00:04:45,,#bloc4,size4,13,1,3,6,horror terror violence war
-10,text,1,,00:04:48,00:04:51,,#bloc1,,,,,,if only it was someone else’s son
-11,text,1,,00:04:52,00:04:54,,#bloc1,,,,,,mother screams
-12,text,1,,00:04:58,00:04:59,,#bloc1,,,,,,listen to me
-13,text,1,,00:05:02,00:05:05,,#bloc1,,,,,,war is the health of the state
-14,text,1,,00:05:17,00:05:25,,#bloc1,,,,,,dirtied bloodied stinking
-15,text,1,,00:05:31,00:05:33,,#bloc1,,,,,,prepare war for peace
-16,text,1,,00:05:35,00:05:43,,#bloc1,,,,,,"who do you believe ?
+15,text,1,11,,00:04:37,00:04:45,,#bloc4,size4,1,2,21,2,horror terror violence war
+16,text,1,,,00:04:48,00:04:51,,#bloc1,,21,2,4,1,if only it was someone else’s son
+17,text,1,,,00:04:52,00:04:54,,#bloc1,,1,2,4,1,mother screams
+18,text,1,,,00:04:58,00:04:59,,#bloc1,,6,2,4,1,listen to me
+19,text,1,,,00:05:02,00:05:05,,#bloc1,,21,2,4,1,war is the health of the state
+20,text,1,,,00:05:17,00:05:25,,#bloc1,,1,2,4,2,dirtied bloodied stinking
+21,text,1,,,00:05:31,00:05:33,,#bloc1,,1,2,4,1,prepare war for peace
+22,text,1,,,00:05:35,00:05:43,,#bloc1,,6,2,4,4,"who do you believe ?
 who do you choose to follow ?
 what to believe ?"
-17,text,1,,00:05:45,00:05:49,,#bloc1,,,,,,"prepare for peace, avoid war"
-18,text,1,,00:05:55,00:05:57,,#bloc1,,,,,,we tortured some folks
-19,text,1,,00:06:31,00:06:38,,#bloc1,,,,,,justify validate execute
-20,text,1,,00:06:39,00:06:42,,#bloc1,,,,,,third world starves
-21,text,1,,00:06:43,00:06:45,,#bloc1,,,,,,second world fight
-22,text,1,,00:06:47,00:06:49,,#bloc1,,,,,,first world feasts
-23,text,1,,00:06:58,00:07:02,,#bloc1,,,,,,do future threats justify violence ?
-24,text,1,,00:09:10,00:09:15,,#bloc1,,,,,,hit hurt hunt
-25,text,1,,00:09:16,00:09:18,,#bloc1,,,,,,are we ever justified ?
-26,text,1,,00:09:19,00:09:21,,#bloc1,,,,,,no one listens
-27,text,1,,00:09:22,00:09:25,,#bloc1,,,,,,thousands of memorial to the dead of the past
-28,text,1,,00:09:26,00:09:33,,#bloc1,,,,,,"honourable wars, soldiers
+23,text,1,,,00:05:45,00:05:49,,#bloc1,,1,2,4,1,"prepare for peace, avoid war"
+24,text,1,,,00:05:55,00:05:57,,#bloc1,,21,2,4,1,we tortured some folks
+25,text,1,,,00:06:31,00:06:38,,#bloc1,,1,2,21,2,justify validate execute
+26,text,1,,,00:06:39,00:06:42,,#bloc1,,1,2,4,1,third world starves
+27,text,1,,,00:06:43,00:06:45,,#bloc1,,12,2,4,1,second world fight
+28,text,1,,,00:06:47,00:06:49,,#bloc1,,21,2,4,1,first world feasts
+29,text,1,,,00:06:58,00:07:02,,#bloc1,,21,2,4,1,do future threats justify violence ?
+30,text,1,,,00:09:10,00:09:15,,#bloc1,,1,2,21,2,hit hurt hunt
+31,text,1,,,00:09:16,00:09:18,,#bloc1,,1,2,4,1,are we ever justified ?
+32,text,1,,,00:09:19,00:09:21,,#bloc1,,21,2,4,1,no one listens
+33,text,1,,,00:09:22,00:09:25,,#bloc1,,1,2,4,2,thousands of memorial to the dead of the past
+34,text,1,,,00:09:26,00:09:33,,#bloc1,,21,2,4,2,"honourable wars, soldiers
 pride ? propaganda ? truth ? memory?"
-29,text,1,,00:09:33,00:09:36,,#bloc1,,,,,,one memorial to the dead in the future
-30,text,1,,00:09:37,00:09:43,,#bloc1,,,,,,"atrocities, destruction, massacre
+35,text,1,,,00:09:33,00:09:36,,#bloc1,,1,2,4,1,one memorial to the dead in the future
+36,text,1,,,00:09:37,00:09:43,,#bloc1,,21,2,4,2,"atrocities, destruction, massacre
  air raids — who dies — died ?"
-31,text,1,,00:09:43,00:09:46,,#bloc1,,,,,,shaming those who refuse
-32,text,1,,00:09:46,00:09:51,,#bloc1,,,,,,"deserted, executed pacifist — it was his third tour"
-33,text,1,,00:09:52,00:09:56,,#bloc1,,,,,,world without war — dream ridiculed
-34,text,1,,00:09:56,00:10:03,,#bloc1,,,,,,"ignored, irrelevant civilians or just poor and peaceful"
-35,text,1,,00:10:03,00:10:06,,#bloc1,,,,,,"losing side — blamed, punished"
-36,text,1,,00:10:06,00:10:13,,#bloc1,,,,,,"out-witted, out-bedded, conquered
+37,text,1,,,00:09:43,00:09:46,,#bloc1,,1,2,4,1,shaming those who refuse
+38,text,1,,,00:09:46,00:09:51,,#bloc1,,21,2,4,2,"deserted, executed pacifist — it was his third tour"
+39,text,1,,,00:09:52,00:09:56,,#bloc1,,1,2,4,1,world without war — dream ridiculed
+40,text,1,,,00:09:56,00:10:03,,#bloc1,,21,2,4,2,"ignored, irrelevant civilians or just poor and peaceful"
+41,text,1,,,00:10:03,00:10:06,,#bloc1,,1,2,4,1,"losing side — blamed, punished"
+42,text,1,,,00:10:06,00:10:13,,#bloc1,,21,2,4,3,"out-witted, out-bedded, conquered
  — they should have known better
  losers as fault"
-37,text,1,,00:10:14,00:10:24,,#bloc1,,,,,,"I hate war
+43,text,1,,,00:10:14,00:10:24,,#bloc1,,1,2,4,5,"I hate war
  you love war ?
  I love my country
  that’s not the same
  how do you know — for sure"
-38,text,1,,00:11:55,00:12:04,,#bloc1,,,,,,maimed wounded crippled mangled
-39,text,1,,00:12:06,00:12:09,,#bloc1,,,,,,only sit at my table if I knew your grandfather
-40,text,1,,00:12:12,00:12:17,,#bloc1,,,,,,casualties fatalities
-41,text,1,,00:12:18,00:12:22,,#bloc1,,,,,,I have earned the right to my opinion
-42,text,1,,00:12:24,00:12:42,,#bloc1,,,,,,"Civil War, Great War, World War,
+44,text,1,,,00:11:55,00:12:04,,#bloc1,,4,2,21,2,maimed wounded crippled mangled
+45,text,1,,,00:12:06,00:12:09,,#bloc1,,1,2,4,1,only sit at my table if I knew your grandfather
+46,text,1,,,00:12:12,00:12:17,,#bloc1,,4,2,21,2,casualties fatalities
+47,text,1,,,00:12:18,00:12:22,,#bloc1,,1,2,4,1,I have earned the right to my opinion
+48,text,1,,,00:12:24,00:12:42,,#bloc1,,21,2,4,5,"Civil War, Great War, World War,
 Hundred Years War, Thirty Years War, War of the Triple Alliance,
 War on Terror, Overseas Contingency Operation"
-43,text,1,,00:12:43,00:12:49,,#bloc1,,,,,,"there is never one point of view
+49,text,1,,,00:12:43,00:12:49,,#bloc1,,1,2,4,3,"there is never one point of view
 one interest
 one consequence"
-44,text,1,,00:12:49,00:12:53,,#bloc1,,,,,,money love power money
-45,text,1,,00:12:53,00:13:00,,#bloc1,,,,,,"started and finished in an instance
+50,text,1,,,00:12:49,00:12:53,,#bloc1,,4,2,21,2,money love power money
+51,text,1,,,00:12:53,00:13:00,,#bloc1,,4,2,4,2,"started and finished in an instance
 pointless, never-ending, pause for peace"
-46,text,1,,00:13:00,00:13:03,,#bloc1,,,,,,"for God, king and country"
-47,text,1,,00:13:03,00:13:06,,#bloc1,,,,,,they shall not grow old —
-48,text,1,,00:14:12,00:14:16,,#bloc1,,,,,,dead deadly done
-49,text,1,,00:14:16,00:14:18,,#bloc1,,,,,,— we are of our time
-50,text,1,,00:14:19,00:14:20,,#bloc1,,,,,,out of time
-51,part,,,,,,,,,,,,Living picture of the dead
-52,text,2,,00:00:00,00:00:05,,#bloc1,,,,,,II.Living Pictures of the Dead
-53,text,2,,00:00:15,00:00:22,,#bloc1,,,,,,they them themselves theirs
-54,text,2,,00:00:32,00:00:39,,#bloc1,,,,,,"what images do you remember?
+52,text,1,,,00:13:00,00:13:03,,#bloc1,,21,2,4,1,"for God, king and country"
+53,text,1,,,00:13:03,00:13:06,,#bloc1,,1,2,4,1,they shall not grow old —
+54,text,1,,,00:14:12,00:14:16,,#bloc1,,4,2,21,2,dead deadly done
+55,text,1,,,00:14:16,00:14:18,,#bloc1,,21,2,4,1,— we are of our time
+56,text,1,,,00:14:19,00:14:20,,#bloc1,,21,2,4,1,out of time
+57,part,2,,,,,,,,,,,,Living picture of the dead
+58,video,2,,1,,,,,,,,,,
+59,text,2,,,00:00:00,00:00:05,,#bloc1,,,,,,II.Living Pictures of the Dead
+60,text,2,,,00:00:15,00:00:22,,#bloc1,,,,,,they them themselves theirs
+61,text,2,,,00:00:32,00:00:39,,#bloc1,,,,,,"what images do you remember?
 what images do they want you to remember?
 forever"
-55,text,2,,00:01:09,00:01:23,,#bloc1,,,,,,"— they came in the middle of the night
+62,text,2,,,00:01:09,00:01:23,,#bloc1,,,,,,"— they came in the middle of the night
 — they bombed my house
 — they left me behind to die
 — they started it
 — it is their fault"
-56,text,2,,00:01:34,00:01:47,,#bloc1,,,,,,"strings for indoors — violin, harp — singing, dancing, flirting
+63,text,2,,,00:01:34,00:01:47,,#bloc1,,,,,,"strings for indoors — violin, harp — singing, dancing, flirting
 winds for outdoors — trumpets, drums — hunting, fighting, marching"
-57,text,2,,00:02:37,00:02:45,,#bloc1,,,,,,"thou shalt not kill
+64,text,2,,,00:02:37,00:02:45,,#bloc1,,,,,,"thou shalt not kill
 thou shalt love thy neighbour as thyself"
-58,text,2,,00:02:46,00:02:54,,#bloc1,,,,,,"war
+65,text,2,,,00:02:46,00:02:54,,#bloc1,,,,,,"war
 destruction, profits
 hidden artefacts, uncovered, past, present, future"
-59,text,2,,00:02:56,00:03:00,,#bloc1,,,,,,"Boston Marathon
+66,text,2,,,00:02:56,00:03:00,,#bloc1,,,,,,"Boston Marathon
 3 dead"
-60,text,2,,00:03:01,00:03:08,,#bloc1,,,,,,"shaking band
+67,text,2,,,00:03:01,00:03:08,,#bloc1,,,,,,"shaking band
 fear, anxiety
 excitement, love"
-61,text,2,,00:03:30,00:03:39,,#bloc1,,,,,,"World War One
+68,text,2,,,00:03:30,00:03:39,,#bloc1,,,,,,"World War One
 estimated 17 million dead"
-62,text,2,,00:03:46,00:03:51,,#bloc1,,,,,,"white feather
+69,text,2,,,00:03:46,00:03:51,,#bloc1,,,,,,"white feather
 coward
 angel"
-63,text,2,,00:04:17,00:04:22,,#bloc1,,,,,,"7/7
+70,text,2,,,00:04:17,00:04:22,,#bloc1,,,,,,"7/7
 52 dead"
-64,text,2,,00:04:22,00:04:27,,#bloc1,,,,,,"red rose, white rose
+71,text,2,,,00:04:22,00:04:27,,#bloc1,,,,,,"red rose, white rose
 red poppy, white poppy"
-65,text,2,,00:04:27,00:04:33,,#bloc1,,,,,,"World War Two
+72,text,2,,,00:04:27,00:04:33,,#bloc1,,,,,,"World War Two
 50 - 70 million people dead"
-66,text,2,,00:04:34,00:04:38,,#bloc1,,,,,,"father carries his son
+73,text,2,,,00:04:34,00:04:38,,#bloc1,,,,,,"father carries his son
 wounded
 game, love"
-67,text,2,,00:04:39,00:04:49,,#bloc1,,,,,,"Hiroshima Nagasaki
+74,text,2,,,00:04:39,00:04:49,,#bloc1,,,,,,"Hiroshima Nagasaki
 129,000 - 246,000 dead"
-68,text,2,,00:04:49,00:04:54,,#bloc1,,,,,,"shovel
+75,text,2,,,00:04:49,00:04:54,,#bloc1,,,,,,"shovel
 weapon, tool
 death, life"
-69,text,2,,00:04:55,00:05:01,,#bloc1,,,,,,"Luxor, Egypt- massacre
+76,text,2,,,00:04:55,00:05:01,,#bloc1,,,,,,"Luxor, Egypt- massacre
 62 dead - tourists targeted"
-70,text,2,,00:05:01,00:05:06,,#bloc1,,,,,,"fight
+77,text,2,,,00:05:01,00:05:06,,#bloc1,,,,,,"fight
 war, not at all
 playground spart"
-71,text,2,,00:05:15,00:05:28,,#bloc1,,,,,,"Iraq
+78,text,2,,,00:05:15,00:05:28,,#bloc1,,,,,,"Iraq
 half a million war-related deaths
 4,486 dead service men and women"
-72,text,2,,00:05:28,00:05:36,,#bloc1,,,,,,"women don't fight wars
+79,text,2,,,00:05:28,00:05:36,,#bloc1,,,,,,"women don't fight wars
 bare-breasted, shield-maiden, myth denied,
 a peaceful world if run by women"
-73,text,2,,00:05:37,00:05:44,,#bloc1,,,,,,"Tokyo Firebombing
+80,text,2,,,00:05:37,00:05:44,,#bloc1,,,,,,"Tokyo Firebombing
 125,000 dead"
-74,text,2,,00:05:44,00:05:50,,#bloc1,,,,,,"Syria
+81,text,2,,,00:05:44,00:05:50,,#bloc1,,,,,,"Syria
 Estimated 200,000 dead and counting"
-75,text,2,,00:05:51,00:05:56,,#bloc1,,,,,,"castle
+82,text,2,,,00:05:51,00:05:56,,#bloc1,,,,,,"castle
 protectors of common people
 protected from common people"
-76,text,2,,00:05:56,00:06:02,,#bloc1,,,,,,"church
+83,text,2,,,00:05:56,00:06:02,,#bloc1,,,,,,"church
 comfort, knowledge,
 obligation, hypnotic rhythms, shapes"
-77,text,2,,00:06:03,00:06:09,,#bloc1,,,,,,"9/11
+84,text,2,,,00:06:03,00:06:09,,#bloc1,,,,,,"9/11
 2,996 dead"
-78,text,2,,00:06:10,00:06:15,,#bloc1,,,,,,"army
+85,text,2,,,00:06:10,00:06:15,,#bloc1,,,,,,"army
 honourable protectors —
 uniforms marching, obeying in time"
-79,text,2,,00:06:16,00:06:24,,#bloc1,,,,,,"Oslo, Norway
+86,text,2,,,00:06:16,00:06:24,,#bloc1,,,,,,"Oslo, Norway
 77 youths ( communists?) dead"
-80,text,2,,00:06:24,00:06:29,,#bloc1,,,,,,"twisted metal
+87,text,2,,,00:06:24,00:06:29,,#bloc1,,,,,,"twisted metal
 jewellery
 building tarn apart"
-81,text,2,,00:06:30,00:06:34,,#bloc1,,,,,,— are people killed in war or do they die?
-82,text,2,,00:06:35,00:06:44,,#bloc1,,,,,,"the battle of Waterloo was won on the playing-fields of Eton;
+88,text,2,,,00:06:30,00:06:34,,#bloc1,,,,,,— are people killed in war or do they die?
+89,text,2,,,00:06:35,00:06:44,,#bloc1,,,,,,"the battle of Waterloo was won on the playing-fields of Eton;
 the opening battles of all subsequent wars have been lost there"
-83,text,2,,00:07:11,00:07:13,,#bloc1,,,,,,child's body in the street
-84,text,2,,00:07:45,00:07:53,,#bloc1,,,,,,"road accidents
+90,text,2,,,00:07:11,00:07:13,,#bloc1,,,,,,child's body in the street
+91,text,2,,,00:07:45,00:07:53,,#bloc1,,,,,,"road accidents
 1,240,000 killed - worldwide annually"
-85,text,2,,00:07:57,00:08:00,,#bloc1,,,,,,man hangs dead on barbed wire
-86,text,2,,00:08:08,00:08:17,,#bloc1,,,,,,"american guns
+92,text,2,,,00:07:57,00:08:00,,#bloc1,,,,,,man hangs dead on barbed wire
+93,text,2,,,00:08:08,00:08:17,,#bloc1,,,,,,"american guns
 yearly 31,000 killed, 19,000 are suicides"
-87,text,2,,00:08:26,00:08:29,,#bloc1,,,,,,woman raped in front of officials
-88,text,2,,00:08:32,00:08:35,,#bloc1,,,,,,"hunger
+94,text,2,,,00:08:26,00:08:29,,#bloc1,,,,,,woman raped in front of officials
+95,text,2,,,00:08:32,00:08:35,,#bloc1,,,,,,"hunger
 kills 25,000 a day"
-89,text,2,,00:08:39,00:08:42,,#bloc1,,,,,,soldier pours buming wax on woman
-90,text,2,,00:08:43,00:08:50,,#bloc1,,,,,,"rape
+96,text,2,,,00:08:39,00:08:42,,#bloc1,,,,,,soldier pours buming wax on woman
+97,text,2,,,00:08:43,00:08:50,,#bloc1,,,,,,"rape
 250,000 cases reported in 65 countries annually"
-91,text,2,,00:08:51,00:08:52,,#bloc1,,,,,,man beaten by police
-92,text,2,,00:08:53,00:08:58,,#bloc1,,,,,,"smoking, alcohol, drugs
+98,text,2,,,00:08:51,00:08:52,,#bloc1,,,,,,man beaten by police
+99,text,2,,,00:08:53,00:08:58,,#bloc1,,,,,,"smoking, alcohol, drugs
 kills — impossible to count"
-93,text,2,,00:08:59,00:08:05,,#bloc1,,,,,,"pandora's box of death, disease, evil, torture, released"
-94,text,2,,00:10:38,00:10:45,,#bloc1,,,,,,"— how do we warn the next generations
+100,text,2,,,00:08:59,00:08:05,,#bloc1,,,,,,"pandora's box of death, disease, evil, torture, released"
+101,text,2,,,00:10:38,00:10:45,,#bloc1,,,,,,"— how do we warn the next generations
 — a thousand years in the future?"
-95,text,2,,00:10:56,00:12:05,,#bloc1,,,,,,"tub-flies, maggots, impaled, brazen bull, heretic
+102,text,2,,,00:10:56,00:12:05,,#bloc1,,,,,,"tub-flies, maggots, impaled, brazen bull, heretic
 fork-head held high, cement shoes, judas cradle,
 brown rats, tongue tearer, rack, eaten by crows,
 thumbscrew, breast ripper, bleeding, submission,
@@ -171,46 +177,55 @@ monks, breaking wheel, spanish donkey/wooden
 horse, guillotine, prison of terror, crucifixion, rope,
 rape, roasting, water boarding
 — kind one day, evil the next"
-96,text,2,,00:12:10,00:12:19,,#bloc1,,,,,,"false confessions, cheap, on-going
+103,text,2,,,00:12:10,00:12:19,,#bloc1,,,,,,"false confessions, cheap, on-going
 — damage, permanent —
 on the pain of death"
-97,text,2,,00:12:27,00:12:32,,#bloc1,,,,,,... this world in arms spends the hopes of its children
-98,text,2,,00:12:46,00:12:52,,#bloc1,,,,,,"I dream of a child who asks: 'what was war, weapons, violence?'"
-99,text,2,,00:12:58,00:13:01,,#bloc1,,,,,,— a multi-billion dollar industry
-100,text,2,,00:13:06,00:13:08,,#bloc1,,,,,,we've lost empathy
-101,text,2,,00:13:16,00:13:27,,#bloc1,,,,,,I me myself mine
-102,part,3,,,,,,,,,,,Other flowers rise
-103,text,3,,00:00:00,00:00:05,,#bloc1,,,,,,III.Other Flowers Rise
-104,text,3,,00:01:43,00:00:00,,#bloc1,,,,,,"Arabic, African, American, Asian, Inuit, European, Extremist"
-105,text,3,,00:02:18,,,#bloc1,,,,,,"Christian, Jewish, Hindu, Muslim, Buddhist, Atheist, Anarchist, Extremist"
-106,text,3,,00:02:35,,,#bloc1,,,,,,"Racist, Anti-Semitic, Pro-terrorist, Sexist, Extremist"
-107,text,3,,00:03:10,,,#bloc1,,,,,,"Fascist, Communist, Socialist, Conservative, Traditionalist, Extremist"
-108,text,3,,,,,#bloc1,,,,,,"Man, Woman, Child, Soldier, Politician, Civilian, Extremist"
-109,text,3,,00:03:44,,,#bloc1,,,,,,"Bully, Master, King, Queen, Emperor, Empress, President, Pope, God, Extremist"
-110,text,3,,00:03:52,,,#bloc1,,,,,,"Slave, Illegal, Hybrid, Common, Nobody, Somebody, Anybody, Extremist"
-111,text,3,,,,,#bloc1,,,,,,"Freedom fighter, Protector, Liberator, Peace keeper, Saviour, Extremist"
-112,text,3,,,,,#bloc1,,,,,,"Soldier, Warrior, Raider, Crusader, Invader, Attacker, Extremist"
-113,text,3,,,,,#bloc1,,,,,,"Victim, Maimed, Wounded, Missing, Dead, Extremist"
-114,text,3,,,,,#bloc1,,,,,,"Rich, Poor, Gunslinger, Mass-Murder, Pacifist, Populist, Extremist"
-115,text,3,,,,,#bloc1,,,,,,"Unknown, Known, Anonymous, Innocent, Guilty, Extremist"
-116,text,3,,,,,#bloc1,,,,,,"Vain, Lustful, Gluttonous, Greedy, ldle, Angry, Envious, Proud, Extremist"
-117,text,3,,,,,#bloc1,,,,,,"Virtuous, Bored, Billionaire, Employed, Enlightened, Privileged, Mediocre, Extremist"
-118,text,3,,,,,#bloc1,,,,,,"Eco-terrorist, Corporate-terrorist, Religious-terrorist, Cultural-terrorist, Extremist"
-119,text,3,,,,,#bloc1,,,,,,"Hero, Heroine, Victor, Winner, Favourite, Ideal, White Knight, Extremist"
-120,text,3,,,,,#bloc1,,,,,,"Radical, Fanatic, Devoted, Revolutionist, Extremist"
-121,text,3,,,,,#bloc1,,,,,,"Coward, Sissy, Chicken, Mouse, Scaredy-Cat, Weakling, Extremist"
-122,text,3,,,,,#bloc1,,,,,,"Reasonable, Sensible, Restrained, Temperate, Practical, Realistic, Liberal, Moderate"
-123,text,3,,,,,#bloc1,,,,,,Moderate Extremist — Extremist Moderate
-124,text,3,,,,,#bloc1,,,,,,"Does one need to Love ? Don't ask, feel it."
-125,part,4,,,,,,,,,,,"The larks, still bravely singing"
-126,text,4,,00:00:00,00:00:05,,#bloc1,,,,,,"IV.The Larks, Still Bravely Singing"
-127,text,4,,00:01:20,00:01:39,,#bloc1,,,,,,"I believe that order is better than chaos,
+104,text,2,,,00:12:27,00:12:32,,#bloc1,,,,,,... this world in arms spends the hopes of its children
+105,text,2,,,00:12:46,00:12:52,,#bloc1,,,,,,"I dream of a child who asks: 'what was war, weapons, violence?'"
+106,text,2,,,00:12:58,00:13:01,,#bloc1,,,,,,— a multi-billion dollar industry
+107,text,2,,,00:13:06,00:13:08,,#bloc1,,,,,,we've lost empathy
+108,text,2,,,00:13:16,00:13:27,,#bloc1,,,,,,I me myself mine
+109,part,3,,,,,,,,,,,,Other flowers rise
+110,video,3,,1,,,,,,,,,,
+111,text,3,,,00:00:00,00:00:05,,#bloc1,,,,,,III.Other Flowers Rise
+112,text,3,,,00:01:43,00:00:00,,#bloc1,size1,4,1,2,2,"Arabic, African, American, Asian, Inuit, European, Extremist"
+113,text,3,112,,00:01:43,00:00:00,,#bloc2,size1,6,1,2,2,African
+114,text,3,112,,00:01:43,00:00:00,,#bloc3,size1,8,1,2,2,American
+115,text,3,112,,00:01:43,00:00:00,,#bloc4,size1,10,1,2,2,Asian
+116,text,3,112,,00:01:43,00:00:00,,#bloc5,size1,12,1,2,2,Inuit
+117,text,3,112,,00:01:43,00:00:00,,#bloc6,size1,14,1,2,2,European
+118,text,3,112,,00:01:43,00:00:00,,#bloc7,size1,16,1,2,2,Extremist
+113,text,3,112,,00:02:18,,,#bloc8,size1,18,1,2,2,"Christian, Jewish, Hindu, Muslim, Buddhist, Atheist, Anarchist, Extremist"
+114,text,3,112,,00:02:18,,,#bloc9,size1,4,3,2,2,Jewish
+114,text,3,112,,00:02:35,,,#bloc10,size1,6,3,2,2,"Racist, Anti-Semitic, Pro-terrorist, Sexist, Extremist"
+115,text,3,112,,00:03:10,,,#bloc11,size1,8,3,2,2,"Fascist, Communist, Socialist, Conservative, Traditionalist, Extremist"
+116,text,3,112,,,,,#bloc12,size1,10,3,2,2,"Man, Woman, Child, Soldier, Politician, Civilian, Extremist"
+117,text,3,112,,00:03:44,,,#bloc13,size1,12,3,2,2,"Bully, Master, King, Queen, Emperor, Empress, President, Pope, God, Extremist"
+118,text,3,112,,00:03:52,,,#bloc14,size1,14,3,2,2,"Slave, Illegal, Hybrid, Common, Nobody, Somebody, Anybody, Extremist"
+119,text,3,112,,,,,#bloc15,size1,16,3,2,2,"Freedom fighter, Protector, Liberator, Peace keeper, Saviour, Extremist"
+120,text,3,112,,,,,#bloc16,size1,18,3,2,2,"Soldier, Warrior, Raider, Crusader, Invader, Attacker, Extremist"
+121,text,3,112,,,,,#bloc17,size1,4,5,2,2,"Victim, Maimed, Wounded, Missing, Dead, Extremist"
+122,text,3,112,,,,,#bloc18,size1,6,5,2,2,"Rich, Poor, Gunslinger, Mass-Murder, Pacifist, Populist, Extremist"
+123,text,3,112,,,,,#bloc19,size1,8,5,2,2,"Unknown, Known, Anonymous, Innocent, Guilty, Extremist"
+124,text,3,112,,,,,#bloc20,size1,10,5,2,2,"Vain, Lustful, Gluttonous, Greedy, ldle, Angry, Envious, Proud, Extremist"
+125,text,3,112,,,,,#bloc21,size1,12,5,2,2,"Virtuous, Bored, Billionaire, Employed, Enlightened, Privileged, Mediocre, Extremist"
+126,text,3,112,,,,,#bloc22,size1,14,5,2,2,"Eco-terrorist, Corporate-terrorist, Religious-terrorist, Cultural-terrorist, Extremist"
+127,text,3,112,,,,,#bloc23,size1,16,5,2,2,"Hero, Heroine, Victor, Winner, Favourite, Ideal, White Knight, Extremist"
+128,text,3,112,,,,,#bloc24,size1,18,5,2,2,"Radical, Fanatic, Devoted, Revolutionist, Extremist"
+129,text,3,112,,,,,#bloc25,size1,4,7,2,2,"Coward, Sissy, Chicken, Mouse, Scaredy-Cat, Weakling, Extremist"
+130,text,3,112,,,,,#bloc26,size1,6,7,2,2,"Reasonable, Sensible, Restrained, Temperate, Practical, Realistic, Liberal, Moderate"
+131,text,3,112,,,,,#bloc27,size1,8,7,2,2,Moderate Extremist — Extremist Moderate
+132,text,3,,,,,,#bloc1,,,,,,"Does one need to Love ? Don't ask, feel it."
+133,part,4,,,,,,,,,,,,"The larks, still bravely singing"
+134,video,4,,1,,,,,,,,,,
+135,text,4,,,00:00:00,00:00:05,,#bloc1,,,,,,"IV.The Larks, Still Bravely Singing"
+136,text,4,,,00:01:20,00:01:39,,#bloc1,,,,,,"I believe that order is better than chaos,
 creation is better than destruction.
 I prefer gentleness to violence,
 forgiveness to vendetta,
 knowledge to ignorance.
 I believe in courtesy"
-128,text,4,,00:03:25,00:04:08,,#bloc1,,,,,,"candles in the dark of winter
+137,text,4,,,00:03:25,00:04:08,,#bloc1,,,,,,"candles in the dark of winter
 kiss under a full moon
 kicking up dead leaves
 whirlwind
@@ -226,13 +241,13 @@ nightingale singing at midnight
 fresh sheets
 smile from a stranger
 joy of expectation"
-129,text,4,,00:04:10,00:04:13,,#bloc1,,,,,,small delights make us human
-130,text,4,,00:04:23,00:04:33,,#bloc1,,,,,,"We all breathe the same air. We all cherish our children's future.
+138,text,4,,,00:04:10,00:04:13,,#bloc1,,,,,,small delights make us human
+139,text,4,,,00:04:23,00:04:33,,#bloc1,,,,,,"We all breathe the same air. We all cherish our children's future.
 And we are all mortal."
-131,text,4,,00:04:37,00:04:41,,#bloc1,,,,,,in that rich earth a richer dust
-132,text,4,,00:04:43,00:04:46,,#bloc1,,,,,,who are the terrorists now?
-133,text,4,,/,/,,#bloc1,,,,,,"Words, thoughts, ideas, images, and inspiration liberally borrowed and quoted from:"
-134,text,4,,/,/,,#bloc1,,,,,,"Amnesty International, Elizabeth Wayland Barber, Dominique P. Behague, Jennifer
+140,text,4,,,00:04:37,00:04:41,,#bloc1,,,,,,in that rich earth a richer dust
+141,text,4,,,00:04:43,00:04:46,,#bloc1,,,,,,who are the terrorists now?
+142,text,4,,,/,/,,#bloc1,,,,,,"Words, thoughts, ideas, images, and inspiration liberally borrowed and quoted from:"
+143,text,4,,,/,/,,#bloc1,,,,,,"Amnesty International, Elizabeth Wayland Barber, Dominique P. Behague, Jennifer
 Bendery, Thomas Bendixen, Laurence Binyon, Henri Lucien Chaffer, Dover Arts
 Development, Rupert Brook, Edmund Blunden, Jens Breivik, Randolph Bourne,
 Charles Chaplin, Diana Shaw Clark, Kenneth Clarke, Nigel Clarke, Dwight D.
@@ -250,13 +265,16 @@ Skrerved, Mattias Skrerved, Paul Vemer Skrerved, Reed Thomas, Ulla Skrerved, Ell
 Strange Petersen, Reed Thomas, Lady Butler/Elizabeth Southerden Thompson, Henry
 Tonks, War Registers' International, Louise Vale, Louis Weirter, Benjamin West, Jon
 Wiant, amongst many more."
-135,text,4,,00:09:46,00:09:55,,#bloc1,,,,,,horror terror violence war
-136,text,4,,00:10:01,00:10:06,,#bloc1,,,,,,dirtied bloodied stinking
-137,text,4,,00:10:07,00:10:14,,#bloc1,,,,,,justify validate execute
-138,text,4,,00:10:17,00:10:23,,#bloc1,,,,,,hit hurt hunt
-139,text,4,,00:10:24,00:10:40,,#bloc1,,,,,,maimed wounded crippled mangled
-140,text,4,,00:10:41,00:10:45,,#bloc1,,,,,,casualties fatalities
-141,text,4,,00:10:45,00:10:53,,#bloc1,,,,,,money love power money
-142,text,4,,00:10:54,00:10:59,,#bloc1,,,,,,dead deadly done
-143,text,4,,00:11:01,00:11:08,,#bloc1,,,,,,they them themselves theirs
-144,text,4,,00:11:09,00:11:17,,#bloc1,,,,,,I me myself mine
+144,text,4,,,00:09:46,00:09:55,,#bloc1,,,,,,horror terror violence war
+145,text,4,,,00:10:01,00:10:06,,#bloc1,,,,,,dirtied bloodied stinking
+146,text,4,,,00:10:07,00:10:14,,#bloc1,,,,,,justify validate execute
+147,text,4,,,00:10:17,00:10:23,,#bloc1,,,,,,hit hurt hunt
+148,text,4,,,00:10:24,00:10:40,,#bloc1,,,,,,maimed wounded crippled mangled
+149,text,4,,,00:10:41,00:10:45,,#bloc1,,,,,,casualties fatalities
+150,text,4,,,00:10:45,00:10:53,,#bloc1,,,,,,money love power money
+151,text,4,,,00:10:54,00:10:59,,#bloc1,,,,,,dead deadly done
+152,text,4,,,00:11:01,00:11:08,,#bloc1,,,,,,they them themselves theirs
+153,text,4,,,00:11:09,00:11:17,,#bloc1,,,,,,I me myself mine
+154,part,5,,,,,,,,,,,,Générique
+155,video,5,,1,,,,,,,,,,
+156,text,5,,,,,,#bloc1,,,,,,
