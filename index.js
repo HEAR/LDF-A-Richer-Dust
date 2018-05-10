@@ -23,7 +23,7 @@ const udp 		= require('dgram');
 const clc 		= require('cli-color');
 // console.log(clc.red('Text in red'));
  
-const csvjson = require('csvjson');
+const csvjson 	= require('csvjson');
 
 
 var abbletonJSON = {};
@@ -49,9 +49,9 @@ function getIPAddress() {
     var iface = interfaces[devName];
 
     for (var i = 0; i < iface.length; i++) {
-      var alias = iface[i];
-      if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal)
-        return alias.address;
+    	var alias = iface[i];
+    	if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal)
+    		return alias.address;
     	// console.log(alias, alias.adress);
     }
   }
