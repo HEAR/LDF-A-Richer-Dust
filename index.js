@@ -81,12 +81,14 @@ io.on('connection', function(socket){
 		console.log('user disconnected');
 	});
 
+	// LORSQUE L'ON RECOIT UN « text message » 
 	socket.on('text message', function(msg){
 		io.emit('text message', msg);
 		console.log('text message', msg);
 	});
 
 
+	// LORSQUE L'ON RECOIT UN « interface message » 
 	socket.on("interface message", function(msg){
 	
 		if(msg.switchgrid === true){
@@ -117,6 +119,8 @@ io.on('connection', function(socket){
 		console.log('interface message', msg);
 	});
 
+
+	// LORSQUE L'ON RECOIT UN « light message » 
 	socket.on('light message', function(msg){
 		// io.emit('light message', msg);
 		console.log('light message', msg.value);
@@ -126,6 +130,7 @@ io.on('connection', function(socket){
 		}
 	});
 
+	// LORSQUE L'ON RECOIT UN « osc message » 
 	socket.on('osc message', function(msg){
 		console.log(msg)
 		// io.emit('chat message', msg);
@@ -151,14 +156,21 @@ io.on('connection', function(socket){
 	});
 });
 
-
-abbletonInterval = setInterval(abbletonSender, 1000);
+// Pour envoyer les messages abbleton à intervale régulier
+if(param.isAbbleton !== false){
+	abbletonInterval = setInterval(abbletonSender, param.milliAbbleton);
+}
 
 function abbletonSender(){
 	console.log("socket emit abbleton", abbletonJSON);
 
 	io.emit('abbleton message', abbletonJSON);
 }
+
+
+
+
+
 
 // https://github.com/russellmcc/node-osc-min
 // http://sonicbloom.net/en/livegrabber-to-sendreceive-osc-in-ableton-live/
