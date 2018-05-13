@@ -39,6 +39,11 @@ $(function () {
 
 	loadConducteur();
 
+
+	/**
+	 * [loadConducteur description]
+	 * @return {[type]} [description]
+	 */
 	function loadConducteur(){
 
 		$("#parties").empty();
@@ -96,6 +101,11 @@ $(function () {
 	}
 
 
+	/**
+	 * [description]
+	 * @param  {[type]}
+	 * @return {[type]}
+	 */
 	$("body").keyup(function(event){
 		// console.log(event.key, shortcuts);
 
@@ -105,6 +115,14 @@ $(function () {
 			console.log("raccourci trouvé => " + shortcuts[event.key] );
 
 			jump( shortcuts[event.key] );
+
+		}else if(event.originalEvent.key == " "){
+
+			console.log('on essaye de lancer le prochain bloc actif');
+
+			$(".stacked").trigger("click");
+
+
 		}else{
 			console.log("pas de raccourci");
 		}
