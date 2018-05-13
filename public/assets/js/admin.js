@@ -283,6 +283,11 @@ $(function () {
 		$("#lights").empty();
 
 
+		socket.emit('clear message', {
+			param: { blocs : 'all' }
+		} );
+
+
 		console.log( "PARTIE n°"+ _id );
 
 		// console.log(dataConducteur);
@@ -384,6 +389,50 @@ $(function () {
 						});
 
 						$("#videos").append( elem );
+
+					break;
+
+					case "clear" :
+
+						elem = $("<li>")
+							.attr("id", "event-"+dataConducteur[i].id)
+							.text("CLEAR : " + dataConducteur[i].param)
+							.data("parent", dataConducteur[i].parent)
+							.data("from", timestamp(dataConducteur[i].from))
+							.data("to", timestamp(dataConducteur[i].to))
+							.data("param", {
+								blocs	: dataConducteur[i].param
+							}) ;
+
+						elem.click(function(event){
+							$(this).addClass("activated");
+
+							let ID = $(this).attr("id").split("-")[1];
+
+							console.log( "ID", ID, "parent", $(this).data("parent"), $(this).data("from") , $(this).data("to") );
+
+							// $("[data-parent='" + ID + "']").trigger("click");
+
+
+							// console.log( $("li[parent="+ID+"]") );
+							// https://api.jqueryui.com/data-selector/
+							let enfants =  $("li:data(parent):not(.activated)");
+
+
+							enfants.each(function(){
+								if( $(this).data("parent") === ID ){
+									$(this).trigger("click");
+								}
+							});
+
+						
+
+							socket.emit('clear message', {
+								param:$(this).data("param")
+							} );
+						});
+
+						$("#messages").append( elem );
 
 					break;
 

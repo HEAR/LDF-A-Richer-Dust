@@ -127,6 +127,43 @@ $(function () {
 	});
 
 
+	socket.on('clear message', function(msg){
+
+		console.log(msg);
+
+		// $('#bloc1').text( msg.text );	
+		
+		let liste = msg.param.blocs.split(",");
+
+		console.log(liste);
+
+		if( liste.indexOf("all") != -1){
+			$(".message")
+				.text("")
+				.removeClassStartingWith("size")
+				.css("left",0)
+				.css("top",0)
+				.css("width",0)
+				.css("height",0)
+				.css("display","none");
+		}else{
+
+			liste.forEach(function(element) {
+				$("#"+element)
+					.text("")
+					.removeClassStartingWith("size")
+					.css("left",0)
+					.css("top",0)
+					.css("width",0)
+					.css("height",0)
+					.css("display","none");
+			});
+
+		}
+
+	});
+
+
 
 	socket.on('interface message', function(msg){
 
@@ -163,3 +200,17 @@ $(function () {
 	});
 
 });
+
+
+/**
+ * [removeClassStartingWith description]
+ * https://stackoverflow.com/questions/2644299/jquery-removeclass-wildcard#5182103
+ * @param  {[type]} filter [description]
+ * @return {[type]}        [description]
+ */
+$.fn.removeClassStartingWith = function (filter) {
+    $(this).removeClass(function (index, className) {
+        return (className.match(new RegExp("\\S*" + filter + "\\S*", 'g')) || []).join(' ')
+    });
+    return this;
+};

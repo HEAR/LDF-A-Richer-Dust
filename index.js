@@ -76,15 +76,21 @@ app.use( express.static('public') )
 // });
 
 io.on('connection', function(socket){
-	console.log('a user connected');
+	// console.log('a user connected');
 	socket.on('disconnect', function(){
-		console.log('user disconnected');
+		// console.log('user disconnected');
 	});
 
 	// LORSQUE L'ON RECOIT UN « text message » 
 	socket.on('text message', function(msg){
 		io.emit('text message', msg);
 		console.log('text message', msg);
+	});
+
+	// LORSQUE L'ON RECOIT UN « clear message » 
+	socket.on('clear message', function(msg){
+		io.emit('clear message', msg);
+		console.log('clear message', msg);
 	});
 
 
@@ -250,9 +256,9 @@ sock.bind(portOSC);
 
 
 http.listen(port, function(){
-	console.log("HTML server is :         "+clc.blue("http://"+ getIPAddress() +":"+ port) );
-	console.log("ADMIN :                  "+clc.cyanBright("http://"+ getIPAddress() +":"+ port + "/admin.html") );
-	console.log("TYPO  :                  "+clc.cyanBright("http://"+ getIPAddress() +":"+ port + "/index.html") );
+	console.log("HTML server is :         " + clc.blue("http://" + getIPAddress() + ":" + port) );
+	console.log("ADMIN :                  " + clc.cyanBright("http://" + getIPAddress() + ":" + port + "/admin.html") );
+	console.log("SCENE :                  " + clc.cyanBright("http://" + getIPAddress() + ":" + port + "/scene.html") );
 });
 
 
