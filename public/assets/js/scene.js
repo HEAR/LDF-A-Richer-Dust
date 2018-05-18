@@ -12,6 +12,8 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 	    // Recherche la famille dans la liste de projets
 	    var family = fonts.find(function (font) {
+	    	console.log(font);
+
 	        return font.name === fontName; //'test-richer-dust';
 	    });
 	    // Recherche la variante dans les variantes de la famille
@@ -96,28 +98,28 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 
 
-window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-                              window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+// window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+//                               window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
 
-var start = null;
+// var start = null;
 
-var d = document.getElementById("scene");
+// var d = document.getElementById("scene");
 
-function step(timestamp) {
-	var progress;
-	if (start === null) start = timestamp;
-	progress = timestamp - start;
-	d.style.left = Math.min(progress/10, 200) + "px";
+// function step(timestamp) {
+// 	var progress;
+// 	if (start === null) start = timestamp;
+// 	progress = timestamp - start;
+// 	d.style.left = Math.min(progress/10, 200) + "px";
 	
-	if (progress < 2000) {
-		requestAnimationFrame(step);
-	}
-}
+// 	if (progress < 2000) {
+// 		requestAnimationFrame(step);
+// 	}
+// }
 
 
 
-requestAnimationFrame(step);
+// requestAnimationFrame(step);
 
 
 $(function () {
