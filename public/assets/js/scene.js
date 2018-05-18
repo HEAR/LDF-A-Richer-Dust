@@ -32,7 +32,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 	    var ptypoFont;
 
 	    var prototypo = new Ptypo.default('b1f4fb23-7784-456e-840b-f37f5a647b1c');
-	 	// var prototypo = new Ptypo.default();
+	 	// var prototypo = new Ptypo.default();	
 
 	    // Crée une font 'testfont' en utilisant le template récupéré
 	    // la font 'testfont' a étée ajoutée à la page en css via une font-family
