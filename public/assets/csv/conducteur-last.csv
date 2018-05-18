@@ -1,7 +1,7 @@
 id,type,part,parent,movie,from,to,param,target,classes,colonne,rang,width,height,texte
 1,part,0,,,,,,,,,,,,Prologue
 2,video,0,,1,00:00:30,00:04:14,,,,,,,,
-3,text,0,,,00:00:10,00:00:20,,#bloc1,"size4,center",7,5,10,6,A Richer Dust
+3,text,0,,,00:00:10,00:00:20,,#bloc1,"size4,center",7,1,10,6,A Richer Dust
 4,text,0,,,00:00:20,00:00:30,,#bloc2,,7,6,10,6,un projet du programme de recherche Lignes de front 1914-2018 de l'atelier de communication graphique de la Haute école des arts du Rhin (a partenariat avec l'atelier de scénographie et l'Académie).
 5,clear,0,4,,,,bloc1,,,,,,,
 6,text,0,,,00:00:30,00:00:40,,#bloc2,,2,2,3,3,Nigel Clarck

@@ -64,6 +64,7 @@ body.callage{
 	display: none;
 	background: transparent;
 	color: #FFF;
+	text-align: left;
 }
 
 .callage .message{
@@ -90,7 +91,7 @@ body.callage{
 }
 
 .size4{
-	line-height: 21rem;
+	line-height: 260px;
 	font-size: 20rem;
 	padding-top: 0.8rem;
 }

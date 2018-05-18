@@ -17,12 +17,18 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 	        return font.name === fontName; //'test-richer-dust';
 	    });
 	    // Recherche la variante dans les variantes de la famille
-	    var variant = family && family.variants.find(function (variant) {
-	        return variant.name === fontVariant; //'Regular';
+	    var variantRegular = family && family.variants.find(function (variant) {
+	        return variant.name === "Regular"; //'Regular';
 	    });
+
+	    var variantSlanted = family && family.variants.find(function (variant) {
+	        return variant.name === "Slanted";
+	    });
+
 	    // Récupère les valeurs nécessaires à initialiser la police
-		var template = family.template;
-		var values   = variant.values;
+		var template 		= family.template;
+		var valuesRegular   = variantRegular.values;
+		var valuesSlanted   = variantSlanted.values;
 	    var ptypoFont;
 
 	    var prototypo = new Ptypo.default('b1f4fb23-7784-456e-840b-f37f5a647b1c');
@@ -30,13 +36,22 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 	    // Crée une font 'testfont' en utilisant le template récupéré
 	    // la font 'testfont' a étée ajoutée à la page en css via une font-family
-	    prototypo.createFont('a-richer-dust-font', template).then(function(createdFont){
+	    prototypo.createFont('a-richer-dust-Regular', template).then(function(createdFont){
 	        ptypoFont = createdFont;
 	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
-	        createdFont.changeParams(values);
+	        createdFont.changeParams(valuesRegular);
 	    });
 
-	    $(".message").css("font-family","a-richer-dust-font");
+
+	    prototypo.createFont('a-richer-dust-Slanted', template).then(function(createdFont){
+	        ptypoFont = createdFont;
+	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
+	        createdFont.changeParams(valuesSlanted);
+	    });
+
+
+
+	    $(".message").css("font-family","a-richer-dust-Slanted");
 
 	    // // Deux évènements de tests lancés va des boutons sur la page et récupérés en jquery
 	    // $('.js-button-changeparam').on('click', function(){
