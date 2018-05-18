@@ -15,6 +15,7 @@ html,body{
 body {
 	font-family:'a-richer-dust-font', Helvetica, Arial;
 	background: #000;
+	overflow: hidden;
 }
 
 body.callage{

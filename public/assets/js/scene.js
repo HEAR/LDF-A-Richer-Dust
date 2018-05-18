@@ -160,7 +160,7 @@ $(function () {
 
 		// $('#bloc1').text( msg.text );	
 		
-		let liste = msg.param.blocs.split(",");
+		var liste = msg.param.blocs.split(",");
 
 		console.log(liste);
 
