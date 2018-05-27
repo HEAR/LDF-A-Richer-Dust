@@ -29,7 +29,10 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		var template 		= family.template;
 		var valuesRegular   = variantRegular.values;
 		var valuesSlanted   = variantSlanted.values;
-	    var ptypoFont;
+
+
+	    // var ptypoFont;
+	    var ptypoFontRegular, ptypoFontSlanted;
 
 	    var prototypo = new Ptypo.default('b1f4fb23-7784-456e-840b-f37f5a647b1c');
 	 	// var prototypo = new Ptypo.default();	
@@ -37,14 +40,15 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 	    // Crée une font 'testfont' en utilisant le template récupéré
 	    // la font 'testfont' a étée ajoutée à la page en css via une font-family
 	    prototypo.createFont('a-richer-dust-Regular', template).then(function(createdFont){
-	        ptypoFont = createdFont;
+	        // ptypoFont = createdFont;
+	        ptypoFontRegular = createdFont;
 	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
 	        createdFont.changeParams(valuesRegular);
 	    });
 
 
 	    prototypo.createFont('a-richer-dust-Slanted', template).then(function(createdFont){
-	        ptypoFont = createdFont;
+	        ptypoFontSlanted = createdFont;
 	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
 	        createdFont.changeParams(valuesSlanted);
 	    });
@@ -52,6 +56,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 
 	    $(".message").css("font-family","a-richer-dust-Slanted");
+
+
+	    createCSSSelector('.super', 'color:red!important');
 
 	    // // Deux évènements de tests lancés va des boutons sur la page et récupérés en jquery
 	    // $('.js-button-changeparam').on('click', function(){
@@ -73,7 +80,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 			// $('#bloc1').text( msg.text );	
 
-			ptypoFont.changeParam('thickness', (2 * 1000000 * msg.args[0].value), $('.text p').text());
+			ptypoFontRegular.changeParam('thickness', (2 * 1000000 * msg.args[0].value), $('.text p').text());
 
 			// console.log(msg.param);
 		});
@@ -256,3 +263,70 @@ $.fn.removeClassStartingWith = function (filter) {
     });
     return this;
 };
+
+
+
+function createCSSSelector (selector, style) {
+  if (!document.styleSheets) return;
+  if (document.getElementsByTagName('head').length == 0) return;
+
+  var styleSheet,mediaType;
+
+  if (document.styleSheets.length > 0) {
+    for (var i = 0, l = document.styleSheets.length; i < l; i++) {
+      if (document.styleSheets[i].disabled) 
+        continue;
+      var media = document.styleSheets[i].media;
+      mediaType = typeof media;
+
+      if (mediaType === 'string') {
+        if (media === '' || (media.indexOf('screen') !== -1)) {
+          styleSheet = document.styleSheets[i];
+        }
+      }
+      else if (mediaType=='object') {
+        if (media.mediaText === '' || (media.mediaText.indexOf('screen') !== -1)) {
+          styleSheet = document.styleSheets[i];
+        }
+      }
+
+      if (typeof styleSheet !== 'undefined') 
+        break;
+    }
+  }
+
+  if (typeof styleSheet === 'undefined') {
+    var styleSheetElement = document.createElement('style');
+    styleSheetElement.type = 'text/css';
+    document.getElementsByTagName('head')[0].appendChild(styleSheetElement);
+
+    for (i = 0; i < document.styleSheets.length; i++) {
+      if (document.styleSheets[i].disabled) {
+        continue;
+      }
+      styleSheet = document.styleSheets[i];
+    }
+
+    mediaType = typeof styleSheet.media;
+  }
+
+  if (mediaType === 'string') {
+    for (var i = 0, l = styleSheet.rules.length; i < l; i++) {
+      if(styleSheet.rules[i].selectorText && styleSheet.rules[i].selectorText.toLowerCase()==selector.toLowerCase()) {
+        styleSheet.rules[i].style.cssText = style;
+        return;
+      }
+    }
+    styleSheet.addRule(selector,style);
+  }
+  else if (mediaType === 'object') {
+    var styleSheetLength = (styleSheet.cssRules) ? styleSheet.cssRules.length : 0;
+    for (var i = 0; i < styleSheetLength; i++) {
+      if (styleSheet.cssRules[i].selectorText && styleSheet.cssRules[i].selectorText.toLowerCase() == selector.toLowerCase()) {
+        styleSheet.cssRules[i].style.cssText = style;
+        return;
+      }
+    }
+    styleSheet.insertRule(selector + '{' + style + '}', styleSheetLength);
+  }
+}
