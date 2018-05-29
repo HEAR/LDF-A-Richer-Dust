@@ -119,9 +119,59 @@ div {
 }
 
 
-
+;
+list-style: none;
+margin: 0;
 @keyframes mymove {
     from {left: 0px;}
     to {left: 200px;}
 }
 */
+
+#generique{
+
+	height: 100%;
+}
+
+#generique ul{
+	column-width: 320px;
+	column-gap: 0;
+	column-fill: auto;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+
+	line-height: 1.2rem;
+	font-size: 1.15rem;
+	padding-top: 0.2rem;
+	color: #000;
+	text-align: left;
+}
+
+#generique h3{
+	line-height: 1.2rem;
+	font-size: 1.15rem;
+	color: #000;
+	text-align: left;
+	margin: 0;
+}
+
+#generique ul li{
+	margin: 0;
+	padding: 0 10px;
+	break-inside: avoid;
+}
+
+#generique ul li+li{
+	margin-bottom:0.3rem;
+}
+
+.break{
+	break-after: column;
+}
+
+.small{
+	line-height: 1rem;
+	font-size: 0.9rem;
+}
