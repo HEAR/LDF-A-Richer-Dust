@@ -21,18 +21,39 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 	        return variant.name === "Regular"; //'Regular';
 	    });
 
+	    var variantThin = family && family.variants.find(function (variant) {
+	        return variant.name === "Thin";
+	    });
+
+	    var variantBold = family && family.variants.find(function (variant) {
+	        return variant.name === "Bold";
+	    });
+
 	    var variantSlanted = family && family.variants.find(function (variant) {
 	        return variant.name === "Slanted";
 	    });
 
+	    var variantSerif = family && family.variants.find(function (variant) {
+	        return variant.name === "Serif";
+	    });
+
+	    var variantLarge = family && family.variants.find(function (variant) {
+	        return variant.name === "Large";
+	    });
+
 	    // Récupère les valeurs nécessaires à initialiser la police
 		var template 		= family.template;
+
 		var valuesRegular   = variantRegular.values;
+		var valuesThin	    = variantThin.values;
+		var valuesBold	    = variantBold.values;
 		var valuesSlanted   = variantSlanted.values;
+		var valuesSerif	    = variantSerif.values;
+		var valuesLarge	    = variantLarge.values;
 
 
 	    // var ptypoFont;
-	    var ptypoFontRegular, ptypoFontSlanted;
+	    var ptypoFontRegular, ptypoFontThin, ptypoFontBold, ptypoFontSlanted, ptypoFontSerif, ptypoFontLarge;
 
 	    var prototypo = new Ptypo.default('b1f4fb23-7784-456e-840b-f37f5a647b1c');
 	 	// var prototypo = new Ptypo.default();	
@@ -46,6 +67,19 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 	        createdFont.changeParams(valuesRegular);
 	    });
 
+	    prototypo.createFont('a-richer-dust-Thin', template).then(function(createdFont){
+	        // ptypoFont = createdFont;
+	        ptypoFontThin = createdFont;
+	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
+	        createdFont.changeParams(valuesThin);
+	    });
+
+	    prototypo.createFont('a-richer-dust-Bold', template).then(function(createdFont){
+	        // ptypoFont = createdFont;
+	        ptypoFontBold = createdFont;
+	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
+	        createdFont.changeParams(valuesBold);
+	    });
 
 	    prototypo.createFont('a-richer-dust-Slanted', template).then(function(createdFont){
 	        ptypoFontSlanted = createdFont;
@@ -53,12 +87,26 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 	        createdFont.changeParams(valuesSlanted);
 	    });
 
+	    prototypo.createFont('a-richer-dust-Serif', template).then(function(createdFont){
+	        ptypoFontSerif = createdFont;
+	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
+	        createdFont.changeParams(valuesSerif);
+	    });
 
+	    prototypo.createFont('a-richer-dust-Large', template).then(function(createdFont){
+	        ptypoFontLarge = createdFont;
+	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
+	        createdFont.changeParams(valuesLarge);
+	    });
 
-	    $(".message").css("font-family","a-richer-dust-Slanted");
+	    // $(".message").css("font-family","a-richer-dust-Regular");
 
-
-	    createCSSSelector('.super', 'color:red!important');
+		createCSSSelector('.regular', 	'font-family:"a-richer-dust-Regular"');
+		createCSSSelector('.thin', 		'font-family:"a-richer-dust-Thin"');
+		createCSSSelector('.bold', 		'font-family:"a-richer-dust-Bold"');
+		createCSSSelector('.slanted', 	'font-family:"a-richer-dust-Slanted"');
+		createCSSSelector('.serif', 	'font-family:"a-richer-dust-Serif"');
+		createCSSSelector('.large', 	'font-family:"a-richer-dust-Large"');
 
 	    // // Deux évènements de tests lancés va des boutons sur la page et récupérés en jquery
 	    // $('.js-button-changeparam').on('click', function(){
@@ -176,6 +224,26 @@ $(function () {
 	});
 
 
+	socket.on('generique message', function(msg){
+
+		console.log(msg);
+
+		$(".message")
+				.text("")
+				.removeClassStartingWith("size")
+				.css("left",0)
+				.css("top",0)
+				.css("width",0)
+				.css("height",0)
+				.css("display","none");
+
+
+		$(".generique").load("generique.html #generique", function(){
+
+		})
+	});
+
+
 	socket.on('clear message', function(msg){
 
 		console.log(msg);
@@ -195,6 +263,8 @@ $(function () {
 				.css("width",0)
 				.css("height",0)
 				.css("display","none");
+
+			$(".generique").empty();
 		}else{
 
 			liste.forEach(function(element) {
@@ -208,6 +278,7 @@ $(function () {
 					.css("display","none");
 			});
 
+			$(".generique").empty();
 		}
 
 	});

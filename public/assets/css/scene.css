@@ -13,13 +13,15 @@ html,body{
 }
 
 body {
-	font-family:'a-richer-dust-font', Helvetica, Arial;
+	font-family:'a-richer-dust-Regular', Helvetica, Arial;
 	background: #000;
 	overflow: hidden;
+	cursor: none;
 }
 
 body.callage{
 	background: #FFF;
+	cursor: auto;
 }
 
 /* http://www.learnlayout.com/flexbox.html */
@@ -91,8 +93,8 @@ body.callage{
 }
 
 .size4{
-	line-height: 260px;
-	font-size: 20rem;
+	line-height: 14rem;
+	font-size: 14rem;
 	padding-top: 0.8rem;
 }
 
@@ -142,36 +144,56 @@ margin: 0;
 	padding: 0;
 	height: 100%;
 
-	line-height: 1.2rem;
-	font-size: 1.15rem;
-	padding-top: 0.2rem;
-	color: #000;
+	line-height: 1.25rem;
+	font-size: 1.1rem;
+	padding-top: 0.5rem;
+	color: #FFF;
 	text-align: left;
+
+	font-family: 'a-richer-dust-Thin';
+}
+
+#generique strong{
+	font-family: 'a-richer-dust-Bold';
+}
+
+.callage #generique ul{
+	color: #000;
 }
 
 #generique h3{
-	line-height: 1.2rem;
-	font-size: 1.15rem;
-	color: #000;
+	line-height: 1.25rem;
+	font-size: 1.1rem;
 	text-align: left;
 	margin: 0;
+
+	font-family: 'a-richer-dust-Large';
 }
 
 #generique ul li{
 	margin: 0;
 	padding: 0 10px;
-	break-inside: avoid;
+	/*break-inside: avoid;*/
 }
 
 #generique ul li+li{
-	margin-bottom:0.3rem;
+	margin-bottom:0.25rem;
 }
 
 .break{
 	break-after: column;
 }
 
-.small{
+li.small{
 	line-height: 1rem;
 	font-size: 0.9rem;
+	margin-top: 0.25rem !important;
+	margin-bottom: 1rem !important;
+}
+
+li img{
+	width: 5rem;
+	height: 5rem;
+	background: #FFF;
+	border: 0;
 }

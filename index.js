@@ -87,6 +87,11 @@ io.on('connection', function(socket){
 		console.log('text message', msg);
 	});
 
+	socket.on('generique message', function(msg){
+		io.emit('generique message', msg);
+		console.log('generique message', msg);
+	});
+
 	// LORSQUE L'ON RECOIT UN « clear message » 
 	socket.on('clear message', function(msg){
 		io.emit('clear message', msg);
