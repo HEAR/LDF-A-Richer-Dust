@@ -57,6 +57,25 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 	    var prototypo = new Ptypo.default('b1f4fb23-7784-456e-840b-f37f5a647b1c');
 	 	// var prototypo = new Ptypo.default();	
+	 	// 
+	 	const createdPrototypoFontFactory = new Ptypo('b1f4fb23-7784-456e-840b-f37f5a647b1c');
+	 	const createdPrototypoLoadingPromise = new Promise((resolve) => {
+	 		prototypoFontFactory.init(undefined, undefined, 'https://e4jpj60rk8.execute-api.eu-west-1.amazonaws.com/prod/fonts/').then(() => {
+	 			resolve(prototypoFontFactory);
+	 		}
+	 	});
+
+ 		createdPrototypoLoadingPromise.then((prototypoFontFactory) => {
+ 			prototypoFontFactory
+ 			.createFont(
+ 				fontName, //'test-richer-dust'
+ 				template,
+ 				true,
+ 				)
+ 			.then((createdFont) => {
+ 				createdFont.changeParams(values, subset);
+ 			});
+ 		}
 
 	    // Crée une font 'testfont' en utilisant le template récupéré
 	    // la font 'testfont' a étée ajoutée à la page en css via une font-family
