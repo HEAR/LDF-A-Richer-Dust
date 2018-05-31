@@ -74,29 +74,42 @@ body.callage{
 	color: #000;
 }
 
-.size1{
-	line-height: 3rem;
-	font-size: 2rem;
-	padding-top: 0.4rem;
-}
-
-.size2{
-	line-height: 7rem;
-	font-size: 6.65rem;
-	padding-top: 0.4rem;
-}
-
-.size3{
-	line-height: 14rem;
-	font-size: 12.2rem;
+.size1{ /* 20px */
+	line-height: 1.25rem;
+	font-size: 1rem;
 	padding-top: 0.6rem;
 }
 
-.size4{
-	line-height: 14rem;
-	font-size: 14rem;
-	padding-top: 0.8rem;
+.size2{ /* 43px */
+	line-height: 2.25rem;
+	font-size: 2.15rem;
+	padding-top: 0.75rem;
 }
+
+.size3{ /* 100px */
+	line-height: 5rem;
+	font-size: 5rem;
+	padding-top: 0.5rem;
+}
+
+.size4{ /* 140px */
+	line-height: 7rem;
+	font-size: 7rem;
+	padding-top: 0.3rem;
+}
+
+.size5{ /* 240px */
+	line-height: 10rem;
+	font-size: 12rem;
+	padding-top: 0.3rem;
+}
+
+.size6{ /* 500px */
+	line-height: 25rem;
+	font-size: 25rem;
+	padding-top: 2.2rem;
+}
+
 
 .right{
 	text-align: right;
