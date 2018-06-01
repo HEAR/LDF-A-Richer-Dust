@@ -31,7 +31,10 @@ body.callage{
 	width:1920px !important;
 	height:720px;
 	/*background: #fdd;*/
-	position: relative;
+	/*position: relative;*/
+	position:fixed;
+	left: 0;
+	bottom: 0;
 }
 
 .callage #scene{
