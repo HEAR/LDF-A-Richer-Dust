@@ -227,8 +227,6 @@ $(function () {
 
 
 		if(delayValue > 0){
-			console.log("OK OK OK ");
-
 			$( msg.param.target )
 			.addClass("delay")
 			.css("animation-delay", delayValue+"s");
@@ -247,9 +245,6 @@ $(function () {
 			.css("height", msg.param.height * pasY)
 			.css("display", "block");
 
-
-
-		console.log(msg.param);
 	});
 
 
