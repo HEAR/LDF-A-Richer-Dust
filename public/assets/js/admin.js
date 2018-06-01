@@ -338,7 +338,8 @@ $(function () {
 								rang 	: dataConducteur[i].rang,
 								width 	: dataConducteur[i].width,
 								height 	: dataConducteur[i].height,
-								classes : dataConducteur[i].classes.split(",").join(" ")
+								classes : dataConducteur[i].classes.split(",").join(" "),
+								params  : param2json(dataConducteur[i].param)
 							}) ;
 
 						elem.click(function(event){
@@ -664,4 +665,28 @@ function animate(time) {
   TWEEN.update(time);
 }
 requestAnimationFrame(animate);
+
+/**
+ * [param2json description]
+ * @param  {[type]} params [description]
+ * @return {[type]}        [description]
+ */
+function param2json(params){
+
+	let liste = params.split(",");
+	let retour = new Array();
+
+	if(params != ""){
+		for(let i = 0 ; i < liste.length; i ++){
+			let temp = liste[i].split(":");
+			
+			retour[i] = {	
+				action : temp[0],
+				value  : temp[1]
+			};
+		}
+	}
+
+	return retour;
+}
 
