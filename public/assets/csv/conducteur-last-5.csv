@@ -1,11 +1,11 @@
 id,type,part,parent,movie,from,to,param,target,classes,colonne,rang,width,height,texte
 1,part,0,,,,,,,,,,,,Prologue
-2,video,0,,1,00:00:00,00:04:14,,,,,,,,
+2,video,0,,1,00:00:30,00:04:14,,,,,,,,
 3,text,0,,,00:14:40,00:17:08,,#bloc1,"size4,center,bold",6,5,14,3,A Richer Dust
-4,text,0,3,,00:14:40,00:17:08,,#bloc2,"size1,center,bold",8,9,10,2,"Symphonie n°1 pour narrateurs et orchestre à vents
+4,text,0,1,,00:14:40,00:17:08,,#bloc2,"size1,center,bold",8,9,10,2,"Symphonie n°1 pour narrateurs et orchestre à vents
 une proposition entre musique et arts visuels"
-5,text,0,3,,00:14:40,00:17:08,delay:2,#bloc3,"size1,bold",8,11,3,1,Nigel Clarck
-6,text,0,3,,00:14:40,00:17:08,delay:2,#bloc4,"size1,bold",15,11,4,1,Malene Sheppard
+5,text,0,1,,00:14:40,00:17:08,delay:2,#bloc3,"size1,bold",8,11,3,1,Nigel Clarck
+6,text,0,1,,00:14:40,00:17:08,delay:2,#bloc4,"size1,bold",15,11,4,1,Malene Sheppard
 ,clear,0,,,,,all,,,,,,,
 7,part,1,,,,,,,,,,,,Still We Drudge in this Dark Maze
 8,video,1,,1,00:00:00,00:04:14,,,,,,,,
@@ -231,47 +231,45 @@ on the pain of death"
 130,part,3,,,,,,,,,,,,Other flowers rise
 131,video,3,,1,,,,,,,,,,
 132,text,3,,,00:00:00,00:00:05,,#bloc1,,,,,,III.Other Flowers Rise
-133,text,3,,,00:01:43,00:00:00,,#bloc1,"size1,serif",4,1,2,2,"Arabic, African, American, Asian, Inuit, European, Extremist"
-134,text,3,133,,00:01:43,00:00:00,delay:2,#bloc2,"size1,serif",6,1,2,2,African
-135,text,3,133,,00:01:43,00:00:00,delay:4,#bloc3,"size1,serif",8,1,2,2,American
-136,text,3,133,,00:01:43,00:00:00,delay:6,#bloc4,"size1,serif",10,1,2,2,Asian
-137,text,3,133,,00:01:43,00:00:00,delay:8,#bloc5,"size1,serif",12,1,2,2,Inuit
-138,text,3,133,,00:01:43,00:00:00,delay:10,#bloc6,"size1,serif",14,1,2,2,European
-139,text,3,133,,00:01:43,00:00:00,delay:12,#bloc7,"size1,serif",16,1,2,2,Extremist
-134,text,3,133,,00:02:18,,delay:14,#bloc8,"size1,serif",18,1,2,2,"Christian, Jewish, Hindu, Muslim, Buddhist, Atheist, Anarchist, Extremist"
-135,text,3,133,,00:02:18,,delay:16,#bloc9,"size1,serif",4,3,2,2,Jewish
-135,text,3,133,,00:02:35,,delay:18,#bloc10,"size1,serif",6,3,2,2,"Racist, Anti-Semitic, Pro-terrorist, Sexist, Extremist"
-136,text,3,133,,00:03:10,,delay:20,#bloc11,"size1,serif",8,3,2,2,"Fascist, Communist, Socialist, Conservative, Traditionalist, Extremist"
-137,text,3,133,,,,,#bloc12,"size1,serif",10,3,2,2,"Man, Woman, Child, Soldier, Politician, Civilian, Extremist"
-138,text,3,133,,00:03:44,,,#bloc13,"size1,serif",12,3,2,2,"Bully, Master, King, Queen, Emperor, Empress, President, Pope, God, Extremist"
-139,text,3,133,,00:03:52,,,#bloc14,"size1,serif",14,3,2,2,"Slave, Illegal, Hybrid, Common, Nobody, Somebody, Anybody, Extremist"
-140,text,3,133,,,,,#bloc15,"size1,serif",16,3,2,2,"Freedom fighter, Protector, Liberator, Peace keeper, Saviour, Extremist"
-141,text,3,133,,,,,#bloc16,"size1,serif",18,3,2,2,"Soldier, Warrior, Raider, Crusader, Invader, Attacker, Extremist"
-142,text,3,133,,,,,#bloc17,"size1,serif",4,5,2,2,"Victim, Maimed, Wounded, Missing, Dead, Extremist"
-143,text,3,133,,,,,#bloc18,"size1,serif",6,5,2,2,"Rich, Poor, Gunslinger, Mass-Murder, Pacifist, Populist, Extremist"
-144,text,3,133,,,,,#bloc19,"size1,serif",8,5,2,2,"Unknown, Known, Anonymous, Innocent, Guilty, Extremist"
-145,text,3,133,,,,,#bloc20,"size1,serif",10,5,2,2,"Vain, Lustful, Gluttonous, Greedy, ldle, Angry, Envious, Proud, Extremist"
-146,text,3,133,,,,,#bloc21,"size1,serif",12,5,2,2,"Virtuous, Bored, Billionaire, Employed, Enlightened, Privileged, Mediocre, Extremist"
-147,text,3,133,,,,,#bloc22,"size1,serif",14,5,2,2,"Eco-terrorist, Corporate-terrorist, Religious-terrorist, Cultural-terrorist, Extremist"
-148,text,3,133,,,,,#bloc23,"size1,serif",16,5,2,2,"Hero, Heroine, Victor, Winner, Favourite, Ideal, White Knight, Extremist"
-149,text,3,133,,,,,#bloc24,"size1,serif",18,5,2,2,"Radical, Fanatic, Devoted, Revolutionist, Extremist"
-150,text,3,133,,,,,#bloc25,"size1,serif",4,7,2,2,"Coward, Sissy, Chicken, Mouse, Scaredy-Cat, Weakling, Extremist"
-151,text,3,133,,,,,#bloc26,"size1,serif",6,7,2,2,"Reasonable, Sensible, Restrained, Temperate, Practical, Realistic, Liberal, Moderate"
-152,text,3,133,,,,,#bloc27,"size1,serif",8,7,2,2,Moderate Extremist — Extremist Moderate
-153,text,3,,,,,,#bloc1,"size1,serif,center",8,5,8,2,"Does one need to Love ? Don't ask, feel it."
+133,text,3,,,00:01:43,00:00:00,,#bloc1,size1,4,1,2,2,"Arabic, African, American, Asian, Inuit, European, Extremist"
+134,text,3,133,,00:01:43,00:00:00,delay:2,#bloc2,size1,6,1,2,2,African
+135,text,3,133,,00:01:43,00:00:00,delay:4,#bloc3,size1,8,1,2,2,American
+136,text,3,133,,00:01:43,00:00:00,delay:6,#bloc4,size1,10,1,2,2,Asian
+137,text,3,133,,00:01:43,00:00:00,delay:8,#bloc5,size1,12,1,2,2,Inuit
+138,text,3,133,,00:01:43,00:00:00,delay:10,#bloc6,size1,14,1,2,2,European
+139,text,3,133,,00:01:43,00:00:00,delay:12,#bloc7,size1,16,1,2,2,Extremist
+134,text,3,133,,00:02:18,,delay:14,#bloc8,size1,18,1,2,2,"Christian, Jewish, Hindu, Muslim, Buddhist, Atheist, Anarchist, Extremist"
+135,text,3,133,,00:02:18,,delay:16,#bloc9,size1,4,3,2,2,Jewish
+135,text,3,133,,00:02:35,,delay:18,#bloc10,size1,6,3,2,2,"Racist, Anti-Semitic, Pro-terrorist, Sexist, Extremist"
+136,text,3,133,,00:03:10,,delay:20,#bloc11,size1,8,3,2,2,"Fascist, Communist, Socialist, Conservative, Traditionalist, Extremist"
+137,text,3,133,,,,,#bloc12,size1,10,3,2,2,"Man, Woman, Child, Soldier, Politician, Civilian, Extremist"
+138,text,3,133,,00:03:44,,,#bloc13,size1,12,3,2,2,"Bully, Master, King, Queen, Emperor, Empress, President, Pope, God, Extremist"
+139,text,3,133,,00:03:52,,,#bloc14,size1,14,3,2,2,"Slave, Illegal, Hybrid, Common, Nobody, Somebody, Anybody, Extremist"
+140,text,3,133,,,,,#bloc15,size1,16,3,2,2,"Freedom fighter, Protector, Liberator, Peace keeper, Saviour, Extremist"
+141,text,3,133,,,,,#bloc16,size1,18,3,2,2,"Soldier, Warrior, Raider, Crusader, Invader, Attacker, Extremist"
+142,text,3,133,,,,,#bloc17,size1,4,5,2,2,"Victim, Maimed, Wounded, Missing, Dead, Extremist"
+143,text,3,133,,,,,#bloc18,size1,6,5,2,2,"Rich, Poor, Gunslinger, Mass-Murder, Pacifist, Populist, Extremist"
+144,text,3,133,,,,,#bloc19,size1,8,5,2,2,"Unknown, Known, Anonymous, Innocent, Guilty, Extremist"
+145,text,3,133,,,,,#bloc20,size1,10,5,2,2,"Vain, Lustful, Gluttonous, Greedy, ldle, Angry, Envious, Proud, Extremist"
+146,text,3,133,,,,,#bloc21,size1,12,5,2,2,"Virtuous, Bored, Billionaire, Employed, Enlightened, Privileged, Mediocre, Extremist"
+147,text,3,133,,,,,#bloc22,size1,14,5,2,2,"Eco-terrorist, Corporate-terrorist, Religious-terrorist, Cultural-terrorist, Extremist"
+148,text,3,133,,,,,#bloc23,size1,16,5,2,2,"Hero, Heroine, Victor, Winner, Favourite, Ideal, White Knight, Extremist"
+149,text,3,133,,,,,#bloc24,size1,18,5,2,2,"Radical, Fanatic, Devoted, Revolutionist, Extremist"
+150,text,3,133,,,,,#bloc25,size1,4,7,2,2,"Coward, Sissy, Chicken, Mouse, Scaredy-Cat, Weakling, Extremist"
+151,text,3,133,,,,,#bloc26,size1,6,7,2,2,"Reasonable, Sensible, Restrained, Temperate, Practical, Realistic, Liberal, Moderate"
+152,text,3,133,,,,,#bloc27,size1,8,7,2,2,Moderate Extremist — Extremist Moderate
+153,text,3,,,,,,#bloc1,,,,,,"Does one need to Love ? Don't ask, feel it."
 154,clear,3,,,00:04:00,,all,,,,,,,
 155,part,4,,,,,,,,,,,,"The larks, still bravely singing"
 156,video,4,,1,,,,,,,,,,
 157,text,4,,,00:00:00,00:00:05,,#bloc1,,,,,,"IV.The Larks, Still Bravely Singing"
-158,text,4,,,00:01:20,00:01:39,,#bloc1,"size3,regular",2,2,23,4,"I believe that order is better than chaos,
+158,text,4,,,00:01:20,00:01:39,,#bloc1,,9,5,9,4,"I believe that order is better than chaos,
 creation is better than destruction.
-"
-,text,4,,,00:01:27,,,#bloc1,"size3,regular",2,2,23,6,"I prefer gentleness to violence,
+I prefer gentleness to violence,
 forgiveness to vendetta,
 knowledge to ignorance.
-"
-,text,4,,,00:01:37,,,#bloc1,"size3,regular",2,2,23,,I believe in courtesy
-159,text,4,,,00:03:25,00:04:08,,#bloc1,"size1,regular",8,2,8,2,"candles in the dark of winter
+I believe in courtesy"
+159,text,4,,,00:03:25,00:04:08,,#bloc1,,3,2,7,10,"candles in the dark of winter
 kiss under a full moon
 kicking up dead leaves
 whirlwind
@@ -287,11 +285,11 @@ nightingale singing at midnight
 fresh sheets
 smile from a stranger
 joy of expectation"
-160,text,4,,,00:04:10,00:04:13,,#bloc1,"size3,right,regular",7,5,17,2,small delights make us human
-161,text,4,,,00:04:23,00:04:33,,#bloc1,"size3,regular",2,2,22,6,"We all breathe the same air. We all cherish our children's future.
+160,text,4,,,00:04:10,00:04:13,,#bloc1,,16,5,6,1,small delights make us human
+161,text,4,,,00:04:23,00:04:33,,#bloc1,,9,2,8,2,"We all breathe the same air. We all cherish our children's future.
 And we are all mortal."
-162,text,4,,,00:04:37,00:04:41,,#bloc1,"size3,right,regular",6,5,18,2,in that rich earth a richer dust
-163,text,4,,,00:04:43,00:04:46,,#bloc1,"size3,regular",2,2,17,2,who are the terrorists now?
+162,text,4,,,00:04:37,00:04:41,,#bloc1,,16,5,6,1,in that rich earth a richer dust
+163,text,4,,,00:04:43,00:04:46,,#bloc1,,2,6,5,1,who are the terrorists now?
 164,text,4,,,/,/,,#bloc1,,,,,,"Words, thoughts, ideas, images, and inspiration liberally borrowed and quoted from:"
 165,text,4,,,/,/,,#bloc1,,,,,,"Amnesty International, Elizabeth Wayland Barber, Dominique P. Behague, Jennifer
 Bendery, Thomas Bendixen, Laurence Binyon, Henri Lucien Chaffer, Dover Arts
@@ -311,39 +309,18 @@ Skrerved, Mattias Skrerved, Paul Vemer Skrerved, Reed Thomas, Ulla Skrerved, Ell
 Strange Petersen, Reed Thomas, Lady Butler/Elizabeth Southerden Thompson, Henry
 Tonks, War Registers' International, Louise Vale, Louis Weirter, Benjamin West, Jon
 Wiant, amongst many more."
-166,text,4,,,00:09:46,00:09:55,,#bloc1,"size3,regular",2,2,22,2,horror
-,text,4,,,00:09:48,,,#bloc1,"size3,regular",2,2,22,2,horror terror
-,text,4,,,00:09:51,,,#bloc1,"size3,regular",2,2,22,2,horror terror violence
-,text,4,,,00:09:54,,,#bloc1,"size3,regular",2,2,22,2,horror terror violence war
-167,text,4,,,00:10:01,00:10:06,,#bloc1,"size3,regular",2,2,22,2,dirtied
-,text,4,,,00:10:02,,,#bloc1,"size3,regular",2,2,22,2,dirtied bloodied
-,text,4,,,00:10:05,,,#bloc1,"size3,regular",2,2,22,2,dirtied bloodied stinking
-168,text,4,,,00:10:07,00:10:14,,#bloc1,"size3,regular",2,2,22,2,justify
-,text,4,,,00:10:10,,,#bloc1,"size3,regular",2,2,22,2,justify validate
-,text,4,,,00:10:12,,,#bloc1,"size3,regular",2,2,22,2,justify validate execute
-169,text,4,,,00:10:17,00:10:23,,#bloc1,"size3,regular",2,2,22,2,hit
-,text,4,,,00:10:20,,,#bloc1,"size3,regular",2,2,22,2,hit hurt
-,text,4,,,00:10:22,,,#bloc1,"size3,regular",2,2,22,2,hit hurt hunt
-170,text,4,,,00:10:24,00:10:40,,#bloc1,"size6,center,regular",1,2,24,9,maimed
-,text,4,,,00:10:34,,,#bloc1,"size6,center,regular",1,2,24,9,wounded
-,text,4,,,00:10:36,,,#bloc1,"size6,center,regular",1,2,24,9,crippled
-,text,4,,,00:10:39,,,#bloc1,"size6,center,regular",1,2,24,9,mangled
-171,text,4,,,00:10:41,00:10:45,,#bloc1,"size3,regular",2,2,22,2,casualties
-,text,4,,,00:10:43,,,#bloc1,"size3,regular",2,2,22,2,casualties fatalities
-172,text,4,,,00:10:45,00:10:53,,#bloc1,"size3,regular",2,2,22,2,money
-,text,4,,,00:10:48,,,#bloc1,"size3,regular",2,2,22,2,money love
-,text,4,,,00:10:50,,,#bloc1,"size3,regular",2,2,22,2,money love power
-,text,4,,,00:10:52,,,#bloc1,"size3,regular",2,2,22,2,money love power money
-173,text,4,,,00:10:54,00:10:59,,#bloc1,"size6,center,regular",1,2,24,9,dead
-,text,4,,,00:10:56,,,#bloc1,"size6,center,regular",1,2,24,9,deadly
-,text,4,,,00:10:58,,,#bloc1,"size6,center,regular",1,2,24,9,done
-174,text,4,,,00:11:01,00:11:08,,#bloc1,"size3,regular",2,2,24,2,they
-,text,4,,,00:11:03,,,#bloc1,"size3,regular",2,2,22,2,they them
-,text,4,,,00:11:05,,,#bloc1,"size3,regular",2,2,22,2,they them themselves
-,text,4,,,00:11:06,,,#bloc1,"size3,regular",2,2,22,2,they them themselves theirs
-175,text,4,,,00:11:09,00:11:10,,#bloc1,"size6,center,regular",1,2,24,9,I 
-156,text,4,,,00:11:11,00:11:12,,#bloc1,"size6,center,regular",1,2,24,9,me
-157,text,4,,,00:11:13,00:11:14,,#bloc1,"size6,center,regular",1,2,24,9,myself
-158,text,4,,,00:11:16,00:11:17,,#bloc1,"size6,center,regular",1,2,24,9,mine
-159,part,5,,,,,,#bloc1,,,,,,Générique
-160,generique,5,,1,,,,#bloc1,,,,,,
+166,text,4,,,00:09:46,00:09:55,,#bloc1,,5,2,16,2,horror terror violence war
+167,text,4,,,00:10:01,00:10:06,,#bloc1,,5,2,16,2,dirtied bloodied stinking
+168,text,4,,,00:10:07,00:10:14,,#bloc1,,5,2,16,2,justify validate execute
+169,text,4,,,00:10:17,00:10:23,,#bloc1,,3,4,22,4,hit hurt hunt
+170,text,4,,,00:10:24,00:10:40,,#bloc1,,2,2,22,2,maimed wounded crippled mangled
+171,text,4,,,00:10:41,00:10:45,,#bloc1,,7,2,12,2,casualties fatalities
+172,text,4,,,00:10:45,00:10:53,,#bloc1,,5,2,16,2,money love power money
+173,text,4,,,00:10:54,00:10:59,,#bloc1,,7,2,12,2,dead deadly done
+174,text,4,,,00:11:01,00:11:08,,#bloc1,,4,2,18,2,they them themselves theirs
+175,text,4,,,00:11:09,00:11:10,,#bloc1,,11,4,4,7,I 
+156,text,4,,,00:11:11,00:11:12,,#bloc2,,9,4,9,7,me
+157,text,4,,,00:11:13,00:11:14,,#bloc3,,3,4,20,7,myself
+158,text,4,,,00:11:16,00:11:17,,#bloc4,,6,4,14,7,mine
+159,part,5,,,,,,,,,,,,Générique
+160,generique,5,,1,,,,,,,,,,
