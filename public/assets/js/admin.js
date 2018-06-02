@@ -28,6 +28,16 @@ $(function () {
 		// $('#messages').append($('<li>').text(msg));
 	});
 
+	socket.on('prototypo message', function(msg){
+		console.log('prototypo', msg);
+
+		if(msg.prototypoReady === true){
+			$("#prototypoReady").addClass("loaded");
+		}else{
+			$("#prototypoReady").removeClass("loaded");
+		}
+	});
+
 	socket.on('interface message', function(msg){
 
 		if(msg.refreshjson === true){
