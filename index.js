@@ -141,6 +141,15 @@ io.on('connection', function(socket){
 		}
 	});
 
+
+	// LORSQUE L'ON RECOIT UN « prototypo message » 
+	socket.on('prototypo message', function(msg){
+		// io.emit('light message', msg);
+		console.log('prototypo message', msg);
+
+		io.emit('prototypo message', msg);
+	});
+
 	// LORSQUE L'ON RECOIT UN « osc message » 
 	socket.on('osc message', function(msg){
 		console.log(msg)

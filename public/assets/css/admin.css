@@ -128,7 +128,7 @@ footer{
 
 .interface button{
 	display: block;
-	height: 50%;
+	height: 33%;
 	width:80px;
 	background: transparent;
 	font-weight: bold;
@@ -136,6 +136,23 @@ footer{
 	color:#21E897;
 	text-transform: uppercase;
 	font-size: 15px;
+}
+
+.interface #prototypoReady{
+	display: block;
+	height: 33%;
+	width:80px;
+	background: transparent;
+	font-weight: bold;
+	border: solid 3px #ED1C24;
+	color:#ED1C24;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+
+.interface #prototypoReady.loaded{
+	color: #21E897;
+	border-color: #21E897;
 }
 
 
