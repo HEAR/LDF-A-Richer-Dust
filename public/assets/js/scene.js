@@ -209,18 +209,42 @@ $(function () {
 
 		// $('#bloc1').text( msg.text );	
 
+		let delayValue = 0;
+		for(var i = 0; i < msg.param.params.length; i++){
+
+			console.log("action", msg.param.params[i].action );
+
+			if(msg.param.params[i].action == "delay"){
+				delayValue = msg.param.params[i].value;
+			}
+		}
+
+		console.log("delayValue",delayValue);
+
+		// on réinitialise les classes
+		$( msg.param.target )
+		.attr("class","");
+
+
+		if(delayValue > 0){
+			$( msg.param.target )
+			.addClass("delay")
+			.css("animation-delay", delayValue+"s");
+		}else{
+			$( msg.param.target )
+			.css("animation-delay", "0s");
+		}
+
 		$( msg.param.target )
 			.text(msg.text)
-			.attr("class","")
 			.addClass("message")
 			.addClass(msg.param.classes)
 			.css("left", msg.param.colonne * pasX )
 			.css("top", msg.param.rang * pasY)
 			.css("width", msg.param.width * pasX )
 			.css("height", msg.param.height * pasY)
-			.css("display", "block"); 
+			.css("display", "block");
 
-		console.log(msg.param);
 	});
 
 
@@ -229,13 +253,14 @@ $(function () {
 		console.log(msg);
 
 		$(".message")
-				.text("")
-				.removeClassStartingWith("size")
-				.css("left",0)
-				.css("top",0)
-				.css("width",0)
-				.css("height",0)
-				.css("display","none");
+			.text("")
+			.removeClassStartingWith("size")
+			.css("left",0)
+			.css("top",0)
+			.css("width",0)
+			.css("height",0)
+			.css("animation-delay", "0s")
+			.css("display","none");
 
 
 		$(".generique").load("generique.html #generique", function(){
@@ -262,6 +287,7 @@ $(function () {
 				.css("top",0)
 				.css("width",0)
 				.css("height",0)
+				.css("animation-delay", "0s")
 				.css("display","none");
 
 			$(".generique").empty();
@@ -275,6 +301,7 @@ $(function () {
 					.css("top",0)
 					.css("width",0)
 					.css("height",0)
+					.css("animation-delay", "0s")
 					.css("display","none");
 			});
 
