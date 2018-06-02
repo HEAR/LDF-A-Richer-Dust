@@ -3,12 +3,15 @@
 
 function loadPrototypo(email,password, fontName, fontVariant, sock){
 
+	console.log("loadPrototypo ok");
+
+	
 	console.log(email,password);
 
 	// Permet de récupérer les projets d'un compte prototypo
 	window['prototypo-projects'].getProjects(email, password).then(function (fonts) {
 
-		console.log("fonts",fonts);
+		// console.log("fonts",fonts);
 
 	    // Recherche la famille dans la liste de projets
 	    var family = fonts.find(function (font) {
@@ -55,77 +58,115 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 	    // var ptypoFont;
 	    var ptypoFontRegular, ptypoFontThin, ptypoFontBold, ptypoFontSlanted, ptypoFontSerif, ptypoFontLarge;
 
-	    var prototypo = new Ptypo.default('b1f4fb23-7784-456e-840b-f37f5a647b1c');
-	 	// var prototypo = new Ptypo.default();	
-	 	// 
-	 	const createdPrototypoFontFactory = new Ptypo('b1f4fb23-7784-456e-840b-f37f5a647b1c');
-	 	const createdPrototypoLoadingPromise = new Promise((resolve) => {
-	 		prototypoFontFactory.init(undefined, undefined, 'https://e4jpj60rk8.execute-api.eu-west-1.amazonaws.com/prod/fonts/').then(() => {
-	 			resolve(prototypoFontFactory);
-	 		}
-	 	});
 
- 		createdPrototypoLoadingPromise.then((prototypoFontFactory) => {
- 			prototypoFontFactory
- 			.createFont(
- 				fontName, //'test-richer-dust'
- 				template,
- 				true,
- 				)
- 			.then((createdFont) => {
- 				createdFont.changeParams(values, subset);
- 			});
- 		}
+	 	// unique subset
+	 	// var nonUnique = "ababdefegg";
+		// var unique = nonUnique.split('').filter(function(item, i, ar){ return ar.indexOf(item) === i; }).join('');
 
-	    // Crée une font 'testfont' en utilisant le template récupéré
-	    // la font 'testfont' a étée ajoutée à la page en css via une font-family
-	    prototypo.createFont('a-richer-dust-Regular', template).then(function(createdFont){
-	        // ptypoFont = createdFont;
-	        ptypoFontRegular = createdFont;
-	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
-	        createdFont.changeParams(valuesRegular);
-	    });
 
-	    prototypo.createFont('a-richer-dust-Thin', template).then(function(createdFont){
-	        // ptypoFont = createdFont;
-	        ptypoFontThin = createdFont;
-	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
-	        createdFont.changeParams(valuesThin);
-	    });
+	 	const prototypoFontFactory = new Ptypo.default('b1f4fb23-7784-456e-840b-f37f5a647b1c');
 
-	    prototypo.createFont('a-richer-dust-Bold', template).then(function(createdFont){
-	        // ptypoFont = createdFont;
-	        ptypoFontBold = createdFont;
-	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
-	        createdFont.changeParams(valuesBold);
-	    });
+	 	prototypoFontFactory
+	 	.init(undefined, undefined, 'https://e4jpj60rk8.execute-api.eu-west-1.amazonaws.com/prod/fonts/')
+	 	.then(function () {
+		//All the code using the prototypoFontFactory should be done there
 
-	    prototypo.createFont('a-richer-dust-Slanted', template).then(function(createdFont){
-	        ptypoFontSlanted = createdFont;
-	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
-	        createdFont.changeParams(valuesSlanted);
-	    });
+			return prototypoFontFactory
+			.createFont('a-richer-dust-Regular', Ptypo.templateNames.GROTESK)
+			.then(function (font) {
+				// console.log("font", font);
+				font.changeParams(valuesRegular);
+			})
+			.catch(error => console.log(error));
 
-	    prototypo.createFont('a-richer-dust-Serif', template).then(function(createdFont){
-	        ptypoFontSerif = createdFont;
-	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
-	        createdFont.changeParams(valuesSerif);
-	    });
+		})
+		.then(function () {
+		//All the code using the prototypoFontFactory should be done there
 
-	    prototypo.createFont('a-richer-dust-Large', template).then(function(createdFont){
-	        ptypoFontLarge = createdFont;
-	        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte
-	        createdFont.changeParams(valuesLarge);
-	    });
+			return prototypoFontFactory
+			.createFont('a-richer-dust-Thin', Ptypo.templateNames.GROTESK)
+			.then(function (font) {
+				// console.log("font", font);
+				font.changeParams(valuesThin);
+			})
+			.catch(error => console.log(error));
 
-	    // $(".message").css("font-family","a-richer-dust-Regular");
+		})
+		.then(function () {
+		//All the code using the prototypoFontFactory should be done there
 
-		createCSSSelector('.regular', 	'font-family:"a-richer-dust-Regular"');
-		createCSSSelector('.thin', 		'font-family:"a-richer-dust-Thin"');
-		createCSSSelector('.bold', 		'font-family:"a-richer-dust-Bold"');
-		createCSSSelector('.slanted', 	'font-family:"a-richer-dust-Slanted"');
-		createCSSSelector('.serif', 	'font-family:"a-richer-dust-Serif"');
-		createCSSSelector('.large', 	'font-family:"a-richer-dust-Large"');
+			return prototypoFontFactory
+			.createFont('a-richer-dust-Bold', Ptypo.templateNames.GROTESK)
+			.then(function (font) {
+				// console.log("font", font);
+				font.changeParams(valuesBold);
+			})
+			.catch(error => console.log(error));
+
+		})
+		.then(function () {
+		//All the code using the prototypoFontFactory should be done there
+
+			return prototypoFontFactory
+			.createFont('a-richer-dust-Slanted', Ptypo.templateNames.GROTESK)
+			.then(function (font) {
+				// console.log("font", font);
+				font.changeParams(valuesSlanted);
+			})
+			.catch(error => console.log(error));
+
+		})
+		.then(function () {
+		//All the code using the prototypoFontFactory should be done there
+
+			return prototypoFontFactory
+			.createFont('a-richer-dust-Serif', Ptypo.templateNames.GROTESK)
+			.then(function (font) {
+				// console.log("font", font);
+				font.changeParams(valuesSerif);
+			})
+			.catch(error => console.log(error));
+
+		})
+		.then(function () {
+		//All the code using the prototypoFontFactory should be done there
+
+			return prototypoFontFactory
+			.createFont('a-richer-dust-Large', Ptypo.templateNames.GROTESK)
+			.then(function (font) {
+				// console.log("font", font);
+				font.changeParams(valuesLarge);
+			})
+			.catch(error => console.log(error));
+
+		})
+		.then(function () {
+
+			createCSSSelector('.regular', 	'font-family:"a-richer-dust-Regular"');
+			createCSSSelector('.thin', 		'font-family:"a-richer-dust-Thin"');
+			createCSSSelector('.bold', 		'font-family:"a-richer-dust-Bold"');
+			createCSSSelector('.slanted', 	'font-family:"a-richer-dust-Slanted"');
+			createCSSSelector('.serif', 	'font-family:"a-richer-dust-Serif"');
+			createCSSSelector('.large', 	'font-family:"a-richer-dust-Large"');
+
+			sock.emit('prototypo message', {
+				prototypoReady:true
+			} );
+
+
+			sock.on('abbleton message', function(msg){
+
+				// console.log(msg);
+				console.log(msg.args[0].value * 2000000);
+				// $('#bloc1').text( msg.text );	
+				ptypoFontRegular.changeParam('thickness', (2 * 1000000 * msg.args[0].value), $('.scene').text());
+				// console.log(msg.param);
+			});
+
+		})
+		.catch(error => console.log(error));
+				
+
 
 	    // // Deux évènements de tests lancés va des boutons sur la page et récupérés en jquery
 	    // $('.js-button-changeparam').on('click', function(){
@@ -139,23 +180,11 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 	    //     ptypoFont.tween('width', 1.4, 10, 0.3, function(){}, $('.text p').text());
 	    // });
 
-	    sock.on('abbleton message', function(msg){
-
-			// console.log(msg);
-
-			console.log(msg.args[0].value * 2000000);
-
-			// $('#bloc1').text( msg.text );	
-
-			ptypoFontRegular.changeParam('thickness', (2 * 1000000 * msg.args[0].value), $('.text p').text());
-
-			// console.log(msg.param);
-		});
-
+	   
 	});
 
 
-	/****************Librairie Prototypo **************/
+	//--------------------- Librairie Prototypo ---------------------//
 
 	// createFont(fontName, fontTemplate)
 	// crée une fonte 'fontName' utilisable en CSS via une balise font-family en utilisant le template 'fontTemplate'
@@ -182,6 +211,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 	// ptypofont.reset(subset)
 	// Réinitialise la font 'ptypofont' en lui redonnant les valeurs du template de base
 	// Possibilité de limiter les caractères modifiés en donnant un 'subset' : chaîne de caractères, pas besoin que ça soit unique
+	// 
+
+	
 
 }
 
@@ -212,15 +244,20 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 
 $(function () {
-	var socket = io();
+	const socket = io();
 
-	var nbrColonnes = 24;
-	var nbrLignes = 12;
+	const nbrColonnes = 24;
+	const nbrLignes = 12;
 
-	var pasX = 1920/nbrColonnes;
-	var pasY = 720/nbrLignes;
+	const pasX = 1920/nbrColonnes;
+	const pasY = 720/nbrLignes;
 
 	console.log(pasX, pasY);
+
+	socket.emit('prototypo message', {
+		prototypoReady:false
+	} );
+
 	
 	socket.on('text message', function(msg){
 
@@ -241,7 +278,6 @@ $(function () {
 
 		console.log(msg.param);
 	});
-
 
 	socket.on('generique message', function(msg){
 
@@ -317,14 +353,15 @@ $(function () {
 			.attr("class", "message");
 		}
 
-
 		console.log(msg);
 		
 	});
 
 	// CHARGEMENT DU CODE PROTOTYPO
 	// en fonction des paramètres dans param.json (copie de param-sample.json) 
-	$.getJSON( "param.json", function( data ) {  
+	jQuery.getJSON( "param.json", function( data ) {  
+
+		console.log('ok json AJAX');
 
 		console.log("data",data);
 
