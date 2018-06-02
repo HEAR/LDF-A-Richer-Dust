@@ -28,6 +28,9 @@ const csvjson 	= require('csvjson');
 
 var abbletonJSON = {};
 
+const ipResolume = param.ipResolume;
+const portResolume = param.portResolume;
+
 
 console.log(param);
 
@@ -170,7 +173,7 @@ io.on('connection', function(socket){
 			]
 		});
 
-		client.send( oscMsg, 0, oscMsg.length, 7000, "127.0.0.1", function(err, bytes) {
+		client.send( oscMsg, 0, oscMsg.length, portResolume, ipResolume, function(err, bytes) {
 			console.log("err : " + err + " | bytes : " + bytes + " | Message : " + oscMsg);
 		});
 	});
