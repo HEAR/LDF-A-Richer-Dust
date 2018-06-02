@@ -96,6 +96,12 @@ $(function () {
 
 							$(this).addClass("activated");
 							$(this).addClass("active");
+
+							var command = "/composition/decks/"+ ( $(this).data("id") + 1 ) +"/select/";
+							sendOSC(command, 1);
+
+							var command = "/composition/layers/2/clips/1/connect";
+							sendOSC(command, 1);
 						});
 
 						$("#parties").append( elem );
@@ -407,9 +413,9 @@ $(function () {
 							$(this).addClass("activated");
 							console.log( $(this).data("from") , $(this).data("to") );
 
-							var command = "/composition/layers/" + $(this).data("part") +"/clips/"+ $(this).data("movie") + "/connect";
-
+							var command = "/composition/layers/1/clips/"+ $(this).data("movie") + "/connect";
 							sendOSC( command ,1);
+
 
 							socket.emit('text message', {
 								text:$(this).text(), 
