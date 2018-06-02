@@ -97,7 +97,7 @@ $(function () {
 							$(this).addClass("activated");
 							$(this).addClass("active");
 
-							var command = "/composition/decks/"+ ( $(this).data("id") + 1 ) +"/select/";
+							var command = "/composition/decks/"+ ( parseInt($(this).data("id")) + 1 ) +"/select/";
 							sendOSC(command, 1);
 
 							var command = "/composition/layers/2/clips/1/connect";
