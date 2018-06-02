@@ -231,34 +231,34 @@ on the pain of death"
 130,part,3,,,,,,,,,,,,Other flowers rise
 131,video,3,,1,,,,,,,,,,
 132,text,3,,,00:00:00,00:00:05,,#bloc1,,,,,,III.Other Flowers Rise
-133,text,3,,,00:01:43,00:00:00,,#bloc1,"size1,serif",4,1,2,2,"Arabic, African, American, Asian, Inuit, European, Extremist"
-134,text,3,133,,00:01:43,00:00:00,delay:2,#bloc2,"size1,serif",6,1,2,2,African
-135,text,3,133,,00:01:43,00:00:00,delay:4,#bloc3,"size1,serif",8,1,2,2,American
-136,text,3,133,,00:01:43,00:00:00,delay:6,#bloc4,"size1,serif",10,1,2,2,Asian
-137,text,3,133,,00:01:43,00:00:00,delay:8,#bloc5,"size1,serif",12,1,2,2,Inuit
-138,text,3,133,,00:01:43,00:00:00,delay:10,#bloc6,"size1,serif",14,1,2,2,European
-139,text,3,133,,00:01:43,00:00:00,delay:12,#bloc7,"size1,serif",16,1,2,2,Extremist
-134,text,3,133,,00:02:18,,delay:14,#bloc8,"size1,serif",18,1,2,2,"Christian, Jewish, Hindu, Muslim, Buddhist, Atheist, Anarchist, Extremist"
-135,text,3,133,,00:02:18,,delay:16,#bloc9,"size1,serif",4,3,2,2,Jewish
-135,text,3,133,,00:02:35,,delay:18,#bloc10,"size1,serif",6,3,2,2,"Racist, Anti-Semitic, Pro-terrorist, Sexist, Extremist"
-136,text,3,133,,00:03:10,,delay:20,#bloc11,"size1,serif",8,3,2,2,"Fascist, Communist, Socialist, Conservative, Traditionalist, Extremist"
-137,text,3,133,,,,,#bloc12,"size1,serif",10,3,2,2,"Man, Woman, Child, Soldier, Politician, Civilian, Extremist"
-138,text,3,133,,00:03:44,,,#bloc13,"size1,serif",12,3,2,2,"Bully, Master, King, Queen, Emperor, Empress, President, Pope, God, Extremist"
-139,text,3,133,,00:03:52,,,#bloc14,"size1,serif",14,3,2,2,"Slave, Illegal, Hybrid, Common, Nobody, Somebody, Anybody, Extremist"
-140,text,3,133,,,,,#bloc15,"size1,serif",16,3,2,2,"Freedom fighter, Protector, Liberator, Peace keeper, Saviour, Extremist"
-141,text,3,133,,,,,#bloc16,"size1,serif",18,3,2,2,"Soldier, Warrior, Raider, Crusader, Invader, Attacker, Extremist"
-142,text,3,133,,,,,#bloc17,"size1,serif",4,5,2,2,"Victim, Maimed, Wounded, Missing, Dead, Extremist"
-143,text,3,133,,,,,#bloc18,"size1,serif",6,5,2,2,"Rich, Poor, Gunslinger, Mass-Murder, Pacifist, Populist, Extremist"
-144,text,3,133,,,,,#bloc19,"size1,serif",8,5,2,2,"Unknown, Known, Anonymous, Innocent, Guilty, Extremist"
-145,text,3,133,,,,,#bloc20,"size1,serif",10,5,2,2,"Vain, Lustful, Gluttonous, Greedy, ldle, Angry, Envious, Proud, Extremist"
-146,text,3,133,,,,,#bloc21,"size1,serif",12,5,2,2,"Virtuous, Bored, Billionaire, Employed, Enlightened, Privileged, Mediocre, Extremist"
-147,text,3,133,,,,,#bloc22,"size1,serif",14,5,2,2,"Eco-terrorist, Corporate-terrorist, Religious-terrorist, Cultural-terrorist, Extremist"
-148,text,3,133,,,,,#bloc23,"size1,serif",16,5,2,2,"Hero, Heroine, Victor, Winner, Favourite, Ideal, White Knight, Extremist"
-149,text,3,133,,,,,#bloc24,"size1,serif",18,5,2,2,"Radical, Fanatic, Devoted, Revolutionist, Extremist"
-150,text,3,133,,,,,#bloc25,"size1,serif",4,7,2,2,"Coward, Sissy, Chicken, Mouse, Scaredy-Cat, Weakling, Extremist"
-151,text,3,133,,,,,#bloc26,"size1,serif",6,7,2,2,"Reasonable, Sensible, Restrained, Temperate, Practical, Realistic, Liberal, Moderate"
-152,text,3,133,,,,,#bloc27,"size1,serif",8,7,2,2,Moderate Extremist — Extremist Moderate
-153,text,3,,,,,,#bloc1,"size1,serif,center",8,5,8,2,"Does one need to Love ? Don't ask, feel it."
+133,text,3,,,00:01:43,00:00:00,,#bloc1,"size1,slanted",4,1,2,2,"Arabic, African, American, Asian, Inuit, European, Extremist"
+134,text,3,133,,00:01:43,00:00:00,delay:2,#bloc2,"size1,slanted",6,1,2,2,African
+135,text,3,133,,00:01:43,00:00:00,delay:4,#bloc3,"size1,slanted",8,1,2,2,American
+136,text,3,133,,00:01:43,00:00:00,delay:6,#bloc4,"size1,slanted",10,1,2,2,Asian
+137,text,3,133,,00:01:43,00:00:00,delay:8,#bloc5,"size1,slanted",12,1,2,2,Inuit
+138,text,3,133,,00:01:43,00:00:00,delay:10,#bloc6,"size1,slanted",14,1,2,2,European
+139,text,3,133,,00:01:43,00:00:00,delay:12,#bloc7,"size1,slanted",16,1,2,2,Extremist
+134,text,3,133,,00:02:18,,delay:14,#bloc8,"size1,slanted",18,1,2,2,"Christian, Jewish, Hindu, Muslim, Buddhist, Atheist, Anarchist, Extremist"
+135,text,3,133,,00:02:18,,delay:16,#bloc9,"size1,slanted",4,3,2,2,Jewish
+135,text,3,133,,00:02:35,,delay:18,#bloc10,"size1,slanted",6,3,2,2,"Racist, Anti-Semitic, Pro-terrorist, Sexist, Extremist"
+136,text,3,133,,00:03:10,,delay:20,#bloc11,"size1,slanted",8,3,2,2,"Fascist, Communist, Socialist, Conservative, Traditionalist, Extremist"
+137,text,3,133,,,,delay:22,#bloc12,"size1,slanted",10,3,2,2,"Man, Woman, Child, Soldier, Politician, Civilian, Extremist"
+138,text,3,133,,00:03:44,,delay:24,#bloc13,"size1,slanted",12,3,2,2,"Bully, Master, King, Queen, Emperor, Empress, President, Pope, God, Extremist"
+139,text,3,133,,00:03:52,,delay:26,#bloc14,"size1,slanted",14,3,2,2,"Slave, Illegal, Hybrid, Common, Nobody, Somebody, Anybody, Extremist"
+140,text,3,133,,,,delay:28,#bloc15,"size1,slanted",16,3,2,2,"Freedom fighter, Protector, Liberator, Peace keeper, Saviour, Extremist"
+141,text,3,133,,,,delay:30,#bloc16,"size1,slanted",18,3,2,2,"Soldier, Warrior, Raider, Crusader, Invader, Attacker, Extremist"
+142,text,3,133,,,,delay:32,#bloc17,"size1,slanted",4,5,2,2,"Victim, Maimed, Wounded, Missing, Dead, Extremist"
+143,text,3,133,,,,delay:34,#bloc18,"size1,slanted",6,5,2,2,"Rich, Poor, Gunslinger, Mass-Murder, Pacifist, Populist, Extremist"
+144,text,3,133,,,,delay:36,#bloc19,"size1,slanted",8,5,2,2,"Unknown, Known, Anonymous, Innocent, Guilty, Extremist"
+145,text,3,133,,,,delay:38,#bloc20,"size1,slanted",10,5,2,2,"Vain, Lustful, Gluttonous, Greedy, ldle, Angry, Envious, Proud, Extremist"
+146,text,3,133,,,,delay:40,#bloc21,"size1,slanted",12,5,2,2,"Virtuous, Bored, Billionaire, Employed, Enlightened, Privileged, Mediocre, Extremist"
+147,text,3,133,,,,delay:42,#bloc22,"size1,slanted",14,5,2,2,"Eco-terrorist, Corporate-terrorist, Religious-terrorist, Cultural-terrorist, Extremist"
+148,text,3,133,,,,delay:44,#bloc23,"size1,slanted",16,5,2,2,"Hero, Heroine, Victor, Winner, Favourite, Ideal, White Knight, Extremist"
+149,text,3,133,,,,delay:46,#bloc24,"size1,slanted",18,5,2,2,"Radical, Fanatic, Devoted, Revolutionist, Extremist"
+150,text,3,133,,,,delay:48,#bloc25,"size1,slanted",4,7,2,2,"Coward, Sissy, Chicken, Mouse, Scaredy-Cat, Weakling, Extremist"
+151,text,3,133,,,,delay:50,#bloc26,"size1,slanted",6,7,2,2,"Reasonable, Sensible, Restrained, Temperate, Practical, Realistic, Liberal, Moderate"
+152,text,3,133,,,,delay:52,#bloc27,"size1,slanted",8,7,2,2,Moderate Extremist — Extremist Moderate
+153,text,3,,,,,,#bloc1,"size1,slanted,center",8,5,8,2,"Does one need to Love ? Don't ask, feel it."
 154,clear,3,,,00:04:00,,all,,,,,,,
 155,part,4,,,,,,,,,,,,"The larks, still bravely singing"
 156,video,4,,1,,,,,,,,,,
