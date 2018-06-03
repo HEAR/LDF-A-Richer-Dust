@@ -139,7 +139,9 @@ footer{
 }
 
 .interface #prototypoReady{
-	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 33%;
 	width:80px;
 	background: transparent;
