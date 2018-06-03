@@ -82,13 +82,26 @@ $(function () {
 
 					case "part" :
 
+
+
 						elem = $("<li>")
-							.text( data[i].texte )
+							.html( data[i].texte )
 							.data("from", timestamp(data[i].from))
 							.data("to", timestamp(data[i].to))
-							.data("id", data[i].part) ;
+							.data("id", data[i].part)
+							.data("param", {
+								target 	: "#bloc1",
+								colonne : dataConducteur[i].colonne,
+								rang 	: dataConducteur[i].rang,
+								width 	: dataConducteur[i].width,
+								height 	: dataConducteur[i].height,
+								classes : dataConducteur[i].classes.split(",").join(" "),
+								params  : param2json(dataConducteur[i].param)
+							}) ;
 
 						elem.click(function(event){
+
+							stop(false);
 
 							loadPart( $(this).data("id") );
 
@@ -102,6 +115,20 @@ $(function () {
 
 							var command = "/composition/layers/2/clips/1/connect";
 							sendOSC(command, 1);
+
+							params =  $(this).data("param").params ;
+
+							for(var p = 0; p<params.length; p ++ ){
+								if(params[p].action === "title" && params[p].value == 1 ){
+
+									socket.emit('text message', {
+										text:$(this).html(), 
+										param:$(this).data("param")
+									} );
+
+								}
+							}
+
 						});
 
 						$("#parties").append( elem );
@@ -134,14 +161,24 @@ $(function () {
 
 		}else if(event.originalEvent.key == " "){
 
+			if(isPlaying === false){
+				socket.emit('clear message', {
+					param: { blocs : 'all' }
+				} );
+
+				play();
+			}
+
 			console.log('on essaye de lancer le prochain bloc actif');
 
-			$(".stacked").trigger("click");
+			$(".stacked").not(".activated").trigger("click");
 
 
 		}else{
 			console.log("pas de raccourci");
 		}
+
+		event.preventDefault();
 	});
 
 
@@ -158,7 +195,7 @@ $(function () {
 	});
 
 	$("#stop").click( function(){
-		stop();
+		stop(true);
 	});
 
 
@@ -208,7 +245,7 @@ $(function () {
 	    prevDate = new Date();
 	}
 
-	function stop(){
+	function stop(reset){
 		isPaused		= true;
 		isPlaying 		= false;
 		pauseDuration 	= 0;
@@ -223,7 +260,9 @@ $(function () {
 			cleargrid : true
 		});
 
-		loadConducteur();
+		if(reset === true){
+			loadConducteur();
+		}
 
 		sendOSC("/composition/tempocontroller/pause",1);
 	}
@@ -344,7 +383,7 @@ $(function () {
 					case "text" :
 						elem = $("<li>")
 							.attr("id", "event-"+dataConducteur[i].id)
-							.text( dataConducteur[i].texte )
+							.html( dataConducteur[i].texte )
 							.data("parent", dataConducteur[i].parent)
 							.data("from", timestamp(dataConducteur[i].from))
 							.data("to", timestamp(dataConducteur[i].to))
@@ -382,7 +421,7 @@ $(function () {
 						
 
 							socket.emit('text message', {
-								text:$(this).text(), 
+								text:$(this).html(), 
 								param:$(this).data("param")
 							} );
 						});
@@ -521,7 +560,7 @@ $(function () {
 
 						elem = $("<li>")
 							.attr("id", "event-"+dataConducteur[i].id)
-							.text( "générique" )
+							.text("générique")
 							.data("parent", dataConducteur[i].parent)
 							.data("from", timestamp(dataConducteur[i].from))
 							.data("to", timestamp(dataConducteur[i].to))
