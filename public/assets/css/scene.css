@@ -122,6 +122,13 @@ body.callage{
 	text-align: center;
 }
 
+.Vcenter{
+	align-items: center;
+}
+
+.Vbottom{
+	align-items: flex-end;
+}
 
 
 /* POUR GERER LE DELAI */
@@ -146,12 +153,12 @@ margin: 0;
 }
 */
 
-#generique{
+#generiqueContainerContainer{
 
 	height: 100%;
 }
 
-#generique ul{
+#generiqueContainer ul{
 	column-width: 320px;
 	column-gap: 0;
 	column-fill: auto;
@@ -169,15 +176,15 @@ margin: 0;
 	font-family: 'a-richer-dust-Thin', sans-serif;
 }
 
-#generique strong{
+#generiqueContainer strong{
 	font-family: 'a-richer-dust-Bold', sans-serif;
 }
 
-.callage #generique ul{
+.callage #generiqueContainer ul{
 	color: #000;
 }
 
-#generique h3{
+#generiqueContainer h3{
 	line-height: 1.25rem;
 	font-size: 1.1rem;
 	text-align: left;
@@ -186,13 +193,13 @@ margin: 0;
 	font-family: 'a-richer-dust-Large', sans-serif;
 }
 
-#generique ul li{
+#generiqueContainer ul li{
 	margin: 0;
 	padding: 0 10px;
 	/*break-inside: avoid;*/
 }
 
-#generique ul li+li{
+#generiqueContainer ul li+li{
 	margin-bottom:0.25rem;
 }
 
@@ -226,11 +233,19 @@ li img{
 	animation-fill-mode: forwards;
 }
 
+.fadeInOut{
+	opacity: 0;
+	animation: fadeInOut 15s;
+	animation-fill-mode: forwards;
+}
+
 .delay{
 	opacity: 0;
 	animation: delay 0s;
 	animation-fill-mode: forwards;
 }
+
+
 
 @keyframes fadeIn{
 	from{
@@ -244,6 +259,21 @@ li img{
 @keyframes fadeOut{
 	from{
 		opacity: 100;
+	}
+	to{
+		opacity: 0;
+	}
+}
+
+@keyframes fadeInOut{
+	from{
+		opacity: 0;
+	}
+	20%{
+		opacity: 100%;
+	}
+	80%{
+		opacity: 100%;
 	}
 	to{
 		opacity: 0;
