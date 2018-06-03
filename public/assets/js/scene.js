@@ -292,14 +292,14 @@ $(function () {
 		}
 
 		$( msg.param.target )
-			.text(msg.text)
+			.html(msg.text)
 			.addClass("message")
 			.addClass(msg.param.classes)
 			.css("left", msg.param.colonne * pasX )
 			.css("top", msg.param.rang * pasY)
 			.css("width", msg.param.width * pasX )
 			.css("height", msg.param.height * pasY)
-			.css("display", "block");
+			.css("display", "flex");
 
 	});
 
@@ -308,7 +308,7 @@ $(function () {
 		console.log(msg);
 
 		$(".message")
-			.text("")
+			.html("")
 			.removeClassStartingWith("size")
 			.css("left",0)
 			.css("top",0)
@@ -318,7 +318,10 @@ $(function () {
 			.css("display","none");
 
 
-		$(".generique").load("generique.html #generique", function(){
+		$("#generiqueContainer").load("generique.html #generique", function(){
+
+
+			$("#generiqueContainer").attr("style","");
 
 		})
 	});
@@ -334,9 +337,9 @@ $(function () {
 
 		console.log(liste);
 
-		if( liste.indexOf("all") != -1){
+		if( liste.indexOf("all") != -1 || msg.param.blocs == ""){
 			$(".message")
-				.text("")
+				.html("")
 				.removeClassStartingWith("size")
 				.css("left",0)
 				.css("top",0)
@@ -345,12 +348,12 @@ $(function () {
 				.css("animation-delay", "0s")
 				.css("display","none");
 
-			$(".generique").empty();
+			$("#generiqueContainer").empty();
 		}else{
 
 			liste.forEach(function(element) {
 				$("#"+element)
-					.text("")
+					.html("")
 					.removeClassStartingWith("size")
 					.css("left",0)
 					.css("top",0)
@@ -360,7 +363,7 @@ $(function () {
 					.css("display","none");
 			});
 
-			$(".generique").empty();
+			$("#generiqueContainer").empty();
 		}
 
 	});
@@ -375,8 +378,9 @@ $(function () {
 
 		if(msg.cleargrid === true){
 			$("#scene div")
-			.text("")
+			.html("")
 			.css("display","none")
+			.not("#generiqueContainer")
 			.attr("class", "message");
 		}
 
