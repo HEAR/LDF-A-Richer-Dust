@@ -321,7 +321,9 @@ $(function () {
 		$("#generiqueContainer").load("generique.html #generique", function(){
 
 
-			$("#generiqueContainer").attr("style","");
+			$("#generiqueContainer")
+			.attr("style","")
+			.addClass("fadeIn");
 
 		})
 	});
