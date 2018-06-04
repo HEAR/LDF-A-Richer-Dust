@@ -82,8 +82,6 @@ $(function () {
 
 					case "part" :
 
-
-
 						elem = $("<li>")
 							.html( data[i].texte )
 							.data("from", timestamp(data[i].from))
@@ -101,6 +99,7 @@ $(function () {
 
 						elem.click(function(event){
 
+							// on arrête la lecture sans réinitialiser le conducteur 
 							stop(false);
 
 							loadPart( $(this).data("id") );
@@ -110,12 +109,15 @@ $(function () {
 							$(this).addClass("activated");
 							$(this).addClass("active");
 
+							// on sélectionne le dossier de vidéos correspondant à la partie dans resolume
 							var command = "/composition/decks/"+ ( parseInt($(this).data("id")) + 1 ) +"/select/";
 							sendOSC(command, 1);
 
+							// on affiche la couche NDI qui récupère le flux vidéo prototypo 
 							var command = "/composition/layers/2/clips/1/connect";
 							sendOSC(command, 1);
 
+							// on vérifie si on doit afficher le titre de la partie
 							params =  $(this).data("param").params ;
 
 							for(var p = 0; p<params.length; p ++ ){
@@ -145,7 +147,7 @@ $(function () {
 
 
 	/**
-	 * [description]
+	 * Permet d'activer les raccourcis clavier
 	 * @param  {[type]}
 	 * @return {[type]}
 	 */
@@ -161,6 +163,8 @@ $(function () {
 
 		}else if(event.originalEvent.key == " "){
 
+			// si le chronomètre n'était pas lancé, on le lance et on nettoie l'affichage
+			// cela permet de cacher un titre de partie au lancement de cette dernière
 			if(isPlaying === false){
 				socket.emit('clear message', {
 					param: { blocs : 'all' }
@@ -628,10 +632,19 @@ function evenements(millis, socket){
 	let time = millis.millis + millis.seconds *1000 + millis.minutes * 60000;
 
 	$("#flux li").not(".activated").each(function(elem){
+
+		// console.log($(this).attr("id"),$(this).data("from"), time);
+
 		// console.log( $(this) )
-		if( $(this).data("from")!= false && $(this).data("from") <= time ){
+		if( $(this).data("from")!== false && $(this).data("from") <= time ){
+
 			// console.log( $(this).data("from") );
 			$(this).addClass("stacked");
+
+			// on active automatiquement les éléments qui ont un timecode à 00:00:00
+			if( $(this).data("from") === 0 && $(this).hasClass("stacked") &&  ! $(this).hasClass("activated ") ){
+				$(this).trigger("click");
+			}
 
 			// socket.emit('chat message', $(this).text() );
 		}
