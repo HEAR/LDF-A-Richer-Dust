@@ -4,7 +4,7 @@
 	"milliAbbleton":1000,
 	"portHttp":3000,
 	"portOSC":4000,
-	"ipResolume":"169.254.222.10",
+	"ipResolume":"169.254.206.189",
 	"portResolume":7000,
 	"ipAbbleton":"0.0.0.0"
 }
