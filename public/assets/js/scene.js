@@ -281,11 +281,11 @@ $(function () {
 		}
 
 		if(noirValue === true){
-			sendOSC("composition/layers/2/clips/1/video/effects/invertrbg/bypassed",1);
-			sendOSC("composition/layers/2/video/mixer/blendmode",3);
+			sendOSC("/composition/layers/2/video/effects/invertrbg/bypassed",1);
+			sendOSC("/composition/layers/2/video/mixer/blendmode",3);
 		}else{
-			sendOSC("composition/layers/2/clips/1/video/effects/invertrbg/bypassed",0);
-			sendOSC("composition/layers/2/video/mixer/blendmode",0);
+			sendOSC("/composition/layers/2/video/effects/invertrbg/bypassed",0);
+			sendOSC("/composition/layers/2/video/mixer/blendmode",0);
 		}
 
 		console.log("delayValue",delayValue);
