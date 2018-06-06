@@ -179,19 +179,17 @@ io.on('connection', function(socket){
 	});
 });
 
-// Pour envoyer les messages abbleton à intervale régulier
-if(param.isAbbleton !== false){
-	abbletonInterval = setInterval(abbletonSender, param.milliAbbleton);
-}
-
-function abbletonSender(){
-	console.log("socket emit abbleton", abbletonJSON);
-
-	io.emit('abbleton message', abbletonJSON);
-}
 
 
 
+
+/*
+ ============================================================
+ |/														   \|
+ ||					~	ABLETON LIVE	~				   ||
+ |\														   /|
+ ============================================================
+ */
 
 
 
@@ -207,14 +205,16 @@ var sock = udp.createSocket("udp4", function(msg, rinfo) {
 	var error;
 	try {
 
-		console.log("osc input",osc.fromBuffer(msg));
+		// console.log("osc input",osc.fromBuffer(msg));
 
 		let messageOSC = osc.fromBuffer(msg);
 
 		// console.log("osc address",messageOSC.address);		
-		
-
 		// if( messageOSC.address.indexOf('/abbleton') !== -1){
+
+			
+		// on stocke toutes les valeurs dans abbletonJSON
+		// => éventuellement ajouter un delta pour vérifier qu'il est intéressant de la prendre en compte
 
 		switch(osc.fromBuffer(msg).address){
 			case '/abbleton/highfrequency' :
@@ -238,14 +238,25 @@ var sock = udp.createSocket("udp4", function(msg, rinfo) {
 			// console.log('abbleton message');
 		// }
 		
-
-
-		return console.log(osc.fromBuffer(msg));
+		return osc.fromBuffer(msg);//console.log(osc.fromBuffer(msg));
 	} catch (error1) {
 		error = error1;
 		return console.log("invalid OSC packet");
 	}
 });
+
+
+// Pour envoyer les messages abbleton à intervales réguliers
+// permet d'éviter de saturer le socket
+if(param.isAbbleton !== false){
+	abbletonInterval = setInterval(abbletonSender, param.milliAbbleton);
+}
+
+function abbletonSender(){
+	console.log("socket emit abbleton", abbletonJSON);
+
+	io.emit('abbleton message', abbletonJSON);
+}
 
 
 

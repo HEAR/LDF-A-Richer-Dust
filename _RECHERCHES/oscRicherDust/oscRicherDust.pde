@@ -40,10 +40,13 @@ void draw() {
   background(0);
 
   if(sendingData){
+    fill(255,0,0);
+    ellipse(width/2,height/2,width-20,height-20);
+      
     OscMessage message = new OscMessage("/abbleton/highfrequency");
     //message.add( random(1.0)/1000 );
     
-    message.add( noise(noiseValue)/1000 );
+    message.add( noise(noiseValue) );
     oscP5.send(message, myBroadcastLocation);
   }
   

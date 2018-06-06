@@ -74,8 +74,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			return prototypoFontFactory
 			.createFont('a-richer-dust-Regular', Ptypo.templateNames.GROTESK)
 			.then(function (font) {
+				ptypoFontRegular = font;
 				// console.log("font", font);
-				font.changeParams(valuesRegular);
+				ptypoFontRegular.changeParams(valuesRegular);
 			})
 			.catch(error => console.log(error));
 
@@ -86,8 +87,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			return prototypoFontFactory
 			.createFont('a-richer-dust-Thin', Ptypo.templateNames.GROTESK)
 			.then(function (font) {
+				ptypoFontThin = font;
 				// console.log("font", font);
-				font.changeParams(valuesThin);
+				ptypoFontThin.changeParams(valuesThin);
 			})
 			.catch(error => console.log(error));
 
@@ -98,8 +100,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			return prototypoFontFactory
 			.createFont('a-richer-dust-Bold', Ptypo.templateNames.GROTESK)
 			.then(function (font) {
+				ptypoFontBold = font;
 				// console.log("font", font);
-				font.changeParams(valuesBold);
+				ptypoFontBold.changeParams(valuesBold);
 			})
 			.catch(error => console.log(error));
 
@@ -110,8 +113,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			return prototypoFontFactory
 			.createFont('a-richer-dust-Slanted', Ptypo.templateNames.GROTESK)
 			.then(function (font) {
+				ptypoFontSlanted = font;
 				// console.log("font", font);
-				font.changeParams(valuesSlanted);
+				ptypoFontSlanted.changeParams(valuesSlanted);
 			})
 			.catch(error => console.log(error));
 
@@ -122,8 +126,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			return prototypoFontFactory
 			.createFont('a-richer-dust-Serif', Ptypo.templateNames.GROTESK)
 			.then(function (font) {
+				ptypoFontSerif = font;
 				// console.log("font", font);
-				font.changeParams(valuesSerif);
+				ptypoFontSerif.changeParams(valuesSerif);
 			})
 			.catch(error => console.log(error));
 
@@ -134,8 +139,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			return prototypoFontFactory
 			.createFont('a-richer-dust-Large', Ptypo.templateNames.GROTESK)
 			.then(function (font) {
+				ptypoFontLarge = font;
 				// console.log("font", font);
-				font.changeParams(valuesLarge);
+				ptypoFontLarge.changeParams(valuesLarge);
 			})
 			.catch(error => console.log(error));
 
@@ -156,10 +162,20 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 			sock.on('abbleton message', function(msg){
 
+				// bold 		125 		>	 	140 		>	 180
+				// thin 		115 		>	 	 62 		>	  35.14
+				// slanted		  0 		>	 	 13 		>	  30
+				// serif		 45.42		>	 	112.33 		>	 166
+				// thin 		  1 		>	 	  1.8 		>	   2.7
+
 				// console.log(msg);
-				console.log(msg.args[0].value * 2000000);
+				// console.log(msg.args[0].value * 2000000);
 				// $('#bloc1').text( msg.text );	
-				ptypoFontRegular.changeParam('thickness', (2 * 1000000 * msg.args[0].value), $('.scene').text());
+
+				let thickness = 50 + msg.highfrequency * 110;
+				let width = 0.5 + msg.highfrequency * 1.5;
+
+				ptypoFontLarge.changeParam({'width': width}, $('.abbleton').text());
 				// console.log(msg.param);
 			});
 
@@ -294,6 +310,7 @@ $(function () {
 		$( msg.param.target )
 			.html(msg.text)
 			.addClass("message")
+			.addClass("abbleton")
 			.addClass(msg.param.classes)
 			.css("left", msg.param.colonne * pasX )
 			.css("top", msg.param.rang * pasY)
@@ -389,6 +406,20 @@ $(function () {
 		console.log(msg);
 		
 	});
+
+
+	/* JUSTE POUR LE TEST */
+	// socket.on('abbleton message', function(msg){
+
+	// 	// console.log(msg);
+	// 	console.log("abbleton", msg.highfrequency * 20000 );//msg.args[0].value * 2000000);
+
+	// 	$(".abbleton").css("font-size", msg.highfrequency * 200000 );
+
+	// 	// $('#bloc1').text( msg.text );	
+	// 	// ptypoFontRegular.changeParam('thickness', (2 * 1000000 * msg.args[0].value), $('.scene').text());
+	// 	// console.log(msg.param);
+	// });
 
 	// CHARGEMENT DU CODE PROTOTYPO
 	// en fonction des paramètres dans param.json (copie de param-sample.json) 
