@@ -54,6 +54,8 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		var valuesSerif	    = variantSerif.values;
 		var valuesLarge	    = variantLarge.values;
 
+		console.log("valuesRegular",valuesRegular);
+
 
 	    // var ptypoFont;
 	    var ptypoFontRegular, ptypoFontThin, ptypoFontBold, ptypoFontSlanted, ptypoFontSerif, ptypoFontLarge;
@@ -160,7 +162,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			} );
 
 
-			sock.on('abbleton message', function(msg){
+			sock.on('ableton message', function(msg){
 
 				// bold 		125 		>	 	140 		>	 180
 				// thin 		115 		>	 	 62 		>	  35.14
@@ -175,7 +177,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 				let thickness = 50 + msg.highfrequency * 110;
 				let width = 0.5 + msg.highfrequency * 1.5;
 
-				ptypoFontLarge.changeParam({'width': width}, $('.abbleton').text());
+				ptypoFontLarge.changeParam({'width': width}, $('.ableton').text());
 				// console.log(msg.param);
 			});
 
@@ -310,7 +312,7 @@ $(function () {
 		$( msg.param.target )
 			.html(msg.text)
 			.addClass("message")
-			.addClass("abbleton")
+			.addClass("ableton")
 			.addClass(msg.param.classes)
 			.css("left", msg.param.colonne * pasX )
 			.css("top", msg.param.rang * pasY)
@@ -409,12 +411,12 @@ $(function () {
 
 
 	/* JUSTE POUR LE TEST */
-	// socket.on('abbleton message', function(msg){
+	// socket.on('ableton message', function(msg){
 
 	// 	// console.log(msg);
-	// 	console.log("abbleton", msg.highfrequency * 20000 );//msg.args[0].value * 2000000);
+	// 	console.log("ableton", msg.highfrequency * 20000 );//msg.args[0].value * 2000000);
 
-	// 	$(".abbleton").css("font-size", msg.highfrequency * 200000 );
+	// 	$(".ableton").css("font-size", msg.highfrequency * 200000 );
 
 	// 	// $('#bloc1').text( msg.text );	
 	// 	// ptypoFontRegular.changeParam('thickness', (2 * 1000000 * msg.args[0].value), $('.scene').text());
@@ -526,3 +528,47 @@ function createCSSSelector (selector, style) {
 		styleSheet.insertRule(selector + '{' + style + '}', styleSheetLength);
 	}
 }
+
+
+
+
+/*
+
+PROTOTYPO REGULAR Values
+
+_contrast: -1
+_contrastExtremity: -0.9333333333333333
+_scThickness: 0.9
+_scWidth: 0.7
+aperture: 1.078076923076923
+apertureBottom: 1
+apertureTop: 1.1017094017094016
+ascender: 230
+capDelta: 223.076923076923
+crossbar: 1
+curviness: 0.6
+descender: -250
+diacriticHeight: 82.6346153846154
+midWidth: 1
+opticThickness: 0.9469230769230769
+overshoot: 8.923076923076922
+serifArc: 0
+serifBall: 1
+serifCurve: -1
+serifHeight: 5
+serifMedian: 1
+serifRotate: 0
+serifRoundness: 1
+serifTerminal: 0
+serifTerminalCurve: 1
+serifWidth: 0.01
+slant: 0
+smallCapDelta: 1
+spacing: 0
+spurHeight: 0
+thickness: 115.69230769230771
+width: 1
+xHeight: 493.8461538461539
+
+*/
+ */
