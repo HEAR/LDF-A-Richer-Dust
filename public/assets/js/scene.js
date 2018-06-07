@@ -161,6 +161,10 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 				prototypoReady:true
 			} );
 
+			console.log("TEXTE", uniqueText( $('.ableton').text() ) );
+
+			//ptypoFontBold.changeParam('thickness', 300, uniqueText( $('.ableton').text() ));
+
 			var thickness, prevThickness;
 
 			sock.on('ableton message', function(msg){
@@ -178,7 +182,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 				// let thickness = 50 + msg.highfrequency * 110;
 				// let width = 0.5 + msg.highfrequency * 1.5;
 				
-				thickness = remap(msg.mid.val, msg.mid.min, msg.mid.max, 125, 180);
+				thickness = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 125, 180);
 
 				// console.log(msg.param);
 			});
@@ -189,9 +193,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 				console.log( "_debounce", thickness );
 
-				ptypoFontBold.changeParam({'thickness': thickness}, $('.ableton').text());
+				ptypoFontBold.changeParam('thickness', thickness, uniqueText( $('.ableton').text() ));
 
-			}, 10);
+			}, 40);
 
 
 			var isRaf = false;
@@ -216,6 +220,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 			}
 			doDraw();
+
 
 		})
 		.catch(error => console.log(error));
@@ -580,6 +585,11 @@ function createCSSSelector (selector, style) {
  */
 function remap(value, start1, stop1, start2, stop2) {
     return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
+}
+
+
+function uniqueText(txt){
+	return txt.split('').filter(function(item, i, ar){ return ar.indexOf(item) === i; }).join('');
 }
 
 
