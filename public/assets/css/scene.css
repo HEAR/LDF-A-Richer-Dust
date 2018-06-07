@@ -65,11 +65,12 @@ body.callage{
 	position: absolute;
 	line-height: 1rem;
 	font-size: 0.9rem;
-	padding-top: 0.2rem;
+	/*padding-top: 0.2rem;*/
 	display: none;
 	background: transparent;
 	color: #FFF;
 	text-align: left;
+	padding: 0.2rem 0.5rem 0;
 }
 
 .callage .message{
