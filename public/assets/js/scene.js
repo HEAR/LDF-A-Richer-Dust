@@ -161,25 +161,61 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 				prototypoReady:true
 			} );
 
+			var thickness, prevThickness;
 
 			sock.on('ableton message', function(msg){
 
-				// bold 		125 		>	 	140 		>	 180
-				// thin 		115 		>	 	 62 		>	  35.14
-				// slanted		  0 		>	 	 13 		>	  30
-				// serif		 45.42		>	 	112.33 		>	 166
-				// thin 		  1 		>	 	  1.8 		>	   2.7
+				// bold 		125 		>	 	140 		>	 180				=> thickness
+				// thin 		115 		>	 	 62 		>	  35.14				=> thickness
+				// slanted		  0 		>	 	 13 		>	  30				=> slant
+				// serif		 45.42		>	 	112.33 		>	 166				=> serifWidth
+				// thin 		  1 		>	 	  1.8 		>	   2.7				=> width
 
 				// console.log(msg);
 				// console.log(msg.args[0].value * 2000000);
 				// $('#bloc1').text( msg.text );	
 
-				let thickness = 50 + msg.highfrequency * 110;
-				let width = 0.5 + msg.highfrequency * 1.5;
+				// let thickness = 50 + msg.highfrequency * 110;
+				// let width = 0.5 + msg.highfrequency * 1.5;
+				
+				thickness = remap(msg.mid.val, msg.mid.min, msg.mid.max, 125, 180);
 
-				ptypoFontLarge.changeParam({'width': width}, $('.ableton').text());
 				// console.log(msg.param);
 			});
+
+
+			//Fonction appelée pendant l'analyse du flux audio permettant de changer les paramètres de la police pour chaque fréquence
+			var updateFont = _.debounce(function () {
+
+				console.log( "_debounce", thickness );
+
+				ptypoFontBold.changeParam({'thickness': thickness}, $('.ableton').text());
+
+			}, 10);
+
+
+			var isRaf = false;
+			var lastMedValue = 0;
+	        var lastLowValue = 0;
+	        var lastHighValue = 0;
+
+
+	        // Boucle d'analyse
+	        var doDraw = function () {
+
+	        	// console.log("thickness",thickness);
+	        	// 	        	
+	        	if(Math.abs(prevThickness - thickness) > 1){
+	        		updateFont();
+	        	}
+
+				prevThickness = thickness;
+				if (!isRaf) {
+	        		requestAnimationFrame(doDraw);
+	        	}
+
+			}
+			doDraw();
 
 		})
 		.catch(error => console.log(error));
@@ -530,6 +566,21 @@ function createCSSSelector (selector, style) {
 }
 
 
+/**
+ * [remap description]
+ * https://stackoverflow.com/questions/20910091/recreating-the-processing-map-function-in-javascript
+ * ou
+ * https://stackoverflow.com/questions/5649803/remap-or-map-function-in-javascript#5650012
+ * @param  {[type]} value  [description]
+ * @param  {[type]} start1 [description]
+ * @param  {[type]} stop1  [description]
+ * @param  {[type]} start2 [description]
+ * @param  {[type]} stop2  [description]
+ * @return {[type]}        [description]
+ */
+function remap(value, start1, stop1, start2, stop2) {
+    return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
+}
 
 
 /*
@@ -571,4 +622,3 @@ width: 1
 xHeight: 493.8461538461539
 
 */
- */
