@@ -117,6 +117,9 @@ $(function () {
 							var command = "/composition/layers/2/clips/1/connect";
 							sendOSC(command, 1);
 
+							var command = "/composition/layers/1/clips/20/connect";
+							sendOSC(command, 1);
+
 							// on vérifie si on doit afficher le titre de la partie
 							params =  $(this).data("param").params ;
 
