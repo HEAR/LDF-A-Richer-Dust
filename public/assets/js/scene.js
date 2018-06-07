@@ -196,23 +196,23 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 			var isRaf = false;
 			var lastMedValue = 0;
-	        var lastLowValue = 0;
-	        var lastHighValue = 0;
+	 		var lastLowValue = 0;
+			var lastHighValue = 0;
 
 
-	        // Boucle d'analyse
-	        var doDraw = function () {
+			// Boucle d'analyse
+			var doDraw = function () {
 
-	        	// console.log("thickness",thickness);
-	        	// 	        	
-	        	if(Math.abs(prevThickness - thickness) > 1){
-	        		updateFont();
-	        	}
+				// console.log("thickness",thickness);
+				// 	        	
+				if(Math.abs(prevThickness - thickness) > 1){
+					updateFont();
+				}
 
 				prevThickness = thickness;
 				if (!isRaf) {
-	        		requestAnimationFrame(doDraw);
-	        	}
+					requestAnimationFrame(doDraw);
+				}
 
 			}
 			doDraw();
