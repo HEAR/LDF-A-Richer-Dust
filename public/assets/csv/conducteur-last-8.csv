@@ -1,3 +1,4 @@
+id,type,part,parent,movie,from,to,param,target,classes,colonne,rang,width,height,texte
 1,part,0,,,,,,,,,,,,Prologue
 2,video,0,,1,00:00:00,00:04:14,,,,,,,,
 3,text,0,,,00:14:40,00:17:08,,#bloc1,"size4,center,bold",6,5,14,3,A Richer Dust
