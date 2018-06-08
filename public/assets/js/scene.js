@@ -176,6 +176,13 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 				slant 				= valuesSlanted.slant;
 				serifWidth 			= valuesSerif.serifWidth;
 				width 				= valuesLarge.width;
+
+				ptypoFontRegular.changeParam('thickness', thicknessBold);
+				ptypoFontBold.changeParam('thickness', thicknessBold);
+				ptypoFontThin.changeParam('thickness', thicknessThin);
+				ptypoFontSlanted.changeParam('slant', slant);
+				ptypoFontSerif.changeParam('serifWidth', serifWidth);
+				ptypoFontLarge.changeParam('width', width);
 		    }
 
 			sock.on('ableton message', function(msg){
