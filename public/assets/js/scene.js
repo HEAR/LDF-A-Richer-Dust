@@ -74,7 +74,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
-			.createFont('a-richer-dust-Regular', Ptypo.templateNames.GROTESK)
+			.createFont('a-richer-dust-Regular', Ptypo.templateNames.GROTESK, true)
 			.then(function (font) {
 				ptypoFontRegular = font;
 				// console.log("font", font);
@@ -87,7 +87,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
-			.createFont('a-richer-dust-Thin', Ptypo.templateNames.GROTESK)
+			.createFont('a-richer-dust-Thin', Ptypo.templateNames.GROTESK, true)
 			.then(function (font) {
 				ptypoFontThin = font;
 				// console.log("font", font);
@@ -100,7 +100,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
-			.createFont('a-richer-dust-Bold', Ptypo.templateNames.GROTESK)
+			.createFont('a-richer-dust-Bold', Ptypo.templateNames.GROTESK, true)
 			.then(function (font) {
 				ptypoFontBold = font;
 				// console.log("font", font);
@@ -113,7 +113,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
-			.createFont('a-richer-dust-Slanted', Ptypo.templateNames.GROTESK)
+			.createFont('a-richer-dust-Slanted', Ptypo.templateNames.GROTESK, true)
 			.then(function (font) {
 				ptypoFontSlanted = font;
 				// console.log("font", font);
@@ -126,7 +126,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
-			.createFont('a-richer-dust-Serif', Ptypo.templateNames.GROTESK)
+			.createFont('a-richer-dust-Serif', Ptypo.templateNames.GROTESK, true)
 			.then(function (font) {
 				ptypoFontSerif = font;
 				// console.log("font", font);
@@ -139,7 +139,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
-			.createFont('a-richer-dust-Large', Ptypo.templateNames.GROTESK)
+			.createFont('a-richer-dust-Large', Ptypo.templateNames.GROTESK, true)
 			.then(function (font) {
 				ptypoFontLarge = font;
 				// console.log("font", font);
@@ -173,7 +173,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 				// thin 		115 		>	 	 62 		>	  35.14				=> thickness
 				// slanted		  0 		>	 	 13 		>	  30				=> slant
 				// serif		 45.42		>	 	112.33 		>	 166				=> serifWidth
-				// thin 		  1 		>	 	  1.8 		>	   2.7				=> width
+				// large 		  1 		>	 	  1.8 		>	   2.7				=> width
 
 				// console.log(msg);
 				// console.log(msg.args[0].value * 2000000);
@@ -182,14 +182,34 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 				// let thickness = 50 + msg.highfrequency * 110;
 				// let width = 0.5 + msg.highfrequency * 1.5;
 				
-				thickness = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 125, 180);
+				thicknessBold = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 125, 180);
+
+				thicknessThin = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 115, 62);
+
+				slant 		  = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 0, 30);
+
+				serifWidth 	  = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 45.42, 166);
+
+				width 		  = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 1, 2.7);
+
+
+
+				ptypoFontBold.changeParam('thickness', thicknessBold, uniqueText( $('.ableton').text() ));
+
+				// ptypoFontThin.changeParam('thickness', thicknessThin, uniqueText( $('.ableton').text() ));
+
+				// ptypoFontSlanted.changeParam('slant', slant, uniqueText( $('.ableton').text() ));
+
+				// ptypoFontSerif.changeParam('serifWidth', serifWidth, uniqueText( $('.ableton').text() ));
+
+				// ptypoFontLarge.changeParam('width', width, uniqueText( $('.ableton').text() ));
 
 				// console.log(msg.param);
 			});
 
 
 			//Fonction appelée pendant l'analyse du flux audio permettant de changer les paramètres de la police pour chaque fréquence
-			var updateFont = _.debounce(function () {
+			/*var updateFont = _.debounce(function () {
 
 				console.log( "_debounce", thickness );
 
@@ -219,7 +239,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 				}
 
 			}
-			doDraw();
+			doDraw();*/
 
 
 		})
@@ -399,7 +419,7 @@ $(function () {
 
 		console.log(liste);
 
-		if( liste.indexOf("all") != -1 || msg.param.blocs == ""){
+		if( liste.indexOf("all") != -1 || msg.param.blocs == ""){ // !!!!!!!!! VERIFIER
 			$(".message")
 				.html("")
 				.removeClassStartingWith("size")
