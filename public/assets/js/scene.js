@@ -171,8 +171,8 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 			function resetFonts(){
 				thicknessRegular 	= valuesRegular.thickness;
-				thicknessBold 		= valuesThin.thickness;
-				thicknessThin 		= valuesBold.thickness;
+				thicknessBold 		= valuesBold.thickness;
+				thicknessThin 		= valuesThin.thickness;
 				slant 				= valuesSlanted.slant;
 				serifWidth 			= valuesSerif.serifWidth;
 				width 				= valuesLarge.width;
