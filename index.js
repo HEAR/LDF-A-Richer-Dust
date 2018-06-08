@@ -26,10 +26,13 @@ const clc 		= require('cli-color');
 const csvjson 	= require('csvjson');
 
 
-var abbletonJSON = {};
+var abletonJSON = {};
+abletonJSON.high 		= { min :1, max : 0, val : 0 };
+abletonJSON.mid 		= { min :1, max : 0, val : 0 };
+abletonJSON.low 		= { min :1, max : 0, val : 0 };
 
-const ipResolume = param.ipResolume;
-const portResolume = param.portResolume;
+const ipResolume 	= param.ipResolume;
+const portResolume 	= param.portResolume;
 
 
 console.log(param);
@@ -179,19 +182,17 @@ io.on('connection', function(socket){
 	});
 });
 
-// Pour envoyer les messages abbleton à intervale régulier
-if(param.isAbbleton !== false){
-	abbletonInterval = setInterval(abbletonSender, param.milliAbbleton);
-}
-
-function abbletonSender(){
-	console.log("socket emit abbleton", abbletonJSON);
-
-	io.emit('abbleton message', abbletonJSON);
-}
 
 
 
+
+/*
+ ============================================================
+ |/														   \|
+ ||					~	ABLETON LIVE	~				   ||
+ |\														   /|
+ ============================================================
+ */
 
 
 
@@ -207,45 +208,68 @@ var sock = udp.createSocket("udp4", function(msg, rinfo) {
 	var error;
 	try {
 
-		console.log("osc input",osc.fromBuffer(msg));
+		// console.log("osc input",osc.fromBuffer(msg));
 
 		let messageOSC = osc.fromBuffer(msg);
 
 		// console.log("osc address",messageOSC.address);		
-		
+		// if( messageOSC.address.indexOf('/ableton') !== -1){
 
-		// if( messageOSC.address.indexOf('/abbleton') !== -1){
+			
+		// on stocke toutes les valeurs dans abletonJSON
+		// => éventuellement ajouter un delta pour vérifier qu'il est intéressant de la prendre en compte
 
 		switch(osc.fromBuffer(msg).address){
-			case '/abbleton/highfrequency' :
+			case '/ableton/highfrequency' :
 				// console.log( clc.blue('\thighfrequency') );
-				abbletonJSON.highfrequency = osc.fromBuffer(msg).args[0].value;
+				abletonJSON.high.val = osc.fromBuffer(msg).args[0].value;
+
+				abletonJSON.high.min = Math.min(abletonJSON.high.min, abletonJSON.high.val);
+				abletonJSON.high.max = Math.max(abletonJSON.high.max, abletonJSON.high.val);
 			break;
-			case '/abbleton/midfrequency' :
+			case '/ableton/midfrequency' :
 				// console.log( clc.blue('\tmidfrequency') );
-				abbletonJSON.midfrequency = osc.fromBuffer(msg).args[0].value;
+				abletonJSON.mid.val = osc.fromBuffer(msg).args[0].value;
+
+				abletonJSON.mid.min  = Math.min(abletonJSON.mid.min, abletonJSON.mid.val);
+				abletonJSON.mid.max  = Math.max(abletonJSON.mid.max, abletonJSON.mid.val);
 			break;
-			case '/abbleton/lowfrequency' :
+			case '/ableton/lowfrequency' :
 				// console.log( clc.blue('\tlowfrequency') );
-				abbletonJSON.lowfrequency = osc.fromBuffer(msg).args[0].value;
+				abletonJSON.low.val = osc.fromBuffer(msg).args[0].value;
+
+				abletonJSON.low.min  = Math.min(abletonJSON.low.min, abletonJSON.low.val);
+				abletonJSON.low.max  = Math.max(abletonJSON.low.max, abletonJSON.low.val);
 			break;
 			default:
 
 			break;
 		}
 
-			// io.emit('abbleton message', messageOSC);
-			// console.log('abbleton message');
+			// io.emit('ableton message', messageOSC);
+			// console.log('ableton message');
 		// }
 		
-
-
-		return console.log(osc.fromBuffer(msg));
+		return osc.fromBuffer(msg);//console.log(osc.fromBuffer(msg));
 	} catch (error1) {
 		error = error1;
 		return console.log("invalid OSC packet");
 	}
 });
+
+
+// Pour envoyer les messages ableton à intervales réguliers
+// permet d'éviter de saturer le socket
+if(param.isAbleton !== false){
+	abletonInterval = setInterval(abletonSender, param.milliAbleton);
+}
+
+function abletonSender(){
+
+	console.log("socket emit ableton", abletonJSON);
+
+	io.emit('ableton message', abletonJSON);
+}
 
 
 

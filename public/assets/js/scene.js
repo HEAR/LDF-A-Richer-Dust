@@ -54,6 +54,8 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		var valuesSerif	    = variantSerif.values;
 		var valuesLarge	    = variantLarge.values;
 
+		console.log("valuesRegular",valuesRegular);
+
 
 	    // var ptypoFont;
 	    var ptypoFontRegular, ptypoFontThin, ptypoFontBold, ptypoFontSlanted, ptypoFontSerif, ptypoFontLarge;
@@ -72,10 +74,11 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
-			.createFont('a-richer-dust-Regular', Ptypo.templateNames.GROTESK)
+			.createFont('a-richer-dust-Regular', Ptypo.templateNames.GROTESK, true)
 			.then(function (font) {
+				ptypoFontRegular = font;
 				// console.log("font", font);
-				font.changeParams(valuesRegular);
+				ptypoFontRegular.changeParams(valuesRegular);
 			})
 			.catch(error => console.log(error));
 
@@ -84,10 +87,11 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
-			.createFont('a-richer-dust-Thin', Ptypo.templateNames.GROTESK)
+			.createFont('a-richer-dust-Thin', Ptypo.templateNames.GROTESK, true)
 			.then(function (font) {
+				ptypoFontThin = font;
 				// console.log("font", font);
-				font.changeParams(valuesThin);
+				ptypoFontThin.changeParams(valuesThin);
 			})
 			.catch(error => console.log(error));
 
@@ -96,10 +100,11 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
-			.createFont('a-richer-dust-Bold', Ptypo.templateNames.GROTESK)
+			.createFont('a-richer-dust-Bold', Ptypo.templateNames.GROTESK, true)
 			.then(function (font) {
+				ptypoFontBold = font;
 				// console.log("font", font);
-				font.changeParams(valuesBold);
+				ptypoFontBold.changeParams(valuesBold);
 			})
 			.catch(error => console.log(error));
 
@@ -108,10 +113,11 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
-			.createFont('a-richer-dust-Slanted', Ptypo.templateNames.GROTESK)
+			.createFont('a-richer-dust-Slanted', Ptypo.templateNames.GROTESK, true)
 			.then(function (font) {
+				ptypoFontSlanted = font;
 				// console.log("font", font);
-				font.changeParams(valuesSlanted);
+				ptypoFontSlanted.changeParams(valuesSlanted);
 			})
 			.catch(error => console.log(error));
 
@@ -120,10 +126,11 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
-			.createFont('a-richer-dust-Serif', Ptypo.templateNames.GROTESK)
+			.createFont('a-richer-dust-Serif', Ptypo.templateNames.GROTESK, true)
 			.then(function (font) {
+				ptypoFontSerif = font;
 				// console.log("font", font);
-				font.changeParams(valuesSerif);
+				ptypoFontSerif.changeParams(valuesSerif);
 			})
 			.catch(error => console.log(error));
 
@@ -132,10 +139,11 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
-			.createFont('a-richer-dust-Large', Ptypo.templateNames.GROTESK)
+			.createFont('a-richer-dust-Large', Ptypo.templateNames.GROTESK, true)
 			.then(function (font) {
+				ptypoFontLarge = font;
 				// console.log("font", font);
-				font.changeParams(valuesLarge);
+				ptypoFontLarge.changeParams(valuesLarge);
 			})
 			.catch(error => console.log(error));
 
@@ -153,15 +161,86 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 				prototypoReady:true
 			} );
 
+			console.log("TEXTE", uniqueText( $('.ableton').text() ) );
 
-			sock.on('abbleton message', function(msg){
+			//ptypoFontBold.changeParam('thickness', 300, uniqueText( $('.ableton').text() ));
+
+			var thickness, prevThickness;
+
+			sock.on('ableton message', function(msg){
+
+				// bold 		125 		>	 	140 		>	 180				=> thickness
+				// thin 		115 		>	 	 62 		>	  35.14				=> thickness
+				// slanted		  0 		>	 	 13 		>	  30				=> slant
+				// serif		 45.42		>	 	112.33 		>	 166				=> serifWidth
+				// large 		  1 		>	 	  1.8 		>	   2.7				=> width
 
 				// console.log(msg);
-				console.log(msg.args[0].value * 2000000);
+				// console.log(msg.args[0].value * 2000000);
 				// $('#bloc1').text( msg.text );	
-				ptypoFontRegular.changeParam('thickness', (2 * 1000000 * msg.args[0].value), $('.scene').text());
+
+				// let thickness = 50 + msg.highfrequency * 110;
+				// let width = 0.5 + msg.highfrequency * 1.5;
+				
+				thicknessBold = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 125, 180);
+
+				thicknessThin = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 115, 62);
+
+				slant 		  = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 0, 30);
+
+				serifWidth 	  = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 45.42, 166);
+
+				width 		  = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 1, 2.7);
+
+
+
+				ptypoFontBold.changeParam('thickness', thicknessBold, uniqueText( $('.ableton').text() ));
+
+				// ptypoFontThin.changeParam('thickness', thicknessThin, uniqueText( $('.ableton').text() ));
+
+				// ptypoFontSlanted.changeParam('slant', slant, uniqueText( $('.ableton').text() ));
+
+				// ptypoFontSerif.changeParam('serifWidth', serifWidth, uniqueText( $('.ableton').text() ));
+
+				// ptypoFontLarge.changeParam('width', width, uniqueText( $('.ableton').text() ));
+
 				// console.log(msg.param);
 			});
+
+
+			//Fonction appelée pendant l'analyse du flux audio permettant de changer les paramètres de la police pour chaque fréquence
+			/*var updateFont = _.debounce(function () {
+
+				console.log( "_debounce", thickness );
+
+				ptypoFontBold.changeParam('thickness', thickness, uniqueText( $('.ableton').text() ));
+
+			}, 40);
+
+
+			var isRaf = false;
+			var lastMedValue = 0;
+	 		var lastLowValue = 0;
+			var lastHighValue = 0;
+
+
+			// Boucle d'analyse
+			var doDraw = function () {
+
+				// console.log("thickness",thickness);
+				// 	        	
+				if(Math.abs(prevThickness - thickness) > 1){
+					updateFont();
+				}
+
+				prevThickness = thickness;
+				if (!isRaf) {
+					requestAnimationFrame(doDraw);
+				}
+
+			}
+			doDraw();*/
+
 
 		})
 		.catch(error => console.log(error));
@@ -307,6 +386,7 @@ $(function () {
 		$( msg.param.target )
 			.html(msg.text)
 			.addClass("message")
+			.addClass("ableton")
 			.addClass(msg.param.classes)
 			.css("left", msg.param.colonne * pasX )
 			.css("top", msg.param.rang * pasY)
@@ -352,7 +432,7 @@ $(function () {
 
 		console.log(liste);
 
-		if( liste.indexOf("all") != -1 || msg.param.blocs == ""){
+		if( liste.indexOf("all") != -1 || msg.param.blocs == ""){ // !!!!!!!!! VERIFIER
 			$(".message")
 				.html("")
 				.removeClassStartingWith("size")
@@ -402,6 +482,20 @@ $(function () {
 		console.log(msg);
 		
 	});
+
+
+	/* JUSTE POUR LE TEST */
+	// socket.on('ableton message', function(msg){
+
+	// 	// console.log(msg);
+	// 	console.log("ableton", msg.highfrequency * 20000 );//msg.args[0].value * 2000000);
+
+	// 	$(".ableton").css("font-size", msg.highfrequency * 200000 );
+
+	// 	// $('#bloc1').text( msg.text );	
+	// 	// ptypoFontRegular.changeParam('thickness', (2 * 1000000 * msg.args[0].value), $('.scene').text());
+	// 	// console.log(msg.param);
+	// });
 
 	// CHARGEMENT DU CODE PROTOTYPO
 	// en fonction des paramètres dans param.json (copie de param-sample.json) 
@@ -525,3 +619,66 @@ function createCSSSelector (selector, style) {
 		styleSheet.insertRule(selector + '{' + style + '}', styleSheetLength);
 	}
 }
+
+
+/**
+ * [remap description]
+ * https://stackoverflow.com/questions/20910091/recreating-the-processing-map-function-in-javascript
+ * ou
+ * https://stackoverflow.com/questions/5649803/remap-or-map-function-in-javascript#5650012
+ * @param  {[type]} value  [description]
+ * @param  {[type]} start1 [description]
+ * @param  {[type]} stop1  [description]
+ * @param  {[type]} start2 [description]
+ * @param  {[type]} stop2  [description]
+ * @return {[type]}        [description]
+ */
+function remap(value, start1, stop1, start2, stop2) {
+    return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
+}
+
+
+function uniqueText(txt){
+	return txt.split('').filter(function(item, i, ar){ return ar.indexOf(item) === i; }).join('');
+}
+
+
+/*
+
+PROTOTYPO REGULAR Values
+
+_contrast: -1
+_contrastExtremity: -0.9333333333333333
+_scThickness: 0.9
+_scWidth: 0.7
+aperture: 1.078076923076923
+apertureBottom: 1
+apertureTop: 1.1017094017094016
+ascender: 230
+capDelta: 223.076923076923
+crossbar: 1
+curviness: 0.6
+descender: -250
+diacriticHeight: 82.6346153846154
+midWidth: 1
+opticThickness: 0.9469230769230769
+overshoot: 8.923076923076922
+serifArc: 0
+serifBall: 1
+serifCurve: -1
+serifHeight: 5
+serifMedian: 1
+serifRotate: 0
+serifRoundness: 1
+serifTerminal: 0
+serifTerminalCurve: 1
+serifWidth: 0.01
+slant: 0
+smallCapDelta: 1
+spacing: 0
+spurHeight: 0
+thickness: 115.69230769230771
+width: 1
+xHeight: 493.8461538461539
+
+*/
