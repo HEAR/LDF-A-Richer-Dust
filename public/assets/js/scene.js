@@ -1,4 +1,6 @@
 
+var typoToAnim;
+var animOnfreq;
 
 
 function loadPrototypo(email,password, fontName, fontVariant, sock){
@@ -59,7 +61,6 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 	    // var ptypoFont;
 	    var ptypoFontRegular, ptypoFontThin, ptypoFontBold, ptypoFontSlanted, ptypoFontSerif, ptypoFontLarge;
-
 
 	 	// unique subset
 	 	// var nonUnique = "ababdefegg";
@@ -161,11 +162,21 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 				prototypoReady:true
 			} );
 
-			console.log("TEXTE", uniqueText( $('.ableton').text() ) );
+			//console.log("TEXTE", uniqueText( $('.ableton').text() ) );
 
 			//ptypoFontBold.changeParam('thickness', 300, uniqueText( $('.ableton').text() ));
 
 			var thickness, prevThickness;
+			var typoInitiated = false;
+
+			function resetFonts(){
+				thicknessRegular 	= valuesRegular.thickness;
+				thicknessBold 		= valuesThin.thickness;
+				thicknessThin 		= valuesBold.thickness;
+				slant 				= valuesSlanted.slant;
+				serifWidth 			= valuesSerif.serifWidth;
+				width 				= valuesLarge.width;
+		    }
 
 			sock.on('ableton message', function(msg){
 
@@ -181,145 +192,71 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 				// let thickness = 50 + msg.highfrequency * 110;
 				// let width = 0.5 + msg.highfrequency * 1.5;
+				// 
+				// 
+				// 
 				
-				thicknessBold = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 125, 180);
+				if(typoToAnim !== false && animOnfreq !== false){
 
-				thicknessThin = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 115, 62);
+					switch(typoToAnim){
 
-				slant 		  = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 0, 30);
+						case "regular" :
+							thicknessRegular	= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 125, 180);
+							ptypoFontRegular.changeParam('thickness', thicknessBold, uniqueText( $('.ableton').text() ));
+						break;
 
-				serifWidth 	  = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 45.42, 166);
+						case "bold" :
+							thicknessBold		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 125, 180);
+							ptypoFontBold.changeParam('thickness', thicknessBold, uniqueText( $('.ableton').text() ));
+						break;
 
-				width 		  = remap(msg["mid"].val, msg["mid"].min, msg["mid"].max, 1, 2.7);
+						case "thin" :
+							thicknessThin 		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 115, 62);
+							ptypoFontThin.changeParam('thickness', thicknessThin, uniqueText( $('.ableton').text() ));
+						break;
 
+						case "slanted" :
+							slant 		  		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 0, 30);
+							ptypoFontSlanted.changeParam('slant', slant, uniqueText( $('.ableton').text() ));
+						break;
 
+						case "serif" :
+							serifWidth 	  		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 45.42, 166);
+							ptypoFontSerif.changeParam('serifWidth', serifWidth, uniqueText( $('.ableton').text() ));
+						break;
 
-				ptypoFontBold.changeParam('thickness', thicknessBold, uniqueText( $('.ableton').text() ));
+						case "large" :
+							width 		  		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 1, 2.7);
+							ptypoFontLarge.changeParam('width', width, uniqueText( $('.ableton').text() ));
+						break;
 
-				// ptypoFontThin.changeParam('thickness', thicknessThin, uniqueText( $('.ableton').text() ));
+					}
 
-				// ptypoFontSlanted.changeParam('slant', slant, uniqueText( $('.ableton').text() ));
+					typoInitiated = true;
+				}else{
 
-				// ptypoFontSerif.changeParam('serifWidth', serifWidth, uniqueText( $('.ableton').text() ));
+					if(typoInitiated === true){
+						resetFonts();
 
-				// ptypoFontLarge.changeParam('width', width, uniqueText( $('.ableton').text() ));
+						typoInitiated = false;
+					}
+				}
 
 				// console.log(msg.param);
 			});
 
 
-			//Fonction appelée pendant l'analyse du flux audio permettant de changer les paramètres de la police pour chaque fréquence
-			/*var updateFont = _.debounce(function () {
-
-				console.log( "_debounce", thickness );
-
-				ptypoFontBold.changeParam('thickness', thickness, uniqueText( $('.ableton').text() ));
-
-			}, 40);
-
-
-			var isRaf = false;
-			var lastMedValue = 0;
-	 		var lastLowValue = 0;
-			var lastHighValue = 0;
-
-
-			// Boucle d'analyse
-			var doDraw = function () {
-
-				// console.log("thickness",thickness);
-				// 	        	
-				if(Math.abs(prevThickness - thickness) > 1){
-					updateFont();
-				}
-
-				prevThickness = thickness;
-				if (!isRaf) {
-					requestAnimationFrame(doDraw);
-				}
-
-			}
-			doDraw();*/
+	
 
 
 		})
 		.catch(error => console.log(error));
-				
-
-
-	    // // Deux évènements de tests lancés va des boutons sur la page et récupérés en jquery
-	    // $('.js-button-changeparam').on('click', function(){
-	    //     // Changement de paramètre simple de la thickness vers 200, en utilisant le texte de la page comme subset
-	    //     ptypoFont.changeParam('thickness', 200, $('.text p').text());
-	    // });
-
-
-	    // $('.js-button-tween').on('click', function(){
-	    //     // Anime la width vers 1.4 sur 10 étapes pendant 0.3 secondes en utilisant le texte de la page comme subset
-	    //     ptypoFont.tween('width', 1.4, 10, 0.3, function(){}, $('.text p').text());
-	    // });
-
+			
 	   
-	});
-
-
-	//--------------------- Librairie Prototypo ---------------------//
-
-	// createFont(fontName, fontTemplate)
-	// crée une fonte 'fontName' utilisable en CSS via une balise font-family en utilisant le template 'fontTemplate'
-
-
-	// ptypofont.changeParam(paramName, paramValue, subset)
-	// Change le paramètre 'paramname' de la font 'ptypofont' en lui donnant la valeur 'paramValue';
-	// Possibilité de limiter les caractères modifiés en donnant un 'subset' : chaîne de caractères, pas besoin que ça soit unique
-
-	// ptypofont.changeParams(paramObj, subset)
-	// Change les paramètres de la font 'ptypofont' selon l'objet de paramètres donné
-	// {'thickness': 110, 'width': 1}
-	// Possibilité de limiter les caractères modifiés en donnant un 'subset' : chaîne de caractères, pas besoin que ça soit unique
-
-
-	// ptypofont.tween(paramName, paramValue, steps, aDuration, cb, subset)
-	// Anime la fonte 'ptypofont' pendant 'aDuration' secondes en faisant varier 'steps' fois le 'paramName' jusqu'à 'paramValue'
-	// Renvoie 'cb' (fonction) quand terminé
-	// Possibilité de limiter les caractères modifiés en donnant un 'subset' : chaîne de caractères, pas besoin que ça soit unique
-
-	// ptypofont.getArrayBuffer()
-	// Renvoie l'arrayBufer de la font 'ptypofont'
-
-	// ptypofont.reset(subset)
-	// Réinitialise la font 'ptypofont' en lui redonnant les valeurs du template de base
-	// Possibilité de limiter les caractères modifiés en donnant un 'subset' : chaîne de caractères, pas besoin que ça soit unique
-	// 
-
-	
-
+	});	
 }
 
 
-
-// window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-//                               window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-
-
-// var start = null;
-
-// var d = document.getElementById("scene");
-
-// function step(timestamp) {
-// 	var progress;
-// 	if (start === null) start = timestamp;
-// 	progress = timestamp - start;
-// 	d.style.left = Math.min(progress/10, 200) + "px";
-	
-// 	if (progress < 2000) {
-// 		requestAnimationFrame(step);
-// 	}
-// }
-
-
-
-// requestAnimationFrame(step);
 
 
 $(function () {
@@ -346,6 +283,10 @@ $(function () {
 
 		let delayValue = 0;
 		let noirValue = false;
+
+		typoToAnim = false;
+		animOnfreq = false;
+
 		for(var i = 0; i < msg.param.params.length; i++){
 
 			console.log("action", msg.param.params[i].action );
@@ -357,6 +298,16 @@ $(function () {
 			if(msg.param.params[i].action == "noir"){
 				noirValue = true;
 			}
+
+			if(msg.param.params[i].action == "typo"){
+				let temp = msg.param.params[i].value.split("|");
+
+				typoToAnim = temp[0];
+				animOnfreq = temp[1];
+
+				alert(typoToAnim + " :: " + animOnfreq);
+			}
+
 		}
 
 		if(noirValue === true){
