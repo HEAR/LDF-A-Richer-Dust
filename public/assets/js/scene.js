@@ -289,7 +289,7 @@ $(function () {
 
 		for(var i = 0; i < msg.param.params.length; i++){
 
-			console.log("action", msg.param.params[i].action );
+			// console.log("action", msg.param.params[i].action );
 
 			if(msg.param.params[i].action == "delay"){
 				delayValue = msg.param.params[i].value;
@@ -305,7 +305,7 @@ $(function () {
 				typoToAnim = temp[0];
 				animOnfreq = temp[1];
 
-				alert(typoToAnim + " :: " + animOnfreq);
+				// alert(typoToAnim + " :: " + animOnfreq);
 			}
 
 		}
