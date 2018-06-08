@@ -117,7 +117,7 @@ $(function () {
 							var command = "/composition/layers/2/clips/1/connect";
 							sendOSC(command, 1);
 
-							var command = "/composition/layers/1/clips/20/connect";
+							var command = "/composition/layers/1/clips/1/connect";
 							sendOSC(command, 1);
 
 							// on vérifie si on doit afficher le titre de la partie
@@ -203,6 +203,14 @@ $(function () {
 
 	$("#stop").click( function(){
 		stop(true);
+	});
+
+	$("#clearBtn").click( function(){
+
+		socket.emit('clear message', {
+			param: { blocs : 'all' }
+		} );
+
 	});
 
 
@@ -388,9 +396,16 @@ $(function () {
 				switch(dataConducteur[i].type){
 
 					case "text" :
+						txtBloc = $("<div>")
+							.addClass("txt")
+							.html( dataConducteur[i].texte );
+
+						timecodeBloc = $("<div>")
+							.addClass("timecode")
+							.html( dataConducteur[i].from );
+
 						elem = $("<li>")
 							.attr("id", "event-"+dataConducteur[i].id)
-							.html( dataConducteur[i].texte )
 							.data("parent", dataConducteur[i].parent)
 							.data("from", timestamp(dataConducteur[i].from))
 							.data("to", timestamp(dataConducteur[i].to))
@@ -402,7 +417,9 @@ $(function () {
 								height 	: dataConducteur[i].height,
 								classes : dataConducteur[i].classes.split(",").join(" "),
 								params  : param2json(dataConducteur[i].param)
-							}) ;
+							})
+							.append(timecodeBloc) 
+							.append(txtBloc);
 
 						elem.click(function(event){
 							$(this).addClass("activated");
@@ -428,7 +445,7 @@ $(function () {
 						
 
 							socket.emit('text message', {
-								text:$(this).html(), 
+								text:$(this).find(".txt").html(), 
 								param:$(this).data("param")
 							} );
 						});
