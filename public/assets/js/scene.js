@@ -345,6 +345,7 @@ $(function () {
 		// $('#bloc1').text( msg.text );	
 
 		let delayValue = 0;
+		let noirValue = false;
 		for(var i = 0; i < msg.param.params.length; i++){
 
 			console.log("action", msg.param.params[i].action );
@@ -352,6 +353,18 @@ $(function () {
 			if(msg.param.params[i].action == "delay"){
 				delayValue = msg.param.params[i].value;
 			}
+
+			if(msg.param.params[i].action == "noir"){
+				noirValue = true;
+			}
+		}
+
+		if(noirValue === true){
+			sendOSC("/composition/layers/2/video/effects/invertrbg/bypassed",1);
+			sendOSC("/composition/layers/2/video/mixer/blendmode",3);
+		}else{
+			sendOSC("/composition/layers/2/video/effects/invertrbg/bypassed",0);
+			sendOSC("/composition/layers/2/video/mixer/blendmode",0);
 		}
 
 		console.log("delayValue",delayValue);
@@ -501,6 +514,23 @@ $(function () {
 		loadPrototypo(email, password, fontName, fontVariant, socket);
 
 	});
+
+
+	/**
+	 * Pour envoyer une commande OSC au socket
+	 * @param  {[type]} command [description]
+	 * @param  {[type]} value   [description]
+	 * @return {[type]}         [description]
+	 */
+	function sendOSC(command,value){
+		// /composition/layers/1/clips/1/connect
+		// /composition/layers/1/clips/4/connect
+
+		socket.emit('osc message', {
+			path: command,
+			val : value
+		});
+	}	
 
 });
 
