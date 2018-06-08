@@ -116,7 +116,7 @@ une proposition entre musique et arts visuels"
 114,clear,1,,,00:12:39,00:12:39,bloc1,,,,,,,
 115,part,2,,,,,title:1,,"center,centerV,large,size3,fadeIn",2,3,20,6,II.Living picture <br>of the dead
 116,video,2,,2,00:00:00,,,,,,,,,
-117,text,2,,,00:00:16,,,#bloc1,"size3,slanted,center",3,4,18,2,they them themselves theirs
+117,text,2,,,00:00:16,,typo:slanted|mid,#bloc1,"size3,slanted,center",3,4,18,2,they them themselves theirs
 118,clear,2,,,00:00:25,,bloc1,,,,,,,
 119,text,2,,,00:00:33,,,#bloc1,"size2,slanted",1,1,11,2,what images do you remember?<br>what images do they want you to remember?<br>forever
 120,clear,2,,,00:00:42,,bloc1,,,,,,,
