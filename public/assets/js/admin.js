@@ -401,6 +401,7 @@ $(function () {
 
 						elem = $("<li>")
 							.attr("id", "event-"+dataConducteur[i].id)
+							.data("type", "text")
 							.data("parent", dataConducteur[i].parent)
 							.data("from", timestamp(dataConducteur[i].from))
 							.data("to", timestamp(dataConducteur[i].to))
@@ -433,12 +434,42 @@ $(function () {
 
 							enfants.each(function(){
 								if( $(this).data("parent") === ID ){
-									$(this).trigger("click");
+
+									if($(this).data("type") == "video"){
+										let timeOutDelay = 0;
+
+										params = $(this).data("param").params;
+
+										console.log( "param video : ",params );
+
+										for(var i = 0; i < params.length; i++){
+
+											// console.log("action", msg.param.params[i].action );
+											if(params[i].action == "delay"){
+												timeOutDelay = parseInt(params[i].value)*1000;
+											}
+										}
+
+										console.log("timeOutDelay", timeOutDelay);
+
+										setTimeout( triggerDelay, timeOutDelay, $(this) );
+
+										function triggerDelay(target){
+											console.log("target trigger",target);
+
+											target.trigger("click");
+										}	
+
+									}else{
+
+										console.log( $(this).data("param") );
+
+										$(this).trigger("click");
+									}	
 								}
 							});
 
-						
-
+					
 							socket.emit('text message', {
 								text:$(this).find(".txt").html(), 
 								param:$(this).data("param")
@@ -463,26 +494,65 @@ $(function () {
 							.addClass("timecode")
 							.html( dataConducteur[i].from );
 
-
-
 						elem = $("<li>")
 							.attr("id", "event-"+dataConducteur[i].id)
+							.data("type", "video")
 							.data("parent", dataConducteur[i].parent)
 							.data("from", timestamp(dataConducteur[i].from))
 							.data("to", timestamp(dataConducteur[i].to))
 							.data("movie", dataConducteur[i].movie)
 							.data("part",dataConducteur[i].part)
+							.data("param", {
+								params  : param2json(dataConducteur[i].param)
+							})
 							.append(timecodeBloc)
 							.append(imgBloc);
 
 
 						elem.click(function(event){
+
+							let ID = $(this).attr("id").split("-")[1];
+							console.log("ID video", ID);
+
 							$(this).addClass("activated");
-							console.log( $(this).data("from") , $(this).data("to") );
+							console.log("vidéo from/to", $(this).data("from") , $(this).data("to") );
 
 							// on sélectionne la vidéo correspondante sur le ccalque Resolume n°3
 							var command = "/composition/layers/3/clips/"+ $(this).data("movie") + "/connect";
 							sendOSC( command ,1);
+
+
+							let enfants =  $("li:data(parent):not(.activated)");
+
+
+							enfants.each(function(){
+								if( $(this).data("parent") === ID ){
+
+									let timeOutDelay = 0;
+
+									params = $(this).data("param").params;
+
+									console.log( "param video : ",params );
+
+									for(var i = 0; i < params.length; i++){
+
+										// console.log("action", msg.param.params[i].action );
+										if(msg.param.params[i].action == "delay"){
+											timeOutDelay = parseInt(msg.param.params[i].value)*1000;
+										}
+									}
+
+									console.log("timeOutDelay", timeOutDelay);
+
+									setTimeout( triggerDelay(), timeOutDelay, $(this));
+
+									function triggerDelay(target){
+										console.log("target trigger",target);
+
+										target.trigger("click");
+									}								
+								}
+							});
 
 
 							socket.emit('text message', {
@@ -499,6 +569,7 @@ $(function () {
 
 						elem = $("<li>")
 							.attr("id", "event-"+dataConducteur[i].id)
+							.data("type", "clear")
 							.text("CLEAR : " + dataConducteur[i].param)
 							.data("parent", dataConducteur[i].parent)
 							.data("from", timestamp(dataConducteur[i].from))
@@ -543,6 +614,7 @@ $(function () {
 
 						elem = $("<li>")
 							.attr("id", "event-"+dataConducteur[i].id)
+							.data("type", "clear")
 							.text( dataConducteur[i].texte )
 							.data("parent", dataConducteur[i].parent)
 							.data("from", timestamp(dataConducteur[i].from))
@@ -589,6 +661,7 @@ $(function () {
 
 						elem = $("<li>")
 							.attr("id", "event-"+dataConducteur[i].id)
+							.data("type", "generique")
 							.text("générique")
 							.data("parent", dataConducteur[i].parent)
 							.data("from", timestamp(dataConducteur[i].from))
