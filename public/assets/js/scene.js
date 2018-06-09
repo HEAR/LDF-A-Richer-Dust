@@ -26,9 +26,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 	        return variant.name === "Regular"; //'Regular';
 	    });
 
-	    var variantThin = family && family.variants.find(function (variant) {
-	        return variant.name === "Thin";
-	    });
+	    // var variantThin = family && family.variants.find(function (variant) {
+	    //     return variant.name === "Thin";
+	    // });
 
 	    var variantBold = family && family.variants.find(function (variant) {
 	        return variant.name === "Bold";
@@ -38,9 +38,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 	        return variant.name === "Slanted";
 	    });
 
-	    var variantSerif = family && family.variants.find(function (variant) {
-	        return variant.name === "Serif";
-	    });
+	    // var variantSerif = family && family.variants.find(function (variant) {
+	    //     return variant.name === "Serif";
+	    // });
 
 	    var variantLarge = family && family.variants.find(function (variant) {
 	        return variant.name === "Large";
@@ -50,17 +50,17 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		var template 		= family.template;
 
 		var valuesRegular   = variantRegular.values;
-		var valuesThin	    = variantThin.values;
+		// var valuesThin	    = variantThin.values;
 		var valuesBold	    = variantBold.values;
 		var valuesSlanted   = variantSlanted.values;
-		var valuesSerif	    = variantSerif.values;
+		// var valuesSerif	    = variantSerif.values;
 		var valuesLarge	    = variantLarge.values;
 
 		console.log("valuesRegular",valuesRegular);
 
 
 	    // var ptypoFont;
-	    var ptypoFontRegular, ptypoFontThin, ptypoFontBold, ptypoFontSlanted, ptypoFontSerif, ptypoFontLarge;
+	    var ptypoFontRegular/*, ptypoFontThin*/, ptypoFontBold, ptypoFontSlanted/*, ptypoFontSerif*/, ptypoFontLarge;
 
 	 	// unique subset
 	 	// var nonUnique = "ababdefegg";
@@ -84,7 +84,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			.catch(error => console.log(error));
 
 		})
-		.then(function () {
+/*		.then(function () {
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
@@ -96,7 +96,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			})
 			.catch(error => console.log(error));
 
-		})
+		})*/
 		.then(function () {
 		//All the code using the prototypoFontFactory should be done there
 
@@ -123,7 +123,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			.catch(error => console.log(error));
 
 		})
-		.then(function () {
+/*		.then(function () {
 		//All the code using the prototypoFontFactory should be done there
 
 			return prototypoFontFactory
@@ -135,7 +135,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			})
 			.catch(error => console.log(error));
 
-		})
+		})*/
 		.then(function () {
 		//All the code using the prototypoFontFactory should be done there
 
@@ -152,10 +152,10 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 		.then(function () {
 
 			createCSSSelector('.regular', 	'font-family:"a-richer-dust-Regular"');
-			createCSSSelector('.thin', 		'font-family:"a-richer-dust-Thin"');
+			// createCSSSelector('.thin', 		'font-family:"a-richer-dust-Thin"');
 			createCSSSelector('.bold', 		'font-family:"a-richer-dust-Bold"');
 			createCSSSelector('.slanted', 	'font-family:"a-richer-dust-Slanted"');
-			createCSSSelector('.serif', 	'font-family:"a-richer-dust-Serif"');
+			// createCSSSelector('.serif', 	'font-family:"a-richer-dust-Serif"');
 			createCSSSelector('.large', 	'font-family:"a-richer-dust-Large"');
 
 			sock.emit('prototypo message', {
@@ -172,16 +172,16 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			function resetFonts(){
 				thicknessRegular 	= valuesRegular.thickness;
 				thicknessBold 		= valuesBold.thickness;
-				thicknessThin 		= valuesThin.thickness;
+				// thicknessThin 		= valuesThin.thickness;
 				slant 				= valuesSlanted.slant;
-				serifWidth 			= valuesSerif.serifWidth;
+				// serifWidth 			= valuesSerif.serifWidth;
 				width 				= valuesLarge.width;
 
 				ptypoFontRegular.changeParam('thickness', thicknessBold);
 				ptypoFontBold.changeParam('thickness', thicknessBold);
-				ptypoFontThin.changeParam('thickness', thicknessThin);
+				// ptypoFontThin.changeParam('thickness', thicknessThin);
 				ptypoFontSlanted.changeParam('slant', slant);
-				ptypoFontSerif.changeParam('serifWidth', serifWidth);
+				// ptypoFontSerif.changeParam('serifWidth', serifWidth);
 				ptypoFontLarge.changeParam('width', width);
 		    }
 
@@ -217,20 +217,20 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 							ptypoFontBold.changeParam('thickness', thicknessBold, uniqueText( $('.ableton').text() ));
 						break;
 
-						case "thin" :
-							thicknessThin 		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 115, 62);
-							ptypoFontThin.changeParam('thickness', thicknessThin, uniqueText( $('.ableton').text() ));
-						break;
+						// case "thin" :
+						// 	thicknessThin 		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 115, 62);
+						// 	ptypoFontThin.changeParam('thickness', thicknessThin, uniqueText( $('.ableton').text() ));
+						// break;
 
 						case "slanted" :
 							slant 		  		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 0, 30);
 							ptypoFontSlanted.changeParam('slant', slant, uniqueText( $('.ableton').text() ));
 						break;
 
-						case "serif" :
-							serifWidth 	  		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 45.42, 166);
-							ptypoFontSerif.changeParam('serifWidth', serifWidth, uniqueText( $('.ableton').text() ));
-						break;
+						// case "serif" :
+						// 	serifWidth 	  		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 45.42, 166);
+						// 	ptypoFontSerif.changeParam('serifWidth', serifWidth, uniqueText( $('.ableton').text() ));
+						// break;
 
 						case "large" :
 							width 		  		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 1, 2.7);
