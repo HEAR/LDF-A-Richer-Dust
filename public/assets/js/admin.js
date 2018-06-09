@@ -117,6 +117,11 @@ $(function () {
 							var command = "/composition/layers/2/clips/1/connect";
 							sendOSC(command, 1);
 
+							// on réinitialise la vidéo en déselectionnant le fichier 
+							var command = "/composition/layers/3/clips/1/connect";
+							sendOSC(command, 1);
+
+							// on sélectionne la couche blanche
 							var command = "/composition/layers/1/clips/1/connect";
 							sendOSC(command, 1);
 
@@ -321,42 +326,32 @@ $(function () {
 		});
 	}	
 
-	$("#clip1").click(function(){
-		sendOSC("/composition/layers/1/clips/1/connect",1);
-	})
+	// $("#clip1").click(function(){
+	// 	sendOSC("/composition/layers/1/clips/1/connect",1);
+	// })
 
-	$("#clip2").click(function(){
-		sendOSC("/composition/layers/1/clips/4/connect",1);
-	})
+	// $("#clip2").click(function(){
+	// 	sendOSC("/composition/layers/1/clips/4/connect",1);
+	// })
 
-	var testID = 0;
-
-	$("#tests").click(function(){
-
-		testID = (testID +1)%60 +1;
-
-		console.log("/composition/layers/2/clips/"+testID+"/connect");
-
-		sendOSC("/composition/layers/2/clips/"+testID+"/connect",1);
-	})
+	// var testID = 0;
+	// $("#tests").click(function(){
+	// 	testID = (testID +1)%60 +1;
+	// 	console.log("/composition/layers/2/clips/"+testID+"/connect");
+	// 	sendOSC("/composition/layers/2/clips/"+testID+"/connect",1);
+	// })
 
 	$("#grille").click(function(){
-
 		socket.emit('interface message', {
 			switchgrid : true
 		} );
-
-
 	})
 
 
 	$("#refreshjson").click(function(){
-
 		socket.emit('interface message', {
 			refreshjson : true
 		} );
-
-
 	})
 
 
@@ -460,23 +455,33 @@ $(function () {
 
 						// console.log("icone : " ,picture);
 
+						imgBloc = $("<div>")
+							.addClass("txt")
+							.html( "<img src='assets/images/" + picture + "'>" );
+
+						timecodeBloc = $("<div>")
+							.addClass("timecode")
+							.html( dataConducteur[i].from );
+
 
 
 						elem = $("<li>")
 							.attr("id", "event-"+dataConducteur[i].id)
-							.html( "<img src='assets/images/" + picture + "'>" )
 							.data("parent", dataConducteur[i].parent)
 							.data("from", timestamp(dataConducteur[i].from))
 							.data("to", timestamp(dataConducteur[i].to))
 							.data("movie", dataConducteur[i].movie)
-							.data("part",dataConducteur[i].part);
+							.data("part",dataConducteur[i].part)
+							.append(timecodeBloc)
+							.append(imgBloc);
 
 
 						elem.click(function(event){
 							$(this).addClass("activated");
 							console.log( $(this).data("from") , $(this).data("to") );
 
-							var command = "/composition/layers/1/clips/"+ $(this).data("movie") + "/connect";
+							// on sélectionne la vidéo correspondante sur le ccalque Resolume n°3
+							var command = "/composition/layers/3/clips/"+ $(this).data("movie") + "/connect";
 							sendOSC( command ,1);
 
 

@@ -12,399 +12,394 @@ id,type,part,parent,movie,from,to,param,target,classes,colonne,rang,width,height
 11,null,0,,,00:00:00,,,#bloc9,"size2,large",0,8,24,1,abcdefghijklmnopqrstuvwyyz
 12,null,0,,,00:00:00,,,#bloc10,"size2,large",0,9,24,1,ABCDEFGHIJKLMNOPQRSTUVWXYZ
 13,null,0,,,00:00:05,,all,,,,,,,
-14,text,0,,,00:14:40,00:17:08,typo:bold|mid,#bloc1,"size4,center,bold",0,5,24,3,A Richer Dust
-15,text,0,14,,00:14:40,00:17:08,,#bloc2,"size2,center,regular",0,7,24,2,"Symphonie n°1 pour narrateur et orchestre à vents
+14,text,0,,,00:14:40,00:17:08,"typo:bold|mid,couleur:rouge",#bloc1,"size4,center,bold",0,5,24,3,A Richer Dust
+15,text,0,14,,00:14:40,00:17:08,,#bloc2,"size2,center,regular",0,7,24,2,"Symphonie No. 1 pour narrateur et orchestre à vents
 une proposition entre musique et arts visuels"
-16,text,0,14,,00:14:40,00:17:08,delay:2,#bloc3,"size2,center,regular",7,9,4,1,Nigel<br>Clarck
-17,text,0,14,,00:14:40,00:17:08,delay:2,#bloc4,"size2,center,regular",13,9,4,1,Malene<br>Sheppard<br>Skaerverd
+16,text,0,14,,00:14:40,00:17:08,delay:2,#bloc3,"size2,center,regular",7,9,4,1,Nigel<br>Clarke
+17,text,0,14,,00:14:40,00:17:08,delay:2,#bloc4,"size2,center,regular",13,9,6,1,Malene<br>Sheppard Skaerved
 18,clear,0,,,00:17:08,,all,,,,,,,
-19,part,1,,,,,title:1,,"center,centerV,large,size3,fadeIn",2,3,20,6,I.Still We Drudge<br> in this Dark Maze
+19,part,1,,,,,title:1,,"center,centerV,large,size3,fadeIn",2,3,20,6,I. Still We Drudge<br> In This Dark Maze
 20,video,1,,2,00:00:00,00:17:01,,,,,,,,
 21,key,1,,,00:03:50,,,,,,,,,
-22,text,1,,,00:03:50,,,#bloc1,"size3,slanted",0,1,18,2,hear me—
-23,text,1,,,00:03:51,,,#bloc1,"size4, regular, center",10,1,4,2,"ten, "
-24,text,1,,,00:03:52,,,#bloc1,"size4, regular, center",10,1,4,2,"nine, "
-25,text,1,,,00:03:53,,,#bloc1,"size4, regular, center",10,1,4,2,"eight, "
-26,text,1,,,00:03:54,,,#bloc1,"size4, regular, center",10,1,4,2,"seven, "
-27,text,1,,,00:03:55,,,#bloc1,"size4, regular, center",10,1,4,2,"six, "
-28,text,1,,,00:03:56,,,#bloc1,"size4, regular, center",10,1,4,2,"five,"
-29,text,1,,,00:03:57,,,#bloc1,"size4, regular, center",10,1,4,2,"four, "
-30,text,1,,,00:03:58,,,#bloc1,"size4, regular, center",10,1,4,2,"three, "
-31,text,1,,,00:03:59,,,#bloc1,"size4, regular, center",10,1,4,2,"two, "
-32,text,1,,,00:04:00,,,#bloc1,"size4, regular, center",10,1,4,2,one…
+22,text,1,,,00:03:47,,,#bloc1,"size3,slanted",0,1,18,2,hear me—
+23,text,1,,,00:03:49,,,#bloc1,"size4,regular,center",10,1,4,2,"ten, "
+24,text,1,,,00:03:49,,,#bloc1,"size4,regular,center",10,1,4,2,"nine, "
+25,text,1,,,00:03:50,,,#bloc1,"size4,regular,center",10,1,4,2,"eight, "
+26,text,1,,,00:03:51,,,#bloc1,"size4,regular,center",10,1,4,2,"seven, "
+27,text,1,,,00:03:51,,,#bloc1,"size4,regular,center",10,1,4,2,"six, "
+28,text,1,,,00:03:52,,,#bloc1,"size4,regular,center",10,1,4,2,"five,"
+29,text,1,,,00:03:53,,,#bloc1,"size4,regular,center",10,1,4,2,"four, "
+30,text,1,,,00:03:54,,,#bloc1,"size4,regular,center",10,1,4,2,"three, "
+31,text,1,,,00:03:55,,,#bloc1,"size4,regular,center",10,1,4,2,"two, "
+32,text,1,,,00:03:56,,,#bloc1,"size4,regular,center",10,1,4,2,one…
 33,light,1,,,/,/,"from:0,to:100",,,,,,,
-34,text,1,,,00:04:01,,,#bloc1,"size3,regular",1,1,22,2,maimed civilians
-35,text,1,,,00:04:02,,,#bloc1,"size3,regular",1,1,22,2,"maimed civilians <br>killed, murdered <br>"
-36,text,1,,,00:04:06,,,#bloc1,"size3,regular",1,1,22,2,"maimed civilians <br>killed, murdered <br>unknown numbers <br>"
-37,text,1,,,00:04:08,00:04:10,,#bloc1,"size3,regular",1,1,22,2,"maimed civilians <br>killed, murdered <br>unknown numbers <br>soldiers missing too"
-38,clear,1,,,00:04:10,,bloc1,,,,,,,
-39,text,1,,,00:04:12,,,#bloc1,"size4,regular",1,1,22,2,horror 
-40,text,1,,,00:04:14,,,#bloc1,"size4,regular",1,1,22,2,horror terror 
-41,text,1,,,00:04:17,,,#bloc1,"size4,regular",1,1,22,2,horror terror violence 
-42,text,1,,,00:04:21,,,#bloc1,"size4,regular",1,1,22,2,horror terror violence war
-43,clear,1,,,00:04:22,00:04:23,bloc1,,,,,,,
-44,text,1,,,00:04:28,,,#bloc1,"size3, slanted, right",0,1,24,2,if only it was someone else’s son
-45,text,1,,,00:04:32,,,#bloc1,"size3,regular",0,1,5,2,mother screams
-46,text,1,,,00:04:35,,,#bloc1,"size3, slanted",0,1,10,2,listen to me
-47,text,1,,,00:04:38,,,#bloc1,"size3, slanted, right",0,1,24,2,war is the health of the state
-48,clear,1,,,00:04:40,00:04:41,bloc1,,,,,,,
-49,text,1,,,00:04:44,,,#bloc1,"size4, regular, center",1,4,22,2,dirtied 
-50,text,1,,,00:04:46,,,#bloc1,"size4, regular, center",1,4,22,2,bloodied 
-51,text,1,,,00:04:50,,,#bloc1,"size4, regular, center",1,4,22,2,stinking
-52,text,1,,,00:04:53,,,#bloc1,"size2,regular",0,1,8,2,prepare war <br>for peace
-53,text,1,,,00:04:56,,,#bloc1,"size2,slanted",0,1,10,2,who do you believe ?<br>who do you choose to follow ?<br>what to believe ?
-54,text,1,,,00:05:03,,,#bloc1,"size2,regular",0,1,5,2,"prepare for peace, avoid war"
-55,clear,1,,,00:05:05,00:05:07,bloc1,,,,,,,
-56,text,1,,,00:05:14,,,#bloc1,"size2, slanted, right",0,1,24,2,we tortured <br>some folks
-57,clear,1,,,00:05:17,00:05:19,bloc1,,,,,,,
-58,text,1,,,00:05:41,,,#bloc1,"size4,regular",1,1,22,2,justify 
-59,text,1,,,00:05:45,,,#bloc1,"size4,regular",1,1,22,2,justify validate 
-60,text,1,,,00:05:47,,,#bloc1,"size4,regular",1,1,22,2,justify validate execute
-61,text,1,,,00:05:51, ,,#bloc1,"size3, regular, center",0,8,24,2,third world starves
-62,text,1,,,00:05:52,,,#bloc1,"size3, regular, center",0,8,24,2,second world fight
-63,text,1,,,00:05:54,,,#bloc1,"size3, regular, center",0,8,24,2,first world feasts
-64,text,1,,,00:05:57,,,#bloc1,"size3, slanted, right",0,8,24,2,do future threats justify violence ?
-65,clear,1,,,00:06:01,00:06:04,bloc1,,,,,,,
-66,text,1,,,00:08:02,,typo:bold|low,#bloc1,"size4,bold",1,1,22,2,hit 
-67,text,1,,,00:08:03,,typo:bold|low,#bloc1,"size4,bold",1,1,22,2,hit hurt 
-68,text,1,,,00:08:05,,typo:bold|low,#bloc1,"size4,bold",1,1,22,2,hit hurt hunt
-69,text,1,,,00:08:08,,,#bloc1,"size2,slanted",0,1,5,2,are we ever justified ?
-70,text,1,,,00:08:09,,,#bloc1,"size2, thin",10,10,5,2,no one listens
-71,text,1,,,00:08:12,,,#bloc1,"size2,regular",0,1,5,2,thousands of memorial <br>to the dead of the past
-72,text,1,,,00:08:17,,,#bloc1,"size2, regular, right",0,1,24,2,"honourable wars, <br>soldiers<br>pride ? "
-73,text,1,,,00:08:21,,,#bloc1,"size2, regular, right",0,8,24,2,propaganda? <br>truth? <br>memory?
-74,text,1,,,00:08:28,,,#bloc1,"size2,regular",0,1,5,2,one memorial to the dead in the future
-75,clear,1,,,00:08:30,00:08:32,bloc1,,,,,,,
-76,text,1,,,00:08:41,,,#bloc1,"size2, regular, right",0,1,24,2,"atrocities, <br>destruction, <br>massacre"
-77,text,1,,,00:08:46,,,#bloc1,"size2, slanted",0,1,5,5,air raids
-78,text,1,,,00:08:48,,,#bloc1,"size2, slanted, right",0,1,24,2,— who dies —
-79,text,1,,,00:08:49,,,#bloc1,"size2, slanted, right",0,8,24,2,died ?
-80,text,1,,,00:08:52,,,#bloc1,"size2,regular",0,1,5,2,shaming those <br>who refuse
-81,text,1,,,00:08:54,,,#bloc1,"size2, regular, right",0,1,24,2,"deserted, <br>executed pacifist "
-82,text,1,,,00:08:59,,,#bloc1,"size2, slanted, right",0,11,24,2,— it was his third tour
-83,text,1,,,00:09:05,,,#bloc1,"size2,regular",0,1,5,2,world without war — dream ridiculed
-84,text,1,,,00:09:10,,,#bloc1,"size2, regular, right",0,1,24,2,"ignored, <br>irrelevant civilians <br>or just poor <br>and peaceful"
-85,text,1,,,00:09:16,,,#bloc1,"size2,regular,fadeIn",0,1,5,2,"losing side<br> — blamed, <br>punished"
-86,text,1,,,00:09:19,,,#bloc1,"size2, regular, right",0,1,24,2,"out-witted, <br>out-bedded, <br>conquered<br>— they should have known better<br>losers as fault"
-87,text,1,,,00:09:30,,typo:slanted|low,#bloc1,"size4,slanted",0,1,24,2,I hate war<br>you love war ?<br>I love my country<br>that’s not the same<br>how do you know — for sure
-88,clear,1,,,00:09:33,00:09:35,bloc1,,,,,,,
-89,text,1,,,00:10:23,,,#bloc1,"size4,regular",1,1,22,2,maimed 
-90,text,1,,,00:10:24,,,#bloc1,"size4,regular",1,1,22,2,maimed wounded
-91,text,1,,,00:10:25,,,#bloc1,"size4,regular",1,1,22,2,maimed wounded crippled 
-92,text,1,,,00:10:26,,,#bloc1,"size4,regular",1,1,22,2,maimed wounded crippled mangled
-93,text,1,,,00:10:29,,typo:bold|low,#bloc1,"size2,bold",0,1,10,2,only sit at my table <br>if I knew your grandfather
-94,text,1,,,00:10:32,,,#bloc1,"size3, regular, center",8,5,18,2,casualties 
-95,text,1,,,00:10:34,,,#bloc1,"size3, regular, center",8,5,18,2,casualties fatalities
-96,text,1,,,00:10:36,,,#bloc1,"size2,slanted",0,1,4,2,I have earned the right to my opinion
-97,text,1,,,00:10:37,,,#bloc1,"size3, regular, right",0,1,24,2,"Civil War, Great War, World War,<br>Hundred Years War, Thirty Years War, <br>War of the Triple Alliance, War on Terror, <br>Overseas Contingency Operation"
-98,text,1,,,00:10:40,,typo:slanted|low,#bloc1,"size2,slanted",0,1,4,2,there is never one point of view<br>one interest<br>one consequence
-99,clear,1,,,00:10:42,00:10:42,bloc1,,,,,,,
-100,text,1,,,00:10:55,,,#bloc1,"size6, regular, center",0,1,19,11,money 
-101,text,1,,,00:10:56,,,#bloc1,"size6, regular, center",0,1,19,11,love
-102,text,1,,,00:10:57,,,#bloc1,"size6, regular, center",0,1,19,11,money 
-103,text,1,,,00:10:58,,,#bloc1,"size6, regular, center",0,1,19,11,power
-104,text,1,,,00:10:59,,,#bloc1,"size6, regular, center",0,1,19,11,money 
-105,text,1,,,00:11:00,,,#bloc1,"size2, regular, right",0,1,24,2,"started and finished <br>in an instance<br>pointless, <br>never-ending, <br>pause for peace"
-106,text,1,,,00:11:05,,,#bloc1,"size4, slanted, right",0,1,24,2,"for God, king and country"
-107,text,1,,,00:11:08,,,#bloc1,"size2,slanted",0,1,4,2,they shall not grow old —
-108,clear,1,,,00:11:10,00:11:10,bloc1,,,,,,,
-109,text,1,,,00:12:30,,,#bloc1,"size4, regular, center",0,1,19,11,dead 
-110,text,1,,,00:12:32,,,#bloc1,"size4, regular, center",0,1,19,11,deadly
-111,text,1,,,00:12:34,,,#bloc1,"size4, regular, center",0,1,19,11,done
-112,text,1,,,00:12:36,,,#bloc1,"size3, slanted",20,10,4,2,— we are of our time
-113,text,1,,,00:12:38,,,#bloc1,"size3, regular, right",0,1,24,2,out of time
-114,clear,1,,,00:12:39,00:12:39,bloc1,,,,,,,
-115,part,2,,,,,title:1,,"center,centerV,large,size3,fadeIn",2,3,20,6,II.Living picture <br>of the dead
-116,video,2,,2,00:00:00,,,,,,,,,
-117,text,2,,,00:00:16,,typo:slanted|mid,#bloc1,"size3,slanted,center",3,4,18,2,they them themselves theirs
-118,clear,2,,,00:00:25,,bloc1,,,,,,,
-119,text,2,,,00:00:33,,,#bloc1,"size2,slanted",1,1,11,2,what images do you remember?<br>what images do they want you to remember?<br>forever
-120,clear,2,,,00:00:42,,bloc1,,,,,,,
-121,video,2,,3,00:00:49,,,,,,,,,
-122,video,2,,4,00:01:05,,,,,,,,,
-123,text,2,,,00:01:10,,,#bloc1,"size2,slanted",13,0,16,12,— they came in the middle of the night<br>— they bombed my house<br>— they left me behind to die<br>— they started it<br>— it is their fault
-124,clear,2,,,00:01:23,,bloc1,,,,,,,
-125,text,2,,,00:01:36,,,#bloc1,"size2,slanted",13,8,9,4,"strings for indoors — violin, harp — singing, dancing, flirting<br>winds for outdoors — trumpets, drums — hunting, fighting, marching"
-126,clear,2,,,00:01:55,,bloc1,,,,,,,
-127,text,2,,,00:02:33,,typo:bold|mid,#bloc1,"size3,bold",9,5,13,6,thou shalt not kill<br>thou shalt love thy neighbour as thyself
-128,video,2,,5,00:02:45,,,,,,,,,
-129,text,2,,,00:02:41,,,#bloc1,"size3,bold",12,2,12,10,"war<br>destruction, profits<br>hidden artefacts, uncovered, past, present, future"
-130,text,2,,,00:02:56,,typo:bold|mid,#bloc1,"size3,bold",0,2,10,2,"Boston Marathon
+34,text,1,,,00:03:57,,,#bloc1,"size3,regular",1,1,22,2,maimed civilians
+35,text,1,,,00:04:00,,,#bloc1,"size3,regular",1,1,22,2,"maimed civilians <br>killed, murdered "
+36,text,1,,,00:04:03,,,#bloc1,"size3,regular",1,1,22,2,"maimed civilians <br>killed, murdered <br>unknown numbers "
+37,text,1,,,00:04:05,,,#bloc1,"size3,regular",1,1,22,2,"maimed civilians <br>killed, murdered <br>unknown numbers <br>soldiers missing too"
+38,clear,1,,,00:04:06,00:04:06,bloc1,,,,,,,
+39,text,1,,,00:04:10,,,#bloc1,"size4,regular",1,1,22,2,Horror 
+40,text,1,,,00:04:11,,,#bloc1,"size4,regular",1,1,22,2,Horror Terror 
+41,text,1,,,00:04:13,,,#bloc1,"size4,regular",1,1,22,2,Horror Terror Violence 
+42,text,1,,,00:04:15,,,#bloc1,"size4,regular",1,1,22,2,Horror Terror Violence War
+43,clear,1,,,00:04:16,00:04:16,bloc1,,,,,,,
+44,text,1,,,00:04:18,,,#bloc1,"size3,slanted,right",0,1,24,2,if only it was someone else’s son
+45,text,1,,,00:04:21,,,#bloc1,"size3,regular",0,1,5,2,mother screams
+46,text,1,,,00:04:24,,,#bloc1,"size3,slanted",0,1,10,2,listen to me
+47,text,1,,,00:04:28,,,#bloc1,"size3,slanted,right",0,1,24,2,war is the health of the state
+48,clear,1,,,00:04:29,00:04:29,bloc1,,,,,,,
+49,text,1,,,00:04:39,,,#bloc1,"size4,regular,center",1,4,22,2,Dirtied 
+50,text,1,,,00:04:40,,,#bloc1,"size4,regular,center",1,4,22,2,Bloodied 
+51,text,1,,,00:04:42,,,#bloc1,"size4,regular,center",1,4,22,2,Stinking
+52,text,1,,,00:04:45,,,#bloc1,"size2,regular",0,1,8,2,prepare war<br>for peace
+53,text,1,,,00:04:50,,,#bloc1,"size2,slanted",0,1,10,2,who do you believe?<br>who do we choose to follow?<br>what do we believe?
+54,text,1,,,00:04:56,,,#bloc1,"size2,regular",0,1,5,2,"prepare for peace, avoid war"
+55,clear,1,,,00:04:57,00:05:07,bloc1,,,,,,,
+56,text,1,,,00:05:12,,,#bloc1,"size2,slanted,right",0,1,24,2,we tortured<br>some folks
+57,clear,1,,,00:05:13,00:05:13,bloc1,,,,,,,
+58,text,1,,,00:05:45,,,#bloc1,"size4,regular",1,1,22,2,Justify 
+59,text,1,,,00:05:46,,,#bloc1,"size4,regular",1,1,22,2,Justify Validate 
+60,text,1,,,00:05:47,,,#bloc1,"size4,regular",1,1,22,2,Justify Validate Execute
+61,text,1,,,00:05:51, ,,#bloc1,"size3,regular,center",0,8,24,2,third world starves
+62,text,1,,,00:05:52,,,#bloc1,"size3,regular,center",0,8,24,2,second world fights
+63,text,1,,,00:05:54,,,#bloc1,"size3,regular,center",0,8,24,2,first world feasts
+64,text,1,,,00:05:58,,,#bloc1,"size3,slanted,right",0,8,24,2,do future threats justify violence?
+65,clear,1,,,00:06:00,00:06:00,bloc1,,,,,,,
+66,text,1,,,00:08:03,,typo:bold|low,#bloc1,"size4,bold",1,1,22,2,Hit 
+67,text,1,,,00:08:04,,typo:bold|low,#bloc1,"size4,bold",1,1,22,2,Hit Hurt 
+68,text,1,,,00:08:05,,typo:bold|low,#bloc1,"size4,bold",1,1,22,2,Hit Hurt Hunt
+69,text,1,,,00:08:07,,,#bloc1,"size2,slanted",0,1,5,2,are we ever justified?
+70,text,1,,,00:08:08,,,#bloc1,"size2, thin",10,10,5,2,no one listens
+71,text,1,,,00:08:10,,,#bloc1,"size2,regular",0,1,5,2,thousands of memorials<br>to the dead of the past
+72,text,1,,,00:08:16,,,#bloc1,"size2,regular,right",0,1,24,2,"honourable wars,<br>soldiers<br>pride? "
+73,text,1,,,00:08:20,,,#bloc1,"size2,regular,right",0,8,24,2,propaganda?<br>truth?<br>memory?
+74,clear,1,,,00:08:21,00:08:21,bloc1,,,,,,,
+75,text,1,,,00:08:27,,,#bloc1,"size2,regular",0,1,5,2,one memorial to the dead in the future
+76,clear,1,,,00:08:30,00:08:32,bloc1,,,,,,,
+77,text,1,,,00:08:34,,,#bloc1,"size4,regular",1,1,22,2,"atrocities,"
+78,text,1,,,00:08:36,,,#bloc1,"size4,regular",1,1,22,2,"atrocities, <br>destruction, "
+79,text,1,,,00:08:37,,,#bloc1,"size4,regular",1,1,22,2,"atrocities, <br>destruction, <br>massacre"
+78,text,1,,,00:08:40,,,#bloc1,"size2,slanted",0,1,5,5,air raids
+79,text,1,,,00:08:41,,,#bloc1,"size2,slanted,right",0,1,24,2,— who dies —
+80,text,1,,,00:08:42,,,#bloc1,"size2,slanted,right",0,8,24,2,died?
+81,text,1,,,00:08:44,,,#bloc1,"size2,regular",0,1,5,2,shaming those <br>who refuse
+82,text,1,,,00:08:47,,,#bloc1,"size2,regular,right",0,1,24,2,"deserted, <br>executed pacifist "
+83,text,1,,,00:08:51,,,#bloc1,"size2,slanted,right",0,11,24,2,— it was his third tour
+84,clear,1,,,00:08:53,00:08:53,bloc1,,,,,,,
+84,text,1,,,00:08:56,,,#bloc1,"size2,regular",0,1,5,2,world without war — dream ridiculed
+85,text,1,,,00:08:57,,,#bloc1,"size2,regular,right",0,1,24,2,"ignored, <br>irrelevant civilians <br>or just poor <br>and peaceful"
+86,text,1,,,00:09:01,,,#bloc1,"size2,regular,fadeIn",0,1,5,2,"losing side<br> — blamed, <br>punished"
+87,text,1,,,00:09:04,,,#bloc1,"size2,regular,right",0,1,24,2,"out-witted, <br>out-betted, <br>conquered<br>— they should have known better<br>losers at fault"
+88,text,1,,,00:09:10,,typo:slanted|low,#bloc1,"size4,slanted",0,0,24,2,I hate war<br>you love war?<br>I love my country<br>that’s not the same<br>how do you know — for sure
+89,clear,1,,,00:09:18,00:09:18,bloc1,,,,,,,
+90,text,1,,,00:10:31,,,#bloc1,"size4,regular",1,1,22,2,Maimed 
+91,text,1,,,00:10:33,,,#bloc1,"size4,regular",1,1,22,2,Maimed Wounded
+92,text,1,,,00:10:35,,,#bloc1,"size4,regular",1,1,22,2,Maimed Wounded Crippled 
+93,text,1,,,00:10:37,,,#bloc1,"size4,regular",1,1,22,2,Maimed Wounded Crippled Mangled
+94,text,1,,,00:10:39,,typo:bold|hight,#bloc1,"size2,bold",0,1,10,2,only sit at my table <br>if I knew your grandfather
+95,text,1,,,00:10:45,,,#bloc1,"size3,regular,center",8,5,18,2,Casualties 
+96,text,1,,,00:10:47,,,#bloc1,"size3,regular,center",8,5,18,2,Casualties Fatalities
+97,text,1,,,00:10:49,,,#bloc1,"size2,slanted",0,1,4,2,I have earned the right to my opinion
+98,text,1,,,00:10:54,,,#bloc1,"size3,regular,right",0,1,24,2,"Civil War, Great War, World War,<br>Hundred Years War, Thirty Years War, <br>War of the Triple Alliance, War on Terror, <br>Overseas Contingency Operation."
+99,text,1,,,00:11:06,,typo:slanted|low,#bloc1,"size2,slanted",0,1,4,2,"there is never one point of view,<br>one interest,<br>one consequence"
+100,clear,1,,,00:11:09,00:11:09,bloc1,,,,,,,
+101,text,1,,,00:11:14,,,#bloc1,"size6,regular,center",0,1,19,11,MONEY 
+102,text,1,,,00:11:15,,,#bloc1,"size6,regular,center",0,1,19,11,LOVE
+103,text,1,,,00:11:16,,,#bloc1,"size6,regular,center",0,1,19,11,MONEY 
+104,text,1,,,00:11:17,,,#bloc1,"size6,regular,center",0,1,19,11,POWER 
+105,text,1,,,00:11:18,,,#bloc1,"size6,regular,center",0,1,19,11,MONEY  
+106,text,1,,,00:11:19,,,#bloc1,"size2,regular,right",0,1,24,2,"started and finished <br>in an instance<br>pointless, <br>never-ending, <br>pause for peace"
+107,text,1,,,00:11:24,,,#bloc1,"size4,slanted,right",0,1,24,2,"for God, king and country"
+108,text,1,,,00:11:28,,,#bloc1,"size2,slanted",0,1,4,2,they shall not grow old —
+109,clear,1,,,00:11:29,00:11:29,bloc1,,,,,,,
+110,text,1,,,00:12:29,,,#bloc1,"size4,regular,center",0,1,19,11,Dead 
+111,text,1,,,00:12:30,,,#bloc1,"size4,regular,center",0,1,19,11,Deadly
+112,text,1,,,00:12:31,,,#bloc1,"size4,regular,center",0,1,19,11,Done
+113,text,1,,,00:12:33,,,#bloc1,"size4,slanted,right,fadeIn",0,10,24,2,— we are of our time
+114,text,1,,,00:12:35,,,#bloc1,"size3,regular,right,fadeOut",0,1,24,2,out of time
+115,clear,1,,,00:12:36,00:12:36,bloc1,,,,,,,
+116,part,2,,,,,title:1,,"center,centerV,large,size3,fadeIn",2,3,20,6,II. Living Picture <br>Of The Dead
+117,video,2,,2,00:00:00,,,,,,,,,
+118,text,2,,,00:00:14,,typo:slanted|mid,#bloc1,"size3,slanted,center",3,4,18,2,They Them Themselves Theirs
+119,clear,2,,,00:00:21,,bloc1,,,,,,,
+120,text,2,,,00:00:31,,,#bloc1,"size2,slanted",1,1,11,2,what images do you remember?<br>what images do they want you to remember?<br>forever
+121,clear,2,,,00:00:39,,bloc1,,,,,,,
+122,text,2,,,00:01:00,,,#bloc1,"size2,slanted",13,0,16,12,— they came in the middle of the night<br>— they bombed my house<br>— they left me behind to die<br>— they started it<br>— it is their fault
+123,clear,2,,,00:01:13,,bloc1,,,,,,,
+124,text,2,,,00:01:38,,,#bloc1,"size2,slanted",13,8,9,4,"strings for indoors — violin, harp — singing, dancing, flirting — <br>winds for outdoors — trumpets, drums — hunting, fighting, marching —"
+125,clear,2,,,00:01:56,,bloc1,,,,,,,
+126,text,2,,,00:02:30,,typo:bold|mid,#bloc1,"size3,bold",9,5,13,6,thou shalt not kill<br>thou shalt love thy neighbour as thyself
+127,text,2,,,00:02:38,,,#bloc1,"size3,bold",12,2,12,10,"war<br>destruction, profits<br>hidden artefacts, uncovered, past, present, future"
+128,text,2,,,00:02:50,,typo:bold|mid,#bloc1,"size3,bold",0,2,10,2,"Boston Marathon
 "
-131,text,2,130,,,,typo:bold|mid,#bloc2,"size6,bold",0,4,23,8,3 dead
-132,clear,2,,,00:03:00,,all,,,,,,,
-133,text,2,,,00:03:04,,typo:bold|mid,#bloc1,"size3,bold",12,6,11,6,"shaking hand<br>fear, anxiety<br>excitement, love"
-134,clear,2,,,00:03:11,,bloc1,,,,,,,
-135,video,2,,6,00:03:08,,,,,,,,,
-136,video,2,,7,00:03:20,,,,,,,,,
-137,text,2,,,00:03:36,,typo:bold|mid,#bloc1,"size3,bold",0,3,10,2,"World War One
+129,text,2,128,,,,typo:bold|mid,#bloc2,"size6,bold",0,4,23,8,3 dead
+130,clear,2,,,00:02:57,,all,,,,,,,
+131,text,2,,,00:02:58,,typo:bold|mid,#bloc1,"size3,bold",12,6,11,6,"shaking hand<br>fear, anxiety<br>excitement, love"
+132,clear,2,,,00:03:05,,bloc1,,,,,,,
+133,video,2,,3,00:03:06,,,,,,,,,
+134,text,2,,,00:03:32,,typo:bold|mid,#bloc1,"size3,bold",0,3,10,2,"World War One
 "
-138,text,2,137,,,,typo:bold|mid,#bloc2,"size5,bold,Vbottom",0,4,21,8,estimated 17 million dead
-139,clear,2,,,00:03:45,,all,,,,,,,
-140,text,2,,,00:03:49,,typo:bold|mid,#bloc1,"size3,bold",12,0,8,5,white feather<br>coward<br>angel
-141,clear,2,,,00:03:55,,bloc1,,,,,,,
-142,video,2,,8,00:03:52,,,,,,,,,
-143,text,2,,,00:04:20,,typo:bold|mid,#bloc1,"size3,bold",0,6,2,2,7/7
-144,text,2,143,,,,typo:bold|mid,#bloc2,"size5,bold",0,8,23,8,52 dead
-145,clear,2,,,00:04:26,,all,,,,,,,
-146,video,2,,9,00:04:27,,,,,,,,,
-147,text,2,,,00:04:27,,typo:bold|mid,#bloc1,"size3,bold",12,0,12,6,"red rose, white rose<br>red poppy, white poppy"
-148,text,2,,,00:04:34,,typo:bold|mid,#bloc1,"size3,bold",0,3,10,2,"World War Two
+135,text,2,134,,,,typo:bold|mid,#bloc2,"size5,bold,Vbottom",0,4,21,8,estimated 17 million dead
+136,clear,2,,,00:03:42,,all,,,,,,,
+137,text,2,,,00:03:50,,typo:bold|mid,#bloc1,"size3,bold",12,0,8,5,white feather<br>coward<br>angel
+138,clear,2,,,00:03:55,,bloc1,,,,,,,
+139,text,2,,,00:04:17,,typo:bold|mid,#bloc1,"size3,bold",0,6,2,2,7/7
+140,text,2,139,,,,typo:bold|mid,#bloc2,"size5,bold",0,8,23,8,52 dead
+141,clear,2,,,00:04:23,,all,,,,,,,
+142,text,2,,,00:04:24,,typo:bold|mid,#bloc1,"size3,bold",12,0,12,6,"red rose, white rose<br>red poppy, white poppy"
+143,text,2,,,00:04:32,,typo:bold|mid,#bloc1,"size3,bold",0,3,10,2,"World War Two
 "
-149,text,2,148,,,,,#bloc2,"size5,bold",0,5,23,8,50 - 70 million people dead
-150,clear,2,,,00:04:42,,all,,,,,,,
-151,text,2,,,00:04:42,,typo:bold|mid,#bloc1,"size3,bold",5,3,13,6,"father carries his son<br>wounded<br>game, love"
-152,text,2,,,00:04:49,,typo:bold|mid,#bloc1,"size3,bold",0,1,10,2,"Hiroshima Nagasaki
+144,text,2,143,,,,,#bloc2,"size5,bold",0,5,23,8,50 to 70 million people dead
+145,clear,2,,,00:04:38,,all,,,,,,,
+146,text,2,,,00:04:39,,typo:bold|mid,#bloc1,"size3,bold",5,3,13,6,"father carries his son<br>wounded, game <br>love"
+147,text,2,,,00:04:45,,typo:bold|mid,#bloc1,"size3,bold",0,1,10,2,"Hiroshima, Nagasaki
 "
-153,text,2,152,,,,typo:bold|mid,#bloc2,"size5,bold",0,5,23,8,"129,000 - 246,000 dead"
-154,clear,2,,,00:05:00,,all,,,,,,,
-155,text,2,,,00:05:01,,typo:bold|mid,#bloc1,"size3,bold",17,1,5,9,"shovel<br>weapon, tool<br>death, life"
-156,text,2,,,00:05:07,,typo:bold|mid,#bloc1,"size3,bold",0,7,23,2,"Luxor Egypt massacre
+148,text,2,147,,,,typo:bold|mid,#bloc2,"size5,bold",0,5,23,8,"129 to 246,000 dead"
+149,clear,2,,,00:04:57,,all,,,,,,,
+150,text,2,,,00:04:57,,typo:bold|mid,#bloc1,"size3,bold",17,1,5,9,"shovel<br>weapon, tool<br>death, life"
+151,text,2,,,00:05:03,,typo:bold|mid,#bloc1,"size3,bold",0,7,23,2,"Luxor, Egypt — massacre
 "
-157,text,2,156,,,,typo:bold|mid,#bloc2,"size4,bold",0,9,23,8,62 dead - tourists targeted
-158,clear,2,,,00:05:19,,all,,,,,,,
-159,text,2,,,00:05:19,,typo:bold|mid,#bloc1,"size3,bold",16,1,8,7,"fight war, <br>not at all<br>playground spart"
-160,clear,2,,,00:05:26,,bloc1,,,,,,,
-161,video,2,,10,00:05:07,,,,,,,,,
-162,text,2,,,00:05:33,,typo:bold|mid,#bloc1,"size3,bold",0,6,4,2,"Iraq
+152,text,2,151,,,,typo:bold|mid,#bloc2,"size4,bold",0,9,23,8,62 dead - tourists targeted
+153,clear,2,,,00:05:15,,all,,,,,,,
+154,text,2,,,00:05:16,,typo:bold|mid,#bloc1,"size3,bold",16,1,8,7,"fight <br>war, not at all<br>playground sport"
+155,clear,2,,,00:05:23,,bloc1,,,,,,,
+156,text,2,,,00:05:29,,typo:bold|mid,#bloc1,"size3,bold",0,6,4,2,"Iraq —
 "
-163,text,2,162,,,,typo:bold|mid,#bloc2,"size3,bold",0,8,23,4,"half a million war-related deaths<br>4,486 dead service men and women"
-164,clear,2,,,00:05:48,,all,,,,,,,
-165,text,2,,,00:05:48,,,#bloc1,"size2,bold",13,7,11,3,"women don't fight wars<br>bare-breasted, shield-maiden, myth denied,<br>a peaceful world if run by women"
-166,video,2,,11,00:05:37,,,,,,,,,
-167,text,2,,,00:05:59,,typo:bold|mid,#bloc1,"size3,bold",0,6,12,2,"Tokyo Firebombing
+157,text,2,156,,,,typo:bold|mid,#bloc2,"size3,bold",0,8,23,4,"half a million war-related deaths<br>4,486 dead service men and women"
+158,clear,2,,,00:05:45,,all,,,,,,,
+159,text,2,,,00:05:45,,,#bloc1,"size2,bold",13,7,11,3,"women don't fight wars<br>bare-breasted, shield-maiden, myth denied,<br>a peaceful world if run by women"
+160,text,2,,,00:05:50,,typo:bold|mid,#bloc1,"size3,bold",0,6,12,2,"Tokyo Firebombing
 "
-168,text,2,167,,,,typo:bold|mid,#bloc2,"size5,bold",0,8,23,5,"125,000 dead"
-169,text,2,,,00:06:08,,typo:bold|mid,#bloc1,"size3,bold",0,4,12,2,"Syria
+161,text,2,160,,,,typo:bold|mid,#bloc2,"size5,bold",0,8,23,5,"125,000 dead"
+162,text,2,,,00:05:55,,typo:bold|mid,#bloc1,"size3,bold",0,4,12,2,"Syria
 "
-170,text,2,169,,,,typo:bold|mid,#bloc2,"size4,bold",0,6,23,5,"Estimated 200,000 dead and counting"
-171,clear,2,,,00:06:17,,all,,,,,,,
-172,text,2,,,00:06:17,,,#bloc1,"size2,bold",1,8,8,3,castle<br>protectors of common people<br>protected from common people
-173,text,2,,,00:06:21,,,#bloc2,"size2,bold",13,6,9,3,"church<br>comfort, knowledge,<br>obligation, hypnotic rhythms, shapes"
-174,clear,2,,,00:06:27,,all,,,,,,,
-175,text,2,,,00:06:34,,typo:bold|mid,#bloc1,"size3,bold",0,6,12,2,9/11
-176,text,2,175,,,,typo:bold|mid,#bloc2,"size5,bold",0,8,20,5,"2,996 dead"
-177,clear,2,,,00:06:41,,all,,,,,,,
-178,text,2,,,00:06:42,,typo:bold|mid,#bloc1,"size3,bold",4,5,15,7,"army<br>honourable protectors —<br>uniforms marching, obeying in time"
-179,text,2,,,00:06:51,,typo:bold|mid,#bloc1,"size3,bold",0,5,12,2,"Oslo, Norway
+163,text,2,162,,,,typo:bold|mid,#bloc2,"size4,bold",0,6,23,5,"estimated 200,000 dead and counting"
+164,clear,2,,,00:06:14,,all,,,,,,,
+165,text,2,,,00:06:14,,,#bloc1,"size2,bold",1,8,8,3,castle<br>protectors of common people<br>protected from the common people
+166,text,2,,,00:06:19,,,#bloc2,"size2,bold",13,6,9,3,"church<br>comfort, knowledge, obligation <br>hypnotic rhythms, shapes"
+167,clear,2,,,00:06:25,,all,,,,,,,
+168,text,2,,,00:06:30,,typo:bold|mid,#bloc1,"size3,bold",0,6,12,2,9/11
+169,text,2,168,,,,typo:bold|mid,#bloc2,"size5,bold",0,8,20,5,"2,996 dead"
+170,clear,2,,,00:06:40,,all,,,,,,,
+171,text,2,,,00:06:41,,typo:bold|mid,#bloc1,"size3,bold",4,5,15,7,"army<br>honourable protectors —<br>uniforms marching, obeying in time"
+172,text,2,,,00:06:48,,typo:bold|mid,#bloc1,"size3,bold",0,5,12,2,"Oslo, Norway
 "
-180,text,2,179,,,,typo:bold|mid,#bloc2,"size4,bold",0,7,22,5,77 youths ( communists?) dead
-181,clear,2,,,00:06:59,,all,,,,,,,
-182,text,2,,,00:07:00,,typo:bold|mid,#bloc1,"size3,bold",4,6,13,5,twisted metal<br>jewellery<br>building tarn apart
-183,text,2,,,00:07:08,,typo:large|mid,#bloc1,"size4,large",1,3,23,8,— are people killed in war or do they die?
-184,text,2,,,00:07:17,,,#bloc1,"size2,large",1,6,18,4,the battle of Waterloo was won on the playing-fields of Eton;<br>the opening battles of all subsequent wars have been lost there
-185,clear,2,,,00:07:27,,bloc1,,,,,,,
-186,video,2,,12,00:06:51,,,,,,,,,
-187,video,2,,13,00:07:00,,,,,,,,,
-188,text,2,,,00:07:54,,typo:large|mid,#bloc1,"size3,large",0,0,23,5,child's body in the street
-189,clear,2,,,00:07:57,,bloc1,,,,,,,
-190,text,2,,,00:08:25,,typo:bold|mid,#bloc1,"size3,bold",0,4,11,2,"road accidents
+173,text,2,172,,,,typo:bold|mid,#bloc2,"size4,bold",0,7,22,5,77 youths (communists?) dead
+174,clear,2,,,00:06:58,,all,,,,,,,
+175,text,2,,,00:06:58,,typo:bold|mid,#bloc1,"size3,bold",4,6,13,5,twisted metal<br>jewellery<br>building torn apart
+176,text,2,,,00:07:04,,typo:large|mid,#bloc1,"size4,large",1,3,23,8,— are people killed in war or do they die?
+177,text,2,,,00:07:10,,,#bloc1,"size2,large",1,6,18,4,the battle of Waterloo was won on the playing-fields of Eton;<br>the opening battles of all subsequent wars have been lost there
+178,clear,2,,,00:07:21,,bloc1,,,,,,,
+179,text,2,,,00:07:47,,typo:large|mid,#bloc1,"size3,large",0,0,23,5,child's body in the street
+180,clear,2,,,00:07:49,,bloc1,,,,,,,
+181,text,2,,,00:08:20,,typo:bold|mid,#bloc1,"size3,bold",0,4,11,2,"road accidents
 "
-191,text,2,190,,,,typo:bold|mid,#bloc2,"size4,bold",0,6,18,5,"1,240,000 killed - worldwide annually"
-192,clear,2,,,00:08:37,,all,,,,,,,
-193,text,2,,,00:08:40,,typo:large|mid,#bloc1,"size3,large",4,0,16,4,man hangs dead on barbed wire
-194,clear,2,,,00:08:45,,bloc1,,,,,,,
-195,text,2,,,00:08:52,,typo:bold|mid,#bloc1,"size3,bold",0,5,11,2,"american guns
+182,text,2,181,,,,typo:bold|mid,#bloc2,"size4,bold",0,6,18,5,"1,240,000 killed - worldwide annually"
+183,clear,2,,,00:08:33,,all,,,,,,,
+184,text,2,,,00:08:38,,typo:large|mid,#bloc1,"size3,large",4,0,16,4,man hangs dead on barbed wire
+185,clear,2,,,00:08:42,,bloc1,,,,,,,
+186,text,2,,,00:08:50,,typo:bold|mid,#bloc1,"size3,bold",0,5,11,2,"american guns
 "
-196,text,2,195,,,,typo:bold|mid,#bloc2,"size4,bold",0,7,23,5,"yearly 31,000 killed; 19,000 are suicides"
-197,clear,2,,,00:09:05,,all,,,,,,,
-198,video,2,,14,00:08:24,,,,,,,,,
-199,text,2,,,00:09:13,,typo:large|mid,#bloc1,"size3,large",2,6,13,6,woman raped in front of officials
-200,text,2,,,00:09:16,,typo:bold|mid,#bloc1,"size3,bold",0,7,11,2,"hunger
+187,text,2,186,,,,typo:bold|mid,#bloc2,"size4,bold",0,7,23,5,"yearly 31,000 killed - 19,000 are suicides"
+188,clear,2,,,00:09:02,,all,,,,,,,
+189,video,2,,4,00:09:08,,,,,,,,,
+190,text,2,,,00:09:13,,typo:large|mid,#bloc1,"size3,large",2,6,13,6,woman raped in front of officials
+191,text,2,,,00:09:18,,typo:bold|mid,#bloc1,"size3,bold",0,7,11,2,"hunger
 "
-201,text,2,200,,,,typo:bold|mid,#bloc2,"size4,bold",0,9,18,5,"kills 25,000 a day"
-202,clear,2,,,00:09:19,,all,,,,,,,
-203,video,2,,15,00:08:38,,,,,,,,,
-204,text,2,,,00:09:20,,typo:large|mid,#bloc1,"size3,large",1,1,8,9,soldier pours buming wax on woman
-205,text,2,,,00:09:23,,typo:bold|mid,#bloc1,"size3,bold",0,5,11,2,"rape
+192,text,2,191,,,,typo:bold|mid,#bloc2,"size4,bold",0,9,18,5,"kills 25,000 a day"
+193,clear,2,,,00:09:23,,all,,,,,,,
+194,text,2,,,00:09:24,,typo:large|mid,#bloc1,"size3,large",1,1,8,9,soldier pours buming wax on a woman
+195,text,2,,,00:09:28,,typo:bold|mid,#bloc1,"size3,bold",0,5,11,2,"rape
 "
-206,text,2,205,,,,typo:bold|mid,#bloc2,"size4,bold",0,7,21,5,"250,000 cases reported in 65 countries annually"
-207,clear,2,,,00:09:30,,all,,,,,,,
-208,text,2,,,00:09:31,,typo:large|mid,#bloc1,"size3,large",0,1,9,5,man beaten by police
-209,text,2,,,00:09:35,,typo:bold|mid,#bloc1,"size3,bold",0,7,24,3,"smoking; alcohol; drugs
+196,text,2,195,,,,typo:bold|mid,#bloc2,"size4,bold",0,7,21,5,"250,000 cases reported in 65 countries annually"
+197,clear,2,,,00:09:35,,all,,,,,,,
+198,text,2,,,00:09:37,,typo:large|mid,#bloc1,"size3,large",0,1,9,5,man beaten by police
+199,text,2,,,00:09:40,,typo:bold|mid,#bloc1,"size3,bold",0,7,24,3,"smoking, alcohol, drugs
 "
-210,text,2,209,,,,typo:bold|mid,#bloc2,"size4,bold",0,9,24,5,kills — impossible to count
-211,clear,2,,,00:09:38,,all,,,,,,,
-212,text,2,,,00:09:40,,typo:large|mid,#bloc1,"size3,large",6,4,16,5,"pandora's box of death, disease, evil, torture, released"
-213,clear,2,,,00:09:46,,bloc1,,,,,,,
-214,video,2,,16,00:09:05,,,,,,,,,
-215,video,2,,17,00:09:16,,,,,,,,,
-216,video,2,,18,00:09:58,,,,,,,,,
-217,text,2,,,00:10:42,,typo:bold|mid,#bloc1,"size3,bold",1,3,15,7,— how do we warn the next generations<br>— a thousand years in the future?
-218,clear,2,,,00:10:46,,bloc1,,,,,,,
-219,text,2,,,00:11:26,,,#bloc1,"size2,regular",10,3,13,8,tub-flies; maggots; impaled; brazen bull; heretic;<br>fork-head held high; cement shoes; judas cradle;<br>brown rats; tongue tearer; rack; eaten by crows;<br>thumbscrew; breast ripper; bleeding; submission;<br>crocodile shears; republican marriage for nuns and monks; breaking wheel; spanish donkey/wooden<br>horse; guillotine; prison of terror; crucifixion; rope;<br>rape; roasting; water boarding<br>— kind one day; evil the next
-220,text,2,,,00:12:09,,typo:bold|mid,#bloc1,"size2,bold",1,1,10,3,"false confessions, cheap, on-going<br>— damage, permanent —<br>on the pain of death"
-221,clear,2,,,00:12:16,,bloc1,,,,,,,
-222,text,2,,,00:12:32,,typo:bold|mid,#bloc1,"size2,bold",5,6,10,3,... this world in arms spends the hopes of its children
-223,clear,2,,,00:12:39,,bloc1,,,,,,,
-224,text,2,,,00:12:55,,typo:bold|mid,#bloc1,"size2,bold",4,9,10,3,"I dream of a child who asks: 'what was war, weapons, violence?'"
-225,clear,2,,,00:13:04,,bloc1,,,,,,,
-226,text,2,,,00:13:16,,typo:bold|mid,#bloc1,"size3,bold",5,9,19,2,— a multi-billion dollar industry
-227,clear,2,,,00:13:19,,bloc1,,,,,,,
-228,text,2,,,00:13:26,,typo:bold|mid,#bloc1,"size4,bold",1,1,9,5,we've lost empathy
-229,clear,2,,,00:13:28,,bloc1,,,,,,,
-230,text,2,,,00:13:32,,typo:large|mid,#bloc1,"size4,large,center",0,4,24,3,I me myself mine
-231,clear,2,,,00:13:37,,bloc1,,,,,,,
-232,part,3,,,,,title:1,,"center,centerV,large,size3,fadeIn",2,3,20,6,III.Other Flowers Rise
-233,video,3,,2,00:00:00,,,,,,,,,
-234,video,3,,3,00:01:06,,,,,,,,,
-235,video,3,,4,00:01:45,,,,,,,,,
-236,text,3,,,00:01:47,00:00:00,typo:slanted|mid,#bloc1,"size2,slanted",2,4,3,2,Arabic
-237,text,3,,,00:01:50,00:00:00,typo:slanted|mid,#bloc1,"size2,slanted",6,8,3,2,African
-238,text,3,,,00:01:51,00:00:00,typo:slanted|mid,#bloc1,"size2,slanted",18,4,4,2,American
-239,clear,3,,,00:01:57,,bloc1,,,,,,,
-240,text,3,,,00:01:58,00:00:00,typo:slanted|mid,#bloc1,"size2,slanted",10,10,3,2,Inuit
-241,text,3,,,00:02:00,00:00:00,typo:slanted|mid,#bloc1,"size2,slanted",4,4,4,2,European
-242,video,3,,5,00:02:25,,typo:slanted|mid,#bloc1,"size2,slanted",7,5,4,2,
-243,text,3,,,00:02:03,,typo:slanted|mid,#bloc1,"size2,slanted",7,5,8,4,Extremist
-244,text,3,,,00:02:04,,typo:slanted|mid,#bloc1,"size3,slanted",7,5,10,6,Extremist
-245,text,3,,,00:02:05,,,#bloc1,"size4,slanted",7,5,10,6,Extremist
-246,text,3,,,00:02:27,00:00:00,,#bloc1,"size2,slanted",7,4,4,2,Christian
-247,text,3,,,00:02:28,00:00:00,,#bloc1,"size2,slanted",10,8,3,2,Jewish
-248,text,3,,,00:02:29,,,#bloc1,"size2,slanted",13,2,3,2,Muslim
-249,text,3,,,00:02:30,,,#bloc1,"size2,slanted",21,8,4,2,Buddhist
-250,text,3,,,00:02:31,,,#bloc1,"size2,slanted",7,10,4,2,Anarchist
-251,text,3,,,00:02:33,,,#bloc1,"size2,slanted",17,2,4,2,Extremist
-252,clear,3,,,00:02:02,,bloc1,,,,,,,
-253,text,3,,,00:02:42,,,#bloc1,"size2,slanted",19,8,3,2,Racist
-254,text,3,,,00:02:44,,,#bloc1,"size2,slanted",4,4,5,2,Anti-Semitic
-255,text,3,,,00:02:45,,,#bloc1,"size2,slanted",19,10,5,2,Pro-terrorist
-256,text,3,,,00:02:47,,,#bloc1,"size2,slanted",19,2,3,2,Sexist
-257,text,3,,,00:02:48,,,#bloc1,"size2,slanted",9,9,5,2,Extremist
-258,text,3,,,00:02:17,,,#bloc1,"size2,slanted",2,10,5,2,Communist
-259,text,3,,,00:02:50,,,#bloc1,"size2,slanted",20,4,4,2,Socialist
-260,text,3,,,00:02:52,,,#bloc1,"size2,slanted",1,10,5,2,Conservativ
-261,text,3,,,00:02:54,,,#bloc1,"size2,slanted",18,6,6,2,Traditionalist
-262,text,3,,,00:02:56,,,#bloc1,"size2,slanted",14,4,5,2,Extremist
-263,clear,3,,,00:02:58,,bloc1,,,,,,,
-264,video,3,,6,00:03:07,,,,,,,,,
-265,text,3,,,00:03:20,,,#bloc1,"size2,slanted",8,4,2,2,Man
-266,text,3,,,00:03:21,,,#bloc1,"size2,slanted",18,10,4,2,Woman
-267,text,3,,,00:03:23,,,#bloc1,"size2,slanted",12,4,4,2,Soldier
-268,text,3,,,00:03:24,,,#bloc1,"size2,slanted",4,4,4,2,Politician
-269,text,3,,,00:03:26,,,#bloc1,"size2,slanted",2,10,3,2,Civilian
-270,text,3,,,00:03:28,,typo:slanted|mid,#bloc1,"size2,slanted",18,10,4,2,Extremist
-271,clear,3,,,00:03:30,,bloc1,,,,,,,
-272,text,3,,,00:03:33,,typo:slanted|mid,#bloc1,"size3,slanted",9,5,14,6,Extremist
-273,clear,3,,,00:03:34,,bloc1,,,,,,,
-274,video,3,,7,00:03:55,,,,,,,,,
-275,text,3,,,00:03:55,,,#bloc1,"size2,slanted",20,5,3,2,Bully
-276,text,3,,,00:03:56,,,#bloc1,"size2,slanted",8,7,3,2,Master
-277,text,3,,,00:03:57,,,#bloc1,"size2,slanted",2,2,3,2,Queen
-278,text,3,,,00:03:58,,,#bloc1,"size2,slanted",14,10,4,2,Emperor
-279,text,3,,,00:03:59,,,#bloc1,"size2,slanted",6,8,4,2,President
-280,text,3,,,00:04:01,,,#bloc1,"size2,slanted",9,2,2,2,God
-281,text,3,,,00:04:02,,,#bloc1,"size2,slanted",12,10,5,2,Extremist
-282,text,3,,,00:04:04,,,#bloc1,"size2,slanted",2,4,2,2,Slave
-283,text,3,,,00:04:05,,,#bloc1,"size2,slanted",16,2,3,2,Illegal
-284,text,3,,,00:04:06,,,#bloc1,"size2,slanted",2,6,4,2,Common
-285,text,3,,,00:04:08,,,#bloc1,"size2,slanted",10,10,4,2,Somebody
-286,text,3,,,00:04:09,,,#bloc1,"size2,slanted",16,2,4,2,Anybody
-287,text,3,,,00:04:10,,,#bloc1,"size2,slanted",16,10,6,2,Freedom Fighter
-288,text,3,,,00:04:11,,,#bloc1,"size2,slanted",2,8,4,2,Protector
-289,text,3,,,00:04:13,,,#bloc1,"size2,slanted",6,6,4,2,Liberator
-290,text,3,,,00:04:15,,,#bloc1,"size2,slanted",14,2,3,2,Saviour
-291,text,3,,,00:04:16,,,#bloc1,"size2,slanted",16,10,3,2,Solider
-292,text,3,,,00:04:20,,,#bloc1,"size2,slanted",16,9,3,2,Warrior
-293,text,3,,,00:04:21,,,#bloc1,"size2,slanted",18,2,3,2,Invader
-294,text,3,,,00:04:22,,,#bloc1,"size2,slanted",6,10,3,2,Attacker
-295,text,3,,,00:04:23,,,#bloc1,"size2,slanted",8,6,4,2,Extremist
-296,text,3,,,00:04:24,,,#bloc1,"size2,slanted",6,10,3,2,Victim
-297,text,3,,,00:04:25,,,#bloc1,"size2,slanted",10,2,3,2,Mairmed
-298,text,3,,,00:04:26,,,#bloc1,"size2,slanted",18,10,4,2,Wounded
-299,text,3,,,00:04:27,,,#bloc1,"size2,slanted",2,10,3,2,Missing
-300,text,3,,,00:04:28,,,#bloc1,"size2,slanted",20,4,2,2,Rich
-301,text,3,,,00:04:29,,,#bloc1,"size2,slanted",14,10,5,2,Gunslinger
-302,text,3,,,00:04:30,,,#bloc1,"size2,slanted",4,14,3,2,Pacifist
-303,text,3,,,00:04:31,,,#bloc1,"size2,slanted",10,10,3,2,Populist
-304,text,3,,,00:04:36,,typo:slanted|mid,#bloc1,"size2,slanted",6,6,4,2,Extremist
-305,text,3,,,00:04:37,,typo:slanted|mid,#bloc1,"size3,slanted",14,6,4,2,Extremist
-306,clear,3,,,00:04:38,,bloc1,,,,,,,
-307,video,3,,8,00:04:40,,,,,,,,,
-308,text,3,,,00:04:41,,,#bloc1,"size2,slanted",0,3,4,2,Lustful
-309,text,3,,,00:04:42,,,#bloc2,"size2,slanted",14,1,4,2,Guilty
-310,text,3,,,00:04:43,,,#bloc3,"size2,slanted",17,9,5,2,White knight
-311,text,3,,,00:04:44,,,#bloc4,"size2,slanted",3,10,4,2,Fanatic
-312,text,3,,,00:04:45,,,#bloc5,"size2,slanted",7,2,3,2,Greedy
-313,text,3,,,00:04:46,,,#bloc6,"size2,slanted",11,6,4,2,Corporate
-314,text,3,,,00:04:47,,,#bloc7,"size2,slanted",1,6,4,2,Privileged
-315,text,3,,,00:04:48,,,#bloc8,"size2,slanted",15,3,3,2,Angry
-316,text,3,,,00:04:49,,,#bloc9,"size2,slanted",5,4,3,2,Virtous
-317,text,3,,,00:04:50,,,#bloc10,"size2,slanted",15,10,4,2,Anonymous
-318,text,3,,,00:04:51,,,#bloc11,"size2,slanted",19,1,2,2,Sissy
-319,text,3,,,00:04:52,,,#bloc12,"size2,slanted",0,10,3,2,Radical
-320,text,3,,,00:04:53,,,#bloc13,"size2,slanted",19,3,3,2,Envious
-321,text,3,,,00:04:44,,,#bloc14,"size2,slanted",3,1,3,2,Known
-322,text,3,,,00:04:55,,,#bloc15,"size2,slanted",7,10,4,2,Devoted
-323,text,3,,,00:04:56,,,#bloc16,"size2,slanted",0,5,3,2,Proud
-324,text,3,,,00:04:57,,,#bloc17,"size2,slanted",19,5,4,2,Enlightened
-325,text,3,,,00:04:58,,,#bloc18,"size2,slanted",7,1,4,2,Innocent
-326,text,3,,,00:04:59,,,#bloc19,"size2,slanted",19,10,4,2,Favourite
-327,text,3,,,00:05:00,,,#bloc20,"size2,slanted",10,6,2,2,Mouse
-328,text,3,,,00:05:01,,,#bloc21,"size2,slanted",17,6,3,2,Culturel
-329,text,3,,,00:05:02,,,#bloc22,"size2,slanted",11,2,2,2,Idle
-,text,3,,,00:05:02,,,#bloc23,"size2,slanted",0,1,4,2,Unknow
-330,text,3,,,00:05:03,,,#bloc24,"size2,slanted",5,6,3,2,Mediocre
-331,text,3,,,00:05:04,,,#bloc25,"size2,slanted",11,4,3,2,Billionaire
-332,text,3,,,00:05:04,,,#bloc26,"size2,slanted",11,10,3,2,Coward
-333,clear,3,,,00:05:05,,all,,,,,,,
-334,text,3,,,00:05:06,,typo:slanted|mid,#bloc1,"size3,slanted,center",8,3,8,2,Moderate extremist
-335,text,3,,,00:05:08,,typo:slanted|mid,#bloc2,"size3,slanted,center",8,6,8,2,Extremist moderate
-336,clear,3,,,00:05:10,,all,,,,,,,
-337,text,3,,,00:05:20,,typo:slanted|mid,#bloc1,"size3,slanted,center",7,4,14,2,"Does one need to love?<br>Don't ask, feel it."
-#REF!,video,3,,9,00:05:06,,,,,,,,,
-#REF!,part,4,,,,,title:1,,"center,centerV,large,size3,fadeIn",2,3,20,6,"IV. The Larks, <br>Still Bravely Singing"
-#REF!,video,4,,2,00:00:00,00:12:57,,,,,,,,
-#REF!,text,4,,,00:01:26,,noir,#bloc1,"size3,regular,noir",1,1,23,4,"I believe that order is better than chaos,<br>creation is better than destruction.
+200,text,2,199,,,,typo:bold|mid,#bloc2,"size4,bold",0,9,24,5,kills — impossible to count
+201,clear,2,,,00:09:43,,all,,,,,,,
+202,text,2,,,00:09:44,,typo:large|mid,#bloc1,"size3,large",6,4,16,5,"pandora's box of death, disease, evil, torture, released"
+203,clear,2,,,00:09:50,,bloc1,,,,,,,
+204,text,2,,,00:11:17,,typo:bold|mid,#bloc1,"size3,bold",1,3,15,7,— how do we warn the next generations<br>— a thousand years in the future?
+205,clear,2,,,00:11:24,,bloc1,,,,,,,
+206,text,2,,,00:11:30,,,#bloc1,"size2,regular",10,3,13,8,"tub-flies, maggots, impaled, brazen bull,<br>cement shoes, judas cradle,<br>brown rats, tongue tearer, rack, eaten by crows,<br>thumbscrew, breast ripper, bleeding, submission,<br>crocodile shears, breaking wheel, spanish donkey, wooden horse, <br>guillotine, prison of terror, crucifixion, rope,<br>rape, roasting, water boarding,<br>— kind one day, evil the next"
+207,text,2,,,00:12:12,,typo:bold|mid,#bloc1,"size2,bold",1,1,10,3,"false confessions, cheap, on-going<br>— damage, permanent —<br>on the pain of death"
+208,clear,2,,,00:12:18,,bloc1,,,,,,,
+209,text,2,,,00:12:32,,typo:bold|mid,#bloc1,"size2,bold",5,6,10,3,... this world in arms spends the hopes of its children
+210,clear,2,,,00:12:39,,bloc1,,,,,,,
+211,text,2,,,00:12:42,,typo:bold|mid,#bloc1,"size2,bold",4,9,10,3,"I dream of a child who asks: 'what was war, weapons, violence?'"
+212,clear,2,,,00:12:49,,bloc1,,,,,,,
+213,text,2,,,00:12:51,,typo:bold|mid,#bloc1,"size3,bold",5,9,19,2,— a multi-billion dollar industry
+214,clear,2,,,00:12:53,,bloc1,,,,,,,
+215,text,2,,,00:12:54,,typo:bold|mid,#bloc1,"size4,bold",1,1,9,5,we've lost empathy
+216,clear,2,,,00:12:57,,bloc1,,,,,,,
+217,text,2,,,00:13:23,,typo:large|mid,#bloc1,"size4,large,center",0,4,24,3,I Me Myself Mine
+218,clear,2,,,00:13:31,,bloc1,,,,,,,
+219,part,3,,,,,title:1,,"center,centerV,large,size3,fadeIn",2,3,20,6,III. Other Flowers Rise
+220,video,3,,2,00:00:00,,,,,,,,,
+221,video,3,,3,00:01:06,,,,,,,,,
+222,video,3,,4,00:01:45,,,,,,,,,
+223,text,3,,,00:01:40,00:00:00,typo:slanted|mid,#bloc1,"size2,slanted",2,4,3,2,Arabic
+224,text,3,,,00:01:42,00:00:00,typo:slanted|mid,#bloc1,"size2,slanted",6,8,3,2,African
+225,text,3,,,00:01:44,00:00:00,typo:slanted|mid,#bloc1,"size2,slanted",18,4,4,2,American
+226,clear,3,,,00:01:45,,bloc1,,,,,,,
+227,text,3,,,00:01:49,00:00:00,typo:slanted|mid,#bloc1,"size2,slanted",10,10,3,2,Inuit
+228,text,3,,,00:01:53,00:00:00,typo:slanted|mid,#bloc1,"size2,slanted",4,4,4,2,European
+229,video,3,,5,00:02:25,,typo:slanted|mid,#bloc1,"size2,slanted",7,5,4,2,
+230,text,3,,,00:01:56,,typo:slanted|mid,#bloc1,"size2,slanted",7,5,8,4,Extremist
+231,text,3,,,00:01:57,,typo:slanted|mid,#bloc1,"size3,slanted",7,5,10,6,Extremist
+232,text,3,,,00:01:58,,,#bloc1,"size4,slanted",7,5,10,6,Extremist
+233,text,3,,,00:02:18,00:00:00,,#bloc1,"size2,slanted",7,4,4,2,Christian
+234,text,3,,,00:02:19,00:00:00,,#bloc1,"size2,slanted",10,8,3,2,Jewish
+235,text,3,,,00:02:22,,,#bloc1,"size2,slanted",13,2,3,2,Muslim
+236,text,3,,,00:02:23,,,#bloc1,"size2,slanted",21,8,4,2,Buddhist
+237,text,3,,,00:02:24,,,#bloc1,"size2,slanted",7,10,4,2,Atheist
+238,text,3,,,00:02:25,,,#bloc1,"size2,slanted",7,10,4,2,Anarchist
+239,text,3,,,00:02:26,,,#bloc1,"size2,slanted",17,2,4,2,Extremist
+240,text,3,,,00:02:27,,,#bloc1,"size2,slanted",17,2,4,2,Extremist
+241,text,3,,,00:02:28,,,#bloc1,"size2,slanted",17,2,4,2,Extremist
+242,text,3,,,00:02:29,,,#bloc1,"size2,slanted",17,2,4,2,Extremist
+243,text,3,,,00:02:33,,,#bloc1,"size4,slanted",17,2,8,4,Extremist
+244,clear,3,,,00:02:37,,bloc1,,,,,,,
+245,text,3,,,00:02:35,,,#bloc1,"size2,slanted",19,8,3,2,Racist
+246,text,3,,,00:02:36,,,#bloc1,"size2,slanted",4,4,5,2,Anti-Semitic
+247,text,3,,,00:02:37,,,#bloc1,"size2,slanted",19,10,5,2,Pro-terrorist
+248,text,3,,,00:02:39,,,#bloc1,"size2,slanted",19,2,3,2,Sexist
+249,text,3,,,00:02:40,,,#bloc1,"size2,slanted",9,9,5,2,Extremist
+250,text,3,,,00:02:43,,,#bloc1,"size2,slanted",2,10,5,2,Communist
+251,text,3,,,00:02:44,,,#bloc1,"size2,slanted",20,4,4,2,Socialist
+252,text,3,,,00:02:47,,,#bloc1,"size2,slanted",1,10,5,2,Conservative
+253,text,3,,,00:02:48,,,#bloc1,"size2,slanted",18,6,6,2,Traditionalist
+254,text,3,,,00:02:50,,,#bloc1,"size2,slanted",14,4,5,2,Extremist
+255,clear,3,,,00:02:58,,bloc1,,,,,,,
+256,video,3,,6,00:03:07,,,,,,,,,
+257,text,3,,,00:03:10,,,#bloc1,"size2,slanted",8,4,2,2,Men
+258,text,3,,,00:03:11,,,#bloc1,"size2,slanted",18,10,4,2,Women
+259,text,3,,,00:03:13,,,#bloc1,"size2,slanted",12,4,4,2,Soldier
+260,text,3,,,00:03:15,,,#bloc1,"size2,slanted",4,4,4,2,Politician
+261,text,3,,,00:03:16,,,#bloc1,"size2,slanted",2,10,3,2,Civilian
+262,text,3,,,00:03:18,,typo:slanted|mid,#bloc1,"size2,slanted",18,10,4,2,Extremist
+263,clear,3,,,00:03:30,,bloc1,,,,,,,
+264,text,3,,,00:03:21,,typo:slanted|mid,#bloc1,"size3,slanted",9,5,14,6,Extremist
+265,clear,3,,,00:03:34,,bloc1,,,,,,,
+266,video,3,,7,00:03:55,,,,,,,,,
+267,text,3,,,00:03:44,,,#bloc1,"size2,slanted",20,5,3,2,Bully
+268,text,3,,,00:03:45,,,#bloc1,"size2,slanted",8,7,3,2,Master
+269,text,3,,,00:03:46,,,#bloc1,"size2,slanted",2,2,3,2,Queen
+270,text,3,,,00:03:47,,,#bloc1,"size2,slanted",14,10,4,2,Emperor
+271,text,3,,,00:03:50,,,#bloc1,"size2,slanted",6,8,4,2,President
+272,text,3,,,00:03:51,,,#bloc1,"size2,slanted",9,2,2,2,God
+273,text,3,,,00:03:52,,,#bloc1,"size2,slanted",12,10,5,2,Extremist
+274,text,3,,,00:03:53,,,#bloc1,"size2,slanted",2,4,2,2,Slave
+275,text,3,,,00:03:55,,,#bloc1,"size2,slanted",16,2,3,2,Illegal
+276,text,3,,,00:03:56,,,#bloc1,"size2,slanted",2,6,4,2,Common
+277,text,3,,,00:03:57,,,#bloc1,"size2,slanted",10,10,4,2,Somebody
+278,text,3,,,00:03:58,,,#bloc1,"size2,slanted",16,2,4,2,Anybody
+279,text,3,,,00:03:59,,,#bloc1,"size2,slanted",16,10,6,2,Freedom Fighter
+280,text,3,,,00:04:00,,,#bloc1,"size2,slanted",2,8,4,2,Protector
+281,text,3,,,00:04:01,,,#bloc1,"size2,slanted",6,6,4,2,Liberator
+282,text,3,,,00:04:03,,,#bloc1,"size2,slanted",14,2,3,2,Saviour
+283,text,3,,,00:04:05,,,#bloc1,"size2,slanted",16,10,3,2,Soldier
+284,text,3,,,00:04:08,,,#bloc1,"size2,slanted",16,9,3,2,Warrior
+285,text,3,  ,,00:04:09,,,#bloc1,"size2,slanted",18,2,3,2,Invader
+286,text,3,,,00:04:10,,,#bloc1,"size2,slanted",6,10,3,2,Attacker
+287,text,3,,,00:04:11,,,#bloc1,"size2,slanted",8,6,4,2,Extremist
+288,text,3,,,00:04:12,,,#bloc1,"size2,slanted",6,10,3,2,Victim
+289,text,3,,,00:04:13,,,#bloc1,"size2,slanted",10,2,3,2,Maimed
+290,text,3,,,00:04:14,,,#bloc1,"size2,slanted",18,10,4,2,Wounded
+291,text,3,,,00:04:15,,,#bloc1,"size2,slanted",2,10,3,2,Missing
+292,text,3,,,00:04:16,,,#bloc1,"size2,slanted",20,4,2,2,Rich
+293,text,3,,,00:04:17,,,#bloc1,"size2,slanted",14,10,5,2,Gunslinger
+294,text,3,,,00:04:18,,,#bloc1,"size2,slanted",4,14,3,2,Pacifist
+295,text,3,,,00:04:19,,,#bloc1,"size2,slanted",10,10,3,2,Populist
+296,text,3,,,00:04:22,,typo:slanted|mid,#bloc1,"size2,slanted",6,6,4,2,Extremist
+297,text,3,,,00:04:23,,typo:slanted|mid,#bloc1,"size3,slanted",14,6,4,2,Extremist
+298,clear,3,,,00:04:38,,bloc1,,,,,,,
+299,video,3,,8,00:04:40,,,,,,,,,
+300,text,3,,,00:04:30,,,#bloc1,"size2,slanted",0,3,4,2,Lustful
+301,text,3,,,00:04:31,,,#bloc2,"size2,slanted",14,1,4,2,Guilty
+302,text,3,,,00:04:32,,,#bloc3,"size2,slanted",17,9,5,2,White knight
+303,text,3,,,00:04:33,,,#bloc4,"size2,slanted",3,10,4,2,Fanatic
+304,text,3,,,00:04:34,,,#bloc5,"size2,slanted",7,2,3,2,Greedy
+305,text,3,,,00:04:35,,,#bloc6,"size2,slanted",11,6,4,2,Corporate
+306,text,3,,,00:04:36,,,#bloc7,"size2,slanted",1,6,4,2,Privileged
+307,text,3,,,00:04:37,,,#bloc8,"size2,slanted",15,3,3,2,Angry
+308,text,3,,,00:04:38,,,#bloc9,"size2,slanted",5,4,3,2,Virtous
+309,text,3,,,00:04:39,,,#bloc10,"size2,slanted",15,10,4,2,Anonymous
+310,text,3,,,00:04:40,,,#bloc11,"size2,slanted",19,1,2,2,Sissy
+311,text,3,,,00:04:41,,,#bloc12,"size2,slanted",0,10,3,2,Radical
+312,text,3,,,00:04:42,,,#bloc13,"size2,slanted",19,3,3,2,Envious
+313,text,3,,,00:04:43,,,#bloc14,"size2,slanted",3,1,3,2,Known
+314,text,3,,,00:04:44,,,#bloc15,"size2,slanted",7,10,4,2,Devoted
+315,text,3,,,00:04:45,,,#bloc16,"size2,slanted",0,5,3,2,Proud
+316,text,3,,,00:04:46,,,#bloc17,"size2,slanted",19,5,4,2,Enlightened
+317,text,3,,,00:04:47,,,#bloc18,"size2,slanted",7,1,4,2,Innocent
+318,text,3,,,00:04:48,,,#bloc19,"size2,slanted",19,10,4,2,Favourite
+319,text,3,,,00:04:49,,,#bloc20,"size2,slanted",10,6,2,2,Mouse
+320,text,3,,,00:04:49,,,#bloc21,"size2,slanted",17,6,3,2,Culturel
+321,text,3,,,00:04:50,,,#bloc22,"size2,slanted",11,2,2,2,Idle
+322,text,3,,,00:04:50,,,#bloc23,"size2,slanted",0,1,4,2,Unknown
+323,text,3,,,00:04:51,,,#bloc24,"size2,slanted",5,6,3,2,Mediocre
+324,text,3,,,00:04:51,,,#bloc25,"size2,slanted",11,4,3,2,Billionaire
+325,text,3,,,00:04:52,,,#bloc26,"size2,slanted",11,10,3,2,Coward
+326,clear,3,,,00:04:52,,all,,,,,,,
+327,text,3,,,00:04:54,,typo:slanted|mid,#bloc1,"size3,slanted,center",8,3,8,2,Moderate extremist
+328,text,3,,,00:04:57,,typo:slanted|mid,#bloc2,"size3,slanted,center",8,6,8,2,Extremist moderate
+329,clear,3,,,00:04:58,,all,,,,,,,
+330,text,3,,,00:05:10,,typo:slanted|mid,#bloc1,"size3,slanted,center",7,4,14,2,"Does one need to love?<br>Don't ask, feel it."
+331,video,3,,9,00:05:12,,,,,,,,,
+332,part,4,,,,,title:1,,"center,centerV,large,size3,fadeIn",2,3,20,6,"IV. The Larks, <br>Still Bravely Singing"
+333,video,4,,2,00:00:00,00:12:57,,,,,,,,
+334,text,4,,,00:01:19,,couleur:noir,#bloc1,"size3,regular,noir",1,1,23,6,"I believe that order is better than chaos,<br>creation is better than destruction.
 "
-#REF!,text,4,,,00:01:34,,noir,#bloc1,"size3,regular,noir",1,1,23,6,"I prefer gentleness to violence,<br>forgiveness to vendetta,<br>knowledge to ignorance.
+335,text,4,,,00:01:28,,couleur:noir,#bloc1,"size3,regular,noir",1,1,23,8,"I prefer gentleness to violence,<br>forgiveness to vendetta,<br>knowledge to ignorance.
 "
-#REF!,text,4,,,00:01:42,,noir,#bloc1,"size3,regular,noir",1,1,23,,I believe in courtesy
-#REF!,clear,4,,,00:01:45,,bloc1,,,,,,,
-#REF!,text,4,,,00:02:56,,noir,#bloc1,"size2,regular,noir",1,1,8,2,candles in the dark of winter<br>kiss under a full moon<br>kicking up dead leaves<br>whirlwind<br>masterpiece<br>cups of tea<br>quiet sunset<br>my child's first giggle<br>warm wind touching a tanned cheek<br>memories<br>miracles<br>happy exhaustion<br>nightingale singing at midnight<br>fresh sheets<br>smile from a stranger<br>joy of expectation
-#REF!,clear,4,,,00:03:28,,bloc1,,,,,,,
-#REF!,text,4,,,00:03:33,,noir,#bloc1,"size3,right,regular,noir",5,4,17,2,small delights make us human
-#REF!,clear,4,,,00:03:36,,bloc1,,,,,,,
-#REF!,text,4,,,00:03:50,,noir,#bloc1,"size3,regular,noir",1,1,22,6,We all breathe the same air.<br>We all cherish our children's future.<br>And we are all mortal.
-#REF!,clear,4,,,00:03:59,,bloc1,,,,,,,
-#REF!,text,4,,,00:04:00,,noir,#bloc1,"size3,right,regular,noir",5,4,18,2,in that rich earth a richer dust
-#REF!,clear,4,,,00:04:04,,bloc1,,,,,,,
-#REF!,text,4,,,00:04:05,,noir,#bloc1,"size3,regular,noir",1,1,17,2,who are the terrorists now?
-#REF!,clear,4,,,00:04:08,,bloc1,,,,,,,
-#REF!,text,4,,,00:09:04,,,#bloc1,"size3,regular",1,1,22,2,horror
-#REF!,text,4,,,00:09:06,,,#bloc1,"size3,regular",1,1,22,2,horror terror
-#REF!,text,4,,,00:09:08,,,#bloc1,"size3,regular",1,1,22,2,horror terror violence
-#REF!,text,4,,,00:09:10,,,#bloc1,"size3,regular",1,1,22,2,horror terror violence war
-#REF!,clear,4,,,00:09:12,,bloc1,,,,,,,
-#REF!,text,4,,,00:09:14,,,#bloc1,"size3,regular",1,1,22,2,dirtied
-#REF!,text,4,,,00:09:16,,,#bloc1,"size3,bold",1,1,22,2,dirtied bloodied
-#REF!,text,4,,,00:09:19,,,#bloc1,"size3,bold",1,1,22,2,dirtied bloodied stinking
-#REF!,text,4,,,00:09:21,,,#bloc1,"size3,bold",1,1,22,2,justify
-#REF!,text,4,,,00:09:23,,,#bloc1,"size3,bold",1,1,22,2,justify validate
-#REF!,text,4,,,00:09:26,,,#bloc1,"size3,bold",1,1,22,2,justify validate execute
-#REF!,text,4,,,00:09:28,,,#bloc1,"size3,bold",1,1,22,2,hit
-#REF!,text,4,,,00:09:30,,,#bloc1,"size3,bold",1,1,22,2,hit hurt
-#REF!,text,4,,,00:09:32,,,#bloc1,"size3,bold",1,1,22,2,hit hurt hunt
-#REF!,text,4,,,00:09:34,,,#bloc1,"size6,center,bold",0,1,24,9,maimed
-#REF!,text,4,,,00:09:38,,typo:bold|mid,#bloc1,"size6,center,bold",0,1,24,9,wounded
-#REF!,text,4,,,00:09:41,,typo:bold|mid,#bloc1,"size6,center,bold",0,1,24,9,crippled
-#REF!,text,4,,,00:09:43,,typo:bold|mid,#bloc1,"size6,center,bold",0,1,24,9,mangled
-#REF!,text,4,,,00:09:45,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,casualties
-#REF!,text,4,,,00:09:47,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,casualties fatalities
-#REF!,text,4,,,00:09:50,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,money
-#REF!,text,4,,,00:09:52,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,money love
-#REF!,text,4,,,00:09:54,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,money love power
-#REF!,text,4,,,00:09:55,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,money love power money
-#REF!,text,4,,,00:09:57,,typo:bold|mid,#bloc1,"size6,center,bold",0,1,24,9,dead
-#REF!,text,4,,,00:09:59,,typo:bold|mid,#bloc1,"size6,center,bold",0,1,24,9,deadly
-#REF!,text,4,,,00:10:01,,typo:bold|mid,#bloc1,"size6,center,bold",0,1,24,9,done
-#REF!,text,4,,,00:10:05,,typo:bold|mid,#bloc1,"size3,bold",1,1,24,2,they
-#REF!,text,4,,,00:10:07,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,they them
-#REF!,text,4,,,00:10:09,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,they them themselves
-#REF!,text,4,,,00:10:12,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,they them themselves theirs
-#REF!,text,4,,,00:10:15,,typo:bold|mid,#bloc1,"size6,center,bold",0,1,24,9,I 
-#REF!,text,4,,,00:10:17,,typo:bold|mid,#bloc1,"size6,center,bold",0,1,24,9,me
-#REF!,text,4,,,00:10:18,,typo:bold|mid,#bloc1,"size6,center,bold",0,1,24,9,myself
-#REF!,text,4,,,00:10:20,,typo:bold|mid,#bloc1,"size6,center,bold",0,1,24,9,mine
-#REF!,clear,4,,,00:10:23,,bloc1,,,,,,,
-#REF!,generique,4,,,00:15:00,,,#bloc1,,,,,,
+336,text,4,,,00:01:39,,couleur:noir,#bloc1,"size3,regular,noir",1,1,23,6,I believe in courtesy.
+337,clear,4,,,00:01:43,,bloc1,,,,,,,
+338,text,4,,,00:03:04,,couleur:noir,#bloc1,"size2,regular",0,2,8,2,Candles in the dark of winter<br>kiss under a full moon<br>kicking up dead leaves<br>whirlwind<br>masterpiece<br>cups of tea<br>quiet sunset<br>my child's first giggle<br>warm wind touching a tanned cheek<br>memories<br>miracles<br>happy exhaustion<br>nightingale singing at midnight<br>fresh sheets<br>smile from a stranger<br>joy of expectation
+339,clear,4,,,00:03:43,,bloc1,,,,,,,
+340,text,4,,,00:03:46,,couleur:noir,#bloc1,"size3,right,regular",5,4,20,2,small delights make us human
+341,clear,4,,,00:03:49,,bloc1,,,,,,,
+342,text,4,,,00:03:57,,couleur:noir,#bloc1,"size3,regular",1,1,22,6,We all breathe the same air.<br>We all cherish our children's future.<br>And we are all mortal.
+343,clear,4,,,00:04:06,,bloc1,,,,,,,
+344,text,4,,,00:04:00,,couleur:noir,#bloc1,"size3,right,regular",5,4,18,2,in that rich earth a richer dust
+345,clear,4,,,00:04:14,,bloc1,,,,,,,
+346,text,4,,,00:04:16,,couleur:noir,#bloc1,"size3,regular",1,1,17,2,who are the terrorists now?
+347,clear,4,,,00:04:21,,bloc1,,,,,,,
+348,text,4,,,00:09:01,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Horror
+349,text,4,,,00:09:09,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Horror Terror
+350,text,4,,,00:09:13,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Horror Terror Violence
+351,text,4,,,00:09:15,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Horror Terror Violence War
+352,clear,4,,,00:09:17,,bloc1,#bloc1,,,,,,
+353,text,4,,,00:09:18,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Dirtied
+354,text,4,,,00:09:21,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Dirtied Bloodied
+355,text,4,,,00:09:23,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Dirtied Bloodied Stinking
+356,text,4,,,00:09:27,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Justify
+357,text,4,,,00:09:29,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Justify Validate
+358,text,4,,,00:09:31,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Justify Validate Execute
+359,text,4,,,00:09:35,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Hit
+360,text,4,,,00:09:37,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Hit Hurt
+361,text,4,,,00:09:39,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Hit Hurt Hunt
+362,text,4,,,00:09:43,,typo:bold|mid,#bloc1,"size5,center,bold",0,1,24,9,Maimed
+363,text,4,,,00:09:45,,typo:bold|mid,#bloc1,"size5,center,bold",0,1,24,9,Wounded
+364,text,4,,,00:09:48,,typo:bold|mid,#bloc1,"size5,center,bold",0,1,24,9,Crippled
+365,text,4,,,00:09:50,,typo:bold|mid,#bloc1,"size5,center,bold",0,1,24,9,Mangled
+366,text,4,,,00:09:54,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Casualties
+367,text,4,,,00:09:56,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Casualties Fatalities
+368,text,4,,,00:09:50,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Money
+369,text,4,,,00:09:52,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Money Love
+370,text,4,,,00:09:54,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Money Love Power
+371,text,4,,,00:09:55,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,Money Love Power Money
+372,text,4,,,00:09:57,,typo:bold|mid,#bloc1,"size5,center,bold",0,1,24,9,Dead
+373,text,4,,,00:09:59,,typo:bold|mid,#bloc1,"size5,center,bold",0,1,24,9,Deadly
+374,text,4,,,00:10:01,,typo:bold|mid,#bloc1,"size5,center,bold",0,1,24,9,Done
+375,text,4,,,00:10:05,,typo:bold|mid,#bloc1,"size3,bold",1,1,24,2,They
+376,text,4,,,00:10:07,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,They Them
+377,text,4,,,00:10:09,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,They Them Themselves
+378,text,4,,,00:10:12,,typo:bold|mid,#bloc1,"size3,bold",1,1,22,2,They Them Themselves Theirs
+379,text,4,,,00:10:15,,typo:bold|mid,#bloc1,"size5,center,bold",0,1,24,9,I 
+380,text,4,,,00:10:17,,typo:bold|mid,#bloc1,"size5,center,bold",0,1,24,9,Me
+381,text,4,,,00:10:18,,typo:bold|mid,#bloc1,"size5,center,bold",0,1,24,9,Myself
+382,text,4,,,00:10:20,,typo:bold|mid,#bloc1,"size5,center,bold",0,1,24,9,Mine
+383,clear,4,,,00:10:23,,bloc1,,,,,,,
+384,generique,4,,,00:15:00,,,#bloc1,,,,,,

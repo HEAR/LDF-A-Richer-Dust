@@ -289,7 +289,7 @@ $(function () {
 		// $('#bloc1').text( msg.text );	
 
 		let delayValue = 0;
-		let noirValue = false;
+		let couleurValue = "blanc";
 
 		typoToAnim = false;
 		animOnfreq = false;
@@ -302,8 +302,8 @@ $(function () {
 				delayValue = msg.param.params[i].value;
 			}
 
-			if(msg.param.params[i].action == "noir"){
-				noirValue = true;
+			if(msg.param.params[i].action == "couleur"){
+				couleurValue = msg.param.params[i].value;
 			}
 
 			if(msg.param.params[i].action == "typo"){
@@ -317,13 +317,28 @@ $(function () {
 
 		}
 
-		if(noirValue === true){
-			sendOSC("/composition/layers/2/video/effects/invertrbg/bypassed",1);
-			sendOSC("/composition/layers/2/video/mixer/blendmode",3);
-		}else{
-			sendOSC("/composition/layers/2/video/effects/invertrbg/bypassed",0);
-			sendOSC("/composition/layers/2/video/mixer/blendmode",0);
+		switch(couleurValue){
+			case "blanc" :
+				var command = "/composition/layers/1/clips/1/connect";
+				sendOSC( command ,1);
+			break;
+
+			case "noir" :
+				var command = "/composition/layers/1/clips/2/connect";
+				sendOSC( command ,1);
+			break;
+
+			case "rouge" :
+				var command = "/composition/layers/1/clips/3/connect";
+				sendOSC( command ,1);
+			break;
+
+			default:
+				var command = "/composition/layers/1/clips/1/connect";
+				sendOSC( command ,1);
+			break;
 		}
+
 
 		console.log("delayValue",delayValue);
 

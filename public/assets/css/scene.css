@@ -156,7 +156,7 @@ margin: 0;
 }
 */
 
-#generiqueContainerContainer{
+#generiqueContainer{
 
 	height: 100%;
 }
@@ -167,7 +167,7 @@ margin: 0;
 	column-fill: auto;
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	/*padding: 0.5rem;*/
 	height: 100%;
 
 	line-height: 1.25rem;
@@ -176,11 +176,12 @@ margin: 0;
 	color: #FFF;
 	text-align: left;
 
-	font-family: 'a-richer-dust-Thin', sans-serif;
+	font-family: 'a-richer-dust-Regular', sans-serif;
 }
 
 #generiqueContainer strong{
-	font-family: 'a-richer-dust-Bold', sans-serif;
+	font-family: 'a-richer-dust-Regular', sans-serif;
+	text-decoration: underline;
 }
 
 .callage #generiqueContainer ul{
