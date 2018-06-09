@@ -228,14 +228,14 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 						case "regular" :
 							thicknessRegular	= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 125, 180);
-							ptypoFontRegular.changeParam('thickness', thicknessBold );//, uniqueText( $('.ableton').text() ));
+							ptypoFontRegular.changeParam('thickness', thicknessBold , uniqueText( $('.ableton').text() ));
 						break;
 
 						case "bold" :
 							// thicknessBold		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 125, 180);
 							thicknessBold		= remap(msg[animOnfreq].val, msg[animOnfreq].seuilMin, msg[animOnfreq].seuilMax, 125, 180);
 
-							ptypoFontBold.changeParam('thickness', thicknessBold ); //, uniqueText( $('.ableton').text() ));
+							ptypoFontBold.changeParam('thickness', thicknessBold , uniqueText( $('.ableton').text() ));
 						break;
 
 						// case "thin" :
@@ -245,7 +245,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 						case "slanted" :
 							slant 		  		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 0, 30);
-							ptypoFontSlanted.changeParam('slant', slant ); //, uniqueText( $('.ableton').text() ));
+							ptypoFontSlanted.changeParam('slant', slant ,uniqueText( $('.ableton').text() ));
 						break;
 
 						// case "serif" :
@@ -255,7 +255,7 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 
 						case "large" :
 							width 		  		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 1, 2.7);
-							ptypoFontLarge.changeParam('width', width ). //, uniqueText( $('.ableton').text() ));
+							ptypoFontLarge.changeParam('width', width , uniqueText( $('.ableton').text() ));
 						break;
 					}
 
