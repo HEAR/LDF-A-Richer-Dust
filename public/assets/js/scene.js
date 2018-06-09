@@ -1,6 +1,7 @@
 
 var typoToAnim;
 var animOnfreq;
+var lastUpdatedVariant;
 
 
 function loadPrototypo(email,password, fontName, fontVariant, sock){
@@ -170,19 +171,37 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 			var typoInitiated = false;
 
 			function resetFonts(){
-				thicknessRegular 	= valuesRegular.thickness;
-				thicknessBold 		= valuesBold.thickness;
-				// thicknessThin 		= valuesThin.thickness;
-				slant 				= valuesSlanted.slant;
-				// serifWidth 			= valuesSerif.serifWidth;
-				width 				= valuesLarge.width;
 
-				ptypoFontRegular.changeParam('thickness', thicknessBold);
-				ptypoFontBold.changeParam('thickness', thicknessBold);
+				switch(lastUpdatedVariant){
+					case "regular" :
+						thicknessRegular 	= valuesRegular.thickness;
+						ptypoFontRegular.changeParam('thickness', thicknessBold);
+					break;
+
+					case "bold" :
+						thicknessBold 		= valuesBold.thickness;
+						ptypoFontBold.changeParam('thickness', thicknessBold);
+					break;
+
+					case "slanted" :
+						slant 				= valuesSlanted.slant;
+						ptypoFontSlanted.changeParam('slant', slant);
+					break;
+
+					case "large" :
+						width 				= valuesLarge.width;
+						ptypoFontLarge.changeParam('width', width);
+					break;
+
+
+				}
+				
+				// thicknessThin 		= valuesThin.thickness;
+				// serifWidth 			= valuesSerif.serifWidth;
+				
 				// ptypoFontThin.changeParam('thickness', thicknessThin);
-				ptypoFontSlanted.changeParam('slant', slant);
 				// ptypoFontSerif.changeParam('serifWidth', serifWidth);
-				ptypoFontLarge.changeParam('width', width);
+				
 		    }
 
 			sock.on('ableton message', function(msg){
@@ -213,7 +232,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 						break;
 
 						case "bold" :
-							thicknessBold		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 125, 180);
+							// thicknessBold		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 125, 180);
+							thicknessBold		= remap(msg[animOnfreq].val, msg[animOnfreq].seuilMin, msg[animOnfreq].seuilMax, 125, 180);
+
 							ptypoFontBold.changeParam('thickness', thicknessBold, uniqueText( $('.ableton').text() ));
 						break;
 
@@ -236,9 +257,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 							width 		  		= remap(msg[animOnfreq].val, msg[animOnfreq].min, msg[animOnfreq].max, 1, 2.7);
 							ptypoFontLarge.changeParam('width', width, uniqueText( $('.ableton').text() ));
 						break;
-
 					}
 
+					lastUpdatedVariant = typoToAnim;
 					typoInitiated = true;
 				}else{
 
@@ -252,14 +273,9 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 				// console.log(msg.param);
 			});
 
-
-	
-
-
 		})
 		.catch(error => console.log(error));
 			
-	   
 	});	
 }
 

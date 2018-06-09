@@ -27,9 +27,9 @@ const csvjson 	= require('csvjson');
 
 
 var abletonJSON = {};
-abletonJSON.high 		= { min :1, max : 0, val : 0 };
-abletonJSON.mid 		= { min :1, max : 0, val : 0 };
-abletonJSON.low 		= { min :1, max : 0, val : 0 };
+// abletonJSON.high 		= { min :1, max : 0, val : 0 };
+abletonJSON.mid 		= { min :1, max : 0, val : 0, seuilMin:1, seuilMax:0 };
+// abletonJSON.low 		= { min :1, max : 0, val : 0 };
 
 const ipResolume 	= param.ipResolume;
 const portResolume 	= param.portResolume;
@@ -183,8 +183,11 @@ io.on('connection', function(socket){
 });
 
 
+var midMax = new Array();
+var midMin = new Array();
+const nbrVal = 1000;
 
-
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 /*
  ============================================================
@@ -218,29 +221,79 @@ var sock = udp.createSocket("udp4", function(msg, rinfo) {
 			
 		// on stocke toutes les valeurs dans abletonJSON
 		// => éventuellement ajouter un delta pour vérifier qu'il est intéressant de la prendre en compte
+		// 
+		// 
+		let seuilMin = 0.001;
+		let seuilMax = 0.2;
 
+		
 		switch(osc.fromBuffer(msg).address){
-			case '/ableton/highfrequency' :
-				// console.log( clc.blue('\thighfrequency') );
-				abletonJSON.high.val = osc.fromBuffer(msg).args[0].value;
+			// case '/ableton/highfrequency' :
+			// 	// console.log( clc.blue('\thighfrequency') );
+			// 	abletonJSON.high.val =  Number((osc.fromBuffer(msg).args[0].value).toFixed(6));
 
-				abletonJSON.high.min = Math.min(abletonJSON.high.min, abletonJSON.high.val);
-				abletonJSON.high.max = Math.max(abletonJSON.high.max, abletonJSON.high.val);
-			break;
+			// 	abletonJSON.high.min = Number((Math.min(abletonJSON.high.min, abletonJSON.high.val)).toFixed(6)) ;
+			// 	abletonJSON.high.max = Number((Math.max(abletonJSON.high.max, abletonJSON.high.val)).toFixed(6));
+			// break;
 			case '/ableton/midfrequency' :
 				// console.log( clc.blue('\tmidfrequency') );
-				abletonJSON.mid.val = osc.fromBuffer(msg).args[0].value;
+				abletonJSON.mid.val  = Number((osc.fromBuffer(msg).args[0].value).toFixed(6));
 
-				abletonJSON.mid.min  = Math.min(abletonJSON.mid.min, abletonJSON.mid.val);
-				abletonJSON.mid.max  = Math.max(abletonJSON.mid.max, abletonJSON.mid.val);
-			break;
-			case '/ableton/lowfrequency' :
-				// console.log( clc.blue('\tlowfrequency') );
-				abletonJSON.low.val = osc.fromBuffer(msg).args[0].value;
+				abletonJSON.mid.min  = Number((Math.min(abletonJSON.mid.min, abletonJSON.mid.val)).toFixed(6));
+				abletonJSON.mid.max  = Number((Math.max(abletonJSON.mid.max, abletonJSON.mid.val)).toFixed(6));
 
-				abletonJSON.low.min  = Math.min(abletonJSON.low.min, abletonJSON.low.val);
-				abletonJSON.low.max  = Math.max(abletonJSON.low.max, abletonJSON.low.val);
+
+				midMin.push(abletonJSON.mid.min);
+				midMax.push(abletonJSON.mid.max);
+
+				// console.log("OK OK OK ",midMin);
+
+				if(midMin.length > nbrVal){
+					midMin.shift();
+				}
+
+				seuilMin = 0;
+
+				for(var v = 0; v< midMin.length; v++){
+					seuilMin += midMin[v];
+				}
+
+				seuilMin = Number((seuilMin/midMin.length).toFixed(6));
+
+				if(midMax.length > nbrVal){
+					midMax.shift();
+				}
+
+				seuilMax = 0;
+
+				for(var v = 0; v< midMax.length; v++){
+					seuilMax += midMax[v];
+				}
+
+				seuilMax = Number((seuilMax/midMax.length).toFixed(6));
+
+				// seuilMin = (midMin.reduce(reducer))/nbrVal;
+				// seuilMax = (midMax.reduce(reducer))/nbrVal;
+
+				if( abletonJSON.mid.val < seuilMin){
+					abletonJSON.mid.val = seuilMin;
+				}
+				if( abletonJSON.mid.val > seuilMax){
+					abletonJSON.mid.val = seuilMax;
+				}
+
+
+				abletonJSON.mid.seuilMin = seuilMin;
+				abletonJSON.mid.seuilMax = seuilMax;
+				
 			break;
+			// case '/ableton/lowfrequency' :
+			// 	// console.log( clc.blue('\tlowfrequency') );
+			// 	abletonJSON.low.val  = Number((osc.fromBuffer(msg).args[0].value).toFixed(6));
+
+			// 	abletonJSON.low.min  = Number((Math.min(abletonJSON.low.min, abletonJSON.low.val)).toFixed(6));
+			// 	abletonJSON.low.max  = Number((Math.max(abletonJSON.low.max, abletonJSON.low.val)).toFixed(6));
+			// break;
 			default:
 
 			break;
