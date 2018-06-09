@@ -175,22 +175,22 @@ function loadPrototypo(email,password, fontName, fontVariant, sock){
 				switch(lastUpdatedVariant){
 					case "regular" :
 						thicknessRegular 	= valuesRegular.thickness;
-						ptypoFontRegular.changeParam('thickness', thicknessBold);
+						ptypoFontRegular.changeParam('thickness', thicknessBold, uniqueText( $('.ableton').text() ));
 					break;
 
 					case "bold" :
 						thicknessBold 		= valuesBold.thickness;
-						ptypoFontBold.changeParam('thickness', thicknessBold);
+						ptypoFontBold.changeParam('thickness', thicknessBold, uniqueText( $('.ableton').text() ));
 					break;
 
 					case "slanted" :
 						slant 				= valuesSlanted.slant;
-						ptypoFontSlanted.changeParam('slant', slant);
+						ptypoFontSlanted.changeParam('slant', slant, uniqueText( $('.ableton').text() ));
 					break;
 
 					case "large" :
 						width 				= valuesLarge.width;
-						ptypoFontLarge.changeParam('width', width);
+						ptypoFontLarge.changeParam('width', width, uniqueText( $('.ableton').text() ));
 					break;
 
 
