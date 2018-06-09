@@ -60,6 +60,7 @@ typings/
 .DS_Store
 
 public/param.json
+param.json
 
 
 videos/
