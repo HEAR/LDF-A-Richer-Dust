@@ -1,0 +1,307 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body{
+	height: 100%;
+}
+body {
+	background: #1A1A1A;
+	font-size: 20px;
+	font-family: "Roboto Slab";
+	/*font: 13px Helvetica, Arial;*/
+}
+
+/* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+/* https://www.alsacreations.com/article/lire/1388-css3-grid-layout.html */
+#admin{
+	display: grid;
+	grid-template-columns: 15% 15% 35% 35%;
+	grid-template-areas:
+		/*"head head head head" */
+		"info info info info"
+		"chat chat flux flux";
+		/*"foot foot foot foot" ;*/
+	/*width: 100%;*/
+	height: 100%;
+}
+
+header{
+	grid-area: head;
+	padding:15px;
+	max-height: 40px;
+}
+
+#infos{
+	background: #1A1A1A;
+	color: #FFF;
+	grid-area: info;
+	/*top:0;*/
+	width:100%;
+	/*position: fixed;*/
+	/*background: #DDD;*/
+	height: 200px;
+	padding:15px;
+	display: grid;
+	grid-template-columns: 90px 90px 90px auto;
+	grid-template-areas:
+		"interface1 interface2 boutons chrono" ;
+}
+
+
+#parties{
+	list-style: none;
+}
+
+#parties li{
+	/*height: 100px;*/
+	vertical-align: center;
+	background: #333333;
+	padding: 40px;
+	color: #FFFFFF;
+	font-size: 35px;
+	margin-bottom: 10px;
+}
+
+#parties li.active{
+	background: #4D4D4D;
+}
+
+#flux{
+	grid-area: flux;
+	height: calc(100vh - 200px);
+	overflow-y: auto;
+	/*background: #CCC;*/
+	display: flex;
+}
+
+#flux ul{
+	width: calc(100% / 2); /* on peut aussi mettre 3 */
+}
+
+#chat{
+	grid-area: chat;
+	height: calc(100vh - 200px);
+	overflow-y: auto;
+}
+
+footer{
+	grid-area: foot;
+	padding:15px;
+	max-height: 40px;
+}
+
+#chrono{
+	grid-area: chrono;
+	font-size: 80px;
+	font-family: "Roboto Mono";
+	padding-left: 90px;
+}
+
+.millis{
+	font-size: 0.5em;
+}
+
+
+.boutons{
+	grid-area: boutons;
+	justify-self: center;
+}
+
+.boutons button{
+	display: block;
+	height: 50%;
+	width:80px;
+	background: transparent;
+	font-weight: bold;
+	border: solid 3px #21E897;
+	color:#21E897;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+
+.interface1{
+	grid-area: interface1;
+	justify-self: center;
+}
+
+.interface2{
+	grid-area: interface2;
+	justify-self: center;
+}
+
+.interface button{
+	display: block;
+	height: 50%;
+	width:80px;
+	background: transparent;
+	font-weight: bold;
+	border: solid 3px #21E897;
+	color:#21E897;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+
+.interface #prototypoReady{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50%;
+	width:80px;
+	background: transparent;
+	font-weight: bold;
+	border: solid 3px #ED1C24;
+	color:#000;
+	background-color: #ED1C24;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+
+.interface #prototypoReady.loaded{
+	color: #000;
+	border-color: #21E897;
+	background-color: #21E897;
+}
+
+.interface #clearBtn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50%;
+	width:80px;
+	background: transparent;
+	font-weight: bold;
+	border: solid 3px #ff9900;
+	color:#ff9900;
+	text-transform: uppercase;
+	font-size: 15px;
+}
+
+
+
+#play{
+	/*background: #0F0;*/
+}
+#pause{
+	/*background: #DDD;*/
+}
+#stop{
+	color: #ED1C24;
+	border-color: #ED1C24;
+}
+
+button:hover{
+	color: #FFF !important;
+	border-color: #FFF !important;
+}
+
+
+#flux ul {
+	list-style-type: none;
+	margin: 0;
+	/*margin-top:200px;*/
+	padding: 0;
+}
+#flux ul li {
+	padding: 10px 10px;
+	background: #444444;
+	color: #FFF;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+#flux ul li .timecode{
+	float: right;
+	background: #FF0;
+	color: #000;
+	font-size: 10px;
+	padding: 5px;
+	margin: -10px -10px 10px 0; 
+}
+
+
+#flux ul li:nth-child(odd) {
+	background: #333333;
+}
+
+#flux ul li.stacked{
+	background: #FF0;
+	color: #000;
+	animation: stacked 20s;
+	animation-fill-mode: forwards;
+}
+
+#flux ul li.activated{
+	animation: activated 0.5s;
+	animation-fill-mode: forwards;
+	overflow-y: auto;
+}
+
+#flux ul#videos li{
+	padding: 10px;
+}
+
+#flux ul#videos li img{
+	width: 100%;
+	display: block;
+	border:solid 3px #FFF;
+}
+
+body.pause #flux ul li.stacked{
+	animation-play-state: paused;
+}
+
+
+@keyframes stacked {
+	0% {
+		background-color: #FF0;
+	}
+	100% {
+		background-color: #F00;
+	}
+}
+
+@keyframes activated {
+	0% {
+		
+	}
+	30%{
+		background-color: #FFF;
+	}
+	75%{
+		color: rgba(0,0,0,0);
+		height: auto;
+		padding: 5px 10px;
+	}
+	100% {
+		/*transform: scaleY(0);*/
+		height: 0;
+		padding: 0px 10px;
+		display: none;
+		margin-bottom:0;
+	}
+}
+
+
+
+form {
+	background: #000;
+	padding: 3px;
+	/*position: fixed;
+	bottom: 0;
+	width: 100%;*/
+}
+form input {
+	border: 0;
+	padding: 10px;
+	width: 80%;
+	margin-right: .5%;
+}
+form button {
+	width: 19.5%;
+	background: rgb(130, 224, 255);
+	border: none;
+	padding: 10px;
+}

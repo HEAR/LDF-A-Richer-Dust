@@ -2,14 +2,14 @@
 <html>
 <head>
 	<title>Admin A richer dust</title>
-	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="stylesheet" href="assets/fonts/Roboto_Slab/stylesheet.css">
+	<link rel="stylesheet" href="assets/fonts/Roboto_Mono/stylesheet.css">
+	<link rel="stylesheet" href="assets/css/admin.css">
 </head>
 <body>
 
 	<div id="admin">
-		<header>
-			<h1>A richer dust ~ pilotage</h1>
-		</header>
+
 		<section id="infos">
 			<div id="chrono">
 				<span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>.<span class="millis">000</span>
@@ -19,31 +19,32 @@
 				<button id="pause">pause</button>
 				<button id="stop">stop</button>
 			</div>
+			<div id="interface1" class="interface">
+				<button id="grille">grille</button>
+				<button id="refreshjson">json</button>
+			</div>
+			<div id="interface2" class="interface">
+				<div id="prototypoReady">Proto<br>typo</div>
+				<div id="clearBtn">CLEAR<br>All</div>
+			</div>
 		</section>
 		<section id="flux">
 			<ul id="messages"></ul>
 			<ul id="videos"></ul>
-			<ul id="lights"></ul>
+			<!-- <ul id="lights"></ul> -->
 		</section>
 		<section id="chat">
-			<form action="">
-				<input id="m" autocomplete="off" /><button>Send</button>
-			</form>
-
-
-			<button id="clip1">Clip 1</button>
-			<button id="clip2">Clip 2</button>
 
 			<ul id="parties"></ul>
 		</section>
-		<footer>Atelier de communication graphique, Haute école des arts du Rhin</footer>
 	</div>
 
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="assets/js/jquery-3.2.1.min.js"></script>
+	<script src="assets/js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 	<script src="assets/js/PapaParse-4.3.2/papaparse.min.js"></script>
 	<script src="assets/js/tween.js-16.7.1/src/Tween.js"></script>
-	<script src="assets/js/script.js"></script>
+	<script src="assets/js/admin.js"></script>
 
 	<!-- http://workshop.chromeexperiments.com/examples/gui/#4--Color-Controllers -->
 

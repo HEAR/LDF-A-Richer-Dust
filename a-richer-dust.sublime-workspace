@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"paddin",
+				"padding\tproperty"
+			],
+			[
+				"font",
+				"font-family\tproperty"
+			],
+			[
+				"cur",
+				"cursor\tproperty"
+			],
+			[
+				"event",
+				"evenements"
+			],
+			[
+				"margin",
+				"margin-bottom\tproperty"
+			],
+			[
+				"txet",
+				"text-transform\tproperty"
+			],
+			[
+				"src",
+				"src\tAttr"
+			],
+			[
+				"a",
+				"assets/"
+			],
+			[
+				"json",
+				"jsondata"
+			],
+			[
+				"is",
+				"isDMX"
+			],
+			[
+				"data",
+				"dataConducteur"
+			],
+			[
 				"osc",
 				"sendOSC"
 			],
@@ -14,10 +58,6 @@
 			[
 				"fon",
 				"font-family"
-			],
-			[
-				"font",
-				"font-size"
 			],
 			[
 				"get",
@@ -52,37 +92,19 @@
 	"buffers":
 	[
 		{
-			"file": "public/assets/css/styles.css",
-			"settings":
-			{
-				"buffer_size": 2325,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/assets/js/script.js",
-			"settings":
-			{
-				"buffer_size": 6425,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 822,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "index.js",
 			"settings":
 			{
-				"buffer_size": 3438,
+				"buffer_size": 8486,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/csv/conducteur-last.csv",
+			"settings":
+			{
+				"buffer_size": 29658,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -91,18 +113,79 @@
 			"file": "public/admin.html",
 			"settings":
 			{
-				"buffer_size": 1256,
+				"buffer_size": 1591,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/index.html",
+			"file": "public/assets/css/admin.css",
 			"settings":
 			{
-				"buffer_size": 1570,
+				"buffer_size": 4438,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/scene.html",
+			"settings":
+			{
+				"buffer_size": 2438,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/js/admin.js",
+			"settings":
+			{
+				"buffer_size": 20134,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/data/a-richer-dust.json",
+			"settings":
+			{
+				"buffer_size": 89161,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/css/scene.css",
+			"settings":
+			{
+				"buffer_size": 3950,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/assets/js/scene.js",
+			"settings":
+			{
+				"buffer_size": 17277,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "param.json",
+			"settings":
+			{
+				"buffer_size": 175,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "// Permet de récupérer les projets d'un compte prototypo\nwindow['prototypo-projects'].getProjects('email', 'password').then(function (fonts) {\n    // Recherche la famille dans la liste de projets\n    var family = fonts.find(function (font) {\n        return font.name === 'Familyname';\n    });\n    // Recherche la variante dans les variantes de la famille\n    var variant = family && family.variants.find(function (variant) {\n        return variant.name === 'VariantName';\n    });\n    // Récupère les valeurs nécessaires à initialiser la police\n    var template = family.template;\n    var values = variant.values;\n    var ptypoFont;\n\n    var prototypo = new Ptypo.default('b1f4fb23-7784-456e-840b-f37f5a647b1c');\n    // Crée une font 'testfont' en utilisant le template récupéré\n    // la font 'testfont' a étée ajoutée à la page en css via une font-family\n    prototypo.createFont('testfont', template).then(function (createdFont) {\n        ptypoFont = createdFont;\n        // Change les paramètres de la font créée en utilisant les valeurs récupérées du compte\n        createdFont.changeParams(values);\n    });\n\n    var text = $('.text p').text();\n\n    /**************************GESTION DU SON *******************/\n    /************************************************************/\n\n    // Permet de calculer une valeur \"réaliste\" pour le paramètre en fonction de la valeur de fréquence reçue\n    var calculateValue = function (param, freqValue) {\n        switch (param) {\n            case 'thickness':\n                return freqValue / 3 + 4;\n                break;\n            case 'width':\n                return (freqValue / 230) + 0.45;\n                break;\n            case 'xHeight':\n                return (freqValue * 1.5) + 400;\n                break;\n            case 'curviness':\n                return (freqValue / 160);\n                break;\n            case 'slant':\n                return (freqValue / 10) - 3;\n                break;\n            default:\n                break;\n        }\n    }\n\n    // Permet de sélectionner quel paramète on souhaite associer à la fréquence\n    var getParamByFreq = function (chosenFreq) {\n        switch (chosenFreq) {\n            case 'Low':\n                return 'thickness';\n                break;\n            case 'Medium':\n                return 'width';\n                break;\n            case 'High':\n                return 'slant';\n                break;\n            default:\n                break;\n        }\n    }\n\n    // Fonction appelée pendant l'analyse du flux audio permettant de changer les paramètres de la police pour chaque fréquence\n    var updateFont = _.debounce(function (low, med, high) {\n        if (low !== 0) {\n            ptypoFont.changeParam(getParamByFreq('Low'), calculateValue(getParamByFreq('Low'), low), text)\n        }\n        if (med != 0) {\n            ptypoFont.changeParam(getParamByFreq('Medium'), calculateValue(getParamByFreq('Medium'), med), text)\n        }\n        if (high !== 0) {\n            ptypoFont.changeParam(getParamByFreq('High'), calculateValue(getParamByFreq('High'), high), text)\n        }\n    }, 10);\n\n    var isRaf = false;\n\n\n    // Fonction exécutée si la capture audio est acceptée, lance l'analyse\n    var soundAllowed = function (stream) {\n\n        // Configuration de l'analyse du stream\n        window.persistAudioStream = stream;\n        var audioContent = new (window.AudioContext || window.webkitAudioContext)();\n        var audioStream = audioContent.createMediaStreamSource(stream);\n        var analyser = audioContent.createAnalyser();\n        audioStream.connect(analyser);\n        analyser.fftSize = 1024;\n        var frequencyArray = new Uint8Array(analyser.frequencyBinCount);\n        var lastMedValue = 0;\n        var lastLowValue = 0;\n        var lastHighValue = 0;\n\n        // Boucle d'analyse\n        var doDraw = function () {\n            if (!isRaf) {\n                requestAnimationFrame(doDraw);\n            }\n            isRaf = true;\n            analyser.getByteFrequencyData(frequencyArray);\n            var adjustedLength;\n            var updateTrigger = 20;\n            // On ne travaille que sur les premières valeurs de l'objet, on le compresse.\n            for (var i = 0; i < 255; i++) {\n                adjustedLength = Math.floor(frequencyArray[i]) - (Math.floor(frequencyArray[i]) % 5);\n            }\n            // low : les 10 premiers blocs des 255\n            var total = 0;\n            for (var i = 1; i < 10; i++) {\n                total += frequencyArray[i];\n            }\n            var low = total / 9;\n            // On ajuste la valeur pour faciliter les calculs de paramètres\n            var adjustedLow = Math.floor(low) - (Math.floor(low) % 5);\n            //medium : les 10 suivants\n            total = 0;\n            for (var i = 11; i < 21; i++) {\n                total += frequencyArray[i];\n            }\n            var med = total / 10;\n            // On ajuste la valeur pour faciliter les calculs de paramètres\n            var adjustedMed = Math.floor(med) - (Math.floor(med) % 5);\n            // high : les 10 suivants\n            total = 0;\n            for (var i = 30; i < 40; i++) {\n                total += frequencyArray[i];\n            }\n            var high = total / 10;\n            // On ajuste la valeur pour faciliter les calculs de paramètres\n            var adjustedHigh = Math.floor(high) - (Math.floor(high) % 5);\n\n            // Si la différence capturée de son est suffisante, on met à jour la fonte\n            if (Math.abs(lastLowValue - low) > updateTrigger || Math.abs(lastMedValue - med) > updateTrigger || Math.abs(lastHighValue - high) > updateTrigger) {\n\n                updateFont(adjustedLow, adjustedMed, adjustedHigh);\n                isRaf = false;\n            } else {\n                isRaf = false;\n            }\n\n        }\n        doDraw();\n    }\n\n    // Configuration de l'accès au micro\n    $('.js-button-getAudio').on('click', function () {\n        if (navigator.getUserMedia) {\n            window.navigator = window.navigator || {};\n            navigator.getUserMedia = navigator.getUserMedia ||\n                navigator.webkitGetUserMedia ||\n                navigator.mozGetUserMedia ||\n                null\n            navigator.getUserMedia({ audio: true }, soundAllowed, function () { console.log('sound not allowed') });\n        } else if (navigator.mediaDevices.getUserMedia) {\n            navigator.mediaDevices.getUserMedia({ audio: true })\n                .then(function (stream) {\n                    if (!listening) {\n                        soundAllowed(stream);\n                    }\n                })\n        }\n    });\n\n});\n\n\n/****************Librairie Prototypo **************/\n\n// createFont(fontName, fontTemplate)\n// crée une fonte 'fontName' utilisable en CSS via une balise font-family en utilisant le template 'fontTemplate'\n\n\n// ptypofont.changeParam(paramName, paramValue, subset)\n// Change le paramètre 'paramname' de la font 'ptypofont' en lui donnant la valeur 'paramValue';\n// Possibilité de limiter les caractères modifiés en donnant un 'subset' : chaîne de caractères, pas besoin que ça soit unique\n\n// ptypofont.changeParams(paramObj, subset)\n// Change les paramètres de la font 'ptypofont' selon l'objet de paramètres donné\n// {'thickness': 110, 'width': 1}\n// Possibilité de limiter les caractères modifiés en donnant un 'subset' : chaîne de caractères, pas besoin que ça soit unique\n\n\n// ptypofont.tween(paramName, paramValue, steps, aDuration, cb, subset)\n// Anime la fonte 'ptypofont' pendant 'aDuration' secondes en faisant varier 'steps' fois le 'paramName' jusqu'à 'paramValue'\n// Renvoie 'cb' (fonction) quand terminé\n// Possibilité de limiter les caractères modifiés en donnant un 'subset' : chaîne de caractères, pas besoin que ça soit unique\n\n// ptypofont.getArrayBuffer()\n// Renvoie l'arrayBufer de la font 'ptypofont'\n\n// ptypofont.reset(subset)\n// Réinitialise la font 'ptypofont' en lui redonnant les valeurs du template de base\n// Possibilité de limiter les caractères modifiés en donnant un 'subset' : chaîne de caractères, pas besoin que ça soit unique\n",
+			"settings":
+			{
+				"buffer_size": 8119,
+				"line_ending": "Unix",
+				"name": "// Permet de récupérer les projets d'un compte pro"
 			}
 		}
 	],
@@ -114,9 +197,61 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "proje",
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"rin",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"align",
+				"Preferences: Alignment File Settings – Default"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"GitGutter: Compare Against Commit"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"jon",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"josn",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"reind",
+				"JSON Reindent: reindent file or selection"
+			],
 			[
 				"proje",
 				"Project Manager"
@@ -124,10 +259,6 @@
 			[
 				"project",
 				"Project Manager: Add New Project"
-			],
-			[
-				"reind",
-				"Indentation: Reindent Lines"
 			],
 			[
 				"pro",
@@ -142,16 +273,8 @@
 				"Indentation: Reindent Lines"
 			],
 			[
-				"json",
-				"Set Syntax: JSON"
-			],
-			[
 				"html",
 				"Set Syntax: HTML"
-			],
-			[
-				"js",
-				"Set Syntax: JavaScript"
 			],
 			[
 				"list",
@@ -178,10 +301,6 @@
 				"Set Syntax: SCSS"
 			],
 			[
-				"packa",
-				"Package Control: Install Package"
-			],
-			[
 				"inden",
 				"Indentation: Reindent Lines"
 			],
@@ -190,7 +309,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 412.0
+		"width": 540.0
 	},
 	"console":
 	{
@@ -213,11 +332,38 @@
 		"/Users/loic/Sites/LDF-A-Richer-Dust",
 		"/Users/loic/Sites/LDF-A-Richer-Dust/public",
 		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/css",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/csv",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/data",
 		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/js"
 	],
 	"file_history":
 	[
+		"/Users/loic/Sites/LDF-A-Richer-Dust/param.json",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/data/a-richer-dust.json",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/param.json",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/generique.html",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/js/admin.js",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/index.html",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/csv/conducteur-last.csv",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/param-sample.json",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/README.md",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/gulpfile.js",
+		"/Users/loic/Library/Application Support/Sublime Text 3/Packages/Alignment/Base File.sublime-settings",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/css/scene.css",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/css/prototypo.css",
+		"/Users/loic/Library/Application Support/Sublime Text 3/Packages/Alignment/Default (OSX).sublime-keymap",
+		"/Users/loic/Library/Application Support/Sublime Text 3/Packages/Terminal/Base File.sublime-settings",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/js/prototypo/lib/ptypo.js",
+		"/Users/loic/Downloads/LDF-A-Richer-Dust-Prototypo-Starter-master/app/index.html",
+		"/Users/loic/Downloads/LDF-A-Richer-Dust-Prototypo-Starter-Sound-master/package.json",
 		"/Users/loic/Sites/LDF-A-Richer-Dust/package.json",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/data/a-richer-dust-conducteur.json",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/jsonfile.json",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/light.js",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/csv/a-richer-dust-conducteur.json",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/index.js",
+		"/Users/loic/Sites/LDF-A-Richer-Dust/public/assets/csv/a-richer-dust-conducteur-JSON.csv",
 		"/Users/loic/Sites/LDF-A-Richer-Dust/package-lock.json",
 		"/Users/loic/Sites/HEAR-2017-Actes-cartographiques/test.php",
 		"/Users/loic/Desktop/instagram-api/vendor/cosenary/instagram/example/index.php",
@@ -237,7 +383,7 @@
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -251,6 +397,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"#generique",
+			"genrique",
+			"fadeInOut",
+			"loadPart",
+			"play",
+			"stop(",
+			"maimed",
+			"csvjson",
+			"intify",
+			"block",
+			"all",
+			"key",
+			"keyUp",
+			"keyup",
+			"a-richer-dust-Slanted",
+			":</h3>",
+			"soundAllowed",
+			"analyser",
+			"_.",
+			"updateFont",
+			"requestAnimationFrame",
+			"doDraw",
+			"loadConducteur",
+			"Buffer",
+			"margin",
+			"socket",
+			"Christelle DAVAL",
+			"\"type\": \"part\",",
+			"click",
 			"lien"
 		],
 		"highlight": true,
@@ -269,148 +444,211 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 7,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/assets/css/styles.css",
+					"file": "index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2325,
+						"buffer_size": 8486,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								185,
-								185
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1798.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "public/assets/js/script.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6425,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2369,
-								2369
-							]
-						],
-						"settings":
-						{
+							"git_gutter_is_enabled": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1663.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "package.json",
+					"buffer": 1,
+					"file": "public/assets/csv/conducteur-last.csv",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 822,
+						"buffer_size": 29658,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								764,
-								764
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/admin.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1591,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public/assets/css/admin.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4438,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 939.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/scene.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2438,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 55.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "index.js",
+					"buffer": 5,
+					"file": "public/assets/js/admin.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3438,
+						"buffer_size": 20134,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2184,
-								1889
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
+						"translation.x": 16.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "public/admin.html",
+					"buffer": 6,
+					"file": "public/assets/data/a-richer-dust.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1256,
+						"buffer_size": 89161,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								107,
-								107
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
 						},
-						"translation.x": 0.0,
+						"translation.x": 536266.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -418,33 +656,123 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "public/index.html",
+					"buffer": 7,
+					"file": "public/assets/css/scene.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1570,
+						"buffer_size": 3950,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								86,
-								86
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 563.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "public/assets/js/scene.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2929.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "param.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 175,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2464,
+								2464
+							]
+						],
+						"settings":
+						{
+							"auto_name": "// Permet de récupérer les projets d'un compte pro",
+							"git_gutter_is_enabled": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1505.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -452,11 +780,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 26.0
 	},
 	"input":
 	{
-		"height": 37.0
+		"height": 38.0
 	},
 	"layout":
 	{
@@ -489,11 +817,19 @@
 	{
 		"height": 0.0
 	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 324.0
+	},
 	"pinned_build_system": "",
 	"project": "a-richer-dust.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -531,7 +867,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 268.0,
+	"side_bar_width": 346.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

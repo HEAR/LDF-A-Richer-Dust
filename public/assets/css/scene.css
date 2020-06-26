@@ -1,0 +1,294 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 20px;
+}
+
+html,body{
+	height: 100%;
+}
+
+body {
+	font-family:'a-richer-dust-Regular', Helvetica, Arial;
+	background: #000;
+	overflow: hidden;
+	cursor: none;
+}
+
+body.callage{
+	background: #FFF;
+	cursor: auto;
+}
+
+/* http://www.learnlayout.com/flexbox.html */
+
+
+#scene{
+	width:1920px !important;
+	height:720px;
+	/*background: #fdd;*/
+	/*position: relative;*/
+	position:fixed;
+	left: 0;
+	bottom: 0;
+}
+
+.callage #scene{
+	background: repeating-linear-gradient(
+		rgba(255, 0, 0, 0.1),
+		rgba(255, 0, 0, 0.1) 0.5rem,
+		rgba(255, 0, 0, 0.05) 0.5rem,
+		rgba(255, 0, 0, 0.05) 1rem
+	),repeating-linear-gradient(
+		rgba(0, 0, 255, 0),
+		rgba(0, 0, 255, 0) 59px,
+		rgba(0, 0, 255, 0.5) 60px,
+		rgba(0, 0, 255, 0.5) 60px
+	),repeating-linear-gradient(
+		90deg,
+		rgba(255, 0, 0, 0),
+		rgba(255, 0, 0, 0) 79px,
+		rgba(255, 0, 0, 0.5) 80px,
+		rgba(255, 0, 0, 0.5) 80px
+	);
+
+	background-size: 80px 60px;
+}
+
+.message{
+	width:calc(1920px / 12);
+	height: calc(720px / 8);
+	position: absolute;
+	line-height: 1rem;
+	font-size: 0.9rem;
+	/*padding-top: 0.2rem;*/
+	display: none;
+	background: transparent;
+	color: #FFF;
+	text-align: left;
+	padding: 0.2rem 0.5rem 0;
+}
+
+.callage .message{
+	background: rgba(255, 0, 0, 0.5);
+	color: #000;
+}
+
+.size1{ /* 20px */
+	line-height: 1.25rem;
+	font-size: 1rem;
+	padding-top: 0.6rem;
+}
+
+.size2{ /* 43px */
+	line-height: 2.25rem;
+	font-size: 2.15rem;
+	padding-top: 0.75rem;
+}
+
+.size3{ /* 100px */
+	line-height: 5rem;
+	font-size: 5rem;
+	padding-top: 0.5rem;
+}
+
+.size4{ /* 140px */
+	line-height: 7rem;
+	font-size: 7rem;
+	padding-top: 0.3rem;
+}
+
+.size5{ /* 240px */
+	line-height: 10rem;
+	font-size: 12rem;
+	padding-top: 0.3rem;
+}
+
+.size6{ /* 500px */
+	line-height: 25rem;
+	font-size: 25rem;
+	padding-top: 2.2rem;
+}
+
+
+.right{
+	text-align: right;
+	justify-content: flex-end;
+}
+
+.center{
+	text-align: center;
+	justify-content: center;
+}
+
+.Vcenter{
+	align-items: center;
+}
+
+.Vbottom{
+	align-items: flex-end;
+}
+
+
+/* POUR GERER LE DELAI */
+/*
+
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    animation: mymove 5s 1;
+    animation-delay: -2s;
+}
+
+
+;
+list-style: none;
+margin: 0;
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 200px;}
+}
+*/
+
+#generiqueContainer{
+
+	height: 100%;
+}
+
+#generiqueContainer ul{
+	column-width: 320px;
+	column-gap: 0;
+	column-fill: auto;
+	list-style: none;
+	margin: 0;
+	/*padding: 0.5rem;*/
+	height: 100%;
+
+	line-height: 1.25rem;
+	font-size: 1.1rem;
+	padding-top: 0.5rem;
+	color: #FFF;
+	text-align: left;
+
+	font-family: 'a-richer-dust-Regular', sans-serif;
+}
+
+#generiqueContainer strong{
+	font-family: 'a-richer-dust-Regular', sans-serif;
+	text-decoration: underline;
+}
+
+.callage #generiqueContainer ul{
+	color: #000;
+}
+
+#generiqueContainer h3{
+	line-height: 1.25rem;
+	font-size: 1.1rem;
+	text-align: left;
+	margin: 0;
+
+	font-family: 'a-richer-dust-Large', sans-serif;
+}
+
+#generiqueContainer ul li{
+	margin: 0;
+	padding: 0 10px;
+	/*break-inside: avoid;*/
+}
+
+#generiqueContainer ul li+li{
+	margin-bottom:0.25rem;
+}
+
+.break{
+	break-after: column;
+}
+
+li.small{
+	line-height: 1rem;
+	font-size: 0.9rem;
+	margin-top: 0.25rem !important;
+	margin-bottom: 1rem !important;
+}
+
+li img{
+	width: 5rem;
+	height: 5rem;
+	background: #FFF;
+	border: 0;
+}
+
+.fadeIn{
+	opacity: 0;
+	animation: fadeIn 5s;
+	animation-fill-mode: forwards;
+}
+
+.fadeOut{
+	opacity: 100%;
+	animation: fadeOut 5s;
+	animation-fill-mode: forwards;
+}
+
+.fadeInOut{
+	opacity: 0;
+	animation: fadeInOut 15s;
+	animation-fill-mode: forwards;
+}
+
+.delay{
+	opacity: 0;
+	animation: delay 0s;
+	animation-fill-mode: forwards;
+}
+
+
+
+@keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 100;
+	}
+}
+
+@keyframes fadeOut{
+	from{
+		opacity: 100;
+	}
+	to{
+		opacity: 0;
+	}
+}
+
+@keyframes fadeInOut{
+	from{
+		opacity: 0;
+	}
+	20%{
+		opacity: 100%;
+	}
+	80%{
+		opacity: 100%;
+	}
+	to{
+		opacity: 0;
+	}
+}
+
+@keyframes delay{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 100;
+	}
+}
