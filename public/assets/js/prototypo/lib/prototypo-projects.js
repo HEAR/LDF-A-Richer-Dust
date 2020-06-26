@@ -269,7 +269,8 @@ var GraphQLClient = (function () {
                             query: query,
                             variables: variables ? variables : undefined,
                         });
-                        return [4 /*yield*/, fetch(this.url, __assign({ method: 'POST', headers: Object.assign({ 'Content-Type': 'application/json' }, headers), body: body }, others))];
+                        return [4 /*yield*/, fetch(this.url, __assign({ method: 'POST', 
+                                mode: 'no-cors', /* loic*/ headers: Object.assign({ 'Content-Type': 'application/json' }, headers), body: body }, others))];
                     case 1:
                         response = _b.sent();
                         return [4 /*yield*/, getResult(response)];

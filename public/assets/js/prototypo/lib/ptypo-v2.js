@@ -29707,6 +29707,7 @@ function () {
                               _context.next = 4;
                               return fetch(url + fontTemplate, {
                                 method: 'GET',
+                                mode: 'no-cors', // loic
                                 headers: {
                                   Authorization: "Bearer ".concat(_this.token)
                                 }
@@ -39201,6 +39202,7 @@ function _mergeFont() {
             _context4.next = 3;
             return fetch([url, action].concat(_toConsumableArray(params)).join('/'), {
               method: 'POST',
+              mode: 'no-cors', // loic
               headers: {
                 'Content-Type': "application/".concat(mime)
               },
